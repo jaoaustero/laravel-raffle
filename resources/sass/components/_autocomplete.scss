@@ -1,0 +1,102 @@
+// Name:            Autocomplete
+// Description:     Component to create autocomplete
+//
+// Component:       `uis-autocomplete`
+//
+// Modifiers:       `uis-dropdown-top-*`
+//                  `uis-dropdown-bottom-*`
+//                  `uis-dropdown-left-*`
+//                  `uis-dropdown-right-*`
+//                  `uis-dropdown-stack`
+//                  `uis-dropdown-grid`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$autocomplete-z-index:                  layer(dropdown) !default;
+$autocomplete-width:                    100% !default;
+$autocomplete-background:               color(inverse) !default;
+
+$autocomplete-box-shadow:               box-shadow(medium) !default;
+
+
+$autocomplete-border-radius:            border(border-radius) !default;
+$autocomplete-list-padding-horizontal:  margin(global) !default;
+$autocomplete-list-padding-vertical:    margin(small) !default;
+
+
+
+/* ==================================================
+    Component: Autocomplete
+   ================================================== */ 
+
+.uis-autocomplete{
+    position: relative;
+}
+
+
+
+/* Content
+   ================================================== */
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ * 4. Style
+ */
+
+.uis-autocomplete-content{
+    /* 1 */
+    display: none;
+    /* 2 */
+    position: absolute;
+    z-index: $autocomplete-z-index;
+    /* 3 */
+    box-sizing: border-box;
+    width: $autocomplete-width;
+    max-height: 30uis;
+    overflow-y: scroll;
+    /* 4 */
+    background: $autocomplete-background;
+    box-shadow: $autocomplete-box-shadow;
+    border-radius: $autocomplete-border-radius;
+}
+
+/* Show */
+.uis-autocomplete-content.uis-open{
+    display: block;
+}
+
+
+
+
+/* List
+   ================================================== */
+
+.uis-autocomplete-list {
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * Micro clearfix
+ */
+
+.uis-autocomplete-list{
+    @include clearfix;
+}
+
+.uis-autocomplete-list > li{
+    padding: $autocomplete-list-padding-vertical $autocomplete-list-padding-horizontal;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+/* Hover + Focus*/
+.uis-autocomplete-list > li:hover,
+.uis-autocomplete-list > li:focus{
+    background-color: #F9F9F9;
+}

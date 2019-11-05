@@ -1,0 +1,145 @@
+// Name:            Modal
+// Description:     Component to create modal dialogs
+//
+// Component:       `uis-modal`
+//
+// Sub-objects:     `uis-modal-page`
+//                  `uis-modal-dialog`
+//                  `uis-modal-header`
+//                  `uis-modal-body`
+//                  `uis-modal-footer`
+//                  `uis-modal-title`
+//                  `uis-modal-close`
+//
+// Adopted:         `uis-modal-close-default`
+//                  `uis-modal-close-outside`
+//                  `uis-modal-close-full`
+//
+// Modifiers:       `uis-modal-container`
+//                  `uis-modal-full`
+//
+// States:          `uis-open`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+$spinner-background:                                    #0B2E4A !default;
+
+
+/* ==================================================
+    Component: Spinner
+   ================================================== */
+
+.uis-spinner-wrapper{
+    height: 100vh;
+    width: 100%;
+
+    background-color: $spinner-background;
+    background-image: url('./public/img/svg/background-pattern.svg');
+}
+
+.uis-spinner{
+    height: 400px;
+    width: 80%;
+
+    margin: 40px auto;
+
+    box-sizing: border-box;
+
+    background-color: darken(theme-color(primary), 10%);
+    border: solid 20px theme-color(primary);
+
+    border-radius: 30px;
+
+    padding: 20px;
+}
+
+.uis-spinner-body{
+    height: 100%;
+    width: 100%;
+
+    background-color: #252525;
+    border-radius: 10px;
+
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.uis-spinner-roller{
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+
+    background-color: theme-color(inverse);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.uis-spinner-roller:before{
+    content: '';
+    position: absolute;
+    z-index: 150;
+
+    height: 40%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-image: linear-gradient(to bottom, #252525, transparent);
+}
+
+.uis-spinner-roller:after{
+    content: '';
+    position: absolute;
+    z-index: 150;
+
+    height: 40%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-image: linear-gradient(to top, #252525, transparent);
+}
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background-page
+ * 6. Fade-in transition
+ */
+
+
+/* List
+   Adopts `uis-list` default style
+   ================================================== */
+
+.uis-spinner-list > li{
+    color: color(primary);
+    font-weight: font-weight(bold);
+    font-size: 70px;
+    padding: 12px 0px;
+}
+
+.uis-spinner-list{
+    position: relative;
+
+    // animation: rolling 0.5s cubic-bezier(.69, 0.2, .25, 1.0);
+    // animation-iteration-count: infinite;
+}
+
+// @keyframes rolling{
+//     0%{
+//         top: 0;
+//     }
+
+//     100%{
+//         top: -800%;
+//     }
+// }

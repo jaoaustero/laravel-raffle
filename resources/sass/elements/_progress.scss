@@ -1,0 +1,195 @@
+// Name:            Progress
+// Description:     Component to create progress bars
+//
+// Component:       `uis-progress`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$progress-height:                           8px !default;
+$progress-margin-vertical:                  margin(global) !default;
+$progress-background:                       #f2f2f2 !default;
+
+$progress-bar-background:                   color(muted) !default;
+
+$progress-bar-background-primary:           color(primary) !default;
+$progress-bar-background-secondary:         color(secondary) !default;
+$progress-bar-background-success:           color(success) !default;
+$progress-bar-background-warning:           color(warning) !default;
+$progress-bar-background-danger:            color(danger) !default;
+
+
+
+/* ==================================================
+    Component: Progress
+   ================================================== */
+
+
+/*
+ * 1. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ * 2. Remove default style
+ * 3. Behave like a block element
+ * 4. Remove borders in Firefox and Edge
+ * 5. Set background color for progress container in Firefox, IE11 and Edge
+ * 6. Style
+ */
+
+.uis-progress {
+    /* 1 */
+    vertical-align: baseline;
+    /* 2 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* 3 */
+    display: block;
+    width: 100%;
+    /* 4 */
+    border: 0;
+    /* 5 */
+    background-color: $progress-background;
+    /* 6 */
+    margin-bottom: $progress-margin-vertical;
+    height: $progress-height;
+}
+
+/* Add margin if adjacent element */
+* + .uis-progress {
+    margin-top: $progress-margin-vertical;
+}
+
+/*
+ * Remove animated circles for indeterminate state in IE11 and Edge
+ */
+
+.uis-progress:indeterminate { color: transparent; }
+
+/*
+ * Progress container
+ * 2. Remove progress bar for indeterminate state in Firefox
+ */
+
+.uis-progress::-webkit-progress-bar {
+  background-color: $progress-background;
+}
+
+/* 2 */
+.uis-progress:indeterminate::-moz-progress-bar {
+    width: 0;
+}
+
+/*
+ * Progress bar
+ * 1. Remove right border in IE11 and Edge
+ */
+
+.uis-progress::-webkit-progress-value {
+    background-color: $progress-bar-background;
+    transition: width 0.6s ease;
+}
+
+.uis-progress::-moz-progress-bar {
+    background-color: $progress-bar-background;
+}
+
+.uis-progress::-ms-fill {
+    background-color: $progress-bar-background;
+    transition: width 0.6s ease;
+    /* 1 */
+    border: 0;
+}
+
+
+
+
+/* Color Modifier
+   ================================================== */
+
+/*
+ * Primary
+ */
+
+.uis-progress.uis-progress-primary::-webkit-progress-value {
+    background-color: $progress-bar-background-primary;
+}
+
+.uis-progress.uis-progress-primary::-moz-progress-bar {
+    background-color: $progress-bar-background-primary;
+}
+
+.uis-progress.uis-progress-primary::-ms-fill {
+    background-color: $progress-bar-background-primary;
+}
+
+
+/*
+ * Secondary
+ */
+
+.uis-progress.uis-progress-secondary::-webkit-progress-value {
+    background-color: $progress-bar-background-secondary;
+}
+
+.uis-progress.uis-progress-secondary::-moz-progress-bar {
+    background-color: $progress-bar-background-secondary;
+}
+
+.uis-progress.uis-progress-secondary::-ms-fill {
+    background-color: $progress-bar-background-secondary;
+}
+
+
+
+/*
+ * Success
+ */
+
+.uis-progress.uis-progress-success::-webkit-progress-value {
+    background-color: $progress-bar-background-success  ;
+}
+
+.uis-progress.uis-progress-success::-moz-progress-bar {
+    background-color: $progress-bar-background-success;
+}
+
+.uis-progress.uis-progress-success::-ms-fill {
+    background-color: $progress-bar-background-success;
+}
+
+
+
+/*
+ * Warning
+ */
+
+.uis-progress.uis-progress-warning::-webkit-progress-value {
+    background-color: $progress-bar-background-warning;
+}
+
+.uis-progress.uis-progress-warning::-moz-progress-bar {
+    background-color: $progress-bar-background-warning;
+}
+
+.uis-progress.uis-progress-warning::-ms-fill {
+    background-color: $progress-bar-background-warning;
+}
+
+
+
+/*
+ * Warning
+ */
+
+.uis-progress.uis-progress-danger::-webkit-progress-value {
+    background-color: $progress-bar-background-danger;
+}
+
+.uis-progress.uis-progress-danger::-moz-progress-bar {
+    background-color: $progress-bar-background-danger;
+}
+
+.uis-progress.uis-progress-danger::-ms-fill {
+    background-color: $progress-bar-background-danger;
+}
