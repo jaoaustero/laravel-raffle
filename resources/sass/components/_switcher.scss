@@ -1,0 +1,44 @@
+// Name:            Swticher
+// Description:     Component to navigate through different content panes
+//
+// Component:       `uis-switcher`
+//
+// States:          `uis-active`
+//
+// ========================================================================
+
+
+/* ==================================================
+    Component: Switcher
+   ================================================== */
+
+/*
+ * Reset list 
+ */
+
+.uis-switcher{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+/* Items
+   ================================================== */
+
+/*
+ * Hide not active items
+ */
+
+.uis-switcher > :not(.uis-active){
+    display: none;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-switcher > * > :last-child{
+    margin-bottom: 0;
+}

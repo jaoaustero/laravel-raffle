@@ -1,0 +1,182 @@
+@import '../helpers/variables';
+@import '../helpers/functions';
+@import '../helpers/mixins';
+
+.uis-slideshow-placeholder{
+    position: absolute;
+    z-index: 8;
+    height: 700px;
+    width: 0%;
+    background-color: #E5E5E5;
+
+    animation-name: uisScale2;
+    animation-duration: 10s;
+    transition: width 0.8s ease-in-out;
+}
+
+@keyframes uisScale2{
+    0%{
+        width: 0%;
+    }
+
+    8%{
+        width: 100%;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+
+
+.uis-slideshow-next-item{
+    z-index: 3;
+}
+
+
+.uis-slideshow{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.uis-slideshow-shadow{
+    box-shadow: 0 -14px 25px rgba(0,0,0,0.16),
+}
+
+@include respond-to(small){
+    .uis-slideshow{
+        height: 600px;
+    }
+}
+
+.uis-slideshow-item{
+    position: absolute;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+
+    transition: width 0.8s ease-in-out;
+}
+
+.uis-slideshow-item.uis-active{
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.uis-slideshow-item-1{
+    z-index: 13!important;
+}
+
+
+.uis-slideshow-item > img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@include respond-to(small){
+    .uis-slideshow-item > img{
+        height: 800px
+    }
+}
+
+// .uis-slideshow-item.uis-active > img{
+//     animation-name: uisZoom;
+//     animation-duration: 10s;
+//     animation-delay: 1s;
+
+//     transform: scale(1.2);
+// }
+
+// @keyframes uisZoom{
+//     0%{
+//         transform: scale(1.2);
+//     }
+
+//     25%{
+//         transform: scale(1);
+//     }
+
+//     100%{
+//         transform: scale(1);
+//     }
+// }
+
+
+.uis-slideshow-content{
+    position: relative;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding: 0px gutter(xsmall);
+    box-sizing: border-box;
+}
+
+@include respond-to(small){
+    .uis-slideshow-content{
+        margin-top: margin(medium);
+        margin-left: margin(medium);
+        padding: 0;
+    }
+}
+
+.uis-slideshow-content-item:not(.uis-active){
+    display: none;
+}
+
+
+
+.uis-slideshow-counter-item{
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    width: 40px;
+    
+    box-sizing: border-box;
+
+    color: #999999;
+    background-color: transparent;
+    border: 2px solid #999999;
+    border-radius: 100%;
+    font-size: font-size(medium);
+
+    margin-right: margin(small);
+    cursor: pointer;
+    outline: none;
+
+    transition: all 0.3s ease-in-out;
+}
+
+@include respond-to('small'){
+    
+    .uis-slideshow-counter-item{
+        height: 30px;
+        width: 30px;
+        font-size: font-size(small);
+    }
+}
+
+.uis-slideshow-counter-item:last-child{
+    margin-right: 0px;
+}
+
+.uis-slideshow-counter-item.uis-active{
+    color: color(inverse);
+    background-color: color(primary);
+    border-color: color(primary)
+}
+
+.uis-slideshow-counter-item:hover:not(.uis-active){
+    color: color(primary);
+    border-color: color(primary);
+}
+
+.uis-slideshow-counter-item:active{
+    color: color(inverse);
+    background-color: color(primary);
+    border-color: color(primary)
+}

@@ -1,0 +1,98 @@
+// Name:            Pagination
+// Description:     Component to create a page navigation
+//
+// Component:       `uis-pagination`
+//
+// Adopted:         `uis-pagination-next`
+//                  `uis-pagination-previous`
+//
+// States:          `uis-active`
+//                  `uis-disabled`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$pagination-margin-horizontal:                   20px !default;
+
+$pagination-item-color:                          color(muted) !default;
+$pagination-item-hover-color:                    color(emphasis) !default;
+$pagination-item-hover-text-decoration:          none !default;
+$pagination-item-active-color:                   color(primary) !default;
+$pagination-item-disabled-color:                 color(muted) !default;
+
+
+/* ========================================================================
+   Component: Pagination
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Gutter
+ * 3. Reset list
+ */
+
+.pagination {
+    margin-top: margin(xlarge);
+    display: flex;
+    justify-content: center;
+    /* 1 */
+    flex-wrap: wrap;
+    /* 2 */
+    margin-left: (-$pagination-margin-horizontal);
+    /* 3 */
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ * 3. Create position context for dropdowns
+ */
+
+.pagination > * {
+    /* 1 */
+    flex: none;
+    /* 2 */
+    padding-left: $pagination-margin-horizontal;
+    /* 3 */
+    position: relative;
+}
+
+
+/* Items
+ ========================================================================== */
+
+/*
+ * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * 2. Style
+ */
+
+.pagination > * > * {
+    /* 1 */
+    display: block;
+    /* 2 */
+    color: $pagination-item-color;
+    font-size: font-size(medium);
+}
+
+/* Hover + Focus */
+.pagination > * > :hover,
+.pagination > * > :focus {
+    color: $pagination-item-hover-color;
+    text-decoration: $pagination-item-hover-text-decoration;
+}
+
+/* Active */
+.pagination > .active > * {
+    color: $pagination-item-active-color;
+}
+
+/* Disabled */
+.pagination > .disabled > * {
+    color: $pagination-item-disabled-color;
+    cursor: not-allowed;
+}

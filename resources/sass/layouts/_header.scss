@@ -1,0 +1,330 @@
+//  ==================================================
+//  Name:               Header
+//  Description:        Styles for header
+//
+//  Component:          `uis-header-*` 
+//
+//  Sub-components:     `uis-header-headline`
+//                      `uis-header-background`
+//
+//  ==================================================
+
+//  ==================================================
+//  Variables
+//  ==================================================
+
+$header-height:                 80vh !default;
+$header-width:                  100% !default;
+$header-background:             color(primary) !default;
+
+$headline-z-index:              layer(dropdown) !default;
+
+
+/* Header
+   ================================================== */
+
+/*
+ * 1. Set Dimension
+ * 2. Align vertical and horizontal center content
+ * 3. Background color as placeholder when the content is loading or broken link
+ * 4. Hide overflow
+ * 5. When the screen size is below small, the video will display; none
+ */
+
+.uis-header{
+    position: relative;
+    /* 1 */
+    height: $header-height;
+    width: $header-width;
+    /* 2 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 3 */
+    background-color: $header-background;
+    /* 4 */
+    overflow: hidden;
+    
+}
+
+.uis-header-landing{
+    /* 5 */
+    background-image: url('../assets/image/mobile-header.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (min-width: map-get($breakpoint, 'large')) and (max-width: map-get($breakpoint, 'xlarge')){
+    .uis-header{
+        height: 90vh;
+    }
+}
+
+@media (max-width: 840px) and (orientation: portrait){
+    .uis-header{
+        height: calc(80vh + 60px);
+    }
+}
+
+
+@media (max-width: 840px) and (orientation: landscape){
+    .uis-header{
+        height: calc(100vh + 100px);
+    }
+}
+
+
+
+/* Headline
+   ================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set layer order
+ */
+
+.uis-header-headline{
+    /* 1 */
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    max-width: map-get($breakpoint, 'xlarge');
+    /* 2 */
+    z-index: $headline-z-index;
+}
+
+@media screen and (min-width: map-get($breakpoint, 'large')) and (max-width: map-get($breakpoint, 'xlarge')){
+    .uis-header-headline{
+        max-width: map-get($breakpoint, 'large'); 
+    }
+}
+
+@media screen and (min-width: map-get($breakpoint, 'medium')) and (max-width: map-get($breakpoint, 'large')){
+    .uis-header-headline{
+        max-width: 900px 
+    }
+}
+
+@include respond-to(medium){
+    .uis-header-headline{
+        left: 0;
+        bottom: 80px;
+        padding: 0 40px;
+        text-align: left;
+    }
+}
+
+/*
+ * Items
+ */
+
+.uis-header-headline .uis-headline-title{
+    font-size: 2rem;
+}
+
+.uis-header-headline .uis-headline-description{
+    font-size: font-size(small);
+}
+
+
+@include respond-to(medium){
+    .uis-header-headline .uis-headline-title{
+        font-size: 2.5rem;
+    }
+
+    .uis-header-headline .uis-headline-description{
+        font-size: font-size(small);
+    }
+}
+
+
+/* Background
+   ================================================== */
+
+.uis-header-background{
+    height: inherit;
+    width: inherit;
+    overflow: hidden;
+}
+
+/*
+ * Items
+ */
+
+.uis-header-background img,
+.uis-header-background video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+/* Links
+   ================================================== */
+.uis-header-links{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 80px;
+    width: 100%;
+
+    border-right: 0.5px solid transparentize(color(inverse), 0.5);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: $headline-z-index;
+}
+
+.uis-header-links .uis-links-label{
+    display: none;
+    color: #FFFFFF;
+    transform: rotateZ(90deg);
+    white-space: nowrap;
+    letter-spacing: 2px;
+    margin: 0 0 50px 0;
+    font-weight: 300;
+}
+
+.uis-links-label::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50px;
+
+    width: 40px;
+    height: 1px;
+    background-color: color(inverse);
+}
+
+.uis-header-links .uis-links-nav{
+    margin-top: 0;
+    z-index: $headline-z-index;
+}
+
+.uis-header-links .uis-links-nav > * {
+    display: inline-block;
+}
+
+.uis-header-links .uis-links-nav * > a{
+    color: color(inverse);
+    padding: 0 12px;
+    font-size: 1.2rem;
+    margin-top: 0px;
+}
+
+
+
+.uis-scroll-label{
+    color: #FFFFFF;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    transform: rotateZ(90deg);
+    position: absolute;
+    top: 180px;
+    left:   0;
+    right: 0;
+}
+
+
+@include respond-to(medium){
+    .uis-header-links{
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: auto;
+
+        height: 100%;
+        width: 80px;
+        flex-direction: column;
+    }
+
+    .uis-header-links .uis-links-label{
+        display: initial;
+    }
+
+    .uis-header-links .uis-links-nav{
+        margin-top: 60px;
+    }
+
+    .uis-header-links .uis-links-nav > * {
+        display: initial;
+    }
+
+    .uis-header-links .uis-links-nav * > a{
+        padding: 0;
+        font-size: initial;
+        margin-top: 8px;
+    }
+
+    // SCroll
+    .uis-header-scroll{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: 0;
+    
+        height: 100%;
+        width: 80px;
+
+        border-left: 0.5px solid transparentize(color(inverse), 0.5);
+
+        z-index: $headline-z-index;
+    }
+
+    .uis-header-scroll > div{
+        position: relative;
+        top: calc(40vh - 150px);
+    }
+
+    .uis-scroll-animation{
+        height: 0px;
+        width: 2px;
+        border-radius: 6px;
+        background: linear-gradient(transparent, #FFFFFF);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+
+        will-change: auto;
+        transition: all 0.3s ease-in-out;
+
+        animation-name: scrollSlidingDown;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        transform-origin: 100% 100%;
+    }
+
+    @keyframes scrollSlidingDown{
+        0%{
+            height: 0px;
+        }
+
+
+        50%{
+            height: 120px;
+            transform: scaley(1);
+        }
+
+        100%{
+            height: 120px;
+            transform: scaley(0);
+            transform-origin: 100% 100%;
+        }
+    }
+}
+
+@include respond-to-max(xsmall){
+    .uis-header-links i.fa{
+        font-size: 1.5em;
+    }
+}
