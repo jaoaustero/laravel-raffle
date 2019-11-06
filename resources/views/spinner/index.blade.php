@@ -5,7 +5,7 @@
         <section class="uis-container uis-container-small">
             <div class="uis-text-center">
                 <img
-                    src="{{ asset('img/GMI-h-inverse.svg') }}"
+                    src="{{ asset('img/logo/GMI-h-inverse.svg') }}"
                     alt="GMI Horizontal Logo Inverse">
             </div>
 

@@ -76,6 +76,8 @@
 // Layout - Structure of the webpage
 
 // Pages - Specific style for pages
+@import './pages/auth.scss';
+@import './pages/event.scss';
 @import './pages/spinner.scss';
 
 // Theme - Customize the look and feel

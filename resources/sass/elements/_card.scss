@@ -47,6 +47,8 @@ $card-footer-padding-vertical:              round(gutter(small) / 2) !default;
 $card-footer-padding-horizontal-l:          gutter(medium) !default;
 $card-footer-padding-vertical-l:            round(gutter(medium) / 2) !default;
 
+$card-footer-background:                    lighten(#F9F9F9, 1%) !default;
+
 $card-title-font-size:                      font-size(large) !default;
 $card-title-line-height:                    1.4 !default;
 
@@ -148,7 +150,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 
 .uis-card-footer{
     padding: $card-footer-padding-vertical $card-footer-padding-horizontal;
-    border-top: 1px solid $card-border-color;
+    background-color: $card-footer-background;
 }
 
 /* Desktop and bigget */

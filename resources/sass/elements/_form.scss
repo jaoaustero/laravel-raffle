@@ -49,7 +49,7 @@ $form-focus-color:                               color(default) !default;
 $form-disabled-background:                       $global-muted-background !default;
 $form-disabled-color:                            color(muted) !default;
 
-$form-placeholder-color:                         color(muted) !default;
+$form-placeholder-color:                         lighten(color(muted), 30%) !default;
 
 $form-small-height:                              control-height(small) !default;
 $form-small-padding-horizontal:                  8px !default;
@@ -276,10 +276,13 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
     /* 2 */
     width: 100%;
     /* 3 */
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
+    border-top: none;
+    border-bottom: 1px solid border(border-color);
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
     /* 4 */
-    padding: 0 $form-padding-horizontal;
+    padding: 0;
     background: $form-background;
     color: $form-color;
 }
@@ -335,7 +338,7 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
 .uis-input:focus,
 .uis-select:focus,
 .uis-textarea:focus{
-    border: 1px solid color(primary);
+    border-bottom: 1px solid color(primary);
     outline: none;
     background-color: $form-focus-background;
     color: $form-focus-color;
@@ -356,18 +359,22 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
 
 .uis-input:-ms-input-placeholder{
     color: $form-placeholder-color !important;
+    font-style: italic;
 }
 
 .uis-input::placeholder{
     color: $form-placeholder-color;
+    font-style: italic;
 }
 
 .uis-textarea:-ms-input-placeholder{
     color: $form-placeholder-color !important;
+    font-style: italic;
 }
 
 .uis-textarea::placeholder{
     color: $form-placeholder-color;
+    font-style: italic;
 }
 
 /* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
