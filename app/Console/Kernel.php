@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\DropTables',
+		'App\Console\Commands\SetupInstall',
     ];
 
     /**
