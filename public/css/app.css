@@ -10927,11 +10927,72 @@ td.uis-text-break {
 .uis-spinner-list > li {
   color: #2591D0;
   font-weight: 600;
-  font-size: 70px;
+  font-size: 50px;
   padding: 12px 0px;
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.uis-spinner-list > li:first-child {
+  padding-top: 0px;
+}
+
+.uis-spinner-list > li:last-child {
+  padding-bottom: 0px;
 }
 
 .uis-spinner-list {
   position: relative;
+  top: 0;
+  -webkit-transition: all 1s cubic-bezier(0.69, 0.2, 0.25, 1);
+  transition: all 1s cubic-bezier(0.69, 0.2, 0.25, 1);
+}
+
+.uis-spinner-list.uis-active {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  -webkit-animation: spinnerBlur 4s ease-in-out;
+          animation: spinnerBlur 4s ease-in-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@-webkit-keyframes spinnerBlur {
+  0% {
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+@keyframes spinnerBlur {
+  0% {
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+.uis-spinner-list > li:first-child {
+  opacity: 0.5;
+}
+
+.uis-spinner-list > li:nth-child(2) {
+  opacity: 1;
+}
+
+.uis-spinner-list > li:nth-child(3) {
+  opacity: 0.5;
 }
 
