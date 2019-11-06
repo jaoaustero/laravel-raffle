@@ -6854,7 +6854,7 @@ ul.uis-nav-sub {
 
 .uis-card-footer {
   padding: 15px 30px;
-  border-top: 1px solid #E5E5E5;
+  background-color: #fcfcfc;
 }
 
 /* Desktop and bigget */
@@ -7421,10 +7421,13 @@ ul.uis-nav-sub {
   /* 2 */
   width: 100%;
   /* 3 */
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
+  border-top: none;
+  border-bottom: 1px solid #E5E5E5;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
   /* 4 */
-  padding: 0 10px;
+  padding: 0;
   background: #FFFFFF;
   color: #454545;
 }
@@ -7481,7 +7484,7 @@ ul.uis-nav-sub {
 .uis-input:focus,
 .uis-select:focus,
 .uis-textarea:focus {
-  border: 1px solid #2591D0;
+  border-bottom: 1px solid #2591D0;
   outline: none;
   background-color: #FFFFFF;
   color: #454545;
@@ -7501,43 +7504,53 @@ ul.uis-nav-sub {
  */
 
 .uis-input:-ms-input-placeholder {
-  color: #5C5C5C !important;
+  color: darkgray !important;
+  font-style: italic;
 }
 
 .uis-input::-webkit-input-placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 .uis-input::-moz-placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 .uis-input::-ms-input-placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 .uis-input::placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 .uis-textarea:-ms-input-placeholder {
-  color: #5C5C5C !important;
+  color: darkgray !important;
+  font-style: italic;
 }
 
 .uis-textarea::-webkit-input-placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 .uis-textarea::-moz-placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 .uis-textarea::-ms-input-placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 .uis-textarea::placeholder {
-  color: #5C5C5C;
+  color: darkgray;
+  font-style: italic;
 }
 
 /* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
@@ -10843,6 +10856,154 @@ td.uis-text-break {
 [class*=uis-width] {
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+}
+
+/* ==================================================
+    Page: Auth
+   ================================================== */
+
+.uis-auth {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #0B2E4A;
+  background-image: url(/images/background-pattern.svg?c12e63b5bfaaca94929747e03fde6fba);
+}
+
+/* Container
+   ================================================== */
+
+/*
+ * 1. Vertical center the content
+ * 2. Calculate and fill the horizontal with margin
+ * 3. Get the parent height
+ * 4. Set max width
+ * 5. Add spacing on side when mobile
+ */
+
+.uis-auth-container {
+  /* 1 */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  /* 2 */
+  margin: 0 auto;
+  /* 3 */
+  height: 100%;
+  /* 4 */
+  max-width: 500px;
+  /* 5 */
+  padding: 0 15px;
+}
+
+/* Table landscape and bugger */
+
+@media screen and (min-width: 960px) {
+  .uis-auth-container {
+    padding: 0;
+  }
+}
+
+/* ==================================================
+    Page: Event
+   ================================================== */
+
+.uis-event {
+  position: relative;
+}
+
+.uis-event-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25vh;
+  width: 100%;
+  text-align: center;
+  padding: 24px 0 0 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #0B2E4A;
+  background-image: url(/images/background-pattern.svg?c12e63b5bfaaca94929747e03fde6fba);
+}
+
+/* Container
+   ================================================== */
+
+/*
+ * 1. Vertical center the content
+ * 2. Calculate and fill the horizontal with margin
+ * 3. Get the parent height
+ * 4. Set max width
+ * 5. Add spacing on side when mobile
+ */
+
+.uis-event-container {
+  /* 1 */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  /* 2 */
+  margin: 0 auto;
+  /* 3 */
+  height: 100%;
+  /* 4 */
+  max-width: 800px;
+  /* 5 */
+  padding: 0 15px;
+}
+
+/* Table landscape and bugger */
+
+@media screen and (min-width: 960px) {
+  .uis-event-container {
+    padding: 0;
+  }
+}
+
+/* QR
+   ================================================== */
+
+.uis-event-qr-container {
+  position: relative;
+  text-align: center;
+}
+
+.uis-event-qr-tooltip {
+  position: relative;
+  margin: 0 auto;
+  top: 20px;
+  height: auto;
+  min-width: 80px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+  border-radius: 0.25rem;
+}
+
+/*
+ * Create traignel bottom as arrow
+ * head
+ */
+
+.uis-event-qr-tooltip:before {
+  content: "";
+  bottom: -10px;
+  left: calc(50% - 20px);
+  position: absolute;
+  margin: 0 auto;
+  height: 0;
+  width: 0;
+  border-top: 20px solid #0B2E4A;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
 }
 
 /* ==================================================

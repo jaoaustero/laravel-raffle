@@ -1,0 +1,126 @@
+// Name:            event
+// Description:     Style for event page
+//
+// Component:       `uis-event`
+//
+// Sub-objects:     `uis-event-container`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+$event-background:                                       #0B2E4A !default;
+$event-background-image:                                 url('./public/img/svg/background-pattern.svg') !default;
+
+$event-container-max-width:                              800px !default;
+$event-container-padding-horizontal:                     gutter(xsmall) !default;
+
+
+
+/* ==================================================
+    Page: Event
+   ================================================== */
+
+.uis-event{
+    position: relative;
+}
+
+.uis-event-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 25vh;
+    width: 100%;
+
+    text-align: center;
+    padding: 24px 0 0 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+    background-color: $event-background;
+    background-image: $event-background-image;
+}
+
+
+/* Container
+   ================================================== */
+
+/*
+ * 1. Vertical center the content
+ * 2. Calculate and fill the horizontal with margin
+ * 3. Get the parent height
+ * 4. Set max width
+ * 5. Add spacing on side when mobile
+ */
+.uis-event-container{
+    /* 1 */
+    display: flex;
+    align-items: center;
+    /* 2 */
+    margin: 0 auto;
+    /* 3 */
+    height: 100%;
+    /* 4 */
+    max-width: $event-container-max-width;
+    /* 5 */
+    padding: 0 $event-container-padding-horizontal;
+}
+
+/* Table landscape and bugger */
+@include respond-to(medium){
+    .uis-event-container{
+        padding: 0;
+    }
+}
+
+
+
+/* QR
+   ================================================== */
+
+.uis-event-qr-container{
+    position: relative;
+    text-align: center;
+}
+
+.uis-event-qr-tooltip{
+    position: relative;
+    margin: 0 auto;
+    top: 20px;
+    
+    height: auto;
+    min-width: 80px;
+    width: fit-content;
+
+    padding: 8px 12px;
+    box-sizing: border-box;
+
+    background-color: $event-background;
+    color: color(inverse);
+    border-radius: border(border-radius);
+}
+
+/*
+ * Create traignel bottom as arrow
+ * head
+ */
+.uis-event-qr-tooltip:before{
+    content: '';
+
+    bottom: -10px;
+    left: calc(50% - 20px);
+
+    position: absolute;
+    margin: 0 auto;
+
+    height: 0;
+    width: 0;
+
+    border-top: 20px solid $event-background;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}

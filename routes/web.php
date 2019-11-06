@@ -11,8 +11,19 @@
 |
 */
 
+// Login page
 Route::get('/', function () {
     return view('auth.login');
+});
+
+// Event Details
+Route::get('/{event}', function () {
+    return view('events.details');
+});
+
+// Event registration
+Route::get('/{event}/registration', function () {
+    return view('events.register');
 });
 
 
