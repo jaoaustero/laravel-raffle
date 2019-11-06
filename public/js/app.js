@@ -29845,9 +29845,13 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+<<<<<<< Updated upstream
 __webpack_require__(/*! ./components/spinner-2 */ "./resources/js/components/spinner-2.js");
 
 __webpack_require__(/*! ./components/get */ "./resources/js/components/get.js");
+=======
+__webpack_require__(/*! ./components/spinner-1 */ "./resources/js/components/spinner-1.js");
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -29883,6 +29887,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ "./resources/js/components/get.js":
 /*!****************************************!*\
   !*** ./resources/js/components/get.js ***!
@@ -30117,6 +30122,18 @@ function () {
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Id.BUTTON_DRAW, function (event) {
   Spinner.start(this);
 });
+=======
+/***/ "./resources/js/components/spinner-1.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/spinner-1.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function test() {
+  alert('YES');
+}
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -30138,8 +30155,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API,
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
