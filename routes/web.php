@@ -33,7 +33,9 @@ Route::group(['middleware' => ['auth']], function()
 {
     Route::get('events', 'EventController@index');
 
-    Route::get('/spinner', function () {
+    Route::get('events/{slug}', 'EventController@view');
+
+    Route::get('spinner', function () {
         return view('spinner.index');
     });
 });
