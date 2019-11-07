@@ -29851,7 +29851,9 @@ __webpack_require__(/*! ./components/form-helper */ "./resources/js/components/f
 
 __webpack_require__(/*! ./components/auth */ "./resources/js/components/auth.js");
 
-__webpack_require__(/*! ./components/registration */ "./resources/js/components/registration.js"); // require('./components/spinner-2');
+__webpack_require__(/*! ./components/registration */ "./resources/js/components/registration.js");
+
+__webpack_require__(/*! ./components/save-winner.js */ "./resources/js/components/save-winner.js"); // require('./components/spinner-2');
 
 
 __webpack_require__(/*! ./components/get */ "./resources/js/components/get.js"); // require('./components/spinner-1');
@@ -30272,6 +30274,69 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-registration-form').submit
 
 /***/ }),
 
+/***/ "./resources/js/components/save-winner.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/save-winner.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crud_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud-handler */ "./resources/js/components/crud-handler.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var SaveWinner =
+/*#__PURE__*/
+function () {
+  function SaveWinner() {
+    _classCallCheck(this, SaveWinner);
+
+    this.crudHandler = new _crud_handler__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  }
+
+  _createClass(SaveWinner, [{
+    key: "submitForm",
+    value: function submitForm(element) {
+      var playerId = element.attr('data-id');
+      var sendNotification = element.attr('data-send') == 'true';
+      this.crudHandler.addData('player_id', playerId);
+      this.crudHandler.addData('send_notification', sendNotification);
+      element.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status === 200) {// Close modal
+        } else if (response.status === 422) {// Show error message
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+
+        element.find('i').remove();
+        element.attr('disabled', false).text(sendNotification ? 'Send and Close' : 'Close');
+      }, 'POST', '/api/save-winner');
+    }
+  }]);
+
+  return SaveWinner;
+}();
+
+var module = new SaveWinner();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-save').click(function () {
+  module.submitForm(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -30290,8 +30355,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-registration-form').submit
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
