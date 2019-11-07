@@ -11,11 +11,12 @@
 
         <!-- Style -->
         <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet">
+
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
     </head>
     <body>
         <div id="app">
-            @include('layouts.header')
-            
             <main>
                 @yield('content')
             </main>

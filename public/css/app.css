@@ -2447,6 +2447,14 @@ pre {
   text-align: left;
 }
 
+/* Offset
+ ========================================================================== */
+
+.uis-offset-top {
+  position: relative;
+  top: -3vh;
+}
+
 /*
  * Hidden
  * `hidden` attribute also set here to make it stronger
@@ -5755,7 +5763,7 @@ ul.uis-nav-sub {
  * modifiers
  */
 
-.uis-button:before {
+.uis-button-3d:before {
   content: "";
   position: absolute;
   top: 0;
@@ -5832,14 +5840,14 @@ ul.uis-nav-sub {
 /* Style modifiers
    ================================================== */
 
+/* 
+ *default 
+ */
+
 .uis-button-default {
   background-color: #FFFFFF;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #e6e6e6;
-}
-
-.uis-button-default:before {
-  box-shadow: 8px 8px 12px rgba(255, 255, 255, 0.3);
+  border: 1px solid #d9d9d9;
 }
 
 /* Hover + Focus */
@@ -5848,7 +5856,7 @@ ul.uis-nav-sub {
 .uis-button-default:focus {
   background-color: #f2f2f2;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #d9d9d9;
+  border: 1px solid #f2f2f2;
 }
 
 /* Onclick + Active */
@@ -5857,22 +5865,17 @@ ul.uis-nav-sub {
 .uis-button-default.uis-active {
   background-color: #e6e6e6;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #d9d9d9;
+  border: 1px solid #e6e6e6;
 }
 
-.uis-button-default:hover:before {
-  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.3);
-}
+/* 
+ *primary 
+ */
 
 .uis-button-primary {
-  position: relative;
   background-color: #2591D0;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #1d73a5;
-}
-
-.uis-button-primary:before {
-  box-shadow: 8px 8px 12px rgba(37, 145, 208, 0.3);
+  border: 1px solid #2591D0;
 }
 
 /* Hover + Focus */
@@ -5881,7 +5884,7 @@ ul.uis-nav-sub {
 .uis-button-primary:focus {
   background-color: #2182ba;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #19648f;
+  border: 1px solid #2182ba;
 }
 
 /* Onclick + Active */
@@ -5890,22 +5893,17 @@ ul.uis-nav-sub {
 .uis-button-primary.uis-active {
   background-color: #1d73a5;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #19648f;
+  border: 1px solid #1d73a5;
 }
 
-.uis-button-primary:hover:before {
-  box-shadow: 0px 0px 0px rgba(37, 145, 208, 0.3);
-}
+/* 
+ *accent 
+ */
 
 .uis-button-accent {
-  position: relative;
   background-color: #FECC00;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #cba300;
-}
-
-.uis-button-accent:before {
-  box-shadow: 8px 8px 12px rgba(254, 204, 0, 0.3);
+  border: 1px solid #FECC00;
 }
 
 /* Hover + Focus */
@@ -5914,7 +5912,7 @@ ul.uis-nav-sub {
 .uis-button-accent:focus {
   background-color: #e5b800;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #b28f00;
+  border: 1px solid #e5b800;
 }
 
 /* Onclick + Active */
@@ -5923,22 +5921,17 @@ ul.uis-nav-sub {
 .uis-button-accent.uis-active {
   background-color: #cba300;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #b28f00;
+  border: 1px solid #cba300;
 }
 
-.uis-button-accent:hover:before {
-  box-shadow: 0px 0px 0px rgba(254, 204, 0, 0.3);
-}
+/* 
+ *secondary 
+ */
 
 .uis-button-secondary {
-  position: relative;
   background-color: #0B2E4A;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #04121e;
-}
-
-.uis-button-secondary:before {
-  box-shadow: 8px 8px 12px rgba(11, 46, 74, 0.3);
+  border: 1px solid #0B2E4A;
 }
 
 /* Hover + Focus */
@@ -5947,7 +5940,7 @@ ul.uis-nav-sub {
 .uis-button-secondary:focus {
   background-color: #082034;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #010507;
+  border: 1px solid #082034;
 }
 
 /* Onclick + Active */
@@ -5956,22 +5949,17 @@ ul.uis-nav-sub {
 .uis-button-secondary.uis-active {
   background-color: #04121e;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #010507;
+  border: 1px solid #04121e;
 }
 
-.uis-button-secondary:hover:before {
-  box-shadow: 0px 0px 0px rgba(11, 46, 74, 0.3);
-}
+/* 
+ *success 
+ */
 
 .uis-button-success {
-  position: relative;
   background-color: #26CC6E;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #1ea157;
-}
-
-.uis-button-success:before {
-  box-shadow: 8px 8px 12px rgba(38, 204, 110, 0.3);
+  border: 1px solid #26CC6E;
 }
 
 /* Hover + Focus */
@@ -5980,7 +5968,7 @@ ul.uis-nav-sub {
 .uis-button-success:focus {
   background-color: #22b762;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #1a8c4b;
+  border: 1px solid #22b762;
 }
 
 /* Onclick + Active */
@@ -5989,22 +5977,17 @@ ul.uis-nav-sub {
 .uis-button-success.uis-active {
   background-color: #1ea157;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #1a8c4b;
+  border: 1px solid #1ea157;
 }
 
-.uis-button-success:hover:before {
-  box-shadow: 0px 0px 0px rgba(38, 204, 110, 0.3);
-}
+/* 
+ *warning 
+ */
 
 .uis-button-warning {
-  position: relative;
   background-color: #FF9E0F;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #db8200;
-}
-
-.uis-button-warning:before {
-  box-shadow: 8px 8px 12px rgba(255, 158, 15, 0.3);
+  border: 1px solid #FF9E0F;
 }
 
 /* Hover + Focus */
@@ -6013,7 +5996,7 @@ ul.uis-nav-sub {
 .uis-button-warning:focus {
   background-color: #f59200;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #c27300;
+  border: 1px solid #f59200;
 }
 
 /* Onclick + Active */
@@ -6022,22 +6005,17 @@ ul.uis-nav-sub {
 .uis-button-warning.uis-active {
   background-color: #db8200;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #c27300;
+  border: 1px solid #db8200;
 }
 
-.uis-button-warning:hover:before {
-  box-shadow: 0px 0px 0px rgba(255, 158, 15, 0.3);
-}
+/* 
+ *danger 
+ */
 
 .uis-button-danger {
-  position: relative;
   background-color: #E32626;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #be1818;
-}
-
-.uis-button-danger:before {
-  box-shadow: 8px 8px 12px rgba(227, 38, 38, 0.3);
+  border: 1px solid #E32626;
 }
 
 /* Hover + Focus */
@@ -6046,7 +6024,7 @@ ul.uis-nav-sub {
 .uis-button-danger:focus {
   background-color: #d41b1b;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #a71616;
+  border: 1px solid #d41b1b;
 }
 
 /* Onclick + Active */
@@ -6055,22 +6033,17 @@ ul.uis-nav-sub {
 .uis-button-danger.uis-active {
   background-color: #be1818;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #a71616;
+  border: 1px solid #be1818;
 }
 
-.uis-button-danger:hover:before {
-  box-shadow: 0px 0px 0px rgba(227, 38, 38, 0.3);
-}
+/* 
+ *inverse 
+ */
 
 .uis-button-inverse {
-  position: relative;
   background-color: #FFFFFF;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #e6e6e6;
-}
-
-.uis-button-inverse:before {
-  box-shadow: 8px 8px 12px rgba(255, 255, 255, 0.3);
+  border: 1px solid #FFFFFF;
 }
 
 /* Hover + Focus */
@@ -6079,7 +6052,7 @@ ul.uis-nav-sub {
 .uis-button-inverse:focus {
   background-color: #f2f2f2;
   color: #454545;
-  box-shadow: inset -8px -8px 0px #d9d9d9;
+  border: 1px solid #f2f2f2;
 }
 
 /* Onclick + Active */
@@ -6088,10 +6061,269 @@ ul.uis-nav-sub {
 .uis-button-inverse.uis-active {
   background-color: #e6e6e6;
   color: #454545;
+  border: 1px solid #e6e6e6;
+}
+
+.uis-button-3d-default {
+  background-color: #FFFFFF;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #e6e6e6;
+}
+
+.uis-button-3d-default:before {
+  box-shadow: 8px 8px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-default:hover,
+.uis-button-3d-default:focus {
+  background-color: #f2f2f2;
+  color: #454545;
   box-shadow: inset -8px -8px 0px #d9d9d9;
 }
 
-.uis-button-inverse:hover:before {
+/* Onclick + Active */
+
+.uis-button-3d-default:active,
+.uis-button-3d-default.uis-active {
+  background-color: #e6e6e6;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #d9d9d9;
+}
+
+.uis-button-3d-default:hover:before {
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.3);
+}
+
+.uis-button-3d-primary {
+  position: relative;
+  background-color: #2591D0;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1d73a5;
+}
+
+.uis-button-3d-primary:before {
+  box-shadow: 8px 8px 12px rgba(37, 145, 208, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-primary:hover,
+.uis-button-3d-primary:focus {
+  background-color: #2182ba;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #19648f;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-primary:active,
+.uis-button-3d-primary.uis-active {
+  background-color: #1d73a5;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #19648f;
+}
+
+.uis-button-3d-primary:hover:before {
+  box-shadow: 0px 0px 0px rgba(37, 145, 208, 0.3);
+}
+
+.uis-button-3d-accent {
+  position: relative;
+  background-color: #FECC00;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #cba300;
+}
+
+.uis-button-3d-accent:before {
+  box-shadow: 8px 8px 12px rgba(254, 204, 0, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-accent:hover,
+.uis-button-3d-accent:focus {
+  background-color: #e5b800;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #b28f00;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-accent:active,
+.uis-button-3d-accent.uis-active {
+  background-color: #cba300;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #b28f00;
+}
+
+.uis-button-3d-accent:hover:before {
+  box-shadow: 0px 0px 0px rgba(254, 204, 0, 0.3);
+}
+
+.uis-button-3d-secondary {
+  position: relative;
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #04121e;
+}
+
+.uis-button-3d-secondary:before {
+  box-shadow: 8px 8px 12px rgba(11, 46, 74, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-secondary:hover,
+.uis-button-3d-secondary:focus {
+  background-color: #082034;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #010507;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-secondary:active,
+.uis-button-3d-secondary.uis-active {
+  background-color: #04121e;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #010507;
+}
+
+.uis-button-3d-secondary:hover:before {
+  box-shadow: 0px 0px 0px rgba(11, 46, 74, 0.3);
+}
+
+.uis-button-3d-success {
+  position: relative;
+  background-color: #26CC6E;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1ea157;
+}
+
+.uis-button-3d-success:before {
+  box-shadow: 8px 8px 12px rgba(38, 204, 110, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-success:hover,
+.uis-button-3d-success:focus {
+  background-color: #22b762;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1a8c4b;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-success:active,
+.uis-button-3d-success.uis-active {
+  background-color: #1ea157;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1a8c4b;
+}
+
+.uis-button-3d-success:hover:before {
+  box-shadow: 0px 0px 0px rgba(38, 204, 110, 0.3);
+}
+
+.uis-button-3d-warning {
+  position: relative;
+  background-color: #FF9E0F;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #db8200;
+}
+
+.uis-button-3d-warning:before {
+  box-shadow: 8px 8px 12px rgba(255, 158, 15, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-warning:hover,
+.uis-button-3d-warning:focus {
+  background-color: #f59200;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #c27300;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-warning:active,
+.uis-button-3d-warning.uis-active {
+  background-color: #db8200;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #c27300;
+}
+
+.uis-button-3d-warning:hover:before {
+  box-shadow: 0px 0px 0px rgba(255, 158, 15, 0.3);
+}
+
+.uis-button-3d-danger {
+  position: relative;
+  background-color: #E32626;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #be1818;
+}
+
+.uis-button-3d-danger:before {
+  box-shadow: 8px 8px 12px rgba(227, 38, 38, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-danger:hover,
+.uis-button-3d-danger:focus {
+  background-color: #d41b1b;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #a71616;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-danger:active,
+.uis-button-3d-danger.uis-active {
+  background-color: #be1818;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #a71616;
+}
+
+.uis-button-3d-danger:hover:before {
+  box-shadow: 0px 0px 0px rgba(227, 38, 38, 0.3);
+}
+
+.uis-button-3d-inverse {
+  position: relative;
+  background-color: #FFFFFF;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #e6e6e6;
+}
+
+.uis-button-3d-inverse:before {
+  box-shadow: 8px 8px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-inverse:hover,
+.uis-button-3d-inverse:focus {
+  background-color: #f2f2f2;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #d9d9d9;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-inverse:active,
+.uis-button-3d-inverse.uis-active {
+  background-color: #e6e6e6;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #d9d9d9;
+}
+
+.uis-button-3d-inverse:hover:before {
   box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.3);
 }
 
@@ -11048,6 +11280,37 @@ td.uis-text-break {
   border-right: 20px solid transparent;
 }
 
+/* Button
+   ================================================== */
+
+.uis-event-button {
+  background-color: #F2F8FB;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: normal;
+}
+
+.uis-event-button:hover {
+  background-color: #D7EBF6;
+}
+
+.uis-event-button > * {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.uis-event-button > .uis-event-button-icon {
+  font-size: 1.2rem;
+}
+
 /* ==================================================
     Component: Spinner
    ================================================== */
@@ -11165,8 +11428,28 @@ td.uis-text-break {
 
 @-webkit-keyframes spinnerBlur {
   0% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+
+  10% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  25% {
     -webkit-filter: blur(20px);
             filter: blur(20px);
+  }
+
+  50% {
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
   }
 
   100% {
@@ -11177,8 +11460,28 @@ td.uis-text-break {
 
 @keyframes spinnerBlur {
   0% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+
+  10% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  25% {
     -webkit-filter: blur(20px);
             filter: blur(20px);
+  }
+
+  50% {
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
   }
 
   100% {

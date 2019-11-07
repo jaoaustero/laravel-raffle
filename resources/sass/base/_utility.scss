@@ -402,19 +402,12 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
     text-align: left;
 }
 
-// .uis-text-ellipsis::before{
-//     content: '...';
-//     position: absolute;
-//     bottom: 0;
-//     right: 0.5em;
-// }
 
-// .uis-text-ellipsis::after{
-//     content: '';
-//     position: absolute;
-//     right: 0;
-//     width: 1em;
-//     height: 1em;
-//     margin-top: 0.2em;
-//     background: white;
-// }
+
+/* Offset
+ ========================================================================== */
+
+.uis-offset-top{
+    position: relative;
+    top: -3vh;
+}

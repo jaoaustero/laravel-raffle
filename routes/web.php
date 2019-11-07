@@ -31,9 +31,11 @@ Route::get('logout', 'Auth\LogoutController@logout');
 
 Route::group(['middleware' => ['auth']], function()
 {
-    Route::get('events', 'EventController@index');
+    Route::get('events', 'Administration\EventController@index');
 
-    Route::get('events/{slug}', 'EventController@view');
+    Route::get('events/{slug}', 'Administration\EventController@view');
+
+    Route::get('users', 'Administration\UserController@index');
 
     Route::get('spinner', function () {
         return view('spinner.index');

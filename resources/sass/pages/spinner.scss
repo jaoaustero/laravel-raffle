@@ -166,7 +166,23 @@ $spinner-background:                                    color(secondary) !defaul
 
 @keyframes spinnerBlur{
     0%{
+        filter: blur(0px);
+    }
+
+    10%{
+        filter: blur(10px);
+    }
+
+    25%{
         filter: blur(20px);
+    }
+
+    50%{
+        filter: blur(20px);
+    }
+
+    75%{
+        filter: blur(10px);
     }
 
     100%{

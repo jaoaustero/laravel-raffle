@@ -50,6 +50,12 @@
                         src="{{ asset('storage/' . $event->path) }}"
                         alt="QR Code">
                 </div>
+
+                <div class="uis-margin-top uis-text-center">
+                    <p class="uis-margin-remove">
+                        {{ env('APP_URL') .  '/' .$event->slug }}
+                    </p>
+                </div>
             </div>
             @else
 

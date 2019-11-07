@@ -29853,10 +29853,14 @@ __webpack_require__(/*! ./components/auth */ "./resources/js/components/auth.js"
 
 __webpack_require__(/*! ./components/registration */ "./resources/js/components/registration.js");
 
-__webpack_require__(/*! ./components/save-winner.js */ "./resources/js/components/save-winner.js"); // require('./components/spinner-2');
+__webpack_require__(/*! ./components/save-winner.js */ "./resources/js/components/save-winner.js");
 
+__webpack_require__(/*! ./components/spinner-2 */ "./resources/js/components/spinner-2.js");
 
 __webpack_require__(/*! ./components/get */ "./resources/js/components/get.js"); // require('./components/spinner-1');
+
+
+__webpack_require__(/*! ./components/modal */ "./resources/js/components/modal.js");
 
 /***/ }),
 
@@ -30198,6 +30202,203 @@ insertPlayers();
 
 /***/ }),
 
+/***/ "./resources/js/components/modal.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/modal.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ "./resources/js/components/util.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+/**
+ * ==================================================
+ * Constants
+ * ==================================================
+ */
+
+var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+
+var Event = {
+  KEYDOWN_DISSMISS: 'keydown',
+  CLICK_DATA_API: 'click touch'
+};
+var Selector = {
+  DATA_TOGGLE: '[uis-modal]',
+  MODAL: 'uis-modal',
+  DIALOG_FLEX: 'uis-flex-top',
+  PAGE: 'uis-modal-page',
+  OVERFLOW_AUTO: '[uis-overflow-auto]',
+  HTML: 'html'
+};
+var ClassName = {
+  MODAL: '.uis-modal',
+  DIALOG: '.uis-modal-dialog',
+  CLOSE: '.uis-modal-close, .close-modal',
+  OPEN: '.uis-open'
+};
+var State = {
+  OPEN: 'uis-open'
+};
+/**
+ * ==================================================
+ * Class Definition
+ * ==================================================
+ */
+
+var Modal =
+/*#__PURE__*/
+function () {
+  function Modal(element, target, option) {
+    _classCallCheck(this, Modal);
+
+    this._element = element;
+    this._target = target;
+    this._option = option;
+    this._escClose = true;
+    this._bgClose = false;
+  } // Public
+
+
+  _createClass(Modal, [{
+    key: "toggle",
+    value: function toggle() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this._target).hasClass(State.OPEN) ? this.close() : this.open();
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      var _this = this;
+
+      this._setConfig();
+
+      this._setDialogPosition();
+
+      this._setEscapeEvent();
+
+      this._setBackDropEvent();
+
+      setTimeout(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(_this._target).addClass(State.OPEN);
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(Selector.HTML).addClass(Selector.PAGE);
+      }, 50);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', ClassName.CLOSE, function () {
+        _this.close();
+      });
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      var _this2 = this;
+
+      this._setConfig();
+
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this._target).removeClass(State.OPEN);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(Selector.HTML).removeClass(Selector.PAGE);
+      setTimeout(function () {
+        _this2._unsetDialogPosition();
+      }, 300);
+    } // Private
+
+  }, {
+    key: "_setConfig",
+    value: function _setConfig() {
+      if (this._option != null) {
+        this._escClose = _util__WEBPACK_IMPORTED_MODULE_1__["default"].getModifierValue(this._option, 'esc-close') ? _util__WEBPACK_IMPORTED_MODULE_1__["default"].getModifierValue(this._option, 'esc-close') : this._escClose;
+        this._bgClose = _util__WEBPACK_IMPORTED_MODULE_1__["default"].getModifierValue(this._option, 'bg-close') ? _util__WEBPACK_IMPORTED_MODULE_1__["default"].getModifierValue(this._option, 'bg-close') : this._bgClose;
+      }
+    }
+  }, {
+    key: "_setDialogPosition",
+    value: function _setDialogPosition() {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this._target).hasClass(Selector.DIALOG_FLEX)) jquery__WEBPACK_IMPORTED_MODULE_0___default()(this._target).css('display', 'flex');else jquery__WEBPACK_IMPORTED_MODULE_0___default()(this._target).css('display', 'block');
+    }
+  }, {
+    key: "_unsetDialogPosition",
+    value: function _unsetDialogPosition() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this._target).removeAttr('style');
+    }
+  }, {
+    key: "_setEscapeEvent",
+    value: function _setEscapeEvent() {
+      var _this3 = this;
+
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('keyup', function (e) {
+        if (e.keyCode == ESCAPE_KEYCODE) {
+          JSON.parse(_this3._escClose) ? _this3.close() : '';
+        }
+      });
+    }
+  }, {
+    key: "_setBackDropEvent",
+    value: function _setBackDropEvent() {
+      var $this = this;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', ClassName.MODAL, function (e) {
+        if (e.target !== this) return;
+        JSON.parse($this._bgClose) ? $this.close() : '';
+      });
+    } // Static
+
+  }], [{
+    key: "initialize",
+    value: function initialize(element) {
+      var target = _util__WEBPACK_IMPORTED_MODULE_1__["default"].getAttributeValue(element);
+      var options = null;
+
+      if (_util__WEBPACK_IMPORTED_MODULE_1__["default"].getOptions(target)) {
+        options = _util__WEBPACK_IMPORTED_MODULE_1__["default"].getOptions(target);
+      }
+
+      if (element) {
+        var modal = new Modal(element, target, options);
+        modal.toggle();
+      }
+    }
+  }, {
+    key: "show",
+    value: function show(target) {
+      var modal = new Modal(null, target, null);
+      modal.open();
+    }
+  }, {
+    key: "hide",
+    value: function hide(target) {
+      var modal = new Modal(null, target, null);
+      modal.close();
+    }
+  }]);
+
+  return Modal;
+}();
+/**
+ * ==================================================
+ * Data Api implementation
+ * ==================================================
+ */
+
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+  if (this.tagName === 'A' || this.tagName === 'AREA') {
+    event.preventDefault();
+  }
+
+  Modal.initialize(this);
+});
+/* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+
 /***/ "./resources/js/components/registration.js":
 /*!*************************************************!*\
   !*** ./resources/js/components/registration.js ***!
@@ -30337,6 +30538,234 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-save').click(function () {
 
 /***/ }),
 
+/***/ "./resources/js/components/spinner-2.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/spinner-2.js ***!
+  \**********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+/**
+ * ==================================================
+ * Constants
+ * ==================================================
+ */
+
+var Event = {
+  CLICK_DATA_API: 'click touch'
+};
+var Id = {
+  BUTTON_DRAW: '#draw'
+};
+/**
+ * ==================================================
+ * Class Definition
+ * ==================================================
+ */
+
+var Spinner =
+/*#__PURE__*/
+function () {
+  function Spinner(el) {
+    _classCallCheck(this, Spinner);
+
+    this._element = el;
+    this._isSpinning = false;
+    this.spinCount = 10;
+  } // Public
+
+
+  _createClass(Spinner, [{
+    key: "draw",
+    value: function draw() {
+      // this._getPositionBottom();
+      this._getChildren();
+    } // Private
+
+    /**
+     * This will randomly set spin count
+     */
+
+  }, {
+    key: "_getChildren",
+    value: function _getChildren() {
+      var _this = this;
+
+      // get winner
+      var winner = Math.ceil(Math.random() * jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().length);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').addClass('uis-active');
+      var sample = setInterval(function () {
+        _this._spin();
+      }, 50);
+      setTimeout(function () {
+        var ab = setInterval(function () {
+          console.log(parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children('li.uis-active').attr('data-id')), winner);
+
+          if (parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children('li.uis-active').attr('data-id')) == winner) {
+            clearInterval(sample);
+            clearInterval(ab);
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').removeClass('uis-active');
+          }
+        }, 300);
+      }, 3000);
+    }
+  }, {
+    key: "_spin",
+    value: function _spin() {
+      // remove all active
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().removeClass('uis-active');
+      var firstPlayer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().get(0); // $('#players').children().eq(1).addClass('uis-spinner-item-exit');
+      // add active on center child
+
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().eq(2).addClass('uis-active');
+      setTimeout(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').append(firstPlayer);
+      }, 200);
+    }
+    /**
+     * This will randomly select winner
+     */
+
+  }, {
+    key: "_selectWinner",
+    value: function _selectWinner() {}
+    /**
+     * This will randomly set spin count
+     */
+
+  }, {
+    key: "_setSpinCount",
+    value: function _setSpinCount() {}
+    /**
+     * The 
+     */
+
+  }, {
+    key: "_getPositionBottom",
+    value: function _getPositionBottom() {
+      var bottom = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').position().top + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').outerHeight(true) - 200;
+      console.log(bottom);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').css('top', "-".concat(bottom, "px"));
+    } // Static
+
+  }], [{
+    key: "start",
+    value: function start(el) {
+      console.log('spinner start');
+      var spinner = new Spinner(el);
+      spinner.draw();
+    }
+  }]);
+
+  return Spinner;
+}();
+/**
+ * ==================================================
+ * Data Api implementation
+ * ==================================================
+ */
+
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Id.BUTTON_DRAW, function (event) {
+  Spinner.start(this);
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/util.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/util.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var Util = {
+  /**
+   * This function is usually use for targeting an element like modal
+   * e.g `uis-modal="target: #my-id"`
+   * It will return object that seperated by `colon`.
+   */
+  splitParameter: function splitParameter(param) {
+    return param.replace(/ /g, "").split(":");
+  },
+
+  /**
+   * This function will return the parameter
+   * e.g `uis-modal="#my-id"`
+   * It will return `#my-id`
+   * NOTE: Its only applicable for (Modal, Notification, and Off-canvas)
+   */
+  getAttributeValue: function getAttributeValue(element) {
+    if (element.getAttribute('uis-modal')) {
+      return element.getAttribute('uis-modal');
+    } else if (element.getAttribute('uis-notification')) {
+      return element.getAttribute('uis-notification');
+    } else if (element.getAttribute('uis-offcanvas')) {
+      return element.getAttribute('uis-offcanvas');
+    } else if (element.getAttribute('uis-subnav')) {
+      return element.getAttribute('uis-subnav');
+    } else if (element.getAttribute('uis-tooltip')) {
+      return element.getAttribute('uis-tooltip');
+    }
+  },
+  formatToArray: function formatToArray(config) {
+    return config.split(':');
+  },
+  getOptions: function getOptions(element) {
+    if (document.querySelector(element).getAttribute('uis-option') == null) {
+      return false;
+    }
+
+    return document.querySelector(element).getAttribute('uis-option').split(';');
+  },
+
+  /**
+   * @param {*} config
+   * Format Array to Object
+   * e.g: config ['flip', 'true', 'overlay', 'false']
+   * return {'flip', 'true', 'overlay', 'false'}
+   */
+  formatToObject: function formatToObject(config) {
+    if (config != null) {
+      var object = {};
+
+      for (var i = 0; i < config.length; i++) {
+        var temp = this.splitParameter(config[i]);
+        object[temp[0]] = temp[1];
+      }
+
+      return object;
+    }
+  },
+
+  /**
+   * @param {*} options
+   * pass a config array 
+   * @param {*} modifier
+   * pass a string modifier
+   * return modifier value
+   */
+  getModifierValue: function getModifierValue(options, modifier) {
+    return this.formatToObject(options)[modifier];
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (Util);
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -30355,8 +30784,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-save').click(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
