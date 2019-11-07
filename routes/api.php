@@ -13,7 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('register', 'API\EventController@register');
+Route::post('register', 'API\RaffleManagementController@register');
+Route::post('save-winner', 'API\RaffleManagementController@saveWinner');
 
 Route::group(['prefix' => 'administration'], function()
 {
@@ -25,7 +26,6 @@ Route::group(['prefix' => 'administration'], function()
         Route::delete('{id}/delete', 'API\Administration\EventController@destroy')->name('admin-events.destroy');
 
         Route::get('{id}/change-active', 'API\Administration\EventController@changeActive')->name('admin-events.update');
-        Route::post('{id}/register', 'API\Administration\EventController@register')->name('admin-events.update');
     });
 
 });

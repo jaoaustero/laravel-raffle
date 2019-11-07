@@ -48,12 +48,12 @@ class Event extends Model
     {
         $path = 'events/';
         $path .= now()->format('Y') . '/' . now()->format('F') . '/' . now()->format('d') . '/';
-        $path .= (time() . '-' . $this->id . '.png');
+        $path .= ($this->slug . '.png');
 
         $link = env('APP_URL') . '/' . $this->slug . '/registration';
 
         $file = \QrCode::format('png')
-                        ->merge('img/GMI-emblem.png', 0.2, true)
+                        ->merge('img/GMI-emblem-white-bg.jpg', 0.2, true)
                         ->size(500)
                         ->generate($link);
 
