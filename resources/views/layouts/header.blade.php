@@ -1,8 +1,7 @@
 <header
      class="uis-header">
     <div
-        class="uis-container
-            uis-container-large">
+        class="uis-container">
         <h1 class="uis-header-title">
             Events
         </h1>
