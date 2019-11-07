@@ -37,7 +37,7 @@
                             uis-margin-xsmall">
                             {{(new \DateTime($event->event_date))->format('F d, Y')}}
                     </p>
-                    {!! Form::open(['class' => 'uis-form-stacked uis-margin-medium-top', 'id' => 'event-registration-form', 'action' => 'API\EventController@register', 'method' => 'POST']) !!}
+                    {!! Form::open(['class' => 'uis-form-stacked uis-margin-medium-top', 'id' => 'event-registration-form', 'action' => 'API\RaffleManagementController@register', 'method' => 'POST']) !!}
                         <fieldset class="uis-fieldset">
                             
                             <div class="uis-margin">
