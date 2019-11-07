@@ -8,7 +8,7 @@
             class="uis-card
                 uis-card-default
                 uis-width-1-1">
-            <form class="uis-form-stacked">
+                {!! Form::open(['class' => 'uis-form-stacked', 'id' => 'login-form', 'action' => 'Auth\LoginController@login', 'method' => 'POST']) !!}
                 <div class="uis-card-body">
                     <div class="uis-text-center">
                         <img
@@ -30,13 +30,12 @@
                             <input
                                 id="email-address"
                                 type="text"
-                                class="uis-input uis-form-danger"
+                                class="uis-input"
+                                name="email"
                                 placeholder="ex: john.doe@gigamare.com"
-                                autofocus>
-
-                            <small class="uis-text-danger">
-                                Error Message!
-                            </small>
+                                autofocus
+                                required
+                                >
                         </div>
 
                         <div class="uis-margin-top">
@@ -50,20 +49,20 @@
                                 id="password"
                                 type="password"
                                 class="uis-input"
-                                placeholder="Your password">
+                                name="password"
+                                placeholder="Your password"
+                                required
+                                >
                         </div>
                     </fieldset>
                 </div>
 
+                <small class="uis-text-danger js-error-message"></small>
+
                 <div class="uis-card-footer uis-text-right">
-                    <button
-                        type="submit"
-                        class="uis-button
-                            uis-button-primary">
-                        Sign In
-                    </button>
+                    {{ Form::button('Sign In', ['type' => 'submit', 'id' => 'js-submit', 'class' => 'uis-button uis-button-primary']) }}
                 </div>
-            </form>
+            {!! Form::close() !!}
         </div>
 
     </div>

@@ -29845,7 +29845,14 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./components/spinner-2 */ "./resources/js/components/spinner-2.js");
+__webpack_require__(/*! ./components/crud-handler */ "./resources/js/components/crud-handler.js");
+
+__webpack_require__(/*! ./components/form-helper */ "./resources/js/components/form-helper.js");
+
+__webpack_require__(/*! ./components/auth */ "./resources/js/components/auth.js");
+
+__webpack_require__(/*! ./components/registration */ "./resources/js/components/registration.js"); // require('./components/spinner-2');
+
 
 __webpack_require__(/*! ./components/get */ "./resources/js/components/get.js"); // require('./components/spinner-1');
 
@@ -29880,6 +29887,220 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/auth.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/auth.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crud_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud-handler */ "./resources/js/components/crud-handler.js");
+/* harmony import */ var _form_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-helper */ "./resources/js/components/form-helper.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var Auth =
+/*#__PURE__*/
+function () {
+  function Auth() {
+    _classCallCheck(this, Auth);
+
+    this.crudHandler = new _crud_handler__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    this.formHelper = new _form_helper__WEBPACK_IMPORTED_MODULE_2__["default"](jquery__WEBPACK_IMPORTED_MODULE_0___default()('#login-form'));
+  }
+
+  _createClass(Auth, [{
+    key: "submitForm",
+    value: function submitForm(event, form) {
+      var crudHandler = this.crudHandler.prepareData(form);
+      var formHelper = this.formHelper;
+      var sendButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-submit');
+      var message = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-message');
+      this.formHelper.clearErrors();
+      message.empty();
+      sendButton.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      event.preventDefault();
+      crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status === 200) {
+          window.location.href = '/events';
+        } else if (response.status === 422) {
+          sendButton.text('Sign In');
+          formHelper.setErrors(responseData.error);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+
+        sendButton.find('i').remove();
+        sendButton.attr('disabled', false).text('Sign In');
+      }, form.attr('method'), form.attr('action'));
+    }
+  }]);
+
+  return Auth;
+}();
+
+var module = new Auth();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#login-form').submit(function (event) {
+  module.submitForm(event, jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/crud-handler.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/crud-handler.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var CRUDHandler =
+/*#__PURE__*/
+function () {
+  function CRUDHandler() {
+    _classCallCheck(this, CRUDHandler);
+
+    this.formData = null;
+  }
+
+  _createClass(CRUDHandler, [{
+    key: "prepareData",
+    value: function prepareData($form) {
+      this.formData = $form.serializeArray();
+      return this;
+    }
+  }, {
+    key: "addData",
+    value: function addData($key, $value) {
+      var $new = {
+        'name': $key,
+        'value': $value
+      };
+      this.formData.push($new);
+      return this;
+    }
+  }, {
+    key: "http",
+    value: function http($callback) {
+      var $method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var $uri = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : NULL;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+        method: $method,
+        url: $uri,
+        data: this.formData,
+        headers: {
+          'X-CSRF-TOKEN': jquery__WEBPACK_IMPORTED_MODULE_0___default()('meta[name="csrf-token"]').attr('content')
+        },
+        beforeSend: function beforeSend() {
+          // Add loader here
+          console.log('Preparing custom form...');
+        },
+        success: function success($response) {
+          // Add Success popup/notification here
+          console.log('Success AJAX custom');
+        },
+        error: function error($jqXHR, $textStatus, $errorThrown) {
+          // Add Error popup/notification here
+          console.log('Error AJAX custom'); // $callback($jqXHR);
+        },
+        complete: function complete($jqXHR, $textStatus) {
+          console.log('AJAX Call Completed!');
+          $callback($jqXHR);
+        }
+      });
+    }
+  }]);
+
+  return CRUDHandler;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (CRUDHandler);
+
+/***/ }),
+
+/***/ "./resources/js/components/form-helper.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/form-helper.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var FormHelper =
+/*#__PURE__*/
+function () {
+  function FormHelper(form) {
+    _classCallCheck(this, FormHelper);
+
+    this.form = form;
+  }
+
+  _createClass(FormHelper, [{
+    key: "setErrors",
+    value: function setErrors(errors) {
+      for (var key in errors) {
+        var element = this.form.find("*[name='" + key + "']");
+        element.addClass('uis-form-danger');
+        element.siblings('.form-error').html(errors[key][0].toString());
+      }
+    }
+  }, {
+    key: "clearErrors",
+    value: function clearErrors() {
+      var form = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.form;
+      form.find('.uis-form-danger').removeClass('uis-form-danger');
+      form.find('.form-error').html('');
+    }
+  }, {
+    key: "clearForm",
+    value: function clearForm() {
+      var form = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.form;
+      form[0].reset();
+    }
+  }]);
+
+  return FormHelper;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (FormHelper);
 
 /***/ }),
 
@@ -29975,10 +30196,10 @@ insertPlayers();
 
 /***/ }),
 
-/***/ "./resources/js/components/spinner-2.js":
-/*!**********************************************!*\
-  !*** ./resources/js/components/spinner-2.js ***!
-  \**********************************************/
+/***/ "./resources/js/components/registration.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/registration.js ***!
+  \*************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -29986,6 +30207,8 @@ insertPlayers();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crud_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud-handler */ "./resources/js/components/crud-handler.js");
+/* harmony import */ var _form_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-helper */ "./resources/js/components/form-helper.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -29993,129 +30216,58 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
-/**
- * ==================================================
- * Constants
- * ==================================================
- */
 
-var Event = {
-  CLICK_DATA_API: 'click touch'
-};
-var Id = {
-  BUTTON_DRAW: '#draw'
-};
-/**
- * ==================================================
- * Class Definition
- * ==================================================
- */
 
-var Spinner =
+
+var Registration =
 /*#__PURE__*/
 function () {
-  function Spinner(el) {
-    _classCallCheck(this, Spinner);
+  function Registration() {
+    _classCallCheck(this, Registration);
 
-    this._element = el;
-    this._isSpinning = false;
-    this.spinCount = 10;
-  } // Public
+    this.crudHandler = new _crud_handler__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    this.formHelper = new _form_helper__WEBPACK_IMPORTED_MODULE_2__["default"](jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-registration-form'));
+  }
 
+  _createClass(Registration, [{
+    key: "submitForm",
+    value: function submitForm(event, form) {
+      var crudHandler = this.crudHandler.prepareData(form);
+      var formHelper = this.formHelper;
+      var sendButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-submit');
+      var message = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-message');
+      this.formHelper.clearErrors();
+      message.empty();
+      sendButton.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      event.preventDefault();
+      crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
 
-  _createClass(Spinner, [{
-    key: "draw",
-    value: function draw() {
-      // this._getPositionBottom();
-      this._getChildren();
-    } // Private
+        if (response.status === 200) {
+          formHelper.clearForm();
+          message.html("<p style=\"color: green;\">".concat(responseData.message, "</p>"));
+          setTimeout(function () {
+            message.empty();
+          }, 2000);
+        } else if (response.status === 422) {
+          sendButton.text('Submit');
+          formHelper.setErrors(responseData.error);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
 
-    /**
-     * This will randomly set spin count
-     */
-
-  }, {
-    key: "_getChildren",
-    value: function _getChildren() {
-      var _this = this;
-
-      // get winner
-      var winner = Math.ceil(Math.random() * jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().length);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').addClass('uis-active');
-      var sample = setInterval(function () {
-        _this._spin();
-      }, 50);
-      setTimeout(function () {
-        var ab = setInterval(function () {
-          console.log(parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children('li.uis-active').attr('data-id')), winner);
-
-          if (parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children('li.uis-active').attr('data-id')) == winner) {
-            clearInterval(sample);
-            clearInterval(ab);
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').removeClass('uis-active');
-          }
-        }, 300);
-      }, 3000);
-    }
-  }, {
-    key: "_spin",
-    value: function _spin() {
-      // remove all active
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().removeClass('uis-active');
-      var firstPlayer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().get(0); // $('#players').children().eq(1).addClass('uis-spinner-item-exit');
-      // add active on center child
-
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().eq(2).addClass('uis-active');
-      setTimeout(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').append(firstPlayer);
-      }, 200);
-    }
-    /**
-     * This will randomly select winner
-     */
-
-  }, {
-    key: "_selectWinner",
-    value: function _selectWinner() {}
-    /**
-     * This will randomly set spin count
-     */
-
-  }, {
-    key: "_setSpinCount",
-    value: function _setSpinCount() {}
-    /**
-     * The 
-     */
-
-  }, {
-    key: "_getPositionBottom",
-    value: function _getPositionBottom() {
-      var bottom = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').position().top + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').outerHeight(true) - 200;
-      console.log(bottom);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').css('top', "-".concat(bottom, "px"));
-    } // Static
-
-  }], [{
-    key: "start",
-    value: function start(el) {
-      console.log('spinner start');
-      var spinner = new Spinner(el);
-      spinner.draw();
+        sendButton.find('i').remove();
+        sendButton.attr('disabled', false).text('Submit');
+      }, form.attr('method'), form.attr('action'));
     }
   }]);
 
-  return Spinner;
+  return Registration;
 }();
-/**
- * ==================================================
- * Data Api implementation
- * ==================================================
- */
 
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Id.BUTTON_DRAW, function (event) {
-  Spinner.start(this);
+var module = new Registration();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-registration-form').submit(function (event) {
+  module.submitForm(event, jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
 });
 
 /***/ }),
@@ -30138,8 +30290,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API,
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

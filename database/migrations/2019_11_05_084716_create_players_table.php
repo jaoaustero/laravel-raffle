@@ -18,8 +18,7 @@ class CreatePlayersTable extends Migration
             $table->bigIncrements('id');
 			$table->bigInteger('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events');
-			$table->string('first_name', 255);
-			$table->string('last_name', 255);
+			$table->string('full_name', 255);
 			$table->string('email', 255)->nullable();
 			$table->string('company', 255)->nullable();
             $table->tinyInteger('is_selected')->default(0);

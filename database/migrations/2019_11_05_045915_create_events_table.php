@@ -19,6 +19,9 @@ class CreateEventsTable extends Migration
 			$table->longText('slug');
 			$table->string('name', 255);
             $table->string('prize', 255)->nullable();
+            $table->string('location', 255);
+            $table->date('event_date');
+            $table->longText('path', 255)->nullable();
             $table->tinyInteger('is_active')->default(1);
 			
             // Default fields

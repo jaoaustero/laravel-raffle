@@ -3,17 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
+    
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Style -->
         <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet">
     </head>
     <body>
-        
-        <main>
-            @yield('content')
-        </main>
+        <div id="app">
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
 
         <!-- Script -->
         <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>

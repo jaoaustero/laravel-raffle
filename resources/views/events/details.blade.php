@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('app')
 
 @section('content')
 <div class="uis-event">
@@ -8,7 +8,7 @@
             alt="GMI Logo Inverse">
     </header>
 
-    <section class="uis-event-container">
+    <section class="uis-event-container" style="margin-top: 100px;">
         <div
             class="uis-card
                 uis-card-default
@@ -16,25 +16,25 @@
                 uis-width-1-1
                 uis-margin-top uis-margin-bottom">
             
-            {{-- When event is on going --}}
+            @if($event->is_active)
             <div class="uis-card-body">
                 <h3
                     class="uis-card-title
                         uis-text-primary
                         uis-margin-remove">
-                    Crew Connect 2019 Event
+                    {{$event->name}}
                 </h3>
                 <p
                     class="uis-text-meta
                             uis-text-default
                             uis-margin-xsmall">
-                    SMX Convention Center, Taguig, Philippines
+                    {{$event->location}}
                 </p>
                 <p
                     class="uis-text-meta
                         uis-text-default
                         uis-margin-xsmall">
-                    October 24, 2018
+                    {{(new \DateTime($event->event_date))->format('F d, Y')}}
                 </p>
 
                 <div class="uis-event-qr-container">
@@ -47,13 +47,14 @@
 
                     <img
                         class="uis"
-                        src="{{ asset('img/qr-code/crew-connect-2019.png') }}"
+                        src="{{ asset('storage/' . $event->path) }}"
                         alt="QR Code">
                 </div>
             </div>
+            @else
 
             {{-- When event is done --}}
-            <div class="uis-card-body uis-text-center" style="display: none">
+            <div class="uis-card-body uis-text-center">
                 <img
                     class="uis-margin-top"
                     src="{{ asset('img/svg/registration-done.svg') }}"
@@ -67,9 +68,10 @@
                         Too late 😟
                     </h3>
 
-                    <p>The <span class="uis-text-primary">Crew Connect 2019</span> event raffle registration is already done.</p>
+                    <p>The <span class="uis-text-primary">{{$event->name}}</span> event raffle registration is already done.</p>
                 </div>
             </div>
+            @endif
         </div>
     </section>
 </div>

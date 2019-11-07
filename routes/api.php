@@ -13,6 +13,24 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('register', 'API\EventController@register');
+
+Route::group(['prefix' => 'administration'], function()
+{
+    Route::get('events', 'API\Administration\EventController@index')->name('admin-events.index');
+    Route::group(['prefix' => 'event'], function()
+    {
+        Route::post('', 'API\Administration\EventController@store')->name('admin-events.store');
+        Route::put('{id}/update', 'API\Administration\EventController@update')->name('admin-events.update');
+        Route::delete('{id}/delete', 'API\Administration\EventController@destroy')->name('admin-events.destroy');
+
+        Route::get('{id}/change-active', 'API\Administration\EventController@changeActive')->name('admin-events.update');
+        Route::post('{id}/register', 'API\Administration\EventController@register')->name('admin-events.update');
+    });
+
+});
+
+
+Route::fallback(function(){
+    return abort(404);
 });

@@ -14,14 +14,14 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
 			[
-				'username' => 'system.admin@gigamare.com',
+				'email' => 'system.admin@gigamare.com',
 				'password' => bcrypt('secret'),
 				'is_enabled' => 1,
 				'created_by' => 1,
 				'created_at' => now()
 			],
 			[
-				'username' => 'spinner@gigamare.com',
+				'email' => 'spinner@gigamare.com',
 				'password' => bcrypt('secret'),
 				'is_enabled' => 1,
 				'created_by' => 1,

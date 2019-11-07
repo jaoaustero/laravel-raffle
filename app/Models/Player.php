@@ -14,11 +14,10 @@ class Player extends Model
     public static function _new($data)
 	{
 		$class = new self;
-		$class->first_name = $data['first_name'];
-		$class->last_name = $data['last_name'];
+		$class->full_name = $data['full_name'];
 		$class->email = $data['email'];
 		$class->company = $data['company'];
-		$class->created_by = Auth::id();
+		$class->created_by = 1;
 		return $class;
 	}
 
@@ -31,8 +30,7 @@ class Player extends Model
     {
         $arr = [
             'id' => $this->id,
-            'first_name' => $this->first_name,
-            'last_name' => $this->last_name,
+            'full_name' => $this->full_name,
             'email' => $this->email,
             'company' => $this->company,
             'is_selected' => $this->is_selected,
