@@ -10,7 +10,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        return view('home');
+        return view('administration.events.index');
     }
     
     public function view($slug)

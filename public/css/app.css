@@ -3621,7 +3621,7 @@ pre {
 }
 
 .uis-message-secondary {
-  background-color: #142337;
+  background-color: #0B2E4A;
   color: #FFFFFF;
 }
 
@@ -5191,6 +5191,7 @@ ul.uis-nav-sub {
   flex-wrap: wrap;
   /* 2 */
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -5207,29 +5208,6 @@ ul.uis-nav-sub {
   position: relative;
 }
 
-/*
- * 1. It will consume the entire width of the parent
- * 2. Create position context for dropdowns
- */
-
-.uis-subnav-full > * {
-  /* 1 */
-  -webkit-box-flex: 1;
-          flex: 1;
-  /* 2 */
-  position: relative;
-}
-
-@media screen and (max-width: 959px) {
-  .uis-subnav-full\@s > * {
-    /* 1 */
-    -webkit-box-flex: 1;
-            flex: 1;
-    /* 2 */
-    position: relative;
-  }
-}
-
 /* Items
  ========================================================================== */
 
@@ -5240,27 +5218,50 @@ ul.uis-nav-sub {
  * 2. Style
  */
 
+.uis-subnav > li {
+  height: 65px;
+  min-width: 60px;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
 .uis-subnav > * > :first-child {
   /* 1 */
   display: block;
   /* 2 */
-  color: #5C5C5C;
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
+}
+
+.uis-subnav > li > a {
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
 }
 
 /* Hover + Focus */
 
-.uis-subnav > * > a:hover,
-.uis-subnav > * > a:focus {
-  color: #454545;
+.uis-subnav > li > a:hover,
+.uis-subnav > li > a:focus {
+  color: #FFFFFF;
   text-decoration: none;
   outline: none;
+}
+
+.uis-subnav > li.uis-active {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(37, 145, 208, 0.4)));
+  background: linear-gradient(to bottom, transparent, rgba(37, 145, 208, 0.4));
 }
 
 /* Active */
 
 .uis-subnav > .uis-active > a {
-  color: #2591D0;
+  color: #FFFFFF;
 }
 
 /* Divider modifier
@@ -5540,7 +5541,7 @@ ul.uis-nav-sub {
 }
 
 .uis-notification-message-secondary {
-  background-color: #142337;
+  background-color: #0B2E4A;
   color: #FFFFFF;
 }
 
@@ -5931,35 +5932,35 @@ ul.uis-nav-sub {
 
 .uis-button-secondary {
   position: relative;
-  background-color: #142337;
+  background-color: #0B2E4A;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px #060b12;
+  box-shadow: inset -8px -8px 0px #04121e;
 }
 
 .uis-button-secondary:before {
-  box-shadow: 8px 8px 12px rgba(20, 35, 55, 0.3);
+  box-shadow: 8px 8px 12px rgba(11, 46, 74, 0.3);
 }
 
 /* Hover + Focus */
 
 .uis-button-secondary:hover,
 .uis-button-secondary:focus {
-  background-color: #0d1724;
+  background-color: #082034;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px black;
+  box-shadow: inset -8px -8px 0px #010507;
 }
 
 /* Onclick + Active */
 
 .uis-button-secondary:active,
 .uis-button-secondary.uis-active {
-  background-color: #060b12;
+  background-color: #04121e;
   color: #FFFFFF;
-  box-shadow: inset -8px -8px 0px black;
+  box-shadow: inset -8px -8px 0px #010507;
 }
 
 .uis-button-secondary:hover:before {
-  box-shadow: 0px 0px 0px rgba(20, 35, 55, 0.3);
+  box-shadow: 0px 0px 0px rgba(11, 46, 74, 0.3);
 }
 
 .uis-button-success {
@@ -6187,16 +6188,16 @@ ul.uis-nav-sub {
 
 .uis-button-outline-secondary {
   background-color: transparent;
-  border: 1px solid #142337;
-  color: #142337;
+  border: 1px solid #0B2E4A;
+  color: #0B2E4A;
 }
 
 /* Hover + Focus */
 
 .uis-button-outline-secondary:hover,
 .uis-button-outline-secondary:focus {
-  background-color: #0d1724;
-  border: 1px solid #142337;
+  background-color: #082034;
+  border: 1px solid #0B2E4A;
   color: #FFFFFF;
 }
 
@@ -6204,8 +6205,8 @@ ul.uis-nav-sub {
 
 .uis-button-outline-secondary:active,
 .uis-button-outline-secondary.uis-active {
-  background-color: #060b12;
-  border: 1px solid #142337;
+  background-color: #04121e;
+  border: 1px solid #0B2E4A;
   color: #FFFFFF;
 }
 
@@ -6442,21 +6443,21 @@ ul.uis-nav-sub {
  */
 
 .uis-button-text-secondary {
-  color: #142337;
+  color: #0B2E4A;
 }
 
 /* Hover + Focus */
 
 .uis-button-text-secondary:hover,
 .uis-button-text-secondary:focus {
-  color: #0d1724;
+  color: #082034;
 }
 
 /* Onclick + Active */
 
 .uis-button-text-secondary:active,
 .uis-button-text-secondary.uis-active {
-  color: #060b12;
+  color: #04121e;
 }
 
 /* 
@@ -6691,13 +6692,13 @@ ul.uis-nav-sub {
 /* Secondary */
 
 .uis-button-icon.uis-button-icon-secondary {
-  background-color: #223b5c;
+  background-color: #124a76;
   color: #FFFFFF;
 }
 
 .uis-button-icon.uis-button-icon-secondary:hover + .uis-button-secondary,
 .uis-button-icon.uis-button-icon-secondary:focus + .uis-button-secondary {
-  background-color: #0d1724;
+  background-color: #082034;
 }
 
 /* Success */
@@ -7081,7 +7082,7 @@ ul.uis-nav-sub {
  */
 
 .uis-card-secondary {
-  background-color: #142337;
+  background-color: #0B2E4A;
   color: #FFFFFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -8163,9 +8164,9 @@ input:checked + .uis-slider:before {
 }
 
 .uis-label-secondary {
-  color: #142337;
-  background-color: rgba(20, 35, 55, 0.15);
-  border-color: #142337;
+  color: #0B2E4A;
+  background-color: rgba(11, 46, 74, 0.15);
+  border-color: #0B2E4A;
 }
 
 .uis-label-accent {
@@ -8558,7 +8559,7 @@ a.uis-link-reset:hover,
  */
 
 .uis-overlay-gradient {
-  background-image: linear-gradient(-135deg, #2591D0, #142337);
+  background-image: linear-gradient(-135deg, #2591D0, #0B2E4A);
   opacity: 0.5;
 }
 
@@ -8843,15 +8844,15 @@ a.uis-link-reset:hover,
  */
 
 .uis-progress.uis-progress-secondary::-webkit-progress-value {
-  background-color: #142337;
+  background-color: #0B2E4A;
 }
 
 .uis-progress.uis-progress-secondary::-moz-progress-bar {
-  background-color: #142337;
+  background-color: #0B2E4A;
 }
 
 .uis-progress.uis-progress-secondary::-ms-fill {
-  background-color: #142337;
+  background-color: #0B2E4A;
 }
 
 /*
@@ -9466,7 +9467,7 @@ a.uis-link-reset:hover,
 }
 
 .uis-text-secondary {
-  color: #142337 !important;
+  color: #0B2E4A !important;
 }
 
 .uis-text-success {
@@ -10856,6 +10857,47 @@ td.uis-text-break {
 [class*=uis-width] {
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+}
+
+/* ==================================================
+    Component: Header
+   ================================================== */
+
+/*
+ * 1. Set Dimension
+ * 2. Background color as placeholder when the content is loading or broken link
+ * 3. Hide overflow
+ * 4. When the screen size is below small, the video will display; none
+ */
+
+.uis-header {
+  position: relative;
+  /* 1 */
+  min-height: 20vh;
+  width: 100%;
+  box-sizing: border-box;
+  /* 2 */
+  background-color: #0B2E4A;
+  background-image: url(/images/background-pattern.svg?c12e63b5bfaaca94929747e03fde6fba);
+  /* 3 */
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+/* Title
+   ================================================== */
+
+.uis-header-title {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 960px) {
+  .uis-header-title {
+    font-size: 2.625rem;
+  }
 }
 
 /* ==================================================

@@ -17,10 +17,10 @@
 $subnav-margin-vertical:                         gutter(small) !default;
 $subnav-margin-horizontal:                       gutter(xsmall) !default;
 
-$subnav-item-color:                              color(muted) !default;
-$subnav-item-hover-color:                        color(default) !default;
+$subnav-item-color:                              transparentize(color(inverse), 0.4) !default;
+$subnav-item-hover-color:                        color(inverse) !default;
 $subnav-item-hover-text-decoration:              none !default;
-$subnav-item-active-color:                       color(primary) !default;
+$subnav-item-active-color:                       color(inverse) !default;
 
 $subnav-divider-margin-horizontal:               $subnav-margin-horizontal !default;
 $subnav-divider-border-height:                   1.5em !default;
@@ -58,6 +58,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
     flex-wrap: wrap;
     /* 2 */
     padding: 0;
+    margin: 0;
     list-style: none;
 }
 
@@ -73,28 +74,6 @@ $subnav-item-disabled-color:                     color(muted) !default;
     position: relative;
 }
 
-/*
- * 1. It will consume the entire width of the parent
- * 2. Create position context for dropdowns
- */
-
-.uis-subnav-full > *{
-    /* 1 */
-    flex: 1;
-    /* 2 */
-    position: relative;
-}
-
-@include respond-to-max(small){
-    .uis-subnav-full\@s > *{
-        /* 1 */
-        flex: 1;
-        /* 2 */
-        position: relative;
-    }
-}
-
-
 
 /* Items
  ========================================================================== */
@@ -106,6 +85,18 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * 2. Style
  */
 
+.uis-subnav > li{
+    height: control-height(large) + 10px;
+    min-width: 60px;
+    box-sizing: border-box;
+
+    padding: margin(small) gutter(small);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
 .uis-subnav > * > :first-child{
     /* 1 */
     display: block;
@@ -114,12 +105,20 @@ $subnav-item-disabled-color:                     color(muted) !default;
     font-weight: 500;
 }
 
+.uis-subnav > li > a{
+    transition: color 0.15s linear;
+}
+
 /* Hover + Focus */
-.uis-subnav > * > a:hover,
-.uis-subnav > * > a:focus{
+.uis-subnav > li > a:hover,
+.uis-subnav > li > a:focus{
     color: $subnav-item-hover-color;
     text-decoration: $subnav-item-hover-text-decoration;
     outline: none;
+}
+
+.uis-subnav > li.uis-active{
+    background: linear-gradient(to bottom, transparent, transparentize(theme-color(primary), 0.6));
 }
 
 /* Active */
