@@ -124,3 +124,31 @@ $event-container-padding-horizontal:                     gutter(xsmall) !default
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
 }
+
+
+
+/* Button
+   ================================================== */
+
+.uis-event-button{
+    background-color: #F2F8FB;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: normal;
+}
+
+.uis-event-button:hover{
+    background-color: #D7EBF6;
+}
+
+.uis-event-button > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.uis-event-button > .uis-event-button-icon{
+    font-size: 1.2rem;
+}

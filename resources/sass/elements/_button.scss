@@ -126,7 +126,7 @@ $button-icon-danger-color:                  color(inverse);
  * box behind and we add box-shadow on
  * modifiers
  */
-.uis-button:before{
+.uis-button-3d:before{
     content: '';
     position: absolute;
     top: 0;
@@ -191,9 +191,9 @@ $button-icon-danger-color:                  color(inverse);
 /* Style modifiers
    ================================================== */
 
-// @include create-modifiers-with-selectors(background, button);
+@include create-modifiers-with-selectors(background, button);
 
-@include button-modifiers-with-selectors();
+@include button-d-modifiers-with-selectors();
 
 
 

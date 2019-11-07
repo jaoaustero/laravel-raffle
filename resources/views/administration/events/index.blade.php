@@ -1,10 +1,20 @@
 @extends('app')
 
 @section('content')
+
+@include('layouts.header', ['title' => $title])
+
 <section
 class="uis-container
     uis-margin-medium-top
     uis-margin-medium-bottom">
+        <div class="uis-margin-medium">
+            <button
+                class="uis-button uis-button-primary"
+                uis-modal="#form-modal">
+                + New Event
+            </button>
+        </div>
         @foreach($events as $key => $event)
             @php
                 $dates = explode('-', $key);
@@ -49,5 +59,7 @@ class="uis-container
                 </ul>
             </div>
         @endforeach
+
+        @include('administration.events.modal.form')
 </section>
 @endsection
