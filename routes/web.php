@@ -12,25 +12,36 @@
 */
 
 // Login page
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', function ()
+{
+    if(Auth::check())
+      return redirect('/events');
 
-// Event Details
-Route::get('/{event}', function () {
-    return view('events.details');
-});
-
-// Event registration
-Route::get('/{event}/registration', function () {
-    return view('events.register');
-});
-
-
-Route::get('/spinner', function () {
-    return view('spinner.index');
+    return redirect('/login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Auth
+Route::get('login', 'Auth\LoginController@index');
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
+
+Route::get('logout', 'Auth\LogoutController@logout');
+
+Route::group(['middleware' => ['auth']], function()
+{
+    Route::get('events', 'EventController@index');
+
+    Route::get('/spinner', function () {
+        return view('spinner.index');
+    });
+});
+
+// Event Details
+Route::get('{slug}', 'EventController@view');
+
+// Event registration
+Route::get('{slug}/registration', 'EventController@registration');
+
+Route::fallback(function(){ return abort(404); });

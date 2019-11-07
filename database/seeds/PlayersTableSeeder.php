@@ -15,8 +15,7 @@ class PlayersTableSeeder extends Seeder
         DB::table('players')->insert([
 			[
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'One',
+                'full_name' => 'Player One',
                 'email' => 'player.one@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -24,8 +23,7 @@ class PlayersTableSeeder extends Seeder
 			],
 			[
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Two',
+                'full_name' => 'Player Two',
                 'email' => 'player.two@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -33,8 +31,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Three',
+                'full_name' => 'Player Three',
                 'email' => 'player.three@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -42,8 +39,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Four',
+                'full_name' => 'Player Four',
                 'email' => 'player.four@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -51,8 +47,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Five',
+                'full_name' => 'Player Five',
                 'email' => 'player.five@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -60,8 +55,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Six',
+                'full_name' => 'Player Six',
                 'email' => 'player.six@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -69,8 +63,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Seven',
+                'full_name' => 'Player Seven',
                 'email' => 'player.seven@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -79,8 +72,7 @@ class PlayersTableSeeder extends Seeder
             
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Eight',
+                'full_name' => 'Player Eight',
                 'email' => 'player.eight@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -88,8 +80,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Nine',
+                'full_name' => 'Player Nine',
                 'email' => 'player.nine@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -97,8 +88,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Ten',
+                'full_name' => 'Player Ten',
                 'email' => 'player.ten@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -106,8 +96,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Eleven',
+                'full_name' => 'Player Eleven',
                 'email' => 'player.eleven@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -115,8 +104,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Twelve',
+                'full_name' => 'Player Twelve',
                 'email' => 'player.twelve@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -124,8 +112,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Thirteen',
+                'full_name' => 'Player Thirteen',
                 'email' => 'player.thirteen@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -133,8 +120,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Fourteen',
+                'full_name' => 'Player Fourteen',
                 'email' => 'player.fourteen@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -142,8 +128,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Fifteen',
+                'full_name' => 'Player Fifteen',
                 'email' => 'player.fifteen@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -151,8 +136,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Sixteen',
+                'full_name' => 'Player Sixteen',
                 'email' => 'player.sixteen@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -160,8 +144,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Seventeen',
+                'full_name' => 'Player Seventeen',
                 'email' => 'player.seventeen@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -169,8 +152,7 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Eighteen',
+                'full_name' => 'Player Eighteen',
                 'email' => 'player.eighteen@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
@@ -178,17 +160,15 @@ class PlayersTableSeeder extends Seeder
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Nineteen',
-                'email' => 'player.nineteen@gmail.com',
+                'full_name' => 'Player Ninteen',
+                'email' => 'player.ninteen@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,
 				'created_at' => now()
             ],
             [
                 'event_id' => 1,
-                'first_name' => 'Player',
-                'last_name' => 'Twenty',
+                'full_name' => 'Player Twenty',
                 'email' => 'player.twenty@gmail.com',
                 'company' => 'Company 1',
 				'created_by' => 1,

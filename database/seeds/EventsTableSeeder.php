@@ -17,6 +17,9 @@ class EventsTableSeeder extends Seeder
                 'slug' => slugifyEvent('Crew Connect Day 1 Event Raffle'),
                 'name' => 'Crew Connect Day 1 Event Raffle',
                 'prize' => 'Powerbank 5000amp',
+                'location' => 'Subic Bay Yacht Club',
+                'event_date' => '2019-12-31',
+                'path' => 'events/sample-qr-code.png',
                 'is_active' => 1,
 				'created_by' => 1,
 				'created_at' => now()
@@ -25,6 +28,9 @@ class EventsTableSeeder extends Seeder
                 'slug' => slugifyEvent('Crew Connect Day 2 Event Raffle'),
                 'name' => 'Crew Connect Day 2 Event Raffle',
                 'prize' => 'Wireless Headphones',
+                'location' => 'Subic Bay Yacht Club',
+                'event_date' => '2019-12-31',
+                'path' => 'events/sample-qr-code.png',
                 'is_active' => 1,
 				'created_by' => 1,
 				'created_at' => now()

@@ -12,7 +12,7 @@
 		**/
 		public function saveFile($file, $path)
 		{
-			return Storage::disk('public')->put($path, file_get_contents($file));
+			return Storage::disk('public')->put($path, $file);
 		}
 
 		public function fileNameMaker($ext)
