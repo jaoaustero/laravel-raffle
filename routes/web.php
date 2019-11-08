@@ -37,6 +37,8 @@ Route::group(['middleware' => ['auth']], function()
 
     Route::get('users', 'Administration\UserController@index');
 
+    Route::get('settings', 'Administration\SettingsController@index');
+
     Route::get('spinner', function () {
         return view('spinner.index');
     });
