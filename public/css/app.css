@@ -11506,3 +11506,51 @@ td.uis-text-break {
   opacity: 0.5;
 }
 
+/* ==================================================
+    Theme: Gloomy
+   ================================================== */
+
+.uis-theme-gloomy {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #F1F2F6 !important;
+}
+
+.uis-theme-gloomy .uis-header {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #758AFD !important;
+}
+
+/* ==================================================
+    Theme: Soft
+   ================================================== */
+
+.uis-theme-soft {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #E8E9ED !important;
+}
+
+.uis-theme-soft .uis-header {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #5F7195 !important;
+}
+
+/* ==================================================
+    Theme: Nght
+   ================================================== */
+
+.uis-theme-night {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #1B2A32 !important;
+}
+
+.uis-theme-night .uis-header {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #22343C !important;
+}
+

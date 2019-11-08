@@ -22,8 +22,10 @@
             <div class="uis-margin-small">
                 <label>
                     <input
+                        uis-theme="default"
                         type="radio"
                         class="uis-radio"
+                        name="theme"
                         checked>
                     Default
                 </label>
@@ -38,8 +40,10 @@
             <div class="uis-margin-small">
                 <label>
                     <input
+                        uis-theme="gloomy"
                         type="radio"
-                        class="uis-radio">
+                        class="uis-radio"
+                        name="theme">
                     Gloomy
                 </label>
             </div>
@@ -53,8 +57,10 @@
             <div class="uis-margin-small">
                 <label>
                     <input
+                        uis-theme="soft"
                         type="radio"
-                        class="uis-radio">
+                        class="uis-radio"
+                        name="theme">
                     Soft
                 </label>
             </div>
@@ -68,8 +74,10 @@
             <div class="uis-margin-small">
                 <label>
                     <input
+                        uis-theme="night"
                         type="radio"
-                        class="uis-radio">
+                        class="uis-radio"
+                        name="theme">
                     Night
                 </label>
             </div>
