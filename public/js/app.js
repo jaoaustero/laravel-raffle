@@ -30696,7 +30696,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API,
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ "./resources/js/components/util.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 /**
@@ -30705,18 +30711,76 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * ==================================================
  */
 
+var Event = {
+  CLICK_DATA_API: 'click touch'
+};
+var Selector = {
+  DATA_TOGGLE: '[uis-theme]'
+};
 /**
  * ==================================================
  * Class Definition
  * ==================================================
  */
 
-var Theme = function Theme() {
-  _classCallCheck(this, Theme);
-} // Public
-// Private
-// Static
-;
+var Theme =
+/*#__PURE__*/
+function () {
+  function Theme(el) {
+    _classCallCheck(this, Theme);
+
+    this._target = el;
+  } // Public
+
+
+  _createClass(Theme, [{
+    key: "setTheme",
+    value: function setTheme() {
+      var theme = _util__WEBPACK_IMPORTED_MODULE_1__["default"].getAttributeValue(this._target);
+
+      switch (theme) {
+        case 'default':
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-gloomy');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-soft');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-night');
+          break;
+
+        case 'gloomy':
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-soft');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-night');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('uis-theme-gloomy');
+          break;
+
+        case 'soft':
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-gloomy');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-night');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('uis-theme-soft');
+          break;
+
+        case 'night':
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-gloomy');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('uis-theme-soft');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('uis-theme-night');
+          break;
+
+        default:
+          break;
+      }
+
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('');
+    } // Private
+    // Static
+
+  }], [{
+    key: "initialize",
+    value: function initialize(el) {
+      var theme = new Theme(el);
+      theme.setTheme();
+    }
+  }]);
+
+  return Theme;
+}();
 
 ;
 /**
@@ -30725,6 +30789,9 @@ var Theme = function Theme() {
  * ==================================================
  */
 
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function () {
+  Theme.initialize(this);
+});
 /* harmony default export */ __webpack_exports__["default"] = (Theme);
 
 /***/ }),
@@ -30765,6 +30832,8 @@ var Util = {
       return element.getAttribute('uis-subnav');
     } else if (element.getAttribute('uis-tooltip')) {
       return element.getAttribute('uis-tooltip');
+    } else if (element.getAttribute('uis-theme')) {
+      return element.getAttribute('uis-theme');
     }
   },
   formatToArray: function formatToArray(config) {

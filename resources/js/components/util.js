@@ -40,6 +40,10 @@ const Util = {
         {
             return element.getAttribute('uis-tooltip');
         }
+        else if (element.getAttribute('uis-theme'))
+        {
+            return element.getAttribute('uis-theme');
+        }
     },
 
 
