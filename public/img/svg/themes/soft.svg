@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="75" viewBox="0 0 122 75">
+  <g id="Colors" transform="translate(-140 -348)">
+    <g id="Blue" transform="translate(140 348)" fill="#5f7195" stroke="#e5e5e5" stroke-width="1">
+      <path d="M4,0H41a0,0,0,0,1,0,0V75a0,0,0,0,1,0,0H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0Z" stroke="none"/>
+      <path d="M4,.5H40a.5.5,0,0,1,.5.5V74a.5.5,0,0,1-.5.5H4A3.5,3.5,0,0,1,.5,71V4A3.5,3.5,0,0,1,4,.5Z" fill="none"/>
+    </g>
+    <g id="Dark" transform="translate(180 348)" fill="#babfd2" stroke="#e5e5e5" stroke-width="1">
+      <rect width="42" height="75" stroke="none"/>
+      <rect x="0.5" y="0.5" width="41" height="74" fill="none"/>
+    </g>
+    <g id="Inverse" transform="translate(221 348)" fill="#e8e9ed" stroke="#e5e5e5" stroke-width="1">
+      <path d="M0,0H37a4,4,0,0,1,4,4V71a4,4,0,0,1-4,4H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" stroke="none"/>
+      <path d="M1,.5H37A3.5,3.5,0,0,1,40.5,4V71A3.5,3.5,0,0,1,37,74.5H1A.5.5,0,0,1,.5,74V1A.5.5,0,0,1,1,.5Z" fill="none"/>
+    </g>
+  </g>
+</svg>

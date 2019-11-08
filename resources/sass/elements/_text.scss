@@ -175,6 +175,9 @@ $text-background-color:                     theme-color(primary) !default;
 
 /* Style modifiers
    ================================================== */
+.uis-text-medium{
+    font-weight: 600;
+}
 
 .uis-text-bold{
     font-weight: $text-bold-font-weight;

@@ -9648,6 +9648,10 @@ a.uis-link-reset:hover,
 /* Style modifiers
    ================================================== */
 
+.uis-text-medium {
+  font-weight: 600;
+}
+
 .uis-text-bold {
   font-weight: 800;
 }

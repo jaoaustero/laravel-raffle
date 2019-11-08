@@ -29862,6 +29862,8 @@ __webpack_require__(/*! ./components/get */ "./resources/js/components/get.js");
 
 __webpack_require__(/*! ./components/modal */ "./resources/js/components/modal.js");
 
+__webpack_require__(/*! ./components/theme */ "./resources/js/components/theme.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -30680,6 +30682,50 @@ function () {
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Id.BUTTON_DRAW, function (event) {
   Spinner.start(this);
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/theme.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/theme.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+/**
+ * ==================================================
+ * Constants
+ * ==================================================
+ */
+
+/**
+ * ==================================================
+ * Class Definition
+ * ==================================================
+ */
+
+var Theme = function Theme() {
+  _classCallCheck(this, Theme);
+} // Public
+// Private
+// Static
+;
+
+;
+/**
+ * ==================================================
+ * Data Api implementation
+ * ==================================================
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = (Theme);
 
 /***/ }),
 
