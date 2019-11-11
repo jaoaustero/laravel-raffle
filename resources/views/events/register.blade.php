@@ -4,7 +4,7 @@
 <div class="uis-event">
     <header class="uis-event-header">
         <img
-            src="{{ asset('images/logo/GMI-h-inverse.svg') }}"
+            src="{{ asset('static/logo/GMI-h-inverse.svg') }}"
             alt="GMI Logo Inverse">
     </header>
 
@@ -98,13 +98,14 @@
                                 <input
                                     type="checkbox"
                                     class="uis-checkbox"
+                                    id="terms-and-condition"
                                     required>
-                                I agree to <a href="">Terms and Condition</a>
+                                I agree to <a href="https://gigamare.com/privacy-policy" target="_blank">Terms and Condition</a>
                             </label>
                         </fieldset>
 
                         <div class="uis-text-center uis-margin-medium-top">
-                            {{ Form::button('Submit', ['type' => 'submit', 'id' => 'js-submit', 'class' => 'uis-button uis-button-primary']) }}
+                            {{ Form::button('Submit', ['type' => 'submit', 'id' => 'js-submit', 'class' => 'uis-button uis-button-primary registration-button']) }}
                         </div>
                         <div id="js-message" class="uis-text-center uis-margin-top"></div>
                         <div>
@@ -119,7 +120,7 @@
                 <div class="uis-card-body uis-text-center">
                     <img
                         class="uis-margin-top"
-                        src="{{ asset('images/svg/registration-done.svg') }}"
+                        src="{{ asset('static/svg/registration-done.svg') }}"
                         alt="Illustration raffle registration done">
 
                     <div class="uis-margin-medium-top">

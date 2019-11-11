@@ -46,10 +46,14 @@ Route::group(['middleware' => ['auth']], function()
     Route::post('setting/change-password', 'SettingController@changePassword');
 });
 
+// Thank you page
+Route::get('thank-you', 'EventController@thankyou');
+
 // Event Details
 Route::get('{slug}', 'EventController@view');
 
 // Event registration
 Route::get('{slug}/registration', 'EventController@registration');
+
 
 Route::fallback(function(){ return abort(404); });

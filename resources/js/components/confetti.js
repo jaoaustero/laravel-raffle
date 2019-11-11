@@ -133,80 +133,86 @@ $(function ()
 
     // Create the overarching container
     var container = document.getElementById('winner-modal');
-    container.style.position = 'fixed';
-    container.style.top = '0';
-    container.style.left = '0';
-    // container.style.width = '100%';
-    // container.style.height = '0';
-    // container.style.overflow = 'visible';
-    container.style.zIndex = '9999';
+    if (container)
+    {
+        container.style.position = 'fixed';
+        container.style.top = '0';
+        container.style.left = '0';
+        // container.style.width = '100%';
+        // container.style.height = '0';
+        // container.style.overflow = 'visible';
+        container.style.zIndex = '9999';
+    }
 
     // Confetto constructor
     function Confetto(theme)
     {
-        this.frame = 0;
-        this.outer = document.createElement('div');
-        this.inner = document.createElement('div');
-        this.outer.appendChild(this.inner);
-
-        var outerStyle = this.outer.style, innerStyle = this.inner.style;
-        outerStyle.position = 'absolute';
-        outerStyle.width = (sizeMin + sizeMax * random()) + 'px';
-        outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
-        innerStyle.width = '100%';
-        innerStyle.height = '100%';
-        innerStyle.backgroundColor = theme();
-
-        outerStyle.perspective = '50px';
-        outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
-        this.axis = 'rotate3D(' +
-            cos(360 * random()) + ',' +
-            cos(360 * random()) + ',0,';
-        this.theta = 360 * random();
-        this.dTheta = dThetaMin + dThetaMax * random();
-        innerStyle.transform = this.axis + this.theta + 'deg)';
-
-        this.x = $window.width() * random();
-        this.y = -deviation;
-        this.dx = sin(dxThetaMin + dxThetaMax * random());
-        this.dy = dyMin + dyMax * random();
-        outerStyle.left = this.x + 'px';
-        outerStyle.top = this.y + 'px';
-
-        // Create the periodic spline
-        this.splineX = createPoisson();
-        this.splineY = [];
-        for (var i = 1, l = this.splineX.length - 1; i < l; ++i)
-            this.splineY[i] = deviation * random();
-        this.splineY[0] = this.splineY[l] = deviation * random();
-
-        this.update = function (height, delta)
+        if (container)
         {
-            this.frame += delta;
-            this.x += this.dx * delta;
-            this.y += this.dy * delta;
-            this.theta += this.dTheta * delta;
+            this.frame = 0;
+            this.outer = document.createElement('div');
+            this.inner = document.createElement('div');
+            this.outer.appendChild(this.inner);
 
-            // Compute spline and convert to polar
-            var phi = this.frame % 7777 / 7777, i = 0, j = 1;
-            while (phi >= this.splineX[j]) i = j++;
-            var rho = interpolation(
-                this.splineY[i],
-                this.splineY[j],
-                (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
-            );
-            phi *= PI2;
+            var outerStyle = this.outer.style, innerStyle = this.inner.style;
+            outerStyle.position = 'absolute';
+            outerStyle.width = (sizeMin + sizeMax * random()) + 'px';
+            outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
+            innerStyle.width = '100%';
+            innerStyle.height = '100%';
+            innerStyle.backgroundColor = theme();
 
-            outerStyle.left = this.x + rho * cos(phi) + 'px';
-            outerStyle.top = this.y + rho * sin(phi) + 'px';
+            outerStyle.perspective = '50px';
+            outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
+            this.axis = 'rotate3D(' +
+                cos(360 * random()) + ',' +
+                cos(360 * random()) + ',0,';
+            this.theta = 360 * random();
+            this.dTheta = dThetaMin + dThetaMax * random();
             innerStyle.transform = this.axis + this.theta + 'deg)';
-            return this.y > height + deviation;
-        };
+
+            this.x = $window.width() * random();
+            this.y = -deviation;
+            this.dx = sin(dxThetaMin + dxThetaMax * random());
+            this.dy = dyMin + dyMax * random();
+            outerStyle.left = this.x + 'px';
+            outerStyle.top = this.y + 'px';
+
+            // Create the periodic spline
+            this.splineX = createPoisson();
+            this.splineY = [];
+            for (var i = 1, l = this.splineX.length - 1; i < l; ++i)
+                this.splineY[i] = deviation * random();
+            this.splineY[0] = this.splineY[l] = deviation * random();
+
+            this.update = function (height, delta)
+            {
+                this.frame += delta;
+                this.x += this.dx * delta;
+                this.y += this.dy * delta;
+                this.theta += this.dTheta * delta;
+
+                // Compute spline and convert to polar
+                var phi = this.frame % 7777 / 7777, i = 0, j = 1;
+                while (phi >= this.splineX[j]) i = j++;
+                var rho = interpolation(
+                    this.splineY[i],
+                    this.splineY[j],
+                    (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
+                );
+                phi *= PI2;
+
+                outerStyle.left = this.x + rho * cos(phi) + 'px';
+                outerStyle.top = this.y + rho * sin(phi) + 'px';
+                innerStyle.transform = this.axis + this.theta + 'deg)';
+                return this.y > height + deviation;
+            };
+        }
     }
 
     function poof()
     {
-        if (!frame)
+        if (!frame && container)
         {
             // Append the container
             document.body.appendChild(container);

@@ -52,9 +52,12 @@
                 </div>
 
                 <div class="uis-margin-top uis-text-center">
-                    <p class="uis-margin-remove">
-                        {{ env('APP_URL') .  '/' .$event->slug }}
-                    </p>
+                    <a
+                        class="uis-margin-remove"
+                        href="{{ env('APP_URL') .  '/' .$event->slug }}/registration"
+                        target="_blank">
+                        {{ env('APP_URL') .  '/' .$event->slug }}/registration
+                    </a>
                 </div>
             </div>
             @else

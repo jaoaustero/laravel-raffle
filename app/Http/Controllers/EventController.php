@@ -25,4 +25,9 @@ class EventController extends Controller
 
         return view('events.register')->with(['event' => $event]);
     }
+
+    public function thankyou()
+    {
+        return view('events.thankyou');
+    }
 }
