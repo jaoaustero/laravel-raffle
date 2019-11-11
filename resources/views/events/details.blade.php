@@ -4,7 +4,7 @@
 <div class="uis-event">
     <header class="uis-event-header">
         <img
-            src="{{ asset('img/logo/GMI-h-inverse.svg') }}"
+            src="{{ asset('static/logo/GMI-h-inverse.svg') }}"
             alt="GMI Logo Inverse">
     </header>
 
@@ -63,7 +63,7 @@
             <div class="uis-card-body uis-text-center">
                 <img
                     class="uis-margin-top"
-                    src="{{ asset('img/svg/registration-done.svg') }}"
+                    src="{{ asset('static/svg/registration-done.svg') }}"
                     alt="Illustration raffle registration done">
 
                 <div class="uis-margin-medium-top">

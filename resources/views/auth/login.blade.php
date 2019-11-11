@@ -12,7 +12,7 @@
                 <div class="uis-card-body">
                     <div class="uis-text-center">
                         <img
-                            src="{{ asset('img/logo/GMI-h.svg') }}"
+                            src="{{ asset('static/logo/GMI-h.svg') }}"
                             alt="GMI Horizontal Logo"
                             width="200px">
                     </div>
