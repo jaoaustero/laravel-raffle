@@ -46,10 +46,9 @@
                             class="uis-button
                                     uis-event-button
                                     uis-margin-xsmall-right
-                                    js-open-modal"
+                                    event-open-modal"
                             data-type="edit"
-                            data-id="{{$event->id}}"
-                            uis-modal="#form-modal">
+                            data-id="{{$event->id}}">
                             <span class="uis-event-button-icon">📝</span>
                             <span>Edit</span>
                         </button>
@@ -57,7 +56,7 @@
                         <button
                             class="uis-button
                                     uis-event-button
-                                    js-open-status-modal"
+                                    event-open-status-modal"
                             uis-modal="#close-event"
                             data-id="{{$event->id}}"
                             data-active="{{$event->is_active}}"
@@ -134,7 +133,7 @@
 
                 @if(count($players) > 10)
                     <div class="uis-text-center uis-margin-top">
-                        <a class="uis-link uis-link-primary js-load-more" data-id="{{$event->id}}">
+                        <a class="uis-link uis-link-primary event-load-more" data-id="{{$event->id}}">
                             + Load more
                         </a>
                     </div>
