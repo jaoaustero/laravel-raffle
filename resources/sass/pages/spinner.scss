@@ -26,6 +26,7 @@
 // Variables
 // ========================================================================
 $spinner-background:                                    color(secondary) !default;
+$spinner-background-image:                              url('../img/svg/background-pattern.svg') !default;
 
 
 /* ==================================================
@@ -37,7 +38,7 @@ $spinner-background:                                    color(secondary) !defaul
     width: 100%;
 
     background-color: $spinner-background;
-    background-image: url('./public/img/svg/background-pattern.svg');
+    background-image: $spinner-background-image;
 }
 
 .uis-spinner{

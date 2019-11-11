@@ -1566,6 +1566,11 @@ iframe.uis-cover {
     Component: Reboot
    ================================================== */
 
+@font-face {
+  font-family: "Poppins";
+  src: url(/fonts/Poppins-Regular.ttf?41e8dead03fb979ecc23b8dfb0fef627);
+}
+
 /*
  * 1. Set `font-size` to support `rem` units
  *    Not using `font` property because a leading hypen (e.g. -apple-system) causes the font to break in IE11 and Edge

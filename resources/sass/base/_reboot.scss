@@ -85,15 +85,10 @@ $reboot-selection-color:                        color(inverse) !default;
     Component: Reboot
    ================================================== */
 
-// @font-face
-//     font-family: 'Open Sans'
-//     src: url('../assets/fonts/Open_Sans/OpenSans-Regular.ttf'),
-//     url('../../../assets/fonts/Open_Sans/OpenSans-SemiBold.ttf'),
-//     url('../../../assets/fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf'),
-//     url('../../../assets/fonts/Open_Sans/OpenSans-Bold.ttf'),
-//     url('../../../assets/fonts/Open_Sans/OpenSans-BoldItalic.ttf'),
-//     url('../../../assets/fonts/Open_Sans/OpenSans-ExtraBold.ttf'),
-//     url('../../../assets/fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf')
+@font-face{
+    font-family: 'Poppins';
+    src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
 
 /*
  * 1. Set `font-size` to support `rem` units
