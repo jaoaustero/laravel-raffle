@@ -11,6 +11,10 @@ class Player extends Model
     
     protected $guarded = [];
 
+    public static $searchables = ['full_name'];
+	public static $filterables = ['event_id', 'is_selected'];
+	public static $orderables = ['created_at', 'is_selected'];
+
     public static function _new($data)
 	{
 		$class = new self;

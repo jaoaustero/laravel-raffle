@@ -24,6 +24,25 @@ class EventController extends Controller
 
         if(!$event) return abort(404);
 
-        return view('administration.events.details')->with(['event' => $event, 'title' => $event->name]);
+        $players = $event->players()->orderBy('is_selected', 'desc')->get();
+
+        return view('administration.events.details')
+                ->with(['event' => $event,
+                        'players' => $players,
+                        'title' => $event->name]);
+    }
+
+    public function viewSpinner($slug)
+    {
+        $event = Event::where('slug', $slug)->first();
+
+        if(!$event) return abort(404);
+
+        $players = $event->players()->orderBy('is_selected', 'desc')->get();
+
+        return view('spinner.index')
+                ->with(['event' => $event,
+                        'players' => $players,
+                        'title' => $event->name]);
     }
 }

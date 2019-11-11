@@ -29855,6 +29855,8 @@ __webpack_require__(/*! ./components/registration */ "./resources/js/components/
 
 __webpack_require__(/*! ./components/save-winner.js */ "./resources/js/components/save-winner.js");
 
+__webpack_require__(/*! ./components/event.js */ "./resources/js/components/event.js");
+
 __webpack_require__(/*! ./components/spinner-2 */ "./resources/js/components/spinner-2.js");
 
 __webpack_require__(/*! ./components/get */ "./resources/js/components/get.js"); // require('./components/spinner-1');
@@ -30053,6 +30055,157 @@ function () {
 
 /***/ }),
 
+/***/ "./resources/js/components/event.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/event.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crud_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud-handler */ "./resources/js/components/crud-handler.js");
+/* harmony import */ var _form_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-helper */ "./resources/js/components/form-helper.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var Event =
+/*#__PURE__*/
+function () {
+  function Event() {
+    _classCallCheck(this, Event);
+
+    this.crudHandler = new _crud_handler__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    this.formHelper = new _form_helper__WEBPACK_IMPORTED_MODULE_2__["default"](jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-form'));
+  }
+
+  _createClass(Event, [{
+    key: "submitForm",
+    value: function submitForm(event, form) {
+      var crudHandler = this.crudHandler.prepareData(form);
+      var formHelper = this.formHelper;
+      var sendButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-submit');
+      var message = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-message');
+      formHelper.clearErrors();
+      message.empty();
+      sendButton.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      event.preventDefault();
+      crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status === 200 || response.status === 201) {
+          formHelper.clearForm();
+          message.empty();
+          location.href = responseData.path;
+        } else if (response.status === 422) {
+          sendButton.text('Submit');
+          formHelper.setErrors(responseData.error);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+
+        sendButton.find('i').remove();
+        sendButton.attr('disabled', false).text('Submit');
+      }, form.attr('method'), form.attr('action'));
+    }
+  }, {
+    key: "changeActive",
+    value: function changeActive(id) {
+      var submitButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-submit');
+      submitButton.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      this.crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status == 200) {
+          location.href = window.location.href;
+        } else {
+          console.log('Response Status: ' + response.status);
+          submitButton.find('i').remove();
+          submitButton.attr('disabled', false).text('Yes');
+        }
+      }, 'GET', "/api/administration/event/".concat(id, "/change-active"));
+    }
+  }, {
+    key: "edit",
+    value: function edit(id) {
+      var formHelper = this.formHelper;
+      this.crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status == 200) {
+          formHelper.clearForm();
+          formHelper.setDataInForm(responseData);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+      }, 'GET', "/api/administration/event/".concat(id, "/edit"));
+    }
+  }, {
+    key: "loadMore",
+    value: function loadMore(id) {
+      var submitButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-load-more');
+      submitButton.hide();
+      this.crudHandler.http(function (response) {
+        var responseData = response.responseJSON.data;
+
+        for (var i = 10; i < responseData.length; i += 1) {
+          var li = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<li />').text(responseData[i].full_name);
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-players-container').append(li);
+        }
+      }, 'GET', "/api/administration/players?filter[event_id]=".concat(id, "&order[is_selected]=desc&expose=true"));
+    }
+  }]);
+
+  return Event;
+}();
+
+var module = new Event();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-form').submit(function (event) {
+  module.submitForm(event, jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-submit').click(function (event) {
+  var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
+  module.changeActive(id);
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-modal').click(function (event) {
+  var form = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-form');
+  var type = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-type');
+
+  if (type == 'edit') {
+    var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
+    form.attr('action', "/api/administration/event/".concat(id, "/update"));
+    form.attr('method', 'PUT');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-type').text('Update');
+    module.edit(id);
+    return;
+  }
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-type').text('Create');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-status-modal').click(function (event) {
+  var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
+  var active = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-active');
+  var name = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-name');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-event-active').text(active == 1 ? 'Close' : 'Open');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-event-name').text(name);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-submit').attr('data-id', id);
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-load-more').click(function () {
+  var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
+  module.loadMore(id);
+});
+
+/***/ }),
+
 /***/ "./resources/js/components/form-helper.js":
 /*!************************************************!*\
   !*** ./resources/js/components/form-helper.js ***!
@@ -30096,6 +30249,14 @@ function () {
       var form = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.form;
       form.find('.uis-form-danger').removeClass('uis-form-danger');
       form.find('.form-error').html('');
+    }
+  }, {
+    key: "setDataInForm",
+    value: function setDataInForm(data) {
+      var form = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.form;
+      form.find("input:not('[name=_token]'),select,textarea,checkbox").each(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(data[jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('name')]);
+      });
     }
   }, {
     key: "clearForm",
@@ -30899,8 +31060,8 @@ var Util = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

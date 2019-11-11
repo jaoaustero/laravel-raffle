@@ -18,7 +18,7 @@
                             class="uis-link
                                 uis-link-reset
                                 uis-margin-xsmall-right"
-                            href="/spinner"
+                            href="{{ env('APP_URL') . '/events/' . $event->slug . '/spinner'}}"
                             target="_blank">
                             <button
                                     class="uis-button
@@ -43,9 +43,12 @@
                         </a>
 
                         <button 
-                                class="uis-button
-                                uis-event-button
-                                uis-margin-xsmall-right"
+                            class="uis-button
+                                    uis-event-button
+                                    uis-margin-xsmall-right
+                                    js-open-modal"
+                            data-type="edit"
+                            data-id="{{$event->id}}"
                             uis-modal="#form-modal">
                             <span class="uis-event-button-icon">📝</span>
                             <span>Edit</span>
@@ -53,10 +56,15 @@
 
                         <button
                             class="uis-button
-                                uis-event-button"
-                            uis-modal="#close-event">
+                                    uis-event-button
+                                    js-open-status-modal"
+                            uis-modal="#close-event"
+                            data-id="{{$event->id}}"
+                            data-active="{{$event->is_active}}"
+                            data-name="{{$event->name}}"
+                            >
                             <span class="uis-event-button-icon">🚩</span>
-                            <span>Close</span>
+                            <span>{{$event->is_active ? 'Close' : 'Open'}}</span>
                         </button>
                     </div>
                 </li>
@@ -106,39 +114,31 @@
         <div class="uis-width-1-1@s uis-width-1-1@m uis-width-2-5@l uis-width-2-5@xl">
             <div class="uis-card uis-card-default uis-card-body">
                 <h3 class="uis-card-title">
-                    Players
+                    Players ({{count($players)}})
                 </h3>
 
-                <ul class="uis-list uis-list-large uis-list-divider">
-                    <li>
-                        Sasha Sloan 🏆
-                    </li>
+                @if(count($players))
+                    <ul class="uis-list uis-list-large uis-list-divider" id="js-players-container">
+                        @foreach($players->take(10) as $player)
+                            <li>
+                                {{$player->full_name}}
+                                @if($player->is_selected)
+                                    🏆
+                                @endif
+                            </li>
+                        @endforeach
+                    </ul>
+                @else
+                    <p>No players yet</p>
+                @endif
 
-                    <li>
-                        Frank Spin 🏆
-                    </li>
-
-                    <li>
-                        John Doe
-                    </li>
-                    <li>
-                        John Doe
-                    </li>
-
-                    <li>
-                        John Doe
-                    </li>
-
-                    <li>
-                        John Doe
-                    </li>
-                </ul>
-
-                <div class="uis-text-center uis-margin-top">
-                    <a class="uis-link uis-link-primary">
-                        + Load more
-                    </a>
-                </div>
+                @if(count($players) > 10)
+                    <div class="uis-text-center uis-margin-top">
+                        <a class="uis-link uis-link-primary js-load-more" data-id="{{$event->id}}">
+                            + Load more
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
