@@ -41,9 +41,9 @@ Route::group(['middleware' => ['auth']], function()
 
     Route::get('settings', 'Administration\SettingsController@index');
 
-    Route::get('spinner', function () {
-        return view('spinner.index');
-    });
+    Route::post('setting/update-fullname', 'SettingController@updateFullname');
+    Route::post('setting/update-email', 'SettingController@updateEmail');
+    Route::post('setting/change-password', 'SettingController@changePassword');
 });
 
 // Event Details

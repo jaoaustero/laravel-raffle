@@ -30,8 +30,8 @@ class EventController extends Controller
         $event = Event::_store($request);
 
         $event->_generateQrCode();
-        
-        return $event;
+
+        return response(['path' => env('APP_URL') . '/events/' . $event->slug], 200);
     }
 
     public function show(Request $request, $id)

@@ -16,9 +16,13 @@ use Illuminate\Http\Request;
 Route::post('register', 'API\RaffleManagementController@register');
 Route::post('save-winner', 'API\RaffleManagementController@saveWinner');
 
-Route::post('setting/update-fullname', 'API\SettingController@updateFullname');
-Route::post('setting/update-email', 'API\SettingController@updateEmail');
-Route::post('setting/change-password', 'API\SettingController@changePassword');
+// Route::group(['middleware' => ['auth']], function()
+// {
+//     Route::post('setting/update-fullname', 'API\SettingController@updateFullname');
+//     Route::post('setting/update-email', 'API\SettingController@updateEmail');
+//     Route::post('setting/change-password', 'API\SettingController@changePassword');
+// });
+
 
 Route::group(['prefix' => 'administration'], function()
 {

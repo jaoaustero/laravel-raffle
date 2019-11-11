@@ -53,7 +53,7 @@ class Event extends Model
         $link = env('APP_URL') . '/' . $this->slug . '/registration';
 
         $file = \QrCode::format('png')
-                        ->merge('img/GMI-emblem-white-bg.jpg', 0.2, true)
+                        ->merge('static/logo/GMI-emblem-white-bg.jpg', 0.15, true)
                         ->size(500)
                         ->generate($link);
 
