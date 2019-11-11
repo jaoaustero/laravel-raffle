@@ -16,7 +16,7 @@
         uis-child-width-1-6@l">
         <div>
             <img
-                src="{{ asset('/img/svg/themes/default.svg') }}"
+                src="{{ asset('static/svg/themes/default.svg') }}"
                 alt="Default Theme">
 
             <div class="uis-margin-small">
@@ -34,7 +34,7 @@
 
         <div>
             <img
-                src="{{ asset('/img/svg/themes/gloomy.svg') }}"
+                src="{{ asset('/static/svg/themes/gloomy.svg') }}"
                 alt="Gloomy Theme">
 
             <div class="uis-margin-small">
@@ -51,7 +51,7 @@
 
         <div>
             <img
-                src="{{ asset('/img/svg/themes/soft.svg') }}"
+                src="{{ asset('/static/svg/themes/soft.svg') }}"
                 alt="Soft Theme">
 
             <div class="uis-margin-small">
@@ -68,7 +68,7 @@
 
         <div>
             <img
-                src="{{ asset('/img/svg/themes/night.svg') }}"
+                src="{{ asset('/static/svg/themes/night.svg') }}"
                 alt="Night Theme">
 
             <div class="uis-margin-small">
