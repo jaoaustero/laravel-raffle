@@ -1,5 +1,5 @@
 import $ from 'jquery';
-
+import Modal from './modal';
 
 /**
  * ==================================================
@@ -29,6 +29,8 @@ class Spinner
         this._element = el
         this._isSpinning = false
         this.spinCount = 10
+        this.spinnerSpeed = 10
+        this._spinnerDone = false
     }
 
     // Public
@@ -45,11 +47,19 @@ class Spinner
      */
     _getChildren()
     {
-        // get winner
-        let winner = Math.ceil(Math.random() * ($('#players').children().length));
+        // Mark as spinner is NOT done
+        this._spinnerDone = false
 
+        // Hide the button
+        this._toggleDrawButton(false);
+
+        // get winner
+        let winner = this._selectWinner();
+
+        // Add blur on UL
         $('#players').addClass('uis-active');
 
+        // Endless spin unless clearInterval
         let sample = setInterval(() =>
         {
             this._spin();
@@ -57,16 +67,39 @@ class Spinner
 
         setTimeout(() =>
         {
+            // Start reducing the speed
+            this._reduceSpinnerSpeed();
+
             const ab = setInterval(() =>
             {
-                console.log(parseInt($('#players').children('li.uis-active').attr('data-id')), winner);
-                if (parseInt($('#players').children('li.uis-active').attr('data-id')) == winner)
+                console.log(parseInt($('#players').children('li.uis-active').attr('data-index')), winner);
+                if (parseInt($('#players').children('li.uis-active').attr('data-index')) == winner)
                 {
                     clearInterval(sample);
                     clearInterval(ab);
                     $('#players').removeClass('uis-active');
+
+                    // Show the button
+                    this._toggleDrawButton(true);
+
+                    // Mark as spinner as done
+                    this._spinnerDone = true;
+
+                    // get winner name
+                    const playerWinnerName = $('#players').find('.uis-active').text();
+
+                    // get winner id
+                    const playerWinnerId = $('#players').find('.uis-active').attr('data-id');
+
+                    // Inject player winner
+                    $('#winner-modal').find('#winner-name').text(playerWinnerName);
+
+                    $('#winner-modal').find('.js-save-winner').attr('data-id', playerWinnerId)
+
+                    // SHow the modal
+                    Modal.show('#winner-modal');
                 }
-            }, 300)
+            }, this.spinnerSpeed)
         }, 3000)
     }
 
@@ -85,7 +118,7 @@ class Spinner
         setTimeout(() => 
         {
             $('#players').append(firstPlayer);
-        }, 200);
+        }, this.spinnerSpeed);
 
     }
 
@@ -94,15 +127,40 @@ class Spinner
      */
     _selectWinner()
     {
+        return Math.ceil(Math.random() * ($('#players').children().length));
+    }
 
+    /**
+     * Toggle Button
+     * Adds visibility class to toggle the button 
+     * Disable the button
+     */
+    _toggleDrawButton(bool)
+    {
+        bool
+            ? $(Id.BUTTON_DRAW)
+                .css('visibility', 'visible')
+                .removeAttr('disabled')
+            : $(Id.BUTTON_DRAW)
+                .css('visibility', 'hidden')
+                .attr('disabled', 'true');
     }
 
     /**
      * This will randomly set spin count
      */
-    _setSpinCount()
+    _reduceSpinnerSpeed()
     {
+        let reducer = setInterval(() =>
+        {
+            // console.log(`reducing speed to ${this.spinnerSpeed}`);
+            this.spinnerSpeed += 50;
 
+            if (this._spinnerDone)
+            {
+                clearInterval(reducer);
+            }
+        }, 300);
     }
 
     /**

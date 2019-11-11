@@ -13,9 +13,10 @@ class Setting
 
     fullNameSubmitForm(event, form)
     {
+        event.preventDefault();
         let crudHandler = this.crudHandler.prepareData(form);
-        let formHelper = this.formHelper;
-        let sendButton = $('#fullname-form').find('#js-submit');
+        let formHelper = this.fullNameFormHelper;
+        let sendButton = $('#js-fullname-submit');
         let message = $('#fullname-form').find('#js-message');
 
         formHelper.clearErrors();

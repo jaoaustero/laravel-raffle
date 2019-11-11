@@ -5,7 +5,7 @@
             <p>Change your full name that will be displayed on the application</p>
 
             <div class="uis-margin-medium-top">
-                {!! Form::open(['class' => 'uis-form-stacked', 'id' => 'fullname-form', 'action' => 'API\SettingController@updateFullname', 'method' => 'POST']) !!}
+                {!! Form::open(['class' => 'uis-form-stacked', 'id' => 'fullname-form', 'action' => 'SettingController@updateFullname', 'method' => 'POST']) !!}
 
                     <div class="uis-margin">
                         <label
@@ -40,7 +40,7 @@
                     <div id="js-message" class="uis-text-center uis-margin-top"></div>
 
                     <div class="uis-text-right">
-                        {{ Form::button('Submit', ['type' => 'submit', 'id' => 'js-submit', 'class' => 'uis-button uis-button-primary']) }}
+                        {{ Form::button('Submit', ['type' => 'submit', 'id' => 'js-fullname-submit', 'class' => 'uis-button uis-button-primary']) }}
                     </div>
                 {!! Form::close() !!}
             </div>

@@ -4,7 +4,7 @@ class CRUDHandler
 {
     constructor()
     {
-        this.formData = null;
+        this.formData = [];
     }
 
     prepareData($form)

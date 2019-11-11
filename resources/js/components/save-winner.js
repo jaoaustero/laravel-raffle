@@ -21,13 +21,14 @@ class SaveWinner
             .text('')
             .append(`<i class="fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate"></i>`);
 
-        crudHandler.http(function (response) 
+        this.crudHandler.http(function (response) 
         {
             let responseData = response.responseJSON;
 
             if (response.status === 200) 
             {
                 // Close modal
+                location.href = window.location.href;
             }
             else if (response.status === 422) 
             {
@@ -49,7 +50,7 @@ class SaveWinner
 
 let module = new SaveWinner();
 
-$('.js-save').click(function ()
+$('.js-save-winner').click(function ()
 {
     module.submitForm($(this));
 });
