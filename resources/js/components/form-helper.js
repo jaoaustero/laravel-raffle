@@ -23,6 +23,14 @@ class FormHelper
         form.find('.form-error').html('');
     }
 
+    setDataInForm(data, form = this.form)
+    {
+        form.find("input:not('[name=_token]'),select,textarea,checkbox").each(function ()
+        {
+            $(this).val(data[$(this).attr('name')]);
+        });
+    }
+
     clearForm(form = this.form)
     {
         form[0].reset();

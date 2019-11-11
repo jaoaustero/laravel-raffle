@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function()
 
     Route::get('events/{slug}', 'Administration\EventController@view');
 
+    Route::get('events/{slug}/spinner', 'Administration\EventController@viewSpinner');
+
     Route::get('users', 'Administration\UserController@index');
 
     Route::get('settings', 'Administration\SettingsController@index');

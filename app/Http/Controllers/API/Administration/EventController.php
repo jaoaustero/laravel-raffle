@@ -58,7 +58,7 @@ class EventController extends Controller
 
         $updated->_generateQrCode();
 
-        return $updated;
+        return response(['path' => env('APP_URL') . '/events/' . $updated->slug], 200);
     }
 
     public function changeActive(Request $request, $id)

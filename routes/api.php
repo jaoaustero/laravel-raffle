@@ -23,10 +23,13 @@ Route::group(['prefix' => 'administration'], function()
     {
         Route::post('', 'API\Administration\EventController@store')->name('admin-events.store');
         Route::put('{id}/update', 'API\Administration\EventController@update')->name('admin-events.update');
+        Route::get('{id}/edit', 'API\Administration\EventController@edit')->name('admin-events.update');
         Route::delete('{id}/delete', 'API\Administration\EventController@destroy')->name('admin-events.destroy');
 
         Route::get('{id}/change-active', 'API\Administration\EventController@changeActive')->name('admin-events.update');
     });
+
+    Route::get('players', 'API\Administration\PlayerController@index')->name('admin-players.index');
 
 });
 

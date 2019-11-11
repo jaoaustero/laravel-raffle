@@ -10,7 +10,8 @@ class="uis-container
     uis-margin-medium-bottom">
         <div class="uis-margin-medium">
             <button
-                class="uis-button uis-button-primary"
+                class="uis-button uis-button-primary js-open-modal"
+                data-type="create"
                 uis-modal="#form-modal">
                 + New Event
             </button>
