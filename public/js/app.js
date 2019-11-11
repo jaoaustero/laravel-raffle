@@ -29857,14 +29857,15 @@ __webpack_require__(/*! ./components/save-winner.js */ "./resources/js/component
 
 __webpack_require__(/*! ./components/event.js */ "./resources/js/components/event.js");
 
-__webpack_require__(/*! ./components/spinner-2 */ "./resources/js/components/spinner-2.js");
-
-__webpack_require__(/*! ./components/get */ "./resources/js/components/get.js"); // require('./components/spinner-1');
+__webpack_require__(/*! ./components/spinner-2 */ "./resources/js/components/spinner-2.js"); // require('./components/get');
+// require('./components/spinner-1');
 
 
 __webpack_require__(/*! ./components/modal */ "./resources/js/components/modal.js");
 
 __webpack_require__(/*! ./components/theme */ "./resources/js/components/theme.js");
+
+__webpack_require__(/*! ./components/confetti */ "./resources/js/components/confetti.js");
 
 /***/ }),
 
@@ -29968,6 +29969,263 @@ function () {
 var module = new Auth();
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#login-form').submit(function (event) {
   module.submitForm(event, jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/confetti.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/confetti.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+'use strict'; // If set to true, the user must press
+// UP UP DOWN ODWN LEFT RIGHT LEFT RIGHT A B
+// to trigger the confetti with a random color theme.
+// Otherwise the confetti constantly falls.
+
+
+var onlyOnKonami = false;
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  // Globals
+  var $window = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window),
+      random = Math.random,
+      cos = Math.cos,
+      sin = Math.sin,
+      PI = Math.PI,
+      PI2 = PI * 2,
+      timer = undefined,
+      frame = undefined,
+      confetti = []; // Settings
+
+  var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+      pointer = 0;
+  var particles = 150,
+      spread = 40,
+      sizeMin = 3,
+      sizeMax = 12 - sizeMin,
+      eccentricity = 10,
+      deviation = 100,
+      dxThetaMin = -.1,
+      dxThetaMax = -dxThetaMin - dxThetaMin,
+      dyMin = .13,
+      dyMax = .18,
+      dThetaMin = .4,
+      dThetaMax = .7 - dThetaMin;
+  var colorThemes = [function () {
+    return color(200 * random() | 0, 200 * random() | 0, 200 * random() | 0);
+  }, function () {
+    var black = 200 * random() | 0;
+    return color(200, black, black);
+  }, function () {
+    var black = 200 * random() | 0;
+    return color(black, 200, black);
+  }, function () {
+    var black = 200 * random() | 0;
+    return color(black, black, 200);
+  }, function () {
+    return color(200, 100, 200 * random() | 0);
+  }, function () {
+    return color(200 * random() | 0, 200, 200);
+  }, function () {
+    var black = 256 * random() | 0;
+    return color(black, black, black);
+  }, function () {
+    return colorThemes[random() < .5 ? 1 : 2]();
+  }, function () {
+    return colorThemes[random() < .5 ? 3 : 5]();
+  }, function () {
+    return colorThemes[random() < .5 ? 2 : 4]();
+  }];
+
+  function color(r, g, b) {
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  } // Cosine interpolation
+
+
+  function interpolation(a, b, t) {
+    return (1 - cos(PI * t)) / 2 * (b - a) + a;
+  } // Create a 1D Maximal Poisson Disc over [0, 1]
+
+
+  var radius = 1 / eccentricity,
+      radius2 = radius + radius;
+
+  function createPoisson() {
+    // domain is the set of points which are still available to pick from
+    // D = union{ [d_i, d_i+1] | i is even }
+    var domain = [radius, 1 - radius],
+        measure = 1 - radius2,
+        spline = [0, 1];
+
+    while (measure) {
+      var dart = measure * random(),
+          i,
+          l,
+          interval,
+          a,
+          b,
+          c,
+          d; // Find where dart lies
+
+      for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+        a = domain[i], b = domain[i + 1], interval = b - a;
+
+        if (dart < measure + interval) {
+          spline.push(dart += a - measure);
+          break;
+        }
+
+        measure += interval;
+      }
+
+      c = dart - radius, d = dart + radius; // Update the domain
+
+      for (i = domain.length - 1; i > 0; i -= 2) {
+        l = i - 1, a = domain[l], b = domain[i]; // c---d          c---d  Do nothing
+        //   c-----d  c-----d    Move interior
+        //   c--------------d    Delete interval
+        //         c--d          Split interval
+        //       a------b
+
+        if (a >= c && a < d) {
+          if (b > d) domain[l] = d; // Move interior (Left case)
+          else domain.splice(l, 2); // Delete interval
+
+        } else if (a < c && b > c) if (b <= d) domain[i] = c; // Move interior (Right case)
+          else domain.splice(i, 0, c, d); // Split interval
+      } // Re-measure the domain
+
+
+      for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+        measure += domain[i + 1] - domain[i];
+      }
+    }
+
+    return spline.sort();
+  } // Create the overarching container
+
+
+  var container = document.getElementById('winner-modal');
+  container.style.position = 'fixed';
+  container.style.top = '0';
+  container.style.left = '0'; // container.style.width = '100%';
+  // container.style.height = '0';
+  // container.style.overflow = 'visible';
+
+  container.style.zIndex = '9999'; // Confetto constructor
+
+  function Confetto(theme) {
+    this.frame = 0;
+    this.outer = document.createElement('div');
+    this.inner = document.createElement('div');
+    this.outer.appendChild(this.inner);
+    var outerStyle = this.outer.style,
+        innerStyle = this.inner.style;
+    outerStyle.position = 'absolute';
+    outerStyle.width = sizeMin + sizeMax * random() + 'px';
+    outerStyle.height = sizeMin + sizeMax * random() + 'px';
+    innerStyle.width = '100%';
+    innerStyle.height = '100%';
+    innerStyle.backgroundColor = theme();
+    outerStyle.perspective = '50px';
+    outerStyle.transform = 'rotate(' + 360 * random() + 'deg)';
+    this.axis = 'rotate3D(' + cos(360 * random()) + ',' + cos(360 * random()) + ',0,';
+    this.theta = 360 * random();
+    this.dTheta = dThetaMin + dThetaMax * random();
+    innerStyle.transform = this.axis + this.theta + 'deg)';
+    this.x = $window.width() * random();
+    this.y = -deviation;
+    this.dx = sin(dxThetaMin + dxThetaMax * random());
+    this.dy = dyMin + dyMax * random();
+    outerStyle.left = this.x + 'px';
+    outerStyle.top = this.y + 'px'; // Create the periodic spline
+
+    this.splineX = createPoisson();
+    this.splineY = [];
+
+    for (var i = 1, l = this.splineX.length - 1; i < l; ++i) {
+      this.splineY[i] = deviation * random();
+    }
+
+    this.splineY[0] = this.splineY[l] = deviation * random();
+
+    this.update = function (height, delta) {
+      this.frame += delta;
+      this.x += this.dx * delta;
+      this.y += this.dy * delta;
+      this.theta += this.dTheta * delta; // Compute spline and convert to polar
+
+      var phi = this.frame % 7777 / 7777,
+          i = 0,
+          j = 1;
+
+      while (phi >= this.splineX[j]) {
+        i = j++;
+      }
+
+      var rho = interpolation(this.splineY[i], this.splineY[j], (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i]));
+      phi *= PI2;
+      outerStyle.left = this.x + rho * cos(phi) + 'px';
+      outerStyle.top = this.y + rho * sin(phi) + 'px';
+      innerStyle.transform = this.axis + this.theta + 'deg)';
+      return this.y > height + deviation;
+    };
+  }
+
+  function poof() {
+    if (!frame) {
+      // Append the container
+      document.body.appendChild(container); // Add confetti
+
+      var theme = colorThemes[onlyOnKonami ? colorThemes.length * random() | 0 : 0],
+          count = 0;
+
+      (function addConfetto() {
+        if (onlyOnKonami && ++count > particles) return timer = undefined;
+        var confetto = new Confetto(theme);
+        confetti.push(confetto);
+        container.appendChild(confetto.outer);
+        timer = setTimeout(addConfetto, spread * random());
+      })(0); // Start the loop
+
+
+      var prev = undefined;
+      requestAnimationFrame(function loop(timestamp) {
+        var delta = prev ? timestamp - prev : 0;
+        prev = timestamp;
+        var height = $window.height();
+
+        for (var i = confetti.length - 1; i >= 0; --i) {
+          if (confetti[i].update(height, delta)) {
+            container.removeChild(confetti[i].outer);
+            confetti.splice(i, 1);
+          }
+        }
+
+        if (timer || confetti.length) return frame = requestAnimationFrame(loop); // Cleanup
+
+        document.body.removeChild(container);
+        frame = undefined;
+      });
+    }
+  }
+
+  $window.keydown(function (event) {
+    pointer = konami[pointer] === event.which ? pointer + 1 : +(event.which === konami[0]);
+
+    if (pointer === konami.length) {
+      pointer = 0;
+      poof();
+    }
+  });
+  if (!onlyOnKonami) poof();
 });
 
 /***/ }),
@@ -30270,98 +30528,6 @@ function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (FormHelper);
-
-/***/ }),
-
-/***/ "./resources/js/components/get.js":
-/*!****************************************!*\
-  !*** ./resources/js/components/get.js ***!
-  \****************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-
-var registeredPlayer = [{
-  id: 1,
-  full_name: 'Jerald Austero'
-}, {
-  id: 2,
-  full_name: 'Sheryl Senining'
-}, {
-  id: 3,
-  full_name: 'Jemuel Acuna'
-}, {
-  id: 4,
-  full_name: 'Kristina Mari Pajota'
-}, {
-  id: 5,
-  full_name: 'Jaycee Mariano'
-}, {
-  id: 6,
-  full_name: 'Baby Abegail'
-}, {
-  id: 7,
-  full_name: 'Norbert Carpio'
-}, {
-  id: 8,
-  full_name: 'Hernane Balinas'
-}, {
-  id: 9,
-  full_name: 'Tristan Fontalera'
-}, {
-  id: 10,
-  full_name: 'Kristine Tadena'
-}, {
-  id: 11,
-  full_name: 'Richard Enriquez'
-}, {
-  id: 12,
-  full_name: 'Chenee Olesco'
-}, {
-  id: 13,
-  full_name: 'Jari Ullakonoja'
-}, {
-  id: 14,
-  full_name: 'Nathalia Ballao'
-}, {
-  id: 15,
-  full_name: 'Lovely Ann Sagolile'
-}, {
-  id: 16,
-  full_name: 'Mikko Huumonen'
-}, {
-  id: 17,
-  full_name: 'Nepritariel Genilo'
-}, {
-  id: 18,
-  full_name: 'Jan Renzo Baranda'
-}, {
-  id: 19,
-  full_name: 'Jeonneil Blanco'
-}, {
-  id: 20,
-  full_name: 'Paul Andrei Diez'
-}, {
-  id: 21,
-  full_name: 'Markwell Gallos'
-}];
-
-function insertPlayers() {
-  for (var i = 0; i < registeredPlayer.length; i++) {
-    if (i == 1) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').append("\n                <li class=\"uis-active\" data-id=\"".concat(registeredPlayer[i].id, "\">\n                    ").concat(registeredPlayer[i].full_name, "\n                </li>\n            "));
-    } else {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').append("\n                <li data-id=\"".concat(registeredPlayer[i].id, "\">\n                    ").concat(registeredPlayer[i].full_name, "\n                </li>\n            "));
-    }
-  }
-}
-
-;
-insertPlayers();
 
 /***/ }),
 
@@ -30695,7 +30861,7 @@ function () {
 }();
 
 var module = new SaveWinner();
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-save').click(function () {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-save-winner').click(function () {
   module.submitForm(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
 });
 
@@ -30712,11 +30878,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-save').click(function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ "./resources/js/components/modal.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 /**
@@ -30746,6 +30914,8 @@ function () {
     this._element = el;
     this._isSpinning = false;
     this.spinCount = 10;
+    this.spinnerSpeed = 10;
+    this._spinnerDone = false;
   } // Public
 
 
@@ -30765,22 +30935,46 @@ function () {
     value: function _getChildren() {
       var _this = this;
 
-      // get winner
-      var winner = Math.ceil(Math.random() * jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().length);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').addClass('uis-active');
+      // Mark as spinner is NOT done
+      this._spinnerDone = false; // Hide the button
+
+      this._toggleDrawButton(false); // get winner
+
+
+      var winner = this._selectWinner(); // Add blur on UL
+
+
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').addClass('uis-active'); // Endless spin unless clearInterval
+
       var sample = setInterval(function () {
         _this._spin();
       }, 50);
       setTimeout(function () {
-        var ab = setInterval(function () {
-          console.log(parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children('li.uis-active').attr('data-id')), winner);
+        // Start reducing the speed
+        _this._reduceSpinnerSpeed();
 
+        var ab = setInterval(function () {
+          // console.log(parseInt($('#players').children('li.uis-active').attr('data-id')), winner);
           if (parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children('li.uis-active').attr('data-id')) == winner) {
             clearInterval(sample);
             clearInterval(ab);
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').removeClass('uis-active');
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').removeClass('uis-active'); // Show the button
+
+            _this._toggleDrawButton(true); // Mark as spinner as done
+
+
+            _this._spinnerDone = true; // get winner name
+
+            var playerWinnerName = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').find('.uis-active').text(); // get winner id
+
+            var playerWinnerId = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').find('.uis-active').attr('data-id'); // Inject player winner
+
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#winner-modal').find('#winner-name').text(playerWinnerName);
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#winner-modal').find('.js-save-winner').attr('data-id', playerWinnerId); // SHow the modal
+
+            _modal__WEBPACK_IMPORTED_MODULE_1__["default"].show('#winner-modal');
           }
-        }, 300);
+        }, _this.spinnerSpeed);
       }, 3000);
     }
   }, {
@@ -30794,7 +30988,7 @@ function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().eq(2).addClass('uis-active');
       setTimeout(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').append(firstPlayer);
-      }, 200);
+      }, this.spinnerSpeed);
     }
     /**
      * This will randomly select winner
@@ -30802,14 +30996,38 @@ function () {
 
   }, {
     key: "_selectWinner",
-    value: function _selectWinner() {}
+    value: function _selectWinner() {
+      return Math.ceil(Math.random() * jquery__WEBPACK_IMPORTED_MODULE_0___default()('#players').children().length);
+    }
+    /**
+     * Toggle Button
+     * Adds visibility class to toggle the button 
+     * Disable the button
+     */
+
+  }, {
+    key: "_toggleDrawButton",
+    value: function _toggleDrawButton(bool) {
+      bool ? jquery__WEBPACK_IMPORTED_MODULE_0___default()(Id.BUTTON_DRAW).css('visibility', 'visible').removeAttr('disabled') : jquery__WEBPACK_IMPORTED_MODULE_0___default()(Id.BUTTON_DRAW).css('visibility', 'hidden').attr('disabled', 'true');
+    }
     /**
      * This will randomly set spin count
      */
 
   }, {
-    key: "_setSpinCount",
-    value: function _setSpinCount() {}
+    key: "_reduceSpinnerSpeed",
+    value: function _reduceSpinnerSpeed() {
+      var _this2 = this;
+
+      var reducer = setInterval(function () {
+        console.log("reducing speed to ".concat(_this2.spinnerSpeed));
+        _this2.spinnerSpeed += 50;
+
+        if (_this2._spinnerDone) {
+          clearInterval(reducer);
+        }
+      }, 300);
+    }
     /**
      * The 
      */
@@ -31060,8 +31278,8 @@ var Util = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Sitepoint\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\JeraldAustero\Sitepoint\raffle\raffle.gmi-solution.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

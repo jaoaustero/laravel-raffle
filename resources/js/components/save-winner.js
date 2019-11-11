@@ -49,7 +49,7 @@ class SaveWinner
 
 let module = new SaveWinner();
 
-$('.js-save').click(function ()
+$('.js-save-winner').click(function ()
 {
     module.submitForm($(this));
 });
