@@ -29857,6 +29857,10 @@ __webpack_require__(/*! ./components/save-winner.js */ "./resources/js/component
 
 __webpack_require__(/*! ./components/event.js */ "./resources/js/components/event.js");
 
+__webpack_require__(/*! ./components/user.js */ "./resources/js/components/user.js");
+
+__webpack_require__(/*! ./components/setting.js */ "./resources/js/components/setting.js");
+
 __webpack_require__(/*! ./components/spinner-2 */ "./resources/js/components/spinner-2.js");
 
 __webpack_require__(/*! ./components/get */ "./resources/js/components/get.js"); // require('./components/spinner-1');
@@ -30068,11 +30072,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _crud_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud-handler */ "./resources/js/components/crud-handler.js");
 /* harmony import */ var _form_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-helper */ "./resources/js/components/form-helper.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal */ "./resources/js/components/modal.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -30176,7 +30182,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-submit').click(functio
   var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
   module.changeActive(id);
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-modal').click(function (event) {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.event-open-modal').click(function (event) {
   var form = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#event-form');
   var type = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-type');
 
@@ -30186,12 +30192,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-modal').click(function (
     form.attr('method', 'PUT');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-type').text('Update');
     module.edit(id);
+    _modal__WEBPACK_IMPORTED_MODULE_3__["default"].show('#form-modal');
     return;
   }
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-type').text('Create');
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-status-modal').click(function (event) {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.event-open-status-modal').click(function (event) {
   var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
   var active = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-active');
   var name = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-name');
@@ -30199,7 +30206,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-status-modal').click(fun
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-event-name').text(name);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-status-submit').attr('data-id', id);
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-load-more').click(function () {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.event-load-more').click(function () {
   var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
   module.loadMore(id);
 });
@@ -30701,6 +30708,111 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-save').click(function () {
 
 /***/ }),
 
+/***/ "./resources/js/components/setting.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/setting.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crud_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud-handler */ "./resources/js/components/crud-handler.js");
+/* harmony import */ var _form_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-helper */ "./resources/js/components/form-helper.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal */ "./resources/js/components/modal.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+
+var Setting =
+/*#__PURE__*/
+function () {
+  function Setting() {
+    _classCallCheck(this, Setting);
+
+    this.crudHandler = new _crud_handler__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    this.fullNameFormHelper = new _form_helper__WEBPACK_IMPORTED_MODULE_2__["default"](jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fullname-form'));
+  }
+
+  _createClass(Setting, [{
+    key: "fullNameSubmitForm",
+    value: function fullNameSubmitForm(event, form) {
+      var crudHandler = this.crudHandler.prepareData(form);
+      var formHelper = this.formHelper;
+      var sendButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fullname-form').find('#js-submit');
+      var message = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fullname-form').find('#js-message');
+      formHelper.clearErrors();
+      message.empty();
+      sendButton.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      event.preventDefault();
+      crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status === 200 || response.status === 201) {
+          formHelper.clearForm();
+          message.empty();
+          location.href = window.location.href;
+        } else if (response.status === 422) {
+          sendButton.text('Submit');
+          formHelper.setErrors(responseData.error);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+
+        sendButton.find('i').remove();
+        sendButton.attr('disabled', false).text('Submit');
+      }, form.attr('method'), form.attr('action'));
+    }
+  }, {
+    key: "emailSubmitForm",
+    value: function emailSubmitForm(event, form) {
+      var crudHandler = this.crudHandler.prepareData(form);
+      var formHelper = this.formHelper;
+      var sendButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#email-form').find('#js-submit');
+      var message = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#email-form').find('#js-message');
+      formHelper.clearErrors();
+      message.empty();
+      sendButton.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      event.preventDefault();
+      crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status === 200 || response.status === 201) {
+          formHelper.clearForm();
+          message.empty();
+          location.href = window.location.href;
+        } else if (response.status === 422) {
+          sendButton.text('Submit');
+          formHelper.setErrors(responseData.error);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+
+        sendButton.find('i').remove();
+        sendButton.attr('disabled', false).text('Submit');
+      }, form.attr('method'), form.attr('action'));
+    }
+  }]);
+
+  return Setting;
+}();
+
+var module = new Setting();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fullname-form').submit(function (event) {
+  module.fullNameSubmitForm(event, jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
+});
+
+/***/ }),
+
 /***/ "./resources/js/components/spinner-2.js":
 /*!**********************************************!*\
   !*** ./resources/js/components/spinner-2.js ***!
@@ -30954,6 +31066,131 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API,
   Theme.initialize(this);
 });
 /* harmony default export */ __webpack_exports__["default"] = (Theme);
+
+/***/ }),
+
+/***/ "./resources/js/components/user.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/user.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _crud_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crud-handler */ "./resources/js/components/crud-handler.js");
+/* harmony import */ var _form_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-helper */ "./resources/js/components/form-helper.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal */ "./resources/js/components/modal.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+
+var User =
+/*#__PURE__*/
+function () {
+  function User() {
+    _classCallCheck(this, User);
+
+    this.crudHandler = new _crud_handler__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    this.formHelper = new _form_helper__WEBPACK_IMPORTED_MODULE_2__["default"](jquery__WEBPACK_IMPORTED_MODULE_0___default()('#user-form'));
+  }
+
+  _createClass(User, [{
+    key: "submitForm",
+    value: function submitForm(event, form) {
+      var crudHandler = this.crudHandler.prepareData(form);
+      var formHelper = this.formHelper;
+      var user = new User();
+      var sendButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-submit');
+      var message = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-message');
+      formHelper.clearErrors();
+      message.empty();
+      sendButton.attr('disabled', true).text('').append("<i class=\"fa fa-spinner fa-lg uis-animate uis-animate-infinite uis-animate-rotate\"></i>");
+      event.preventDefault();
+      crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status === 200 || response.status === 201) {
+          formHelper.clearForm();
+          message.empty();
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-users-container').prepend(user.buildCard(responseData));
+          _modal__WEBPACK_IMPORTED_MODULE_3__["default"].hide('#form-modal');
+        } else if (response.status === 422) {
+          sendButton.text('Submit');
+          formHelper.setErrors(responseData.error);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+
+        sendButton.find('i').remove();
+        sendButton.attr('disabled', false).text('Submit');
+      }, form.attr('method'), form.attr('action'));
+    }
+  }, {
+    key: "edit",
+    value: function edit(id) {
+      var formHelper = this.formHelper;
+      this.crudHandler.http(function (response) {
+        var responseData = response.responseJSON;
+
+        if (response.status == 200) {
+          formHelper.clearForm();
+          formHelper.setDataInForm(responseData);
+        } else {
+          console.log('Response Status: ' + response.status);
+        }
+      }, 'GET', "/api/administration/user/".concat(id, "/edit"));
+    }
+  }, {
+    key: "buildCard",
+    value: function buildCard(data) {
+      var list = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<li />');
+      var link = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<a class="uis-link uis-link-reset" />');
+      var card = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div class="uis-card uis-card-default uis-card-body uis-card-hover" />');
+      var cardTitle = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<h3 class="uis-card-title uis-text-primary uis-margin-small" />');
+      cardTitle.text(data.user_profile.first_name + ' ' + data.user_profile.last_name);
+      var cardSubtitle = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<p class="uis-text-meta uis-text-default uis-margin-remove" />');
+      cardSubtitle.text(data.email);
+      card.html(cardTitle);
+      card.append(cardSubtitle);
+      link.html(card);
+      list.html(link);
+      return list;
+    }
+  }]);
+
+  return User;
+}();
+
+var module = new User();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#user-form').submit(function (event) {
+  module.submitForm(event, jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.user-open-modal').click(function (event) {
+  var form = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#user-form');
+  var type = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-type');
+
+  if (type == 'edit') {
+    var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-id');
+    form.attr('action', "/api/administration/user/".concat(id, "/update"));
+    form.attr('method', 'PUT');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-type').text('Update');
+    module.edit(id);
+    _modal__WEBPACK_IMPORTED_MODULE_3__["default"].show('#form-modal');
+    return;
+  }
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-type').text('Create');
+});
 
 /***/ }),
 

@@ -5,27 +5,45 @@
             <p>Change your full name that will be displayed on the application</p>
 
             <div class="uis-margin-medium-top">
-                <form
-                    class="uis-form-stacked">
+                {!! Form::open(['class' => 'uis-form-stacked', 'id' => 'fullname-form', 'action' => 'API\SettingController@updateFullname', 'method' => 'POST']) !!}
 
                     <div class="uis-margin">
                         <label
                             class="uis-form-label"
-                            for="full-name">
-                            Full name
+                            for="first-name">
+                            First name
                         </label>
                         <input
-                            id="full-name"
+                            id="first-name"
                             type="text"
                             class="uis-input"
+                            value="{{auth()->user()->userProfile->first_name}}"
+                            name="first_name"
                             placeholder="ex: John Doe">
+                        <small class="uis-text-danger form-error"></small>
                     </div>
-                </form>
-            </div>
-        </div>
+                    <div class="uis-margin">
+                        <label
+                            class="uis-form-label"
+                            for="last-name">
+                            Last name
+                        </label>
+                        <input
+                            id="last-name"
+                            type="text"
+                            class="uis-input"
+                            value="{{auth()->user()->userProfile->last_name}}"
+                            name="last_name"
+                            placeholder="ex: John Doe">
+                        <small class="uis-text-danger form-error"></small>
+                    </div>
+                    <div id="js-message" class="uis-text-center uis-margin-top"></div>
 
-        <div class="uis-modal-footer uis-text-right">
-            <button class="uis-button uis-button-primary" type="button">Save</button>
+                    <div class="uis-text-right">
+                        {{ Form::button('Submit', ['type' => 'submit', 'id' => 'js-submit', 'class' => 'uis-button uis-button-primary']) }}
+                    </div>
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
 </div>

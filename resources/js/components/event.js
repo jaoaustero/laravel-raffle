@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import CRUDHandler from './crud-handler';
 import FormHelper from './form-helper';
+import Modal from './modal';
 
 class Event
 {
@@ -146,7 +147,7 @@ $('#js-status-submit').click(function (event)
     module.changeActive(id);
 });
 
-$('.js-open-modal').click(function (event)
+$('.event-open-modal').click(function (event)
 {
     const form = $('#event-form');
 
@@ -163,13 +164,15 @@ $('.js-open-modal').click(function (event)
 
         module.edit(id);
 
+        Modal.show('#form-modal');
+
         return;
     }
 
     $('#js-type').text('Create');
 });
 
-$('.js-open-status-modal').click(function (event)
+$('.event-open-status-modal').click(function (event)
 {
     const id = $(this).attr('data-id');
 
@@ -184,7 +187,7 @@ $('.js-open-status-modal').click(function (event)
     $('#js-status-submit').attr('data-id', id);
 });
 
-$('.js-load-more').click(function ()
+$('.event-load-more').click(function ()
 {
     const id = $(this).attr('data-id');
 

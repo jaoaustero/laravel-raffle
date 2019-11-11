@@ -13,7 +13,7 @@ class UserProfile extends Model
 		$class = new self;
 		$class->first_name = $data['first_name'];
 		$class->last_name = $data['last_name'];
-		$class->created_by = Auth::id();
+		$class->created_by = 1;
 		return $class;
 	}
 
@@ -21,7 +21,7 @@ class UserProfile extends Model
 	{
 		return ['first_name' => $data['first_name'],
 				'last_name' => $data['last_name'],
-				'updated_by' => Auth::id()
+				'updated_by' => 1
 			];
     }
     

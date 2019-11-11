@@ -5,6 +5,8 @@ require('./components/auth');
 require('./components/registration');
 require('./components/save-winner.js');
 require('./components/event.js');
+require('./components/user.js');
+require('./components/setting.js');
 require('./components/spinner-2');
 require('./components/get');
 // require('./components/spinner-1');

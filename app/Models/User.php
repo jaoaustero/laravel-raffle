@@ -31,10 +31,10 @@ class User extends Authenticatable
     public static function _store($data)
 	{
         $class = new self;
-		$class->username = $data['username'];
-		$class->password = bcrypt($data['password_confirmation']);
+		$class->email = $data['email'];
+		$class->password = bcrypt('secret');
 		$class->is_enabled = 1;
-		$class->created_by = Auth::id();
+		$class->created_by = 1;
         $class->save();
         
         return $class;
@@ -42,8 +42,8 @@ class User extends Authenticatable
 
 	public static function _update($data)
 	{
-		return ['username' => $data['username'],
-				'updated_by' => Auth::id()
+		return ['email' => $data['email'],
+				'updated_by' =>1
 			];
 	}
 
@@ -55,9 +55,20 @@ class User extends Authenticatable
     public function toArray()
 	{
 		$arr =  ['id' => $this->id,
-				 'username' => $this->username,
+				 'email' => $this->email,
 				 'is_enabled' => $this->is_enabled,
 				 'user_profile' => $this->userProfile
+				];
+
+		return $arr;
+    }
+    
+    public function toArrayEdit()
+	{
+		$arr =  ['id' => $this->id,
+				 'email' => $this->email,
+				 'first_name' => $this->userProfile->first_name,
+				 'last_name' => $this->userProfile->last_name
 				];
 
 		return $arr;
