@@ -17,12 +17,8 @@
                         <table align="center" style="border-collapse: collapse;">
                             <tbody>
                             <tr>
-                                <td style="vertical-align: middle; text-align: left; border-bottom: 1px solid #CCCCCC; padding: 24px 0px 24px 0px">
-									<img src="{{ asset('assets/img/mail/icons/task-tracker-logo.png') }}" height="60px" width="60px" alt="">
-                                </td>
-
-                                <td style="vertical-align: middle; text-align: right; border-bottom: 1px solid #CCCCCC; padding: 24px 0px 24px 0px">
-                                    <img src="{{ asset('assets/img/mail/icons/GMI-emblem.png') }}" height="60px" width="60px"/>
+                                <td colspan="2" style="vertical-align: middle; text-align: right; border-bottom: 1px solid #CCCCCC; padding: 24px 0px 24px 0px">
+                                    <img src="{{ asset('static/logo/GMI-emblem.png') }}" height="60px" width="60px"/>
                                 </td>
                             </tr>
 
@@ -68,7 +64,7 @@
 
                             <tr>
                                 <td colspan="2" style="color: #242424; font-size: 16px; font-weight: 300; margin: 18px 0px 4px 0px; font-weight: 300; font-family: Helvetica, Arial, sans-serif; text-align: center">
-                                    <p>Kindly contact <a href="mailto:support@gigamare.com">support@gigamare.com</a> to claim your prize.</p>
+                                    <p>To claim your prize, message us on our <a href="https://www.facebook.com/GigaMare/">facebook page</a>.</p>
                                 </td>
                             </tr>
 

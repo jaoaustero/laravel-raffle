@@ -47,6 +47,11 @@ class Spinner
      */
     _getChildren()
     {
+        if ($('#players').children().length < 3)
+        {
+            alert('Wag nyo na gamitin to mag jack n poy nalang kayo 🤣');
+            return;
+        }
         // Mark as spinner is NOT done
         this._spinnerDone = false
 

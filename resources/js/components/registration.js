@@ -38,10 +38,7 @@ class Registration
 
                 message.html(`<p style="color: green;">${responseData.message}</p>`);
 
-                setTimeout(function ()
-                {
-                    message.empty();
-                }, 2000);
+                window.location.href = '/thank-you';
             }
             else if (response.status === 422) 
             {
@@ -69,3 +66,21 @@ $('#event-registration-form').submit(function (event)
 {
     module.submitForm(event, $(this));
 });
+
+// Disabled button
+$('.registration-button').attr('disabled', true);
+
+let check = $('#terms-and-condition').is(':checked');
+
+
+$('#terms-and-condition').on('click', function ()
+{
+    if ($(this).is(':checked'))
+    {
+        $('.registration-button').removeAttr('disabled');
+    }
+    else
+    {
+        $('.registration-button').attr('disabled', true);
+    }
+})
