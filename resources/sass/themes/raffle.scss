@@ -66,3 +66,19 @@ $theme-night-base:                                          #1B2A32 !default;
     transition: all 0.15s ease-in-out;
     background-color: $theme-night-primary !important;
 }
+
+.uis-theme-night p,
+.uis-theme-night h1,
+.uis-theme-night h2,
+.uis-theme-night h3,
+.uis-theme-night h4,
+.uis-theme-night h5,
+.uis-theme-night .uis-text-lead
+.uis-theme-night .uis-form-label,
+.uis-theme-night label{
+    color: color(inverse) !important;
+}
+
+.uis-theme-night .uis-text-meta{
+    color: transparentize(color(inverse), 0.4) !important;
+}

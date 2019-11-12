@@ -26,12 +26,13 @@
             </div>
 
             <div>
-                <button
+                <a
                     class="uis-button
                         uis-button-text
-                        uis-button-text-primary">
+                        uis-button-text-primary"
+                    href="/settings/help">
                     Read FAQS
-                </button>
+                </a>
             </div>
         </div>
 

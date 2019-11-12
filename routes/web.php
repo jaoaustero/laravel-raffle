@@ -39,6 +39,8 @@ Route::group(['middleware' => ['auth']], function()
 
     Route::get('users', 'Administration\UserController@index');
 
+    Route::get('settings/help', 'Administration\HelpController@index');
+
     Route::get('settings', 'Administration\SettingsController@index');
 
     Route::post('setting/update-fullname', 'SettingController@updateFullname');

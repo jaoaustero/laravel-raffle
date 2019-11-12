@@ -20,40 +20,21 @@
 
 
 // Components - Advanced multi-part components with lots of possiblities
-@import './components/datepicker';
-@import './components/dropdown';
-@import './components/lightbox';
-@import './components/message';
 @import './components/modal';
-@import './components/nav';
-@import './components/navbar';
-@import './components/offcanvas';
-@import './components/pagination';
-@import './components/slider';
-@import './components/slideshow';
 @import './components/subnav';
-@import './components/switcher';
 @import './components/toast';
-@import './components/upload';
 
 
 
 // Elements - Essentials interface elements that only require a single CSS class
 @import './elements/badge';
 @import './elements/button';
-@import './elements/callout';
 @import './elements/card';
 @import './elements/close';
 @import './elements/container';
 @import './elements/form';
-@import './elements/icon';
-@import './elements/label';
 @import './elements/link';
 @import './elements/list';
-@import './elements/overlay';
-@import './elements/placeholder';
-@import './elements/progress';
-@import './elements/stepper';
 @import './elements/table';
 @import './elements/text';
 
@@ -65,15 +46,22 @@
 @import './grid/width';
 
 
+
 // Layout - Structure of the webpage
 @import './layouts/header';
+
+
 
 // Pages - Specific style for pages
 @import './pages/auth.scss';
 @import './pages/event.scss';
 @import './pages/spinner.scss';
 
+
+
 // Theme - Customize the look and feel
 @import './themes/raffle.scss';
+
+
 
 // Vendor - Plugin custom style

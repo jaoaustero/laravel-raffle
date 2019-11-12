@@ -14,7 +14,7 @@
 
             <div class="uis-spinner">
                 <div class="uis-spinner-body">
-                    <div class="uis-spinner-roller uis-text-center">
+                    <div class="uis-spinner-reel">
                         <ul
                             class="uis-list
                             uis-spinner-list"

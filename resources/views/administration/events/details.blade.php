@@ -7,7 +7,9 @@
 <section
     class="uis-container
         uis-margin-medium-top
-        uis-margin-medium-bottom">
+        uis-margin-medium-bottom
+        uis-animate
+        uis-animate-fade-in">
     
     <div class="uis-grid">
         <div class="uis-width-1-1@s uis-width-1-1@m uis-width-3-5@l uis-width-3-5@xl">

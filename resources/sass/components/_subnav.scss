@@ -48,20 +48,27 @@ $subnav-item-disabled-color:                     color(muted) !default;
 
 
 /*
- * 1. Allow items to wrap into the next line
+ * 1. Don't allow items to wrap into the next line
  * 2. Reset list
  */
 
 .uis-subnav{
     display: flex;
     /* 1 */
-    flex-wrap: wrap;
+    flex-wrap: flex;
     /* 2 */
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
+.uis-subnav-horizontal-scroll{
+    overflow-x: auto;
+}
+
+.uis-subnav-horizontal-scroll::-webkit-scrollbar { 
+    display: none; 
+}
 /*
  * 1. Space is allocated solely based on content dimensions: 0 0 auto
  * 2. Create position context for dropdowns
