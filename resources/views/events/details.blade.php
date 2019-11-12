@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-<div class="uis-event">
+<div>
     <header class="uis-event-header">
         <img
             src="{{ asset('static/logo/GMI-h-inverse.svg') }}"

@@ -7,7 +7,9 @@
 <div
 class="uis-container
     uis-margin-medium-top
-    uis-margin-medium-bottom">
+    uis-margin-medium-bottom
+    uis-animate
+    uis-animate-fade-in">
     
     @include('administration.settings.section.themes')
 

@@ -10,7 +10,7 @@
 
 // Variables
 // ========================================================================
-$auth-background:                                           #0B2E4A !default;
+$auth-background:                                           theme-color(secondary) !default;
 $auth-background-image:                                     url('../../assets/images/svg/background-pattern.svg') !default;
 
 $auth-container-max-width:                                  500px !default;
@@ -21,13 +21,20 @@ $auth-container-padding-horizontal:                         gutter(xsmall) !defa
 /* ==================================================
     Page: Auth
    ================================================== */
+
+/*
+ * 1. Set dimension
+ * 2. Hide all excess content
+ * 3. Style
+ */
 .uis-auth{
     position: relative;
-
+    /* 1 */
     height: 100vh;
     width: 100%;
-
+    /* 2 */
     overflow: hidden;
+    /* 3 */
     background-color: $auth-background;
     background-image: $auth-background-image;
 }
@@ -57,7 +64,7 @@ $auth-container-padding-horizontal:                         gutter(xsmall) !defa
     padding: 0 $auth-container-padding-horizontal;
 }
 
-/* Table landscape and bugger */
+/* Table landscape and bigger */
 @include respond-to(medium){
     .uis-auth-container{
         padding: 0;

@@ -5,9 +5,11 @@
 @include('layouts.header', ['title' => $title])
 
 <section
-class="uis-container
-    uis-margin-medium-top
-    uis-margin-medium-bottom">
+    class="uis-container
+        uis-margin-medium-top
+        uis-margin-medium-bottom
+        uis-animate
+        uis-animate-fade-in">
         <div class="uis-margin-medium">
             <button
                 class="uis-button uis-button-primary js-open-modal"

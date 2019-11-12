@@ -24,6 +24,7 @@ $header-title-color:            color(inverse) !default;
 $header-title-font-size:        font-size(xlarge) !default;
 $header-title-font-size-l:      font-size(xxlarge) !default;
 $header-title-font-weight:      font-weight(regular) !default;
+$header-title-kerning:          1px !default;
 
 
 /* ==================================================
@@ -53,8 +54,6 @@ $header-title-font-weight:      font-weight(regular) !default;
 
 
 
-
-
 /* Title
    ================================================== */
 
@@ -62,11 +61,26 @@ $header-title-font-weight:      font-weight(regular) !default;
     color: $header-title-color;
     font-size: $header-title-font-size;
     font-weight: $header-title-font-weight;
-    letter-spacing: 1px;
+    letter-spacing: $header-title-kerning;
 }
 
 @include respond-to(medium){
     .uis-header-title{
         font-size: $header-title-font-size-l;
+    }
+}
+
+@include respond-to-max(small){
+    .uis-header-title{
+        margin: 0 margin(global);
+    }
+}
+
+/* Container
+   ================================================== */
+@include respond-to-max(small){
+    .uis-header-container{
+        padding-left: 0;
+        padding-right: 0;
     }
 }

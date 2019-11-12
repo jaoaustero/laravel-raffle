@@ -1,12 +1,15 @@
 <header
      class="uis-header">
     <div
-        class="uis-container">
+        class="uis-container
+            uis-header-container">
         <h1 class="uis-header-title uis-margin-small-top">
             {{ $title }}
         </h1>
         
-        <ul class="uis-subnav uis-visible@m">
+        <ul
+            class="uis-subnav
+                    uis-subnav-horizontal-scroll">
             <li
                 class="{{ Request::segment(1) == 'events' ? 'uis-active' : ''}}">
                 <a href="/events">
