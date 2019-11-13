@@ -270,7 +270,6 @@ $text-background-color:                     theme-color(primary) !default;
 
 /* Phone landscape and bigger */
 @include respond-to(small){
-    
     .uis-text-left\@s{
         text-align: left !important;
     }
@@ -282,12 +281,10 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-center\@s{
         text-align: center !important;
     }
-
 }
 
 /* Tablet landscape and bigger */
 @include respond-to(medium){
-    
     .uis-text-left\@m{
         text-align: left !important;
     }
@@ -299,12 +296,10 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-center\@m{
         text-align: center !important;
     }
-    
 }
 
 /* Desktop  and bigger */
 @include respond-to(large){
-    
     .uis-text-left\@l{
         text-align: left !important;
     }
@@ -316,12 +311,10 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-center\@l{
         text-align: center !important;
     }
-    
 }
 
 /* Desktop  and bigger */
 @include respond-to(large){
-    
     .uis-text-left\@xl{
         text-align: left !important;
     }
@@ -333,7 +326,6 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-center\@xl{
         text-align: center !important;
     }
-    
 }
 
 
@@ -433,5 +425,5 @@ td.uis-text-break{
 @include respond-to(medium){
     .uis-text-indent-left{
         margin-left: gutter(medium);
-    }    
+    }
 }

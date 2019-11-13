@@ -18,7 +18,7 @@
  * It create modifiers using `theme-colors` with selectors (hover, active, focus)
  */
 @mixin create-modifiers-with-selectors($type, $component){
-    @if($type == 'background'){
+    @if ($type == 'background'){
         @each $modifier, $style in $theme-color{
             @each $color in $style{
     
@@ -27,7 +27,7 @@
                  */
                 
 
-                @if($modifier != 'default'){
+                @if ($modifier != 'default'){
                     .uis-#{$component}-#{$modifier}{
                         background-color: $color;
                         color: color-yiq($color);
@@ -62,6 +62,7 @@
             }
         }
     }
+
     @else if($type == 'text'){
         @each $modifier, $style in $theme-color{
             @each $color in $style{
@@ -114,18 +115,19 @@
             /* 
              * Outline #{$modifier} 
              */
-            @if($modifier == 'default'){
+            @if ($modifier == 'default'){
                 .uis-#{$component}-outline-#{$modifier}{
                     background-color: transparent;
                     border: 1px solid darken($color, 15%);
                     color: color-yiq($color);
                 }
             }
+
             @else{
                 .uis-#{$component}-outline-#{$modifier}{
                     background-color: transparent;
                     border: 1px solid $color;
-                    color: $color; 
+                    color: $color;
                 }
             }
 
@@ -162,6 +164,7 @@
             @content;
         }
     }
+
     @else{
         @warn "Unknown `#{$value}` in $breakpoint";
     }
@@ -181,6 +184,7 @@
             @content;
         }
     }
+
     @else{
         @warn "Unknown `#{$value}` in $breakpoint-max";
     }
@@ -248,13 +252,14 @@
 
     // create child widths
     @each $classname, $style in $childwidth{
-        @if($classname == 'uis-child-width'){
+        @if ($classname == 'uis-child-width'){
             [class*='#{$classname}'] > *{
                 @each $property, $value in $style{
                     #{$property}:#{$value};
                 }
             }
         }
+
         @else if($classname == 'uis-child-width-expand'){
             .#{$classname} > :not([class*='uis-width']){
                 @each $property, $value in $style{
@@ -262,8 +267,9 @@
                 }
             }
         }
+
         @else{
-            @if($classname != 'uis-child-width-1-1'){
+            @if ($classname != 'uis-child-width-1-1'){
                 .#{$classname} > * {
                     @each $property, $value in $style{
                         #{$property}:#{$value};
@@ -286,14 +292,15 @@
 @mixin generate-child-width($size, $classname, $style){
     $condition: if($classname == 'uis-child-width-expand', ':not([class*='uis-width'])', '*');
 
-    @if($classname != 'uis-child-width'){
-        @if($size == 'small'){
+    @if ($classname != 'uis-child-width'){
+        @if ($size == 'small'){
             .#{$classname + '\\@s'} > #{$condition}{
                 @each $property, $value in $style{
                     #{$property}:#{$value};
                 }
             }
         }
+
         @else if($size == 'medium'){
             .#{$classname + '\\@m'} > #{$condition}{
                 @each $property, $value in $style{
@@ -301,6 +308,7 @@
                 }
             }
         }
+
         @else if($size == 'large'){
             .#{$classname + '\\@l'} > #{$condition}{
                 @each $property, $value in $style{
@@ -308,6 +316,7 @@
                 }
             }
         }
+
         @else if($size == 'xlarge'){
             .#{$classname + '\\@xl'} > #{$condition}{
                 @each $property, $value in $style{
@@ -315,12 +324,11 @@
                 }
             }
         }
+
         @else{
             @warn 'Error';
         }
     }
-    
-    
 }
 
 
@@ -414,8 +422,8 @@
 }
 
 @mixin generate-width($size, $classname, $style){
-
     @if($classname != 'uis-width'){
+
         @if($size == 'small'){
             .#{$classname + '\\@s'}{
                 @each $property, $value in $style{
@@ -423,41 +431,38 @@
                 }
             }
         }
-        @else if($size == 'medium'){
+
+        @else if ($size == 'medium'){
             .#{$classname + '\\@m'}{
                 @each $property, $value in $style{
                     #{$property}:#{$value};
                 }
             }
         }
-        @else if($size == 'large'){
+
+        @else if ($size == 'large'){
             .#{$classname + '\\@l'}{
                 @each $property, $value in $style{
                     #{$property}:#{$value};
                 }
             }
         }
-        @else if($size == 'xlarge'){
+
+        @else if ($size == 'xlarge'){
             .#{$classname + '\\@xl'}{
                 @each $property, $value in $style{
                     #{$property}:#{$value};
                 }
             }
         }
-        @else{
-            @warn 'errpr';
-        }
 
-        
+        @else{
+            @warn 'error';
+        }
     }
 }
 
-
-
-/*
- * Create pixel based widths
- */
-
+/* Create pixel based widths */
 @mixin create-width-pixel-based{
     $pixel-width:(
         small:      150px,
@@ -507,26 +512,30 @@
 }
 
 @mixin generate-column($size, $classname, $count){
-    @if($size == 'small'){
+    @if ($size == 'small'){
         .#{$classname + '\\@s'}{
             column-count: $count;
         }
     }
-    @else if($size == 'medium'){
+
+    @else if ($size == 'medium'){
         .#{$classname + '\\@m'}{
             column-count: $count;
         }
     }
-    @else if($size == 'large'){
+
+    @else if ($size == 'large'){
         .#{$classname + '\\@l'}{
             column-count: $count;
         }
     }
-    @else if($size == 'xlarge'){
+
+    @else if ($size == 'xlarge'){
         .#{$classname + '\\@xl'}{
             column-count: $count;
         }
     }
+
     @else{
         @warn 'Error at generate column';
     }
@@ -565,26 +574,30 @@
 }
 
 @mixin generate-flex-alignment($size, $classname, $value){
-    @if($size == 'small'){
+    @if ($size == 'small'){
         .#{$classname + '\\@s'}{
             justify-content: $value;
         }
     }
-    @else if($size == 'medium'){
+
+    @else if ($size == 'medium'){
         .#{$classname + '\\@m'}{
             justify-content: $value;
         }
     }
-    @else if($size == 'large'){
+
+    @else if ($size == 'large'){
         .#{$classname + '\\@l'}{
             justify-content: $value;
         }
     }
-    @else if($size == 'xlarge'){
+
+    @else if ($size == 'xlarge'){
         .#{$classname + '\\@xl'}{
             justify-content: $value;
         }
     }
+    
     @else{
         @warn 'Error in generate flex alignment';
     }

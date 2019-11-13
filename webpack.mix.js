@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 
+require('laravel-mix-stylelint');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,4 +15,14 @@ const mix = require('laravel-mix');
 
 mix
     .js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .stylelint(
+        {
+            configFile: path.join(__dirname, '.stylelintrc.js'),
+            context: './resources',
+            failOnError: false,
+            files: ['**/*.scss'],
+            quiet: false,
+            syntax: 'scss',
+        }
+    );
