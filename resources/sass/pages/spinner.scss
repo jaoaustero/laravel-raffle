@@ -49,14 +49,18 @@ $spinner-reel-background:                               theme-color(inverse) !de
  */
 .uis-spinner{
     position: relative;
+
     /* 1 */
     height: $spinner-height;
     width: $spinner-width;
     box-sizing: border-box;
+
     /* 2 */
     margin: $spinner-margin-vertical auto;
+
     /* 3 */
     z-index: $spinner-z-index;
+
     /* 4 */
     padding: $spinner-padding;
     background-color: $spinner-background;
@@ -74,13 +78,16 @@ $spinner-reel-background:                               theme-color(inverse) !de
 
 .uis-spinner-wrapper{
     position: relative;
+
     /* 1 */
     height: $spinner-wrapper-height;
     width: 100%;
+
     /* 2 */
     display: flex;
     align-items: center;
     justify-content: center;
+
     /* 3 */
     background-color: $spinner-wrapper-background;
     background-image: $spinner-wrapper-background-image;
@@ -93,6 +100,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 .uis-spinner-wrapper > *{
     /* 1 */
     flex: 1;
+
     /* 2 */
     z-index: 20;
 }
@@ -138,12 +146,15 @@ $spinner-reel-background:                               theme-color(inverse) !de
 
 .uis-spinner-body{
     position: relative;
+
     /* 1 */
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+
     /* 2 */
     padding: $spinner-body-padding;
+
     /* 3 */
     background-color: $spinner-body-background;
     border-radius: $spinner-body-border-radius;
@@ -193,11 +204,14 @@ $spinner-reel-background:                               theme-color(inverse) !de
 
 .uis-spinner-reel{
     position: relative;
+
     /* 1 */
     height: 100%;
     width: 100%;
+
     /* 2 */
     overflow: hidden;
+
     /* 3 */
     text-align: center;
     background-color: $spinner-reel-background;
@@ -272,6 +286,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 .uis-spinner-list > li:first-child{
     /* 1 */
     padding-top: 0px;
+
     /* 2 */
     transform: rotateX(-40deg);
 }
@@ -330,5 +345,3 @@ $spinner-reel-background:                               theme-color(inverse) !de
         filter: blur(0px);
     }
 }
-
-

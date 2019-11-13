@@ -64,9 +64,7 @@
  * Create a single width with breakpoints
  */
 
-/*
- * Create pixel based widths
- */
+/* Create pixel based widths */
 
 /*
  * Create column width modifiers
@@ -165,7 +163,7 @@
 /* Fade
 ================================================== */
 
-/* Fade In*/
+/* Fade In */
 
 .uis-animate-fade-in {
   -webkit-animation-name: fadeIn;
@@ -256,7 +254,7 @@
 /* Slide
 ================================================== */
 
-/* Slide In Down*/
+/* Slide In Down */
 
 .uis-animate-slide-in-down {
   -webkit-animation-name: slideInDown;
@@ -293,7 +291,7 @@
   }
 }
 
-/* Slide In Down*/
+/* Slide In Down */
 
 .uis-animate-slide-in-up {
   -webkit-animation-name: slideInUp;
@@ -326,7 +324,7 @@
   }
 }
 
-/* Slide In Down*/
+/* Slide In Down */
 
 .uis-animate-slide-in-left {
   -webkit-animation-name: slideInLeft;
@@ -363,7 +361,7 @@
   }
 }
 
-/* Slide Out Up*/
+/* Slide Out Up */
 
 .uis-animate-slide-out-up {
   -webkit-animation-name: slideOutUp;
@@ -1424,6 +1422,7 @@ iframe.uis-cover {
    ================================================== */
 
 @font-face {
+  font-display: swap;
   font-family: "Poppins";
   src: url(/fonts/Poppins-Regular.ttf?41e8dead03fb979ecc23b8dfb0fef627);
 }
@@ -4761,7 +4760,7 @@ pre {
   cursor: pointer;
 }
 
-/* Hover + Focus*/
+/* Hover + Focus */
 
 .uis-close:hover,
 .uis-close:active {
@@ -6826,7 +6825,7 @@ td.uis-text-break {
           column-gap: 30px;
 }
 
-/* Desktop and Bigger*/
+/* Desktop and Bigger */
 
 @media screen and (min-width: 1200px) {
   [class*=uis-column-] {
@@ -8156,7 +8155,7 @@ td.uis-text-break {
   padding: 0 15px;
 }
 
-/* Table landscape and bugger */
+/* Table landscape and bigger */
 
 @media screen and (min-width: 960px) {
   .uis-event-container {

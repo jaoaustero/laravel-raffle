@@ -1,10 +1,11 @@
 /*
  * It create modifiers using `theme-colors` with selectors (hover, active, focus)
  */
- @mixin button-d-modifiers-with-selectors(){
+
+@mixin button-d-modifiers-with-selectors(){
     @each $modifier, $style in $theme-color{
         @each $color in $style{
-            @if($modifier != 'default'){
+            @if ($modifier != 'default'){
                 .uis-button-3d-#{$modifier}{
                     position: relative;
                     background-color: $color;
@@ -16,6 +17,7 @@
                     box-shadow: 8px 8px 12px transparentize($color, 0.7);
                 }
             }
+
             @else{
                 .uis-button-3d-#{$modifier}{
                     background-color: $color;
@@ -27,8 +29,6 @@
                     box-shadow: 8px 8px 12px transparentize($color, 0.7);
                 }
             }
-
-            
 
             /* Hover + Focus */
             .uis-button-3d-#{$modifier}:hover,

@@ -86,6 +86,7 @@ $reboot-selection-color:                        color(inverse) !default;
    ================================================== */
 
 @font-face{
+    font-display: swap;
     font-family: 'Poppins';
     src: url('../../assets/fonts/poppins/Poppins-Regular.ttf');
 }
@@ -126,26 +127,26 @@ body{
    ================================================== */
 
 /* width */
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     width: 8px;
     height: 8px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-    background: #E5E5E5; 
+::-webkit-scrollbar-track{
+    background: #E5E5E5;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
     background-color: color(muted); 
     border-radius: 100px;
     transition: all 0.3s ease-in-out;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background-color: color(default); 
+::-webkit-scrollbar-thumb:hover{
+    background-color: color(default);
 }
 
 

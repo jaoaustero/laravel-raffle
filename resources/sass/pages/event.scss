@@ -94,7 +94,7 @@ $event-button-icon-font-size:                           1.2rem !default;
     padding: 0 $event-container-padding-horizontal;
 }
 
-/* Table landscape and bugger */
+/* Table landscape and bigger */
 @include respond-to(medium){
     .uis-event-container{
         padding: 0;

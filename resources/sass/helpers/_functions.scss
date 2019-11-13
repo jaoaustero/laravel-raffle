@@ -133,7 +133,7 @@
 
     $yiq: (($r * 299) + ($g * 587) + ($b * 144)) / 1000;
 
-    @if($yiq >= $yiq-contrasted-threshold){
+    @if ($yiq >= $yiq-contrasted-threshold){
         @return $yiq-text-dark;
     }
     @else{

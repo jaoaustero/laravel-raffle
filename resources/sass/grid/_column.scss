@@ -29,7 +29,7 @@ $column-divider-rule-width:             border(border-width) !default;
     column-gap: $column-gutter;
 }
 
-/* Desktop and Bigger*/
+/* Desktop and Bigger */
 @include respond-to(large){
     [class*='uis-column-']{
         column-gap: $column-gutter-l;
@@ -70,10 +70,7 @@ $column-divider-rule-width:             border(border-width) !default;
 
 /* Width modifiers
    ================================================== */ 
-
 @include create-column-width-modifiers;
-
-
 
 /* Make element span across all columns
  * Does not work in Firefox yet
