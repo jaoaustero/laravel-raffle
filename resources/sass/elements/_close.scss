@@ -25,7 +25,7 @@ $close-color-hover-inverse:     color(inverse) !default;
  * Adopts `li-icon`
  */
 
-.uis-close{
+.uis-close {
     color: $close-color;
     background-color: transparent;
     border: none;
@@ -37,7 +37,7 @@ $close-color-hover-inverse:     color(inverse) !default;
 
 /* Hover + Focus */
 .uis-close:hover,
-.uis-close:active{
+.uis-close:active {
     color: $close-hover-color;
     outline: none;
     text-decoration: none;
@@ -47,13 +47,13 @@ $close-color-hover-inverse:     color(inverse) !default;
 
 /* Style modifiers
    ================================================== */
-.uis-close-inverse{
+.uis-close-inverse {
     color: $close-color-inverse;
 }
 
 /* Hover + Focus */
 .uis-close-inverse:hover,
-.uis-close-inverse:active{
+.uis-close-inverse:active {
     color: $close-color-hover-inverse;
     outline: none;
     cursor: pointer;

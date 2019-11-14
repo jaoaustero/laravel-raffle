@@ -79,9 +79,10 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * 6. Fade-in transition
  */
 
-.uis-modal{
+.uis-modal {
     /* 1 */
     display: none;
+
     /* 2 */
     position: fixed;
     top: 0;
@@ -89,34 +90,38 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
     left: 0;
     right: 0;
     z-index: $modal-z-index;
+
     /* 3 */
     overflow: hidden;
     // overflow-y: auto;
     // -webkit-overflow-scrolling: touch;
+
     /* 4 */
     padding: $modal-padding-vertical $modal-padding-horizontal;
+    
     /* 5 */
     background: $modal-background;
+
     /* 6 */
     opacity: 0;
     transition: opacity 0.15s linear !important;
 }
 
 // Search modal modification
-.uis-modal.uis-search-modal{
+.uis-modal.uis-search-modal {
     background: color(inverse);
 }
 
 /* Phone landscape and bigger */
-@include respond-to(small){
-    .uis-modal{
+@include respond-to(small) {
+    .uis-modal {
         padding: $modal-padding-vertical-s $modal-padding-horizontal-s;
     }
 }
 
 /* Tablet landscape and bigger */
-@include respond-to(medium){
-    .uis-modal{
+@include respond-to(medium) {
+    .uis-modal {
         padding-left: $modal-padding-horizontal-m;
         padding-right: $modal-padding-horizontal-m;
     }
@@ -126,7 +131,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * Open
  */
 
-.uis-modal.uis-open{
+.uis-modal.uis-open {
     opacity: 1;
 }
 
@@ -139,7 +144,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * Prevent scrollbars
  */
 
-.uis-modal-page{
+.uis-modal-page {
     overflow: hidden;
 }
 
@@ -157,18 +162,22 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * 5. Slide-in transition
  */
 
-.uis-modal-dialog{
+.uis-modal-dialog {
     /* 1 */
     position: relative;
+
     /* 2 */
     box-sizing: border-box;
     border-radius: 0.235rem;
     margin: 0 auto;
     width: $modal-dialog-width;
+
     /* 3 */
     max-width: unquote('calc(100% - 0.01px)') !important;
+
     /* 4 */
     background: $modal-dialog-background; 
+    
     /* 5 */
     opacity: 0;
     transform: translateY(-100px);
@@ -176,7 +185,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
     transition-property: opacity, transform;
 }
 
-.uis-modal.uis-search-modal .uis-modal-dialog{
+.uis-modal.uis-search-modal .uis-modal-dialog {
     background: transparent;
 }
 
@@ -184,7 +193,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * Open
  */
 
-.uis-open > .uis-modal-dialog{
+.uis-open > .uis-modal-dialog {
     opacity: 1;
     transform: translateY(0);
 }
@@ -199,7 +208,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * Take the same size as the Container component
  */
 
-.uis-modal-container .uis-modal-dialog{
+.uis-modal-container .uis-modal-dialog {
     width: $modal-container-width;
 }
 
@@ -210,13 +219,13 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  */
 
 /* 1 */
-.uis-modal-full{
+.uis-modal-full {
     padding: 0;
     background: none;
 }
 
 /* 2 */
-.uis-modal-full .uis-modal-dialog{
+.uis-modal-full .uis-modal-dialog {
     margin: 0;
     width: 100%;
     max-width: 100%;
@@ -228,17 +237,17 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
 /* Sections
    ================================================== */
 
-.uis-modal-body{
+.uis-modal-body {
     padding: $modal-body-padding-vertical $modal-body-padding-horizontal;
 }
 
-.uis-modal-header{
+.uis-modal-header {
     padding: $modal-header-padding-vertical $modal-header-padding-horizontal;
     background: $modal-header-background;
     border-bottom: 0.235px solid #E5E5E5;
 }
 
-.uis-modal-footer{
+.uis-modal-footer {
     padding: $modal-footer-padding-vertical $modal-footer-padding-horizontal;
     background: $modal-footer-background;
     border-top: 0.235px solid #E5E5E5;
@@ -250,7 +259,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
 
 .uis-modal-body,
 .uis-modal-header,
-.uis-modal-footer{
+.uis-modal-footer {
     @include clearfix;
 }
 
@@ -260,7 +269,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
 
 .uis-modal-body > :last-child,
 .uis-modal-header > :last-child,
-.uis-modal-footer > :last-child{
+.uis-modal-footer > :last-child {
     margin-bottom: 0;
 }
 
@@ -269,7 +278,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
 /* Title
    ================================================== */
 
-.uis-modal-title{
+.uis-modal-title {
     font-size: $modal-title-font-size;
     line-height: $modal-title-line-height;
     margin: 0;
@@ -281,14 +290,14 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * Adopts `uis-close`
    ================================================== */
 
-[class*='uis-modal-close']{
+[class*='uis-modal-close'] {
     position: absolute;
     top: $modal-close-position;
     right: $modal-close-position;
     padding: $modal-close-padding;
 }
 
-.uis-modal.uis-search-modal [class*='uis-modal-close']{
+.uis-modal.uis-search-modal [class*='uis-modal-close'] {
     position: fixed;
     top: 16px;
     right: 16px;
@@ -300,7 +309,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * Remove margin from adjacent element
  */
 
-[class*='uis-modal-close']:first-child + *{
+[class*='uis-modal-close']:first-child + * {
     margin-top: 0;
 }
 
@@ -309,7 +318,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * 1. Prevent scrollbar on small devices
  */
 
-.uis-modal-close-outside{
+.uis-modal-close-outside {
     top: $modal-close-outside-position;
 
     /* 1 */
@@ -318,13 +327,13 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
     color: $modal-close-outside-color;
 }
 
-.uis-modal-close-outside:hover{
+.uis-modal-close-outside:hover {
     color: $modal-close-outside-hover-color;
 }
 
-@include respond-to(medium){
+@include respond-to(medium) {
     /* 1 */
-    .uis-modal-close-outside{
+    .uis-modal-close-outside {
         right: $modal-close-outside-position;
         transform: translate($modal-close-outside-translate, -($modal-close-outside-translate));
     }
@@ -336,7 +345,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
  * Full
  */
 
-.uis-modal-close-full{
+.uis-modal-close-full {
     top: 0;
     right: 0;
     padding: 20px;

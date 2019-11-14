@@ -9,11 +9,11 @@
    Component: Flex
  ========================================================================== */
 
-.uis-flex{
+.uis-flex {
     display: flex;
 }
 
-.uis-flex-inline{
+.uis-flex-inline {
     display: inline-flex;
 }
 
@@ -24,7 +24,7 @@
 .uis-flex::before,
 .uis-flex::after,
 .uis-flex-inline::before,
-.uis-flex-inline::after{
+.uis-flex-inline::after {
     display: none;
 }
 
@@ -48,19 +48,19 @@
 
 // Default
 
-.uis-flex-stretch{
+.uis-flex-stretch {
     align-items: stretch;
 }
 
-.uis-flex-top{
+.uis-flex-top {
     align-items: flex-start;
 }
 
-.uis-flex-middle{
+.uis-flex-middle {
     align-items: center;
 }
 
-.uis-flex-bottom{
+.uis-flex-bottom {
     align-items: flex-end;
 }
 
@@ -69,19 +69,19 @@
 /* Direction
  ========================================================================== */
 
-.uis-flex-row{
+.uis-flex-row {
     flex-direction: row;
 }
 
-.uis-flex-row-reverse{
+.uis-flex-row-reverse {
     flex-direction: row-reverse;
 }
 
-.uis-flex-column{
+.uis-flex-column {
     flex-direction: column;
 }
 
-.uis-flex-column-reverse{
+.uis-flex-column-reverse {
     flex-direction: column-reverse;
 }
 
@@ -91,40 +91,40 @@
  ========================================================================== */
 
 // Default
-.uis-flex-nowrap{
+.uis-flex-nowrap {
     flex-wrap: nowrap;
 }
 
-.uis-flex-wrap{
+.uis-flex-wrap {
     flex-wrap: wrap;
 }
 
-.uis-flex-wrap-reverse{
+.uis-flex-wrap-reverse {
     flex-wrap: wrap-reverse;
 }
 
 // Default
-.uis-flex-wrap-stretch{ 
+.uis-flex-wrap-stretch {
     align-content: stretch;
 }
 
-.uis-flex-wrap-top{ 
+.uis-flex-wrap-top {
     align-content: flex-start;
 }
 
-.uis-flex-wrap-middle{ 
+.uis-flex-wrap-middle {
     align-content: center;
 }
 
-.uis-flex-wrap-bottom{ 
+.uis-flex-wrap-bottom {
     align-content: flex-end;
 }
 
-.uis-flex-wrap-between{
+.uis-flex-wrap-between {
     align-content: space-between;
 }
 
-.uis-flex-wrap-around{
+.uis-flex-wrap-around {
     align-content: space-around;
 }
 
@@ -133,50 +133,50 @@
 /* Item Ordering
  ========================================================================== */
 
-.uis-flex-first{
+.uis-flex-first {
     order: -1;
 }
 
-.uis-flex-last{
+.uis-flex-last {
     order: 99;
 }
 
-@include respond-to(small){
-    .uis-flex-first\@s{
+@include respond-to(small) {
+    .uis-flex-first\@s {
         order: -1;
     }
     
-    .uis-flex-last\@s{
+    .uis-flex-last\@s {
         order: 99;
     }
 }
 
-@include respond-to(medium){
-    .uis-flex-first\@m{
+@include respond-to(medium) {
+    .uis-flex-first\@m {
         order: -1;
     }
     
-    .uis-flex-last\@m{
+    .uis-flex-last\@m {
         order: 99;
     }
 }
 
-@include respond-to(large){
-    .uis-flex-first\@l{
+@include respond-to(large) {
+    .uis-flex-first\@l {
         order: -1;
     }
     
-    .uis-flex-last\@l{
+    .uis-flex-last\@l {
         order: 99;
     }
 }
 
-@include respond-to(xlarge){
-    .uis-flex-first\@xl{
+@include respond-to(xlarge) {
+    .uis-flex-first\@xl {
         order: -1;
     }
     
-    .uis-flex-last\@xl{
+    .uis-flex-last\@xl {
         order: 99;
     }
 }
@@ -196,7 +196,7 @@
  * Content dimensions
  */
 
-.uis-flex-none{
+.uis-flex-none {
     flex: none;
 }
 
@@ -205,7 +205,7 @@
  * Space is allocated considering content
  */
 
-.uis-flex-auto{
+.uis-flex-auto {
     flex: auto;
 }
 
@@ -214,6 +214,6 @@
  * Space is allocated solely based on flex
  */
 
-.uis-flex-1{
+.uis-flex-1 {
     flex: 1;
 }

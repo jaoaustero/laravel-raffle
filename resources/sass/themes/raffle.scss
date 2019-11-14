@@ -26,12 +26,12 @@ $theme-night-base:                                          #1B2A32 !default;
     Theme: Gloomy
    ================================================== */   
 
-.uis-theme-gloomy{
+.uis-theme-gloomy {
     transition: all 0.15s ease-in-out;
     background-color: $theme-gloomy-base !important;
 }
 
-.uis-theme-gloomy .uis-header{
+.uis-theme-gloomy .uis-header {
     transition: all 0.15s ease-in-out;
     background-color: $theme-gloomy-primary !important;
 }
@@ -41,12 +41,12 @@ $theme-night-base:                                          #1B2A32 !default;
     Theme: Soft
    ================================================== */   
 
-.uis-theme-soft{
+.uis-theme-soft {
     transition: all 0.15s ease-in-out;
     background-color: $theme-soft-base !important;
 }
 
-.uis-theme-soft .uis-header{
+.uis-theme-soft .uis-header {
     transition: all 0.15s ease-in-out;
     background-color: $theme-soft-primary !important;
 }
@@ -56,12 +56,12 @@ $theme-night-base:                                          #1B2A32 !default;
     Theme: Nght
    ================================================== */   
 
-.uis-theme-night{
+.uis-theme-night {
     transition: all 0.15s ease-in-out;
     background-color: $theme-night-base !important;
 }
 
-.uis-theme-night .uis-header{
+.uis-theme-night .uis-header {
     transition: all 0.15s ease-in-out;
     background-color: $theme-night-primary !important;
 }
@@ -74,10 +74,10 @@ $theme-night-base:                                          #1B2A32 !default;
 .uis-theme-night h5,
 .uis-theme-night .uis-text-lead
 .uis-theme-night .uis-form-label,
-.uis-theme-night label{
+.uis-theme-night label {
     color: color(inverse) !important;
 }
 
-.uis-theme-night .uis-text-meta{
+.uis-theme-night .uis-text-meta {
     color: transparentize(color(inverse), 0.4) !important;
 }

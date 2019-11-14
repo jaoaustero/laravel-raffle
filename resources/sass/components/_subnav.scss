@@ -25,7 +25,7 @@ $subnav-item-active-color:                       color(inverse) !default;
 $subnav-divider-margin-horizontal:               $subnav-margin-horizontal !default;
 $subnav-divider-border-height:                   1.5em !default;
 $subnav-divider-border-width:                    border(border-width) !default;
-$subnav-divider-border:                          border(border-color)!default;
+$subnav-divider-border:                          border(border-color) !default;
 
 $subnav-pill-item-padding-vertical:              margin(small) !default;
 $subnav-pill-item-padding-horizontal:            gutter(small) !default;
@@ -52,31 +52,34 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * 2. Reset list
  */
 
-.uis-subnav{
+.uis-subnav {
     display: flex;
+
     /* 1 */
     flex-wrap: flex;
+
     /* 2 */
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.uis-subnav-horizontal-scroll{
+.uis-subnav-horizontal-scroll {
     overflow-x: auto;
 }
 
-.uis-subnav-horizontal-scroll::-webkit-scrollbar { 
+.uis-subnav-horizontal-scroll::-webkit-scrollbar {
     display: none;
 }
+
 /*
  * 1. Space is allocated solely based on content dimensions: 0 0 auto
  * 2. Create position context for dropdowns
  */
-
-.uis-subnav > *{
+.uis-subnav > * {
     /* 1 */
     flex: none;
+
     /* 2 */
     position: relative;
 }
@@ -92,7 +95,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * 2. Style
  */
 
-.uis-subnav > li{
+.uis-subnav > li {
     height: control-height(large) + 10px;
     min-width: 60px;
     box-sizing: border-box;
@@ -104,32 +107,33 @@ $subnav-item-disabled-color:                     color(muted) !default;
     justify-content: flex-end;
 }
 
-.uis-subnav > * > :first-child{
+.uis-subnav > * > :first-child {
     /* 1 */
     display: block;
+
     /* 2 */
     color: $subnav-item-color;
     font-weight: 500;
 }
 
-.uis-subnav > li > a{
+.uis-subnav > li > a {
     transition: color 0.15s linear;
 }
 
 /* Hover + Focus */
 .uis-subnav > li > a:hover,
-.uis-subnav > li > a:focus{
+.uis-subnav > li > a:focus {
     color: $subnav-item-hover-color;
     text-decoration: $subnav-item-hover-text-decoration;
     outline: none;
 }
 
-.uis-subnav > li.uis-active{
+.uis-subnav > li.uis-active {
     background: linear-gradient(to bottom, transparent, transparentize(theme-color(primary), 0.6));
 }
 
 /* Active */
-.uis-subnav > .uis-active > a{
+.uis-subnav > .uis-active > a {
     color: $subnav-item-active-color;
 }
 
@@ -141,7 +145,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * 1. Align items and divider vertically
  */
 
-.uis-subnav-divider > *{
+.uis-subnav-divider > * {
     /* 1 */
     display: flex;
     align-items: center;
@@ -152,7 +156,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * `nth-child` makes it also work without JS if it's only one row
  */
 
-.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column)::before{
+.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column)::before {
     content: "";
     height: $subnav-divider-border-height;
     // margin-left: ($subnav-divider-margin-horizontal - $subnav-margin-horizontal);
@@ -165,7 +169,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
 /* Plain
  ========================================================================== */
 
-.uis-subnav-default{
+.uis-subnav-default {
     border-bottom: 1px solid #E5E5E5;
 }
 
@@ -173,23 +177,23 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * Items
  */
 
-.uis-subnav-default > * > a{
+.uis-subnav-default > * > a {
     padding: 0px 16px 12px 16px;
 }
 
-.uis-subnav-default > .uis-active{
+.uis-subnav-default > .uis-active {
     color: color(primary);
     border-bottom: 1px solid color(primary);
 }
 
 
-.uis-subnav-default > *:hover > a{
+.uis-subnav-default > *:hover > a {
     color: color(primary);
 }
 
 /* Direction Modifier
  ========================================================================== */
-.uis-subnav-column{
+.uis-subnav-column {
     flex-direction: column;
 }
 
@@ -198,7 +202,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * The same for all style modifiers
  ========================================================================== */
 
-.uis-subnav > .uis-disabled > a{
+.uis-subnav > .uis-disabled > a {
     color: $subnav-item-disabled-color;
 }
 
@@ -207,7 +211,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
 /* Default Full
  ========================================================================== */
 
-.uis-subnav-default.uis-subnav-default-full{
+.uis-subnav-default.uis-subnav-default-full {
     border-bottom: 0px;
 }
 
@@ -215,35 +219,35 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * Items
  */
 
-.uis-subnav-default.uis-subnav-default-full > *{
+.uis-subnav-default.uis-subnav-default-full > * {
     flex: 1;
     position: relative;
     margin-right: 24px;
 }
 
-.uis-subnav-default.uis-subnav-default-full > *:last-child{
+.uis-subnav-default.uis-subnav-default-full > *:last-child {
     margin-right: 0px;
 }
 
-.uis-subnav-default.uis-subnav-default-full > * > a{
+.uis-subnav-default.uis-subnav-default-full > * > a {
     padding: 0px 16px 12px 16px;
 }
 
-.uis-subnav-default.uis-subnav-default-full > .uis-active{
+.uis-subnav-default.uis-subnav-default-full > .uis-active {
     color: color(primary);
     border-bottom: 1px solid color(primary);
 }
 
-.uis-subnav-default.uis-subnav-default-full > :not(.uis-active){
+.uis-subnav-default.uis-subnav-default-full > :not(.uis-active) {
     color: color(default);
     border-bottom: 1px solid color(muted);
 }
 
 
-.uis-subnav-default.uis-subnav-default-full > *:hover > a{
+.uis-subnav-default.uis-subnav-default-full > *:hover > a {
     color: color(primary);
 }
 
-.uis-subnav-default.uis-subnav-default-full > *:hover{
+.uis-subnav-default.uis-subnav-default-full > *:hover {
     border-color: color(primary);
 }

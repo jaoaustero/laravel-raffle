@@ -20,9 +20,10 @@
  *       is absolute positioned or if the container has a height
  */
 
-.uis-cover{
+.uis-cover {
     /* 1 */
     max-width: none;
+
     /* 2 */
     position: absolute;
     left: 50%;
@@ -30,7 +31,7 @@
     transform: translate(-50%, -50%);
 }
 
-iframe.uis-cover{
+iframe.uis-cover {
     pointer-events: none;
 }
 
@@ -39,9 +40,10 @@ iframe.uis-cover{
 /* Cover container
    ================================================== */
    
-.uis-cover-container{
+.uis-cover-container {
     /* 1 */
     overflow: hidden;
+    
     /* 2 */
     position: relative;
 }

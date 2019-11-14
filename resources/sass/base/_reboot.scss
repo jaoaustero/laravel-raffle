@@ -28,7 +28,7 @@ $reboot-code-font-size:                         font-size(small) !default;
 $reboot-code-font-family:                       Open Sans;
 $reboot-code-color:                             theme-color(danger) !default;
 $reboot-em-color:                               theme-color(danger) !default;
-$reboot-ins-background:                         #ffd !default;
+$reboot-ins-background:                         #FFFFDD !default;
 $reboot-ins-color:                              color(default) !default;
 $reboot-mark-background:                        rgba(109, 55, 218, 0.1) !default;
 $reboot-mark-color:                             color(primary) !default;
@@ -76,7 +76,7 @@ $reboot-pre-line-height:                        1.5 !default;
 $reboot-pre-font-family:                        $reboot-code-font-family !default;
 $reboot-pre-color:                              text-color($default) !default;
 
-$reboot-selection-background:                   #39F !default;
+$reboot-selection-background:                   #3399FF !default;
 $reboot-selection-color:                        color(inverse) !default;
 
 
@@ -85,7 +85,7 @@ $reboot-selection-color:                        color(inverse) !default;
     Component: Reboot
    ================================================== */
 
-@font-face{
+@font-face {
     font-display: swap;
     font-family: 'Poppins';
     src: url('../../assets/fonts/poppins/Poppins-Regular.ttf');
@@ -98,18 +98,19 @@ $reboot-selection-color:                        color(inverse) !default;
  * 3. Style
  */
 
-html{
+html {
     /* 1 */
     font-family: $reboot-body-font-family;
     font-size: $reboot-body-font-size;
     font-weight: $reboot-body-font-weight;
     line-height: $reboot-body-line-height;
+
     /* 2 */
     -webkit-text-size-adjust: 100%;
+
     /* 3 */
     background: $reboot-body-background;
     color: $reboot-body-color;
-
     scroll-behavior: smooth;
 }
 
@@ -117,7 +118,7 @@ html{
  * Remove the margin in all browsers
  */
 
-body{
+body {
     margin: 0;
 }
 
@@ -127,25 +128,25 @@ body{
    ================================================== */
 
 /* width */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
 /* Track */
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background: #E5E5E5;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: color(muted); 
     border-radius: 100px;
     transition: all 0.3s ease-in-out;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
     background-color: color(default);
 }
 
@@ -158,7 +159,7 @@ body{
  * Remove gap in links underline in iOS 8+ and Safari 8+.
  */
 
-a{
+a {
     -webkit-text-decoration-skip: objects;
 }
 
@@ -167,7 +168,7 @@ a{
  */
 
 a:active,
-a:hover{
+a:hover {
     outline: none;
 }
 
@@ -176,14 +177,14 @@ a:hover{
  */
 
 a,
-.uis-link{
+.uis-link {
     color: $reboot-link-color;
     text-decoration: $reboot-link-text-decoration;
     cursor: pointer;
 }
 
 a:hover,
-.uis-link:hover{
+.uis-link:hover {
     color: $reboot-link-hover-color;
     text-decoration: $reboot-link-hover-text-decoration;
 }
@@ -198,12 +199,12 @@ a:hover,
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
-abbr[title]{
+abbr[title] {
     /* 1 */
     border-bottom: none;
+
     /* 2 */
     text-decoration: underline;
-    text-decoration: underline dotted;
 }
 
 /*
@@ -211,7 +212,7 @@ abbr[title]{
  */
 
 b,
-strong{
+strong {
     font-weight: $reboot-strong-font-weight;
 }
 
@@ -223,11 +224,13 @@ strong{
 
 ::not(pre) > code,
 ::not(pre) > kbd,
-::not(pre) > samp{
+::not(pre) > samp {
     /* 1 */
     font-family: $reboot-code-font-family;
+
     /* 2 */
     font-size: $reboot-code-font-size;
+
     /* 3 */
     color: $reboot-code-color;
     white-space: nowrap;
@@ -238,7 +241,7 @@ strong{
  * Emphasize
  */
 
-em{
+em {
     color: $reboot-em-color;
 }
 
@@ -246,7 +249,7 @@ em{
  * Insert
  */
 
-ins{
+ins {
     background: $reboot-ins-background;
     color: $reboot-ins-color;
     text-decoration: none;
@@ -256,7 +259,7 @@ ins{
  * Mark
  */
 
-mark{
+mark {
     background: $reboot-mark-background;
     color: $reboot-mark-color;
 }
@@ -265,7 +268,7 @@ mark{
  * Quote
  */
 
-q{
+q {
     font-style: $reboot-quote-font-style;
 }
 
@@ -273,7 +276,7 @@ q{
  * Add the correct font size in all browsers
  */
 
-small{
+small {
     font-size: $reboot-small-font-size;
 }
 
@@ -282,18 +285,18 @@ small{
  */
 
 sub,
-sup{
+sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
 }
 
-sup{
+sup {
     top: -0.5em;
 }
 
-sub{
+sub {
     bottom: 0.25em;
 }
 
@@ -310,7 +313,7 @@ canvas,
 iframe,
 img,
 svg,
-video{
+video {
     vertical-align: middle;
 }
 
@@ -324,11 +327,13 @@ video{
 audio,
 canvas,
 img,
-video{
+video {
     /* 1 */
     max-width: 100%;
+
     /* 2 */
     height: auto;
+
     /* 3 */
     box-sizing: border-box;
 }
@@ -337,16 +342,16 @@ video{
  * Hide overflow in IE.
  */
 
-svg:not(:root){
+svg:not(:root) {
     overflow: hidden;
 }
 
 /*
  * Hide `allt` for lazy load images
- * Selector for background while loading img[data-src*='.jpg'][src*='data:image'] { background: grey; }
+ * Selector for background while loading img[data-src*='.jpg'][src*='data:image']  { background: grey; }
  */
 
-img:not([src]){
+img:not([src]) {
     visibility: hidden;
 }
 
@@ -366,7 +371,7 @@ dl,
 pre,
 address,
 fieldset,
-figure{
+figure {
     margin: 0 0 $reboot-margin-vertical 0;
 }
 
@@ -378,7 +383,7 @@ figure{
 * + pre,
 * + address,
 * + fieldset,
-* + figure{
+* + figure {
     margin-top: $reboot-margin-vertical;
 }
 
@@ -391,7 +396,7 @@ figure{
 * + h3, * + .uis-h3,
 * + h4, * + .uis-h4,
 * + h5, * + .uis-h5,
-* + h6, * + .uis-h6{
+* + h6, * + .uis-h6 {
     margin-top: $reboot-heading-margin-top;
 }
 
@@ -399,46 +404,46 @@ figure{
  * Sizes
  */
 
-h1, .uis-h1{
+h1, .uis-h1 {
     font-size: $reboot-h1-font-size;
     line-height: $reboot-h1-line-height;
 }
 
-h2, .uis-h2{
+h2, .uis-h2 {
     font-size: $reboot-h2-font-size;
     line-height: $reboot-h2-line-height;
     font-weight: 400;
 }
 
-h3, .uis-h3{
+h3, .uis-h3 {
     font-size: $reboot-h3-font-size;
     line-height: $reboot-h3-line-height;
     font-weight: 400;
 }
 
-h4, .uis-h4{
+h4, .uis-h4 {
     font-size: $reboot-h4-font-size;
     line-height: $reboot-h4-line-height;
 }
 
-h5, .uis-h5{
+h5, .uis-h5 {
     font-size: $reboot-h5-font-size;
     line-height: $reboot-h5-line-height;
 }
 
-h6, .uis-h6{
+h6, .uis-h6 {
     font-size: $reboot-h6-font-size;
     line-height: $reboot-h6-line-height;
 }
     
 /* Tablet landscape and bigger */
-@media (min-width: map-get($breakpoint, medium)){
+@media (min-width: map-get($breakpoint, medium)) {
 
-    h1, .uis-h1{
+    h1, .uis-h1 {
         font-size: $reboot-h1-font-size-m;
     }
 
-    h2, .uis-h2{
+    h2, .uis-h2 {
         font-size: $reboot-h2-font-size-m;
     }
 }
@@ -449,7 +454,7 @@ h6, .uis-h6{
    ================================================== */
 
 ul,
-ol{
+ol {
     padding-left: $reboot-list-padding-left;
 }
 
@@ -460,7 +465,7 @@ ol{
 ul > li > ul,
 ul > li > ol,
 ol > li > ol,
-ol > li > ul{
+ol > li > ul {
     margin-top: 0;
 }
 
@@ -469,11 +474,11 @@ ol > li > ul{
 /* Description lists
    ================================================== */
 
-dt{
-    font-weight: bold;
+dt {
+    font-weight: 600;
 }
 
-dd{
+dd {
     margin-left: 0;
 }
 
@@ -489,14 +494,17 @@ dd{
  * 4. Styles
  */
 
-hr, .uis-hr{
+hr, .uis-hr {
     /* 1 */
     box-sizing: content-box;
     height: 0;
+
     /* 2 */
     overflow: visible;
+
     /* 3 */
     text-align: inherit;
+
     /* 4 */
     margin: 0 0 $reboot-hr-margin-vertical 0;
     border: 0;
@@ -505,7 +513,7 @@ hr, .uis-hr{
 
 /* Add margin if adjacent element */
 * + hr,
-* + .uis-hr{
+* + .uis-hr {
     margin-top: $reboot-hr-margin-vertical;
 }
 
@@ -514,7 +522,7 @@ hr, .uis-hr{
 /* Horizontal rules
    ================================================== */
 
-address{
+address {
     font-size: normal;
 }
 
@@ -523,7 +531,7 @@ address{
 /* Blockquotes
    ================================================== */
 
-blockquote{
+blockquote {
     margin: 0 0 $reboot-blockquote-margin-vertical 0;
     font-size: $reboot-blockquote-font-size;
     line-height: $reboot-blockquote-line-height;
@@ -531,7 +539,7 @@ blockquote{
 }
 
 /* Add margin if adjacent element */
-* + blockquote{
+* + blockquote {
     margin-top: $reboot-blockquote-margin-vertical;
 }
 
@@ -539,11 +547,11 @@ blockquote{
  * Content
  */
 
-blockquote p:last-of-type{
+blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
-blockquote footer{
+blockquote footer {
     margin-top: $reboot-blockquote-footer-margin-top;
     font-size: $reboot-blockquote-footer-font-size;
     line-height: $reboot-blockquote-footer-line-height;
@@ -558,16 +566,17 @@ blockquote footer{
  * 1. Contain overflow in all browsers.
  */
 
-pre{
+pre {
     font: $reboot-pre-font-size unquote("/") $reboot-pre-line-height $reboot-pre-font-family;
     color: $reboot-pre-color;
     -moz-tab-size: 4;
     tab-size: 4;
+    
     /* 1 */
     overflow: auto;
 }
 
-pre code{
+pre code {
     font-family: $reboot-pre-font-family;
 }
 
@@ -576,13 +585,13 @@ pre code{
 /* Selection pseudo-element
    ================================================== */
 
-::moz-selection{
+::moz-selection {
     background: $reboot-selection-background;
     color: $reboot-selection-color;
     text-shadow: none;
 }
 
-::selection{
+::selection {
     background: $reboot-selection-background;
     color: $reboot-selection-color;
     text-shadow: none;
@@ -599,7 +608,7 @@ pre code{
  */
 
 details,
-main{
+main {
     display: block;
 }
 
@@ -607,7 +616,7 @@ main{
  * Add the correct display in all browsers.
  */
 
-summary{
+summary {
     display: list-item;
 }
 
@@ -615,7 +624,7 @@ summary{
  * Add the correct display in IE.
  */
 
-template{
+template {
     display: none;
 }
 
@@ -623,13 +632,12 @@ template{
  * Iframe
  */
 
-iframe{
+iframe {
     border: 0;
 }
 
-pre{
-    color:darkgreen;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+pre {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     padding: 0px;
     margin: 0px;
     font-size: 1rem;

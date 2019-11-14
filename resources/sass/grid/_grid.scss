@@ -55,8 +55,9 @@ $grid-divider-border:                   border(border-color) !default;
  * 2. Reset list
  */
 
-.uis-grid{
+.uis-grid {
     display: flex;
+
     /* 1 */
     flex-wrap: wrap;
     margin: 0;
@@ -70,7 +71,7 @@ $grid-divider-border:                   border(border-color) !default;
  * Reset margin for e.g. paragraphs
  */
 
-.uis-grid > *{
+.uis-grid > * {
     margin: 0;
 }
 
@@ -78,7 +79,7 @@ $grid-divider-border:                   border(border-color) !default;
  * Remove margin from the last-child
  */
 
-.uis-margin > * > :last-child{
+.uis-margin > * > :last-child {
     margin-bottom: 0;
 }
 
@@ -92,34 +93,34 @@ $grid-divider-border:                   border(border-color) !default;
  */
 
 /* Horizontal */
-.uis-grid{
+.uis-grid {
     margin-left: (-$grid-gutter-horizontal);
 }
 
-.uis-grid > *{
+.uis-grid > * {
     padding-left: $grid-gutter-horizontal;
 }
 
 /* Vertical */
 .uis-grid + .uis-grid,
 .uis-grid > .uis-grid-margin,
-* + .uis-grid-margin{
+* + .uis-grid-margin {
     margin-top: $grid-gutter-vertical;
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
-    .uis-grid{
-        margin-left: (-$grid-gutter-horizontal-l)
+@include respond-to(large) {
+    .uis-grid {
+        margin-left: (-$grid-gutter-horizontal-l);
     }
 
-    .uis-grid > *{
-        padding-left: $grid-gutter-horizontal-l
+    .uis-grid > * {
+        padding-left: $grid-gutter-horizontal-l;
     }
 
     .uis-grid + .uis-grid,
     .uis-grid > .uis-grid-margin,
-    * + .uis-grid-margin{
+    * + .uis-grid-margin {
         margin-top: $grid-gutter-vertical-l;
     }
 }
@@ -131,18 +132,18 @@ $grid-divider-border:                   border(border-color) !default;
  */
 
 /* Horizontal */
-.uis-grid-small{
+.uis-grid-small {
     margin-left: (-$grid-small-gutter-horizontal);
 }
 
-.uis-grid-small > *{
+.uis-grid-small > * {
     padding-left: $grid-small-gutter-horizontal;
 }
 
 /* Vertical */
 .uis-grid + .uis-grid-small,
 .uis-grid-small > .uis-grid-margin,
-* + .uis-grid-margin-small{
+* + .uis-grid-margin-small {
     margin-top: $grid-small-gutter-vertical;
 }
 
@@ -153,18 +154,18 @@ $grid-divider-border:                   border(border-color) !default;
  */
 
 /* Horizontal */
-.uis-grid-medium{
+.uis-grid-medium {
     margin-left: (-$grid-medium-gutter-horizontal);
 }
 
-.uis-grid-medium > *{
+.uis-grid-medium > * {
     padding-left: $grid-medium-gutter-horizontal;
 }
 
 /* Vertical */
 .uis-grid + .uis-grid-medium,
 .uis-grid-medium > .uis-grid-margin,
-* + .uis-grid-margin-medium{
+* + .uis-grid-margin-medium {
     margin-top: $grid-medium-gutter-vertical;
 }
 
@@ -175,34 +176,34 @@ $grid-divider-border:                   border(border-color) !default;
  */
 
 /* Horizontal */
-.uis-grid-large{
+.uis-grid-large {
     margin-left: (-$grid-large-gutter-horizontal);
 }
 
-.uis-grid-large > *{
+.uis-grid-large > * {
     padding-left: $grid-large-gutter-horizontal;
 }
 
 /* Vertical */
 .uis-grid + .uis-grid-large,
 .uis-grid-large > .uis-grid-margin,
-* + .uis-grid-margin-large{
+* + .uis-grid-margin-large {
     margin-top: $grid-large-gutter-vertical;
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
-    .uis-grid-large{
-        margin-left: (-$grid-large-gutter-horizontal-l)
+@include respond-to(large) {
+    .uis-grid-large {
+        margin-left: (-$grid-large-gutter-horizontal-l);
     }
 
-    .uis-grid-large > *{
-        padding-left: $grid-large-gutter-horizontal-l
+    .uis-grid-large > * {
+        padding-left: $grid-large-gutter-horizontal-l;
     }
 
     .uis-grid + .uis-grid-large,
     .uis-grid-large > .uis-grid-margin,
-    * + .uis-grid-margin-large{
+    * + .uis-grid-margin-large {
         margin-top: $grid-large-gutter-vertical-l;
     }
 }
@@ -214,17 +215,17 @@ $grid-divider-border:                   border(border-color) !default;
  */
 
 /* Horizontal */
-.uis-grid-collapse{
+.uis-grid-collapse {
     margin-left: 0;
 }
 
-.uis-grid-collapse > *{
+.uis-grid-collapse > * {
     padding-left: 0;
 }
 
 /* Vertical */
 .uis-grid + .uis-grid-collapse,
-.uis-grid-collapse > .uis-grid-margin{
+.uis-grid-collapse > .uis-grid-margin {
     margin-top: 0;
 }
 
@@ -233,11 +234,11 @@ $grid-divider-border:                   border(border-color) !default;
 /* Divider
    ================================================== */
 
-.uis-grid-divider{
+.uis-grid-divider {
     position: relative;
 }
 
-.uis-grid-divider > :not(.uis-first-column)::before{
+.uis-grid-divider > :not(.uis-first-column)::before {
     content: "";
     position: absolute;
     top: 0;
@@ -245,7 +246,7 @@ $grid-divider-border:                   border(border-color) !default;
     border-left: $grid-divider-border-width solid $grid-divider-border;
 }
 
-.uis-grid-divider .uis-grid-stock > .uis-grid-margin::before{
+.uis-grid-divider .uis-grid-stock > .uis-grid-margin::before {
     content: "";
     position: absolute;
     left: 0;
@@ -258,49 +259,49 @@ $grid-divider-border:                   border(border-color) !default;
  */
  
 /* Horizontal */
-.uis-grid-divider{
+.uis-grid-divider {
     margin-left: (-$grid-gutter-horizontal * 2);
 }
 
-.uis-grid-divider > *{
+.uis-grid-divider > * {
     padding-left: $grid-gutter-horizontal * 2;
 }
 
-.uis-grid-divider > :not(.uis-first-column)::before{
+.uis-grid-divider > :not(.uis-first-column)::before {
     left: $grid-gutter-horizontal;
 }
 
 /* Vertical */
-.uis-grid-divider .uis-grid-stack > .uis-grid-margin{
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin {
     margin-top: ($grid-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-stack > .uis-grid-margin::before{
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin::before {
     top: (-$grid-gutter-vertical);
     left: ($grid-gutter-horizontal * 2);
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
+@include respond-to(large) {
     /* Horizontal */
-    .uis-grid-divider{
+    .uis-grid-divider {
         margin-left: (-$grid-gutter-horizontal-l * 2);
     }
 
-    .uis-grid-divider > *{
+    .uis-grid-divider > * {
         padding-left: $grid-gutter-horizontal-l * 2;
     }
 
-    .uis-grid-divider > :not(.uis-first-column)::before{
+    .uis-grid-divider > :not(.uis-first-column)::before {
         left: $grid-gutter-horizontal-l;
     }
 
     /* Vertical */
-    .uis-grid-divider .uis-grid-stack > .uis-grid-margin{
+    .uis-grid-divider .uis-grid-stack > .uis-grid-margin {
         margin-top: ($grid-gutter-horizontal-l * 2);
     }
 
-    .uis-grid-divider .uis-grid-stack > .uis-grid-margin::before{
+    .uis-grid-divider .uis-grid-stack > .uis-grid-margin::before {
         top: (-$grid-gutter-vertical-l);
         left: ($grid-gutter-horizontal-l * 2);
     }
@@ -313,24 +314,24 @@ $grid-divider-border:                   border(border-color) !default;
  */
  
 /* Horizontal */
-.uis-grid-divider .uis-grid-small{
+.uis-grid-divider .uis-grid-small {
     margin-left: (-$grid-small-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-small > *{
+.uis-grid-divider .uis-grid-small > * {
     padding-left: $grid-small-gutter-horizontal * 2;
 }
 
-.uis-grid-divider .uis-grid-small > :not(.uis-first-column)::before{
+.uis-grid-divider .uis-grid-small > :not(.uis-first-column)::before {
     left: $grid-small-gutter-horizontal;
 }
 
 /* Vertical */
-.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin{
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin {
     margin-top: ($grid-small-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin::before{
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin::before {
     top: (-$grid-small-gutter-vertical);
     left: ($grid-small-gutter-horizontal * 2);
 }
@@ -342,24 +343,24 @@ $grid-divider-border:                   border(border-color) !default;
  */
  
 /* Horizontal */
-.uis-grid-divider .uis-grid-medium{
+.uis-grid-divider .uis-grid-medium {
     margin-left: (-$grid-medium-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-medium > *{
+.uis-grid-divider .uis-grid-medium > * {
     padding-left: $grid-medium-gutter-horizontal * 2;
 }
 
-.uis-grid-divider .uis-grid-medium > :not(.uis-first-column)::before{
+.uis-grid-divider .uis-grid-medium > :not(.uis-first-column)::before {
     left: $grid-medium-gutter-horizontal;
 }
 
 /* Vertical */
-.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin{
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin {
     margin-top: ($grid-medium-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin::before{
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin::before {
     top: (-$grid-medium-gutter-vertical);
     left: ($grid-medium-gutter-horizontal * 2);
 }
@@ -371,49 +372,49 @@ $grid-divider-border:                   border(border-color) !default;
  */
  
 /* Horizontal */
-.uis-grid-divider .uis-grid-large{
+.uis-grid-divider .uis-grid-large {
     margin-left: (-$grid-large-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-large > *{
+.uis-grid-divider .uis-grid-large > * {
     padding-left: $grid-large-gutter-horizontal * 2;
 }
 
-.uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before{
+.uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before {
     left: $grid-large-gutter-horizontal;
 }
 
 /* Vertical */
-.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin{
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin {
     margin-top: ($grid-large-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before{
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before {
     top: (-$grid-large-gutter-vertical);
     left: ($grid-large-gutter-horizontal * 2);
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
+@include respond-to(large) {
     /* Horizontal */
-    .uis-grid-divider .uis-grid-large{
+    .uis-grid-divider .uis-grid-large {
         margin-left: (-$grid-large-gutter-horizontal-l * 2);
     }
 
-    .uis-grid-divider .uis-grid-large > *{
+    .uis-grid-divider .uis-grid-large > * {
         padding-left: $grid-large-gutter-horizontal-l * 2;
     }
 
-    .uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before{
+    .uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before {
         left: $grid-large-gutter-horizontal-l;
     }
 
     /* Vertical */
-    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin{
+    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin {
         margin-top: ($grid-large-gutter-horizontal-l * 2);
     }
 
-    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before{
+    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before {
         top: (-$grid-gutter-vertical-l);
         left: ($grid-gutter-horizontal-l * 2);
     }
@@ -432,17 +433,19 @@ $grid-divider-border:                   border(border-color) !default;
  */
 
 .uis-grid-match > *,
-.uis-grid-item-match{
+.uis-grid-item-match {
     display: flex;
+
     /* 1 */
     flex-wrap: wrap;
 }
 
 .uis-grid-match > * > :not([class*='uis-width']),
-.uis-grid-item-match > :not([class*='uis-width']){
+.uis-grid-item-match > :not([class*='uis-width']) {
     /* 2 */
     box-sizing: border-box;
     width: 100%;
+    
     /* 3 */
     flex: auto;
 }

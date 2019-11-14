@@ -25,13 +25,13 @@ $padding-large-padding-l:           gutter(large) !default;
     Component: Padding
    ================================================== */
 
-.uis-padding{
+.uis-padding {
     padding: $padding-padding !important;
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
-    .uis-padding{
+@include respond-to(large) {
+    .uis-padding {
         padding: $padding-padding-l !important;
     }
 }
@@ -41,7 +41,7 @@ $padding-large-padding-l:           gutter(large) !default;
 /* Small
    ================================================== */
 
-.uis-padding-small{
+.uis-padding-small {
     padding: $padding-small-padding !important;
 }
 
@@ -50,13 +50,13 @@ $padding-large-padding-l:           gutter(large) !default;
 /* Large
    ================================================== */
 
-.uis-padding-large{
+.uis-padding-large {
     padding: $padding-large-padding !important;
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
-    .uis-padding-large{
+@include respond-to(large) {
+    .uis-padding-large {
         padding: $padding-large-padding-l !important;
     }
 }
@@ -66,32 +66,32 @@ $padding-large-padding-l:           gutter(large) !default;
 /* Remove
    ================================================== */
 
-.uis-padding-remove{
+.uis-padding-remove {
     padding: 0 !important;
 }
 
-.uis-padding-remove-top{
+.uis-padding-remove-top {
     padding-top: 0 !important;
 }
 
-.uis-padding-remove-bottom{
+.uis-padding-remove-bottom {
     padding-bottom: 0 !important;
 }
 
-.uis-padding-remove-left{
+.uis-padding-remove-left {
     padding-left: 0 !important;
 }
 
-.uis-padding-remove-right{
+.uis-padding-remove-right {
     padding-right: 0 !important;
 }
 
-.uis-padding-remove-vertical{
+.uis-padding-remove-vertical {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
 
-.uis-padding-remove-horizontal{
+.uis-padding-remove-horizontal {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
