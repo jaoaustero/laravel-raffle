@@ -22,13 +22,13 @@
  */
 
 [hidden],
-.uis-hidden{
+.uis-hidden {
     display: none !important;
 }
 
 /* Phone landscape and bigger */
-@include respond-to(small){
-    .uis-hidden\@s{
+@include respond-to(small) {
+    .uis-hidden\@s {
         display: none !important;
     }
 }
@@ -36,22 +36,22 @@
     
 
 /* Tablet landscape and bigger */
-@include respond-to(medium){
-    .uis-hidden\@m{
+@include respond-to(medium) {
+    .uis-hidden\@m {
         display: none !important;
     }
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
-    .uis-hidden\@l{
+@include respond-to(large) {
+    .uis-hidden\@l {
         display: none !important;
     }
 }
 
 /* Large screen and bigger */
-@include respond-to(xlarge){
-    .uis-hidden\@xl{
+@include respond-to(xlarge) {
+    .uis-hidden\@xl {
         display: none !important;
     }
 }
@@ -62,29 +62,29 @@
  */
 
 /* Phone portrait and smaller */
-@include respond-to-max(xsmall){
-    .uis-visible\@s{
+@include respond-to-max(xsmall) {
+    .uis-visible\@s {
         display: none !important;
     }
 }
 
 /* Phone landscape and smaller */
-@include respond-to-max(small){
-    .uis-visible\@m{
+@include respond-to-max(small) {
+    .uis-visible\@m {
         display: none !important;
     }
 }
 
 /* Tablet landscape and smaller */
-@include respond-to-max(medium){
-    .uis-visible\@l{
+@include respond-to-max(medium) {
+    .uis-visible\@l {
         display: none !important;
     }
 }
 
 /* Desktop and smaller */
-@include respond-to-max(large){
-    .uis-visible\@xl{
+@include respond-to-max(large) {
+    .uis-visible\@xl {
         display: none !important;
     }
 }
@@ -94,7 +94,7 @@
 /* Visibility
    ================================================== */
 
-.uis-invisible{
+.uis-invisible {
     visibility: hidden !important;
 }
 
@@ -108,7 +108,7 @@
  * Can't use `display: hidden` because it's not focusable. This is accessible through keyboard.
  */
 
-.uis-visible-toggle:not(:hover):not(.uk-hover) .uis-hidden-hover:not(:focus){
+.uis-visible-toggle:not(:hover):not(.uk-hover) .uis-hidden-hover:not(:focus) {
     position: absolute !important;
     width: 0 !important;
     height: 0 !important;
@@ -122,7 +122,7 @@
  * Can't use `visibility: hidden` because it's not focusable. This is accessible through keyboard.
  */
 
-.uk-visible-toggle:not(:hover):not(.uk-hover) .uk-invisible-hover:not(:focus){
+.uk-visible-toggle:not(:hover):not(.uk-hover) .uk-invisible-hover:not(:focus) {
     opacity: 0 !important;
 }
 
@@ -135,8 +135,8 @@
  * Works on mobile browsers: Safari, Chrome and Android browser
  */
 
-@media (pointer: coarse){
-    .uis-hidden-touch{
+@media (pointer: coarse) {
+    .uis-hidden-touch {
         display: none !important;
     }
 }
@@ -148,12 +148,12 @@
  */
 
 /* 1 */
-.uis-hidden-notouch{
+.uis-hidden-notouch {
     display: none !important;
 }
 
-@media (pointer: coarse){
-    .uis-hidden-notouch{
+@media (pointer: coarse) {
+    .uis-hidden-notouch {
         display: block !important;
     }
 }

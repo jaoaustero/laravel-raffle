@@ -40,7 +40,7 @@ $text-small-line-height:                    1.5 !default;
 $text-large-font-size:                      font-size(large) !default;
 $text-large-line-height:                    1.5 !default;
 
-$text-bold-font-weight:                     font-weight(black) !default;
+$text-bold-font-weight:                     font-weight(bold) !default;
 
 $text-background-color:                     theme-color(primary) !default;
 
@@ -51,14 +51,14 @@ $text-background-color:                     theme-color(primary) !default;
    ================================================== */    
 
 
-.uis-text-header{
+.uis-text-header {
     font-size: $text-header-font-size;
     line-height: $text-header-line-height;
     color: $text-header-color;
     font-weight: $text-header-font-weight;
 }
 
-.uis-text-subheader{
+.uis-text-subheader {
     font-size: $text-subheader-font-size;
     line-height: $text-subheader-line-height;
     color: $text-subheader-color;
@@ -66,7 +66,7 @@ $text-background-color:                     theme-color(primary) !default;
 }
 
 
-.uis-loading::before{
+.uis-loading::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -77,45 +77,33 @@ $text-background-color:                     theme-color(primary) !default;
     animation-duration: 2s;
 }
 
-@keyframes slideIn{
-    0%{
+@keyframes slideIn {
+    0% {
         width: 0;
     }
 
-    25%{
+    25% {
         width: 100%;
     }
 
-    50%{
+    50% {
         width: 100%;
     }
 
-    75%{
+    75% {
         width: 100%;
-        right: 0
+        right: 0;
     }
 
-    100%{
+    100% {
         width: 0%;
-        right: 0
+        right: 0;
     }
 }
 
-.hideme1{
-    opacity: 0;
-}
-
-.hideme{
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.hideme.uis-show{
-    opacity: 1;
-}
 
 .uis-text-header.uis-text-header-underline::after,
-.uis-text-subheader.uis-text-subheader-underline::after{
+.uis-text-subheader.uis-text-subheader-underline::after {
     content: '';
 
     position: absolute;
@@ -131,41 +119,41 @@ $text-background-color:                     theme-color(primary) !default;
     animation-duration: 500ms;
 }
 
-@include respond-to(medium){
+@include respond-to(medium) {
     .uis-text-header.uis-text-header-underline::after,
-    .uis-text-subheader.uis-text-subheader-underline::after{
+    .uis-text-subheader.uis-text-subheader-underline::after {
         width: 100%;
         left: 40px;
         right: auto;
     }
 }
 
-@keyframes slideRight{
-    from{
+@keyframes slideRight {
+    from {
         width: 0%;
     }
 
-    to{
+    to {
         width: 100%;
     }
 }
 
 
-.uis-text-lead{
+.uis-text-lead {
     font-size: $text-lead-font-size;
     line-height: $text-lead-line-height;
     color: $text-lead-color;
     font-weight: $text-lead-font-weight;
 }
 
-.uis-text-sublead{
+.uis-text-sublead {
     font-size: $text-sublead-font-size;
     line-height: $text-sublead-line-height;
     color: $text-sublead-color;
     font-weight: $text-sublead-font-weight;
 }
 
-.uis-text-meta{
+.uis-text-meta {
     font-size: $text-meta-font-size;
     line-height: $text-meta-line-height;
     color: $text-meta-color;
@@ -175,23 +163,23 @@ $text-background-color:                     theme-color(primary) !default;
 
 /* Style modifiers
    ================================================== */
-.uis-text-medium{
+.uis-text-medium {
     font-weight: 600;
 }
 
-.uis-text-bold{
+.uis-text-bold {
     font-weight: $text-bold-font-weight;
 }
 
-.uis-text-italic{
+.uis-text-italic {
     font-style: italic;
 }
 
-.uis-text-oblique{
+.uis-text-oblique {
     font-style: oblique;
 }
 
-.uis-text-underline{
+.uis-text-underline {
     text-decoration: underline;
 }
 
@@ -200,15 +188,15 @@ $text-background-color:                     theme-color(primary) !default;
 /* Transform modifiers
    ================================================== */
 
-.uis-text-uppercase{
+.uis-text-uppercase {
     text-transform: uppercase !important;
 }
 
-.uis-text-capitalize{
+.uis-text-capitalize {
     text-transform: capitalize !important;
 }
 
-.uis-text-lowercase{
+.uis-text-lowercase {
     text-transform: lowercase !important;
 }
 
@@ -231,18 +219,20 @@ $text-background-color:                     theme-color(primary) !default;
  * 3. Fallback color for IE11
  */
 
-.uis-text-background{
+.uis-text-background {
     /* 1 */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     /* 2 */
     display: inline-block;
+
     /* 3 */
     color: $text-background-color;
 }
 
-@supports (-webkit-background-clip: text){
-    .uis-text-background{
+@supports (-webkit-background-clip: text) {
+    .uis-text-background {
         background-color: $text-background-color;
     }
 }
@@ -252,78 +242,78 @@ $text-background-color:                     theme-color(primary) !default;
 /* Alignment modifiers
    ================================================== */
 
-.uis-text-left{
+.uis-text-left {
     text-align: left !important;
 }
 
-.uis-text-right{
+.uis-text-right {
     text-align: right !important;
 }
 
-.uis-text-center{
+.uis-text-center {
     text-align: center !important;
 }
 
-.uis-text-justify{
+.uis-text-justify {
     text-align: justify !important;
 }
 
 /* Phone landscape and bigger */
-@include respond-to(small){
-    .uis-text-left\@s{
+@include respond-to(small) {
+    .uis-text-left\@s {
         text-align: left !important;
     }
     
-    .uis-text-right\@s{
+    .uis-text-right\@s {
         text-align: right !important;
     }
     
-    .uis-text-center\@s{
+    .uis-text-center\@s {
         text-align: center !important;
     }
 }
 
 /* Tablet landscape and bigger */
-@include respond-to(medium){
-    .uis-text-left\@m{
+@include respond-to(medium) {
+    .uis-text-left\@m {
         text-align: left !important;
     }
     
-    .uis-text-right\@m{
+    .uis-text-right\@m {
         text-align: right !important;
     }
     
-    .uis-text-center\@m{
+    .uis-text-center\@m {
         text-align: center !important;
     }
 }
 
 /* Desktop  and bigger */
-@include respond-to(large){
-    .uis-text-left\@l{
+@include respond-to(large) {
+    .uis-text-left\@l {
         text-align: left !important;
     }
     
-    .uis-text-right\@l{
+    .uis-text-right\@l {
         text-align: right !important;
     }
     
-    .uis-text-center\@l{
+    .uis-text-center\@l {
         text-align: center !important;
     }
 }
 
 /* Desktop  and bigger */
-@include respond-to(large){
-    .uis-text-left\@xl{
+@include respond-to(large) {
+    .uis-text-left\@xl {
         text-align: left !important;
     }
     
-    .uis-text-right\@xl{
+    .uis-text-right\@xl {
         text-align: right !important;
     }
     
-    .uis-text-center\@xl{
+    .uis-text-center\@xl {
         text-align: center !important;
     }
 }
@@ -333,19 +323,19 @@ $text-background-color:                     theme-color(primary) !default;
 /* Vertical modifiers
    ================================================== */
 
-.uis-text-top{
+.uis-text-top {
     vertical-align: top !important;
 }
 
-.uis-text-middle{
+.uis-text-middle {
     vertical-align: middle !important;
 }
 
-.uis-text-bottom{
+.uis-text-bottom {
     vertical-align: bottom !important;
 }
 
-.uis-text-baseline{
+.uis-text-baseline {
     vertical-align: baseline !important;
 }
 
@@ -358,7 +348,7 @@ $text-background-color:                     theme-color(primary) !default;
  * Prevent text from wrapping into multiple lines
  */
 
-.uis-text-nowrap{
+.uis-text-nowrap {
     white-space: nowrap;
 }
 
@@ -369,9 +359,10 @@ $text-background-color:                     theme-color(primary) !default;
  * 3. Fix for table cells
  */
 
-.uis-text-truncate{
+.uis-text-truncate {
     /* 1 */
     max-width: 100%;
+
     /* 2 */
     display: block;
     overflow: hidden;
@@ -379,10 +370,11 @@ $text-background-color:                     theme-color(primary) !default;
     white-space: nowrap;
 }
 
-@media screen and (max-width: 960px){
-    .uis-text-truncate\@m{
+@media screen and (max-width: 960px) {
+    .uis-text-truncate\@m {
         /* 1 */
         max-width: 100%;
+
         /* 2 */
         display: block;
         overflow: hidden;
@@ -393,7 +385,7 @@ $text-background-color:                     theme-color(primary) !default;
 
 /* 3 */
 th.uis-text-truncate,
-td.uis-text-truncate{
+td.uis-text-truncate {
     max-width: 0;
 }
 
@@ -405,25 +397,26 @@ td.uis-text-truncate{
  * Note: Not using `hypens: auto;` because it hypenates text even if not needed.
  */
 
-.uis-text-break{
+.uis-text-break {
     /* 1 */
     overflow-wrap: break-word;
+    
     /* 2 */
     word-wrap: break-word;
 }
 
 /* 3 */
 th.uis-text-break,
-td.uis-text-break{
+td.uis-text-break {
     word-break: break-all;
 }
 
-.uis-text-indent-left{
+.uis-text-indent-left {
     margin-left: 0;
 }
 
-@include respond-to(medium){
-    .uis-text-indent-left{
+@include respond-to(medium) {
+    .uis-text-indent-left {
         margin-left: gutter(medium);
     }
 }

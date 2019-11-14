@@ -33,7 +33,7 @@ $container-padding-horizontal-l:                gutter(medium) !default;
  *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
  */
 
-.uis-container{
+.uis-container {
     /* 1 */
     box-sizing: content-box;
 
@@ -45,16 +45,16 @@ $container-padding-horizontal-l:                gutter(medium) !default;
 }
 
 /* Phone landscape and bigger */
-@include respond-to(small){
-    .uis-container{
+@include respond-to(small) {
+    .uis-container {
         padding-left: $container-padding-horizontal-s;
         padding-right: $container-padding-horizontal-s;
     }
 }
 
 /* Table landscape and bigger */
-@include respond-to(medium){
-    .uis-container{
+@include respond-to(medium) {
+    .uis-container {
         padding-left: $container-padding-horizontal-l;
         padding-right: $container-padding-horizontal-l;
     }
@@ -63,7 +63,7 @@ $container-padding-horizontal-l:                gutter(medium) !default;
 /*
  * Miscro clearfix
  */
-.uis-container{
+.uis-container {
     @include clearfix;
 }
 
@@ -71,7 +71,7 @@ $container-padding-horizontal-l:                gutter(medium) !default;
  * Remove margin from the last-child
  */
 
-.uis-container > :last-child{
+.uis-container > :last-child {
     margin-bottom: 0;
 }
 
@@ -79,7 +79,7 @@ $container-padding-horizontal-l:                gutter(medium) !default;
  * Remove padding from nested containers
  */
 
-.uis-container .uis-container{
+.uis-container .uis-container {
     padding-left: 0;
     padding-right: 0;
 }
@@ -89,18 +89,18 @@ $container-padding-horizontal-l:                gutter(medium) !default;
 /* Size modifiers
    ================================================== */
 
-.uis-container-xsmall{
+.uis-container-xsmall {
     max-width: $container-xsmall-max-width;
 }
 
-.uis-container-small{
+.uis-container-small {
     max-width: $container-small-max-width;
 }
 
-.uis-container-large{
+.uis-container-large {
     max-width: $container-large-max-width;
 }
 
-.uis-container-expand{
+.uis-container-expand {
     max-width: none;
 }

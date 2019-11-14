@@ -33,7 +33,7 @@ $box-shadow-duration:                            0.1s !default;
 
 $box-shadow-bottom-height:                       30px !default;
 $box-shadow-bottom-border-radius:                100% !default;
-$box-shadow-bottom-background:                   #444 !default;
+$box-shadow-bottom-background:                   #444444 !default;
 $box-shadow-bottom-blur:                         20px !default;
 
 $dropcap-margin-right:                           10px !default;
@@ -44,7 +44,7 @@ $logo-font-family:                               font(font-family) !default;
 $logo-color:                                     color(default) !default;
 $logo-hover-color:                               color(default) !default;
 
-$dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) !default;
+$dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.3) !default;
 
 
 
@@ -55,17 +55,17 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 /* Panel
  ========================================================================== */
 
-.uis-panel{
+.uis-panel {
     position: relative;
     box-sizing: border-box;
-    background-color: #f9f9f9;
+    background-color: #F9F9F9;
 }
 
 /*
  * Micro clearfix
  */
 
-.uis-panel{
+.uis-panel {
     @include clearfix;
 }
 
@@ -73,7 +73,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * Remove margin from the last-child
  */
 
-.uis-panel > :last-child{
+.uis-panel > :last-child {
     margin-bottom: 0;
 }
 
@@ -81,7 +81,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  *
  */
 
-.uis-panel-scrollable{
+.uis-panel-scrollable {
     height: $panel-scrollable-height;
     padding: $panel-scrollable-padding;
     border: $panel-scrollable-border-width solid $panel-scrollable-border;
@@ -101,7 +101,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * Note: `display: block` with `overflow: hidden` is currently not working in the latest Safari
  */
 
-.uis-clearfix{
+.uis-clearfix {
     @include clearfix;
 }
 
@@ -114,16 +114,16 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * 1. Prevent content overflow
  */
 
-.uis-float-left{
+.uis-float-left {
     float: left;
 }
 
-.uis-float-right{
+.uis-float-right {
     float: right;
 }
 
 /* 1 */
-[class*='uis-float-']{
+[class*='uis-float-'] {
     max-width: 100%;
 }
 
@@ -132,7 +132,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 /* Overflow
  ========================================================================== */
 
-.uis-overflow-hidden{
+.uis-overflow-hidden {
     overflow: hidden;
 }
 
@@ -141,12 +141,12 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * Note: firefox ignores `padding-bottom` for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
  */
 
-.uis-overflow-auto{
+.uis-overflow-auto {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
 
-.uis-overflow-auto > :last-child{
+.uis-overflow-auto > :last-child {
     margin-bottom: 0;
 }
 
@@ -155,32 +155,32 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 /* Resize
  ========================================================================== */
 
-// .uis-resize{
-//     resize: both;
-// }
+.uis-resize {
+    resize: both;
+}
 
-// .uis-resize-vertical{
-//     resize: vertical;
-// }
+.uis-resize-vertical {
+    resize: vertical;
+}
 
 
 
 /* Display
  ========================================================================== */
 
-.uis-display-block{
+.uis-display-block {
     display: block !important;
 }
 
-.uis-display-inline{
+.uis-display-inline {
     display: inline !important;
 }
 
-.uis-display-inline-block{
+.uis-display-inline-block {
     display: inline-block !important;
 }
 
-.uis-display-none{
+.uis-display-none {
     display: none;
 }
 
@@ -199,20 +199,24 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * 6. Clip child elements
  */
 
-[class*='uis-inline']{
+[class*='uis-inline'] {
     /* 1 */
     display: inline-block;
+
     /* 2 */
     position: relative;
+
     /* 3 */
     max-width: 100%;
+
     /* 4 */
     vertical-align: middle;
+
     /* 5 */
     -webkit-backface-visibility: hidden;
 }
 
-.uis-inline-clip{
+.uis-inline-clip {
     /* 8 */
     overflow: hidden;
 }
@@ -232,7 +236,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 .uis-preserve-width canvas,
 .uis-preserve-width img,
 .uis-preserve-width svg,
-.uis-preserve-width video{
+.uis-preserve-width video {
     max-width: none;
 }
 
@@ -242,7 +246,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  */
 
 .uis-responsive-width,
-.uis-responsive-height{
+.uis-responsive-height {
     box-sizing: border-box;
 }
 
@@ -251,9 +255,10 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * 2. Auto scale the height. Only needed if `height` attribute is present
  */
 
-.uis-responsive-width{
+.uis-responsive-width {
     /* 1 */
     max-width: 100% !important;
+    
     /* 2 */
     height: auto;
 }
@@ -263,15 +268,15 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 /* Border
  ========================================================================== */
 
-.uis-border-circle{
+.uis-border-circle {
     border-radius: 50%;
 }
 
-.uis-border-pill{
+.uis-border-pill {
     border-radius: 500px;
 }
 
-.uis-border-rounded{
+.uis-border-rounded {
     border-radius: $border-rounded-border-radius;
 }
 
@@ -279,7 +284,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * Fix `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit 
  */
 
-.uis-inline-clip[class*='uis-border-']{
+.uis-inline-clip[class*='uis-border-'] {
     -webkit-transform: translateZ(0);
 }
 
@@ -288,19 +293,19 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 /* Box-shadow
  ========================================================================== */
 
-.uis-box-shadow-small{
+.uis-box-shadow-small {
     box-shadow: box-shadow(small);
 }
 
-.uis-box-shadow-medium{
+.uis-box-shadow-medium {
     box-shadow: box-shadow(medium);
 }
 
-.uis-box-shadow-large{
+.uis-box-shadow-large {
     box-shadow: box-shadow(large);
 }
 
-.uis-box-shadow-xlarge{
+.uis-box-shadow-xlarge {
     box-shadow: box-shadow(xlarge);
 }
 
@@ -308,23 +313,23 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * Hover
  */
 
-[class*='uis-box-shadow-hover']{
+[class*='uis-box-shadow-hover'] {
     transition: box-shadow $box-shadow-duration ease-in-out;
 }
 
-.uis-box-shadow-hover-small:hover{
+.uis-box-shadow-hover-small:hover {
     box-shadow: box-shadow(small);
 }
 
-.uis-box-shadow-hover-medium:hover{
+.uis-box-shadow-hover-medium:hover {
     box-shadow: box-shadow(medium);
 }
 
-.uis-box-shadow-hover-large:hover{
+.uis-box-shadow-hover-large:hover {
     box-shadow: box-shadow(large);
 }
 
-.uis-box-shadow-hover-xlarge:hover{
+.uis-box-shadow-hover-xlarge:hover {
     box-shadow: box-shadow(xlarge);
 }
 
@@ -333,7 +338,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 /* Disabled State
  ========================================================================== */
 
-.uis-disabled{
+.uis-disabled {
     pointer-events: none;
 }
 
@@ -344,12 +349,12 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 
 .uis-drag,
 /* 1 */
-.uis-drag *{
+.uis-drag * {
     cursor: move;
 }
 
 /* 2 */
-.uis-drag iframe{
+.uis-drag iframe {
     pointer-events: none;
 }
 
@@ -362,7 +367,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * Create a box-shadow when dragging a file over the upload area
  */
 
-.uis-dragover{
+.uis-dragover {
     box-shadow: $dragover-box-shadow;
 }
 
@@ -372,7 +377,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  ========================================================================== */
 
 .uis-point,
-.uis-point *{
+.uis-point * {
     cursor: pointer;
 }
 
@@ -384,7 +389,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  * Create a box-shadow when pointing a file over the upload area
  */
 
-.uis-pointover{
+.uis-pointover {
     box-shadow: $dragover-box-shadow;
 }
 
@@ -394,7 +399,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
  ========================================================================== */
 
 //  for 3 only
-.uis-text-ellipsis{
+.uis-text-ellipsis {
     overflow: hidden;
     position: relative;
     line-height: 1.5em;
@@ -407,7 +412,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100,100,100,0.3) 
 /* Offset
  ========================================================================== */
 
-.uis-offset-top{
+.uis-offset-top {
     position: relative;
     top: -3vh;
 }

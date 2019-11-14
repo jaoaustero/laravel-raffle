@@ -24,7 +24,7 @@ $overlay-gradient-opacity:                      0.5 !default;
     Component: Overlay
    ================================================== */ 
 
-.uis-overlay{
+.uis-overlay {
     padding: $overlay-padding-vertical $overlay-padding-vertical;
 }
 
@@ -32,7 +32,7 @@ $overlay-gradient-opacity:                      0.5 !default;
  * Removes margin from the last-child
  */
 
-.uis-overlay > :last-child{
+.uis-overlay > :last-child {
     margin-bottom: 0;
 }
 
@@ -44,7 +44,7 @@ $overlay-gradient-opacity:                      0.5 !default;
  * Default
  */
 
-.uis-overlay-default{
+.uis-overlay-default {
     background: $overlay-default-background;
 }
 
@@ -52,7 +52,7 @@ $overlay-gradient-opacity:                      0.5 !default;
  * Primary
  */
 
-.uis-overlay-primary{
+.uis-overlay-primary {
     background: $overlay-primary-background;
 }
 
@@ -60,7 +60,7 @@ $overlay-gradient-opacity:                      0.5 !default;
  * Gradient
  */
 
-.uis-overlay-gradient{
+.uis-overlay-gradient {
     background-image: $overlay-gradient-background;
     opacity: $overlay-gradient-opacity;
 }

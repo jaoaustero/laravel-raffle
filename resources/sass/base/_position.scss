@@ -110,12 +110,14 @@ $position-large-margin-l:                               50px !default;
  * 2. Fix text wrapping for Firefox
  */
 
-.uis-position-center{
+.uis-position-center {
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+
     /* 1 */
     display: table;
+
     /* 2 */
     width: -moz-max-content;
     max-width: 100%;
@@ -129,41 +131,43 @@ $position-large-margin-l:                               50px !default;
     transform: translateY(-50%);
 }
 
-.uis-position-center-left{
+.uis-position-center-left {
     left: 0;
 }
-.uis-position-center-right{
+.uis-position-center-right {
     right: 0;
 }
 
-.uis-position-center-left-out{
+.uis-position-center-left-out {
     right: 100%;
     width: max-content;
 }
 
-.uis-position-center-right-out{
+.uis-position-center-right-out {
     left: 100%;
     width: max-content;
 }
 
 /* Horizontal */
 .uis-position-top-center,
-.uis-position-bottom-center{
+.uis-position-bottom-center {
     left: 50%;
     transform: translateX(-50%);
+
     /* 1 */
     display: table;
+    
     /* 2 */
     width: -moz-max-content;
     max-width: 100%;
     box-sizing: border-box;
 }
 
-.uis-position-top-center{
+.uis-position-top-center {
     top: 0;
 }
 
-.uis-position-bottom-center{
+.uis-position-bottom-center {
     bottom: 0;
 }
 
@@ -171,7 +175,7 @@ $position-large-margin-l:                               50px !default;
 /* Cover
  ========================================================================== */
 
-.uis-position-cover{
+.uis-position-cover {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -183,19 +187,19 @@ $position-large-margin-l:                               50px !default;
 /* Utility
  ========================================================================== */
 
-.uis-position-relative{
+.uis-position-relative {
     position: relative !important;
 }
 
-.uis-position-absolute{
+.uis-position-absolute {
     position: absolute !important;
 }
 
-.uis-position-fixed{
+.uis-position-fixed {
     position: fixed !important;
 }
 
-.uis-position-z-index{
+.uis-position-z-index {
     z-index: 1;
 }
 
@@ -207,21 +211,21 @@ $position-large-margin-l:                               50px !default;
  * Small
  */
 
-.uis-position-small{
+.uis-position-small {
     margin: $position-small-margin;
 }
 
-.uis-position-small.uis-position-center{
+.uis-position-small.uis-position-center {
     transform: translate(-50%, -50%) translate(-$position-small-margin, (-$position-small-margin));
 }
 
 .uis-position-small[class*='uis-position-center-left'],
-.uis-position-small[class*='uis-position-center-right']{
+.uis-position-small[class*='uis-position-center-right'] {
     transform: translateY(-50%) translateY(-$position-small-margin);
 }
 
 .uis-position-small.uis-position-top-center,
-.uis-position-small.uis-position-bottom-center{
+.uis-position-small.uis-position-bottom-center {
     transform: translateX(-50%) translateX(-$position-small-margin);
 }
 
@@ -229,21 +233,21 @@ $position-large-margin-l:                               50px !default;
  * Medium
  */
 
-.uis-position-medium{
+.uis-position-medium {
     margin: $position-medium-margin;
 }
 
-.uis-position-medium.uis-position-center{
+.uis-position-medium.uis-position-center {
     transform: translate(-50%, -50%) translate(-$position-medium-margin, (-$position-medium-margin));
 }
 
 .uis-position-medium[class*='uis-position-center-left'],
-.uis-position-medium[class*='uis-position-center-right']{
+.uis-position-medium[class*='uis-position-center-right'] {
     transform: translateY(-50%) translateY(-$position-medium-margin);
 }
 
 .uis-position-medium.uis-position-top-center,
-.uis-position-medium.uis-position-bottom-center{
+.uis-position-medium.uis-position-bottom-center {
     transform: translateX(-50%) translateX(-$position-medium-margin);
 }
 
@@ -251,41 +255,41 @@ $position-large-margin-l:                               50px !default;
  * Large
  */
 
-.uis-position-large{
+.uis-position-large {
     margin: $position-large-margin;
 }
 
-.uis-position-large.uis-position-center{
+.uis-position-large.uis-position-center {
     transform: translate(-50%, -50%) translate(-$position-large-margin, (-$position-large-margin));
 }
 
 .uis-position-large[class*='uis-position-center-left'],
-.uis-position-large[class*='uis-position-center-right']{
+.uis-position-large[class*='uis-position-center-right'] {
     transform: translateY(-50%) translateY(-$position-large-margin);
 }
 
 .uis-position-large.uis-position-top-center,
-.uis-position-large.uis-position-bottom-center{
+.uis-position-large.uis-position-bottom-center {
     transform: translateX(-50%) translateX(-$position-large-margin);
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
-    .uis-position-large{
+@include respond-to(large) {
+    .uis-position-large {
         margin: $position-large-margin-l;
     }
 
-    .uis-position-large.uis-position-center{
+    .uis-position-large.uis-position-center {
         transform: translate(-50%, -50%) translate(-$position-large-margin-l, (-$position-large-margin-l));
     }
 
     .uis-position-large[class*='uis-position-center-left'],
-    .uis-position-large[class*='uis-position-center-right']{
+    .uis-position-large[class*='uis-position-center-right'] {
         transform: translateY(-50%) translateY(-$position-large-margin-l);
     }
 
     .uis-position-large.uis-position-top-center,
-    .uis-position-large.uis-position-bottom-center{
+    .uis-position-large.uis-position-bottom-center {
         transform: translateX(-50%) translateX(-$position-large-margin-l);
     }
 }

@@ -42,27 +42,27 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
  * Default
  */
 
-.uis-margin{ 
+.uis-margin {
     margin-bottom: $margin-margin !important;
 }
 
-* + .uis-margin{ 
+* + .uis-margin {
     margin-top: $margin-margin !important;
 }
 
-.uis-margin-top{ 
+.uis-margin-top {
     margin-top: $margin-margin !important;
 }
 
-.uis-margin-bottom{ 
+.uis-margin-bottom {
     margin-bottom: $margin-margin !important;
 }
 
-.uis-margin-left{ 
+.uis-margin-left {
     margin-left: $margin-margin !important;
 }
 
-.uis-margin-right{ 
+.uis-margin-right {
     margin-right: $margin-margin !important;
 }
 
@@ -72,27 +72,27 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
  * Extra Small
  */
 
-.uis-margin-xsmall{ 
+.uis-margin-xsmall {
     margin-bottom: $margin-xsmall-margin !important;
 }
 
-* + .uis-margin-xsmall{ 
+* + .uis-margin-xsmall {
     margin-top: $margin-xsmall-margin !important;
 }
 
-.uis-margin-xsmall-top{ 
+.uis-margin-xsmall-top {
     margin-top: $margin-xsmall-margin !important;
 }
 
-.uis-margin-xsmall-bottom{ 
+.uis-margin-xsmall-bottom {
     margin-bottom: $margin-xsmall-margin !important;
 }
 
-.uis-margin-xsmall-left{ 
+.uis-margin-xsmall-left {
     margin-left: $margin-xsmall-margin !important;
 }
 
-.uis-margin-xsmall-right{ 
+.uis-margin-xsmall-right {
     margin-right: $margin-xsmall-margin !important;
 }
 
@@ -102,27 +102,27 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
  * Small
  */
 
-.uis-margin-small{ 
+.uis-margin-small {
     margin-bottom: $margin-small-margin !important;
 }
 
-* + .uis-margin-small{ 
+* + .uis-margin-small {
     margin-top: $margin-small-margin !important;
 }
 
-.uis-margin-small-top{ 
+.uis-margin-small-top {
     margin-top: $margin-small-margin !important;
 }
 
-.uis-margin-small-bottom{ 
+.uis-margin-small-bottom {
     margin-bottom: $margin-small-margin !important;
 }
 
-.uis-margin-small-left{ 
+.uis-margin-small-left {
     margin-left: $margin-small-margin !important;
 }
 
-.uis-margin-small-right{ 
+.uis-margin-small-right {
     margin-right: $margin-small-margin !important;
 }
 
@@ -132,27 +132,27 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
  * Medium
  */
 
-.uis-margin-medium{ 
+.uis-margin-medium {
     margin-bottom: $margin-medium-margin !important;
 }
 
-* + .uis-margin-medium{ 
+* + .uis-margin-medium {
     margin-top: $margin-medium-margin !important;
 }
 
-.uis-margin-medium-top{ 
+.uis-margin-medium-top {
     margin-top: $margin-medium-margin !important;
 }
 
-.uis-margin-medium-bottom{ 
+.uis-margin-medium-bottom {
     margin-bottom: $margin-medium-margin !important;
 }
 
-.uis-margin-medium-left{ 
+.uis-margin-medium-left {
     margin-left: $margin-medium-margin !important;
 }
 
-.uis-margin-medium-right{ 
+.uis-margin-medium-right {
     margin-right: $margin-medium-margin !important;
 }
 
@@ -162,54 +162,54 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
  * Large
  */
 
-.uis-margin-large{ 
+.uis-margin-large {
     margin-bottom: $margin-large-margin !important;
 }
 
-* + .uis-margin-large{ 
+* + .uis-margin-large {
     margin-top: $margin-large-margin !important;
 }
 
-.uis-margin-large-top{ 
+.uis-margin-large-top {
     margin-top: $margin-large-margin !important;
 }
 
-.uis-margin-large-bottom{ 
+.uis-margin-large-bottom {
     margin-bottom: $margin-large-margin !important;
 }
 
-.uis-margin-large-left{ 
+.uis-margin-large-left {
     margin-left: $margin-large-margin !important;
 }
 
-.uis-margin-large-right{ 
+.uis-margin-large-right {
     margin-right: $margin-large-margin !important;
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
+@include respond-to(large) {
 
-    .uis-margin-large{ 
+    .uis-margin-large {
         margin-bottom: $margin-large-margin-l !important;
     }
     
-    * + .uis-margin-large{ 
+    * + .uis-margin-large {
         margin-top: $margin-large-margin-l !important;
     }
     
-    .uis-margin-large-top{ 
+    .uis-margin-large-top {
         margin-top: $margin-large-margin-l !important;
     }
     
-    .uis-margin-large-bottom{ 
+    .uis-margin-large-bottom {
         margin-bottom: $margin-large-margin-l !important;
     }
     
-    .uis-margin-large-left{ 
+    .uis-margin-large-left {
         margin-left: $margin-large-margin-l !important;
     }
     
-    .uis-margin-large-right{ 
+    .uis-margin-large-right {
         margin-right: $margin-large-margin-l !important;
     }
 }
@@ -218,54 +218,54 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
  * Large
  */
 
-.uis-margin-xlarge{ 
+.uis-margin-xlarge {
     margin-bottom: $margin-xlarge-margin !important;
 }
 
-* + .uis-margin-xlarge{ 
+* + .uis-margin-xlarge {
     margin-top: $margin-xlarge-margin !important;
 }
 
-.uis-margin-xlarge-top{ 
+.uis-margin-xlarge-top {
     margin-top: $margin-xlarge-margin !important;
 }
 
-.uis-margin-xlarge-bottom{ 
+.uis-margin-xlarge-bottom {
     margin-bottom: $margin-xlarge-margin !important;
 }
 
-.uis-margin-xlarge-left{ 
+.uis-margin-xlarge-left {
     margin-left: $margin-xlarge-margin !important;
 }
 
-.uis-margin-xlarge-right{ 
+.uis-margin-xlarge-right {
     margin-right: $margin-xlarge-margin !important;
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
+@include respond-to(large) {
 
-    .uis-margin-xlarge{ 
+    .uis-margin-xlarge {
         margin-bottom: $margin-xlarge-margin-l !important;
     }
     
-    * + .uis-margin-xlarge{ 
+    * + .uis-margin-xlarge {
         margin-top: $margin-xlarge-margin-l !important;
     }
     
-    .uis-margin-xlarge-top{ 
+    .uis-margin-xlarge-top {
         margin-top: $margin-xlarge-margin-l !important;
     }
     
-    .uis-margin-xlarge-bottom{ 
+    .uis-margin-xlarge-bottom {
         margin-bottom: $margin-xlarge-margin-l !important;
     }
     
-    .uis-margin-xlarge-left{ 
+    .uis-margin-xlarge-left {
         margin-left: $margin-xlarge-margin-l !important;
     }
     
-    .uis-margin-xlarge-right{ 
+    .uis-margin-xlarge-right {
         margin-right: $margin-xlarge-margin-l !important;
     }
 }
@@ -275,32 +275,32 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
 /* Remove Margin
    ================================================== */
 
-.uis-margin-remove{
+.uis-margin-remove {
     margin: 0 !important;
 }
 
-.uis-margin-remove-top{
+.uis-margin-remove-top {
     margin-top: 0 !important;
 }
 
-.uis-margin-remove-bottom{
+.uis-margin-remove-bottom {
     margin-bottom: 0 !important;
 }
 
-.uis-margin-remove-left{
+.uis-margin-remove-left {
     margin-left: 0 !important;
 }
 
-.uis-margin-remove-right{
+.uis-margin-remove-right {
     margin-right: 0 !important;
 }
 
-.uis-margin-remove-vertical{
+.uis-margin-remove-vertical {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
-.uis-margin-remove-adjacent + *{
+.uis-margin-remove-adjacent + * {
     margin-top: !important;
 }
 
@@ -309,28 +309,28 @@ $margin-xlarge-margin-l:                margin(xlarge) !default;
 /* Auto Margin
    ================================================== */
 
-.uis-margin-auto{
+.uis-margin-auto {
     margin-left: auto !important;
     margin-right: auto !important;
 }
 
-.uis-margin-auto-top{
+.uis-margin-auto-top {
     margin-top: auto !important;
 }
 
-.uis-margin-auto-bottom{
+.uis-margin-auto-bottom {
     margin-bottom: auto !important;
 }
 
-.uis-margin-auto-left{
+.uis-margin-auto-left {
     margin-left: auto !important;
 }
 
-.uis-margin-auto-right{
+.uis-margin-auto-right {
     margin-right: auto !important;
 }
 
-.uis-margin-auto-vertical{
+.uis-margin-auto-vertical {
     margin-top: auto !important;
     margin-bottom: auto !important;
 }

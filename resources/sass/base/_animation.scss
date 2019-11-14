@@ -33,12 +33,12 @@
  * It causes bug in transform and z-index
  */
 
-.uis-animate{
+.uis-animate {
     animation-duration: 1s;
     animation-fill-mode: none;
 }
  
-.uis-animate-infinite{
+.uis-animate-infinite {
     animation-iteration-count: infinite;
 }
 
@@ -51,27 +51,27 @@
 * Animation Delay
 */
 
-.uis-animate-delay-500ms{
+.uis-animate-delay-500ms {
     animation-delay: 0.5s;
 }
 
-.uis-animate-delay-1s{
+.uis-animate-delay-1s {
     animation-delay: 1s;
 }
 
-.uis-animate-delay-2s{
+.uis-animate-delay-2s {
     animation-delay: 2s;
 }
 
-.uis-animate-delay-3s{
+.uis-animate-delay-3s {
     animation-delay: 3s;
 }
 
-.uis-animate-delay-4s{
+.uis-animate-delay-4s {
     animation-delay: 4s;
 }
 
-.uis-animate-delay-5s{
+.uis-animate-delay-5s {
     animation-delay: 5s;
 }
 
@@ -80,19 +80,19 @@
 * Animation Duration
 */
 
-.uis-animate-duration-slower{
+.uis-animate-duration-slower {
     animation-duration: 3s;
 }
 
-.uis-animate-duration-slow{
+.uis-animate-duration-slow {
     animation-duration: 2s;
 }
 
-.uis-animate-duration-fast{
+.uis-animate-duration-fast {
     animation-duration: 800ms;
 }
 
-.uis-animate-duration-faster{
+.uis-animate-duration-faster {
     animation-duration: 500ms;
 }
 
@@ -101,29 +101,29 @@
 ================================================== */
 
 /* Fade In */
-.uis-animate-fade-in{
+.uis-animate-fade-in {
     animation-name: fadeIn;
 }
 
-@keyframes fadeIn{
-    from{
+@keyframes fadeIn {
+    from {
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }
 
 /* Fade Out */
-.uis-animate-fade-out{
+.uis-animate-fade-out {
     animation-name: fadeOut;
 }
 
-@keyframes fadeOut{
-    from{
+@keyframes fadeOut {
+    from {
         opacity: 1;
     }
-    to{
+    to {
         opacity: 0;
     }
 }
@@ -133,16 +133,16 @@
 /* Rotate
 ================================================== */
 
-.uis-animate-rotate{
+.uis-animate-rotate {
     animation-name: rotating;
     animation-timing-function: linear;
 }
 
-@keyframes rotating{
-    from{
+@keyframes rotating {
+    from {
         transform: rotate(0deg);
     }
-    to{
+    to {
         transform: rotate(360deg);
     }
 }
@@ -153,65 +153,65 @@
 ================================================== */
 
 /* Slide In Down */ 
-.uis-animate-slide-in-down{
+.uis-animate-slide-in-down {
     animation-name: slideInDown;
 }
  
-@keyframes slideInDown{
-    from{
+@keyframes slideInDown {
+    from {
         transform: translate3d(0, -100%, 0);
         visibility: visible;
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
 }
 
 /* Slide In Down */ 
-.uis-animate-slide-in-up{
+.uis-animate-slide-in-up {
     animation-name: slideInUp;
 }
  
-@keyframes slideInUp{
-    from{
+@keyframes slideInUp {
+    from {
         transform: translate3d(0, 100%, 0);
         visibility: visible;
     }
-    to{
+    to {
         transform: translate3d(0, 0, 0);
     }
 }
 
 /* Slide In Down */ 
-.uis-animate-slide-in-left{
+.uis-animate-slide-in-left {
     animation-name: slideInLeft;
 }
  
-@keyframes slideInLeft{
-    from{
+@keyframes slideInLeft {
+    from {
         transform: translate3d(-100%, 0, 0);
         visibility: visible;
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
 }
 
 /* Slide Out Up */ 
-.uis-animate-slide-out-up{
+.uis-animate-slide-out-up {
     animation-name: slideOutUp;
 }
  
-@keyframes slideOutUp{
-    from{
+@keyframes slideOutUp {
+    from {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
-    to{
+    to {
         opacity: 0;
         transform: translate3d(0, -100%, 0);
     }

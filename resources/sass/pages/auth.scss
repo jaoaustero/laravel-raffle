@@ -27,13 +27,16 @@ $auth-container-padding-horizontal:                         gutter(xsmall) !defa
  * 2. Hide all excess content
  * 3. Style
  */
-.uis-auth{
+.uis-auth {
     position: relative;
+
     /* 1 */
     height: 100vh;
     width: 100%;
+
     /* 2 */
     overflow: hidden;
+
     /* 3 */
     background-color: $auth-background;
     background-image: $auth-background-image;
@@ -50,23 +53,27 @@ $auth-container-padding-horizontal:                         gutter(xsmall) !defa
  * 4. Set max width
  * 5. Add spacing on side when mobile
  */
-.uis-auth-container{
+.uis-auth-container {
     /* 1 */
     display: flex;
     align-items: center;
+
     /* 2 */
     margin: 0 auto;
+
     /* 3 */
     height: 100%;
+
     /* 4 */
     max-width: $auth-container-max-width;
+    
     /* 5 */
     padding: 0 $auth-container-padding-horizontal;
 }
 
 /* Table landscape and bigger */
-@include respond-to(medium){
-    .uis-auth-container{
+@include respond-to(medium) {
+    .uis-auth-container {
         padding: 0;
     }
 }

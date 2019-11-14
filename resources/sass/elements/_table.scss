@@ -21,7 +21,7 @@
 // Variables
 // ========================================================================
 
-$table-margin-vertical:                         margin(global)!default;
+$table-margin-vertical:                         margin(global) !default;
 
 $table-cell-padding-vertical:                   16px !default;
 $table-cell-padding-horizontal:                 12px !default;
@@ -35,7 +35,7 @@ $table-footer-font-size:                        font-size(small) !default;
 $table-caption-font-size:                       font-size(small) !default;
 $table-caption-color:                           color(muted) !default;
 
-$table-row-active-background:                   #FFD !default;
+$table-row-active-background:                   #FFFFDD !default;
 
 $table-divider-border-width:                    0.235px !default;
 $table-divider-border:                          border(border-color) !default;
@@ -64,18 +64,20 @@ $table-expand-min-width:                        150px !default;
  * 3. Style
  */
 
-.uis-table{
+.uis-table {
     /* 1 */
     border-collapse: collapse;
     border-spacing: 0;
+
     /* 2 */
     width: 100%;
+
     /* 3 */
     margin-bottom: $table-margin-vertical;
 }
 
 /* Add margin if adjacent element */
-* + .uis-table{
+* + .uis-table {
     margin-top: $table-margin-vertical;
 }
 
@@ -87,10 +89,11 @@ $table-expand-min-width:                        150px !default;
 /*
  * 1. Style
  */
-.uis-table th{
+.uis-table th {
     padding: $table-cell-padding-vertical $table-cell-padding-horizontal;
     text-align: left;
     vertical-align: bottom;
+    
     /* 1 */
     font-size: $table-header-cell-font-size;
     font-weight: $table-header-cell-font-weight;
@@ -102,18 +105,18 @@ $table-expand-min-width:                        150px !default;
 /* Cell
    ================================================== */
 
-.uis-table td{
+.uis-table td {
     padding: $table-cell-padding-vertical $table-cell-padding-horizontal;
     vertical-align: top;
     color: color(default);
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 /*
  * Remove margin from the last-child
  */
 
-.uis-table td > :last-child{
+.uis-table td > :last-child {
     margin-bottom: 0;
 }
 
@@ -122,7 +125,7 @@ $table-expand-min-width:                        150px !default;
 /* Footer
    ================================================== */
 
-.uis-table tfoot{
+.uis-table tfoot {
     font-size: $table-footer-font-size;
 }
 
@@ -131,7 +134,7 @@ $table-expand-min-width:                        150px !default;
 /* Caption
    ================================================== */
 
-.uis-table caption{
+.uis-table caption {
     font-size: $table-caption-font-size;
     text-align: left;
     color: $table-caption-color;
@@ -143,7 +146,7 @@ $table-expand-min-width:                        150px !default;
    ================================================== */
 
 .uis-table-middle,
-.uis-table-middle td{
+.uis-table-middle td {
     vertical-align: middle !important;
 }
 
@@ -158,8 +161,8 @@ $table-expand-min-width:                        150px !default;
 
 .uis-table-divider > tr:not(:first-child),
 .uis-table-divider > :not(:first-child) > tr,
-.uis-table-divider > :first-child > tr:not(:first-child){
-    border-top: $table-divider-border-width solid $table-divider-border
+.uis-table-divider > :first-child > tr:not(:first-child) {
+    border-top: $table-divider-border-width solid $table-divider-border;
 }
  
 
@@ -169,7 +172,7 @@ $table-expand-min-width:                        150px !default;
  */
 
 .uis-table-striped > tr:nth-of-type(odd),
-.uis-table-striped tbody tr:nth-of-type(odd){
+.uis-table-striped tbody tr:nth-of-type(odd) {
     background: $table-striped-row-background;
 }
 
@@ -180,7 +183,7 @@ $table-expand-min-width:                        150px !default;
  */
 
 .uis-table-hover > tr:hover,
-.uis-table-hover tbody tr:hover{
+.uis-table-hover tbody tr:hover {
     background: $table-hover-row-background;
 }
 
@@ -190,7 +193,7 @@ $table-expand-min-width:                        150px !default;
    ================================================== */
 
 .uis-table > tr.uis-active,
-.uis-table tbody tr.uis-active{
+.uis-table tbody tr.uis-active {
     background: $table-row-active-background;
 }
 
@@ -200,12 +203,12 @@ $table-expand-min-width:                        150px !default;
    ================================================== */
 
 .uis-table-small th,
-.uis-table-small td{
+.uis-table-small td {
     padding: $table-small-cell-padding-vertical $table-small-cell-padding-horizontal;
 }
 
 .uis-table-large th,
-.uis-table-large td{
+.uis-table-large td {
     padding: $table-large-cell-padding-vertical $table-large-cell-padding-horizontal;
 }
 
@@ -215,12 +218,12 @@ $table-expand-min-width:                        150px !default;
    ================================================== */
 
 .uis-table-justify th:first-child,
-.uis-table-justify td:first-child{
+.uis-table-justify td:first-child {
     padding-left: 0;
 }
 
 .uis-table-justify th:last-child,
-.uis-table-justify td:last-child{
+.uis-table-justify td:last-child {
     padding-right: 0;
 }
 
@@ -229,12 +232,12 @@ $table-expand-min-width:                        150px !default;
 /* Cell size modifier
    ================================================== */
 
-.uis-table-shrink{
-    width: 1px
+.uis-table-shrink {
+    width: 1px;
 }
 
-.uis-table-expand{
-   min-width: $table-expand-min-width;
+.uis-table-expand {
+    min-width: $table-expand-min-width;
 }
 
 
@@ -246,36 +249,36 @@ $table-expand-min-width:                        150px !default;
  * Does not work with `uk-table-justify` at the moment
  */
 
-.uis-table-link{
+.uis-table-link {
     padding: 0 !important;
 }
 
-.uis-table-link > a{
+.uis-table-link > a {
     display: block;
     padding: $table-cell-padding-vertical $table-cell-padding-horizontal;
 }
 
-.uis-table-small .uis-table-link > a{
+.uis-table-small .uis-table-link > a {
     padding: $table-small-cell-padding-vertical $table-small-cell-padding-horizontal;
 }
 
 
-@include respond-to-max(small){
+@include respond-to-max(small) {
 
     .uis-table-responsive,
     .uis-table-responsive tbody,
     .uis-table-responsive th,
     .uis-table-responsive td,
-    .uis-table-responsive tr{
+    .uis-table-responsive tr {
         display: block;
     }
 
-    .uis-table-responsive thead{
+    .uis-table-responsive thead {
         display: none;
     }
 
     .uis-table-responsive th,
-    .uis-table-responsive td{
+    .uis-table-responsive td {
         width: auto !important;
         max-width: none !important;
         min-width: 0 !important;
@@ -285,18 +288,18 @@ $table-expand-min-width:                        150px !default;
 
     .uis-table-responsive th:not(:first-child):not(.uis-table-link),
     .uis-table-responsive td:not(:first-child):not(.uis-table-link),
-    .uis-table-responsive .uis-table-link:not(:first-child) > a{
+    .uis-table-responsive .uis-table-link:not(:first-child) > a {
         padding-top: round($table-cell-padding-vertical / 3) !important;
     }
 
     .uis-table-responsive th:not(:last-child):not(.uis-table-link),
     .uis-table-responsive td:not(:last-child):not(.uis-table-link),
-    .uis-table-responsive .uis-table-link:not(:last-child) > a{
+    .uis-table-responsive .uis-table-link:not(:last-child) > a {
         padding-bottom: round($table-cell-padding-vertical / 3) !important;
     }
 
     .uis-table-justify.uis-table-responsive th,
-    .uis-table-justify.uis-table-responsive td{
+    .uis-table-justify.uis-table-responsive td {
         padding-left: 0;
         padding-right: 0;
     }
@@ -307,13 +310,13 @@ $table-expand-min-width:                        150px !default;
 /* Table to card
    ================================================== */
 
-@include respond-to-max(small){
+@include respond-to-max(small) {
 
-    .uis-table.uis-table-to-card thead{
+    .uis-table.uis-table-to-card thead {
         display: none;
     }
 
-    .uis-table.uis-table-to-card tr{
+    .uis-table.uis-table-to-card tr {
         width: 100%;
         display: block;
         background: #FFFFFF;
@@ -330,98 +333,98 @@ $table-expand-min-width:                        150px !default;
         margin: gutter(small) 0px;
     }
 
-    .uis-table.uis-table-to-card tr:first-child{
+    .uis-table.uis-table-to-card tr:first-child {
         margin-top: 0px;
     }
 
     /*
      * Micro clearfix
      */
-    .uis-table.uis-table-to-card tr{
+    .uis-table.uis-table-to-card tr {
         @include clearfix;
     }
 
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-image{
+    .uis-table.uis-table-to-card tr td.uis-table-to-card-image {
         padding: 0px;
     }
 
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-image .uis-avatar{
+    .uis-table.uis-table-to-card tr td.uis-table-to-card-image .uis-avatar {
         height: 300px;
         width: 100%;
         
-        & img{
+        & img {
             border-bottom-right-radius: 0px;
             border-bottom-left-radius: 0px;
             filter: brightness(80%);
         }
 
-        & img.uis-border-circle{
+        & img.uis-border-circle {
             border-radius: 0px !important;
         }
     }
 
     .uis-table.uis-table-to-card tr td .uis-avatar-border,
-    .uis-table.uis-table-to-card tr td .uis-placeholder-image{
+    .uis-table.uis-table-to-card tr td .uis-placeholder-image {
         border-radius: 0px;
         border: 0px;
         padding: 0px;
-        margin: 0px!important;
+        margin: 0px !important;
 
-        & img{
+        & img {
             padding: 0;
         }
     }
 
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-title{
+    .uis-table.uis-table-to-card tr td.uis-table-to-card-title {
         display: inline-block;
 
         font-size: font-size(large);
-        font-weight: bold;
+        font-weight: 600;
         line-height: font-size(large);
         margin-top: 12px;
     }
 
-    .uis-table.uis-table-to-card tr td .uis-table-card-label{
+    .uis-table.uis-table-to-card tr td .uis-table-card-label {
         display: block;
         font-size: font-size(small);
         font-weight: 600;
     }
 
-    .uis-table.uis-table-to-card tr td{
+    .uis-table.uis-table-to-card tr td {
         display: block;
         padding: margin(small) gutter(small);
     }
 
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-option{
+    .uis-table.uis-table-to-card tr td.uis-table-to-card-option {
         padding: 0px;
         margin-bottom: 12px;
     }
 
-    .uis-table.uis-table-to-card tr td:not(.uis-table-to-card-image):not(.uis-table-to-card-title):not(:last-child):not(.uis-table-to-card-remove-border){
+    .uis-table.uis-table-to-card tr td:not(.uis-table-to-card-image):not(.uis-table-to-card-title):not(:last-child):not(.uis-table-to-card-remove-border) {
         border-bottom: border(border-width) solid border(border-color);
     }
 
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-option > [uis-dropdown]{
+    .uis-table.uis-table-to-card tr td.uis-table-to-card-option > [uis-dropdown] {
         position: absolute;
         top: 15px;
         right: 15px;
     }
 
-    .uis-table.uis-table-to-card tr td .uis-split-content{
+    .uis-table.uis-table-to-card tr td .uis-split-content {
         display: flex;
         align-items: center;
         align-content: center;
 
-        & div{
+        & div {
             flex: 1;
         }
 
-        & div:last-child{
+        & div:last-child {
             text-align: right;
         }
     }
 }
 
-.uis-table-card-label{
+.uis-table-card-label {
     display: none;
 }

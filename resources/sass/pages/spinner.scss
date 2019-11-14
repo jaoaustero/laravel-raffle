@@ -47,7 +47,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
  * 3. Add layer greater than wrapper to avoid overlapping of :before :after of wrapper.
  * 4. Style
  */
-.uis-spinner{
+.uis-spinner {
     position: relative;
 
     /* 1 */
@@ -76,7 +76,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
  * 3. Style
    ================================================== */
 
-.uis-spinner-wrapper{
+.uis-spinner-wrapper {
     position: relative;
 
     /* 1 */
@@ -97,7 +97,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
  * 1. Make the child expand
  * 2. Make the layer greater than background
  */
-.uis-spinner-wrapper > *{
+.uis-spinner-wrapper > * {
     /* 1 */
     flex: 1;
 
@@ -106,7 +106,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 }
 
 .uis-spinner-wrapper:before,
-.uis-spinner-wrapper:after{
+.uis-spinner-wrapper:after {
     content: '';
     
     position: absolute;
@@ -119,7 +119,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * Blue radial gradient
  */
-.uis-spinner-wrapper:before{
+.uis-spinner-wrapper:before {
     top: 0;
     left: 0;
 
@@ -129,7 +129,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * Violet radial gradient
  */
-.uis-spinner-wrapper:after{
+.uis-spinner-wrapper:after {
     right: 0;
     bottom: 0;
 
@@ -144,7 +144,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
  * 3. Style
    ================================================== */
 
-.uis-spinner-body{
+.uis-spinner-body {
     position: relative;
 
     /* 1 */
@@ -161,7 +161,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 }
 
 .uis-spinner-body:before,
-.uis-spinner-body:after{
+.uis-spinner-body:after {
     content: '';
 
     position: absolute;
@@ -181,7 +181,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * Left arrow
  */
-.uis-spinner-body:before{
+.uis-spinner-body:before {
     left: 0;
     border-left: 100px solid color(default);
 }
@@ -189,7 +189,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * Right arrow
  */
-.uis-spinner-body:after{
+.uis-spinner-body:after {
     right: 0;
     border-right: 100px solid color(default);
 }
@@ -202,7 +202,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
  * 3. Style
    ================================================== */
 
-.uis-spinner-reel{
+.uis-spinner-reel {
     position: relative;
 
     /* 1 */
@@ -221,7 +221,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
  * Adding shadow to make look 3D
  */
 .uis-spinner-reel:before,
-.uis-spinner-reel:after{
+.uis-spinner-reel:after {
     content: '';
     position: absolute;
     z-index: 150;
@@ -236,7 +236,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * Top shadow
  */
-.uis-spinner-reel:before{
+.uis-spinner-reel:before {
     top: 0;
 
     background-image: linear-gradient(to bottom, #252525, transparent);
@@ -245,7 +245,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * Bottom shadow
  */
-.uis-spinner-reel:after{
+.uis-spinner-reel:after {
     bottom: 0;
 
     background-image: linear-gradient(to top, #252525, transparent);
@@ -265,9 +265,9 @@ $spinner-reel-background:                               theme-color(inverse) !de
    Adopts `uis-list` default style
    ================================================== */
 
-.uis-spinner-list > li{
+.uis-spinner-list > li {
     color: color(primary);
-    font-weight: font-weight(bold);
+    font-weight: 600;
     font-size: 50px;
     padding: 12px 0px;
 
@@ -275,7 +275,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
     transition: all 0.15s ease-in-out;
 }
 
-.uis-spinner-list > li.uis-active{
+.uis-spinner-list > li.uis-active {
     opacity: 1;
 }
 
@@ -283,7 +283,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
  * 1. Remove the gutter on the top
  * 2. Make it lean and looks 3d 
  */
-.uis-spinner-list > li:first-child{
+.uis-spinner-list > li:first-child {
     /* 1 */
     padding-top: 0px;
 
@@ -294,17 +294,17 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * 1. Make it lean and looks 3d 
  */
-.uis-spinner-list > li:nth-child(3){
+.uis-spinner-list > li:nth-child(3) {
     /* 1 */
     transform: rotateX(40deg);
 }
 
 /* Remove the gutter on last child */
-.uis-spinner-list > li:last-child{
+.uis-spinner-list > li:last-child {
     padding-bottom: 0px;
 }
 
-.uis-spinner-list{
+.uis-spinner-list {
     position: relative;
     top: 0;
 }
@@ -312,7 +312,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * Adds blur on the list
  */
-.uis-spinner-list.uis-active{
+.uis-spinner-list.uis-active {
     filter: blur(0px);
 
     animation: spinnerBlur 4s ease-in-out;
@@ -320,28 +320,28 @@ $spinner-reel-background:                               theme-color(inverse) !de
     transition: all 0.3s ease-in-out;
 }
 
-@keyframes spinnerBlur{
-    0%{
+@keyframes spinnerBlur {
+    0% {
         filter: blur(0px);
     }
 
-    10%{
+    10% {
         filter: blur(5px);
     }
 
-    25%{
+    25% {
         filter: blur(8px);
     }
 
-    50%{
+    50% {
         filter: blur(8px);
     }
 
-    75%{
+    75% {
         filter: blur(5px);
     }
 
-    100%{
+    100% {
         filter: blur(0px);
     }
 }

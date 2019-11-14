@@ -25,13 +25,13 @@ $column-divider-rule-width:             border(border-width) !default;
    ================================================== */    
 
 
-[class*='uis-column-']{
+[class*='uis-column-'] {
     column-gap: $column-gutter;
 }
 
 /* Desktop and Bigger */
-@include respond-to(large){
-    [class*='uis-column-']{
+@include respond-to(large) {
+    [class*='uis-column-'] {
         column-gap: $column-gutter-l;
     }
 }
@@ -53,29 +53,27 @@ $column-divider-rule-width:             border(border-width) !default;
  * 1. Double the column gap
  */
 
-.uis-column-divider{
+.uis-column-divider {
     column-rule: $column-divider-rule-width solid $column-divider-rule-color;
+    
     /* 1 */
     column-gap: ($column-gutter * 2);
 }
 
 /* Desktop and bigger */
-@include respond-to(large){
-    .uis-column-divider{
+@include respond-to(large) {
+    .uis-column-divider {
         column-gap: ($column-gutter-l * 2);
     }
 }
 
-
+/* Make element span across all columns
+ * Does not work in Firefox yet
+   ================================================== */ 
+.uis-column-span {
+    column-span: all;
+}
 
 /* Width modifiers
    ================================================== */ 
 @include create-column-width-modifiers;
-
-/* Make element span across all columns
- * Does not work in Firefox yet
-   ================================================== */ 
-
-.uis-column-span{
-    column-span: all;
-}

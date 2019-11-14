@@ -53,21 +53,21 @@ $link-inverse-hover-color:              transparentize(color(inverse), 0.5) !def
     Component: Link
    ================================================== */
 
-.uis-link{
+.uis-link {
     position: relative;
 }
 
-.uis-link-line{
+.uis-link-line {
     position: relative;
     // left: 50px;
     margin-left: 50px;
 }
 
-.uis-link-line:hover{
+.uis-link-line:hover {
     text-decoration: none;
 }
 
-.uis-link.uis-link-line::after{
+.uis-link.uis-link-line::after {
     content: '';
     position: absolute;
     left: -50px;
@@ -82,13 +82,13 @@ $link-inverse-hover-color:              transparentize(color(inverse), 0.5) !def
    ================================================== */
 
 a.uis-link-inverse,
-.uis-link-inverse a{
+.uis-link-inverse a {
     color: $link-inverse-color;
     transition: color 0.3s ease-in-out;
 }
 
 a.uis-link-inverse:hover,
-.uis-link-inverse a:hover{
+.uis-link-inverse a:hover {
     color: $link-inverse-hover-color;
     text-decoration: none;
 }
@@ -99,12 +99,12 @@ a.uis-link-inverse:hover,
    ================================================== */
 
 a.uis-link-muted,
-.uis-link-muted a{
+.uis-link-muted a {
     color: $link-muted-color;
 }
 
 a.uis-link-muted:hover,
-.uis-link-muted a:hover{
+.uis-link-muted a:hover {
     color: $link-muted-hover-color;
 }
 
@@ -113,12 +113,12 @@ a.uis-link-muted:hover,
    ================================================== */
 
 a.uis-link-default,
-.uis-link-default a{
+.uis-link-default a {
     color: $link-default-color;
 }
 
 a.uis-link-default:hover,
-.uis-link-default a:hover{
+.uis-link-default a:hover {
     color: $link-default-hover-color;
 }
 
@@ -128,12 +128,12 @@ a.uis-link-default:hover,
    ================================================== */
 
 a.uis-link-emphasis,
-.uis-link-emphasis a{
+.uis-link-emphasis a {
     color: $link-emphasis-color;
 }
 
 a.uis-link-emphasis:hover,
-.uis-link-emphasis a:hover{
+.uis-link-emphasis a:hover {
     color: $link-emphasis-hover-color;
 }
 
@@ -143,12 +143,12 @@ a.uis-link-emphasis:hover,
    ================================================== */
 
 a.uis-link-primary,
-.uis-link-primary a{
+.uis-link-primary a {
     color: $link-primary-color;
 }
 
 a.uis-link-primary:hover,
-.uis-link-primary a:hover{
+.uis-link-primary a:hover {
     color: $link-primary-color;
 }
 
@@ -158,12 +158,12 @@ a.uis-link-primary:hover,
    ================================================== */
 
 a.uis-link-success,
-.uis-link-success a{
+.uis-link-success a {
     color: $link-success-color;
 }
 
 a.uis-link-success:hover,
-.uis-link-success a:hover{
+.uis-link-success a:hover {
     color: $link-success-hover-color;
 }
 
@@ -173,12 +173,12 @@ a.uis-link-success:hover,
    ================================================== */
 
 a.uis-link-warning,
-.uis-link-warning a{
+.uis-link-warning a {
     color: $link-warning-color;
 }
 
 a.uis-link-warning:hover,
-.uis-link-warning a:hover{
+.uis-link-warning a:hover {
     color: $link-warning-hover-color;
 }
 
@@ -188,13 +188,13 @@ a.uis-link-warning:hover,
    ================================================== */
 
 a.uis-link-danger,
-.uis-link-danger a{
+.uis-link-danger a {
     color: $link-danger-color;
     text-decoration: none;
 }
 
 a.uis-link-danger:hover,
-.uis-link-danger a:hover{
+.uis-link-danger a:hover {
     color: $link-danger-hover-color;
     text-decoration: none;
 }
@@ -205,13 +205,13 @@ a.uis-link-danger:hover,
    ================================================== */
 
 a.uis-link-inverse,
-.uis-link-inverse a{
+.uis-link-inverse a {
     color: $link-inverse-color;
     text-decoration: none;
 }
 
 a.uis-link-inverse:hover,
-.uis-link-inverse a:hover{
+.uis-link-inverse a:hover {
     color: $link-inverse-hover-color;
     text-decoration: none;
 }
@@ -222,12 +222,12 @@ a.uis-link-inverse:hover,
    ================================================== */
 
 a.uis-link-text:not(:hover),
-.uis-link-text a:not(:hover){
+.uis-link-text a:not(:hover) {
     color: inherit;
 }
 
 a.uis-link-text:hover,
-.uis-link-text a:hover{
+.uis-link-text a:hover {
     color: $link-text-hover-color;
 }
 
@@ -237,12 +237,12 @@ a.uis-link-text:hover,
    ================================================== */
 
 a.uis-link-heading:not(:hover),
-.uis-link-heading a:not(:hover){
+.uis-link-heading a:not(:hover) {
     color: inherit;
 }
 
 a.uis-link-heading:hover,
-.uis-link-heading a:hover{
+.uis-link-heading a:hover {
     color: $link-heading-hover-color;
     text-decoration: $link-heading-hover-text-decoration;
 }
@@ -259,7 +259,7 @@ a.uis-link-heading:hover,
 a.uis-link-reset,
 a.uis-link-reset:hover,
 .uis-link-reset a,
-.uis-link-reset a:hover{
+.uis-link-reset a:hover {
     color: inherit;
     text-decoration: none;
 }
