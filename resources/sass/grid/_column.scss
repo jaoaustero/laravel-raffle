@@ -22,7 +22,7 @@ $column-divider-rule-width:             border(border-width) !default;
 
 /* ==================================================
     Component: Column
-   ================================================== */    
+   ================================================== */
 
 
 [class*='uis-column-'] {
@@ -47,7 +47,7 @@ $column-divider-rule-width:             border(border-width) !default;
 
 
 /* Divider
-   ================================================== */ 
+   ================================================== */
 
 /*
  * 1. Double the column gap
@@ -55,7 +55,7 @@ $column-divider-rule-width:             border(border-width) !default;
 
 .uis-column-divider {
     column-rule: $column-divider-rule-width solid $column-divider-rule-color;
-    
+
     /* 1 */
     column-gap: ($column-gutter * 2);
 }
@@ -69,11 +69,11 @@ $column-divider-rule-width:             border(border-width) !default;
 
 /* Make element span across all columns
  * Does not work in Firefox yet
-   ================================================== */ 
+   ================================================== */
 .uis-column-span {
     column-span: all;
 }
 
 /* Width modifiers
-   ================================================== */ 
+   ================================================== */
 @include create-column-width-modifiers;

@@ -151,7 +151,7 @@ $event-button-icon-font-size:                           1.2rem !default;
  */
 .uis-event-qr-tooltip:before {
     content: '';
-    
+
     /* 1 */
     position: absolute;
     bottom: -10px;
@@ -161,7 +161,7 @@ $event-button-icon-font-size:                           1.2rem !default;
     /* 2 */
     height: 0;
     width: 0;
-    
+
     /* 3 */
     border-top: $event-qr-tooltip-border-width solid $event-background;
     border-left: $event-qr-tooltip-border-width solid transparent;

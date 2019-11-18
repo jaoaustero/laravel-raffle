@@ -2,7 +2,7 @@
 //  Name:               Button
 //  Description:        Styles for buttons
 //
-//  Component:          `uis-button-*` 
+//  Component:          `uis-button-*`
 //
 //  Sub-components:     `uis-button-group`
 //                      `uis-floating-button`
@@ -16,7 +16,7 @@
 //                      `uis-button-outline-secondary`
 //                      `uis-button-outline-warning`
 //                      `uis-button-outline-danger`
-//                      
+//
 //
 //  States:             `active`
 //  ==================================================
@@ -29,7 +29,7 @@ $button-line-height:                        control-height(medium) !default;
 $button-small-line-height:                  control-height(small) !default;
 $button-large-line-height:                  control-height(large) !default;
 
-$button-font-size:                          font(font-size) !default; 
+$button-font-size:                          font(font-size) !default;
 $button-small-font-size:                    font-size(small) !default;
 $button-large-font-size:                    font-size(large) !default;
 
@@ -83,8 +83,10 @@ $button-icon-danger-color:                  color(inverse);
  * 5. Correct `font` properties and `color` not being inherited for `button`.
  * 6. Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 7. Style
- * 8. `line-height` is used to create a height because it also centers the text vertically for `a` elements.
- *      Better would be to use height and flexbox to center the text vertically but flexb ox doesn't work in Firefox on `button` elements.
+ * 8. `line-height` is used to create a height because it also centers the text
+ *    vertically for `a` elements.
+ *    Better would be to use height and flexbox to center the text vertically
+ *    but flexb ox doesn't work in Firefox on `button` elements.
  * 9. Align text if button has a width.
  * 10. Require for `a`.
  */
@@ -286,7 +288,7 @@ $button-icon-danger-color:                  color(inverse);
     padding: 0;
     line-height: $button-link-line-height;
     background: none;
-    
+
     /* 2 */
     color: $button-link-color;
 }
@@ -310,7 +312,8 @@ $button-icon-danger-color:                  color(inverse);
    ================================================== */
 
 /*
- * 1. Using `flex` instead of `inline-block` to prevent whitespace between child elements
+ * 1. Using `flex` instead of `inline-block` to prevent
+ *    whitespace between child elements
  * 2. Behave like button
  * 3. Create position context
  */
@@ -318,7 +321,7 @@ $button-icon-danger-color:                  color(inverse);
 .uis-button-group {
     /* 1 */
     display: inline-flex;
-    
+
     /* 2 */
     vertical-align: middle;
 

@@ -1,6 +1,6 @@
 /*
  * It create modifiers using `theme-colors`
- */ 
+ */
 @mixin create-modifiers($component) {
     @each $modifier, $style in $theme-color {
         .uis-#{$component}-#{$modifier} {
@@ -15,13 +15,14 @@
 
 
 /*
- * It create modifiers using `theme-colors` with selectors (hover, active, focus)
+ * It create modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
  */
 @mixin create-modifiers-with-selectors($type, $component) {
     @if ($type == 'background') {
         @each $modifier, $style in $theme-color {
             @each $color in $style {
-    
+
                 @if ($modifier != 'default') {
                     .uis-#{$component}-#{$modifier} {
                         background-color: $color;
@@ -38,8 +39,8 @@
                     }
                 }
 
-                
-    
+
+
                 /* Hover + Focus */
                 .uis-#{$component}-#{$modifier}:hover,
                 .uis-#{$component}-#{$modifier}:focus {
@@ -47,7 +48,7 @@
                     color: color-yiq($color);
                     border: 1px solid darken($color, 5%);
                 }
-    
+
                 /* Onclick + Active */
                 .uis-#{$component}-#{$modifier}:active,
                 .uis-#{$component}-#{$modifier}.uis-active {
@@ -62,19 +63,19 @@
     @else if ($type == 'text') {
         @each $modifier, $style in $theme-color {
             @each $color in $style {
-                /* 
-                 *#{$modifier} 
+                /*
+                 *#{$modifier}
                  */
                 .uis-#{$component}-text-#{$modifier} {
                     color: $color;
                 }
-    
+
                 /* Hover + Focus */
                 .uis-#{$component}-text-#{$modifier}:hover,
                 .uis-#{$component}-text-#{$modifier}:focus {
                     color: darken($color, 5%);
                 }
-    
+
                 /* Onclick + Active */
                 .uis-#{$component}-text-#{$modifier}:active,
                 .uis-#{$component}-text-#{$modifier}.uis-active {
@@ -87,7 +88,7 @@
 
 
 /*
- * It create text color modifiers using `text-colors` 
+ * It create text color modifiers using `text-colors`
  */
 @mixin create-text-modifiers($component) {
     @each $modifier, $style in $text-color {
@@ -102,7 +103,8 @@
 
 
 /*
- * It create Outline modifiers using `theme-colors` with selectors (hover, active, focus)
+ * It create Outline modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
  */
 @mixin create-outline-modifiers-with-selectors($component) {
     @each $modifier, $style in $theme-color {
@@ -159,7 +161,7 @@
     }
 
     @else {
-        @warn "Unknown `#{$value}` in $breakpoint";
+        @warn 'Unknown `#{$value}` in $breakpoint';
     }
 }
 
@@ -179,7 +181,7 @@
     }
 
     @else {
-        @warn "Unknown `#{$value}` in $breakpoint-max";
+        @warn 'Unknown `#{$value}` in $breakpoint-max';
     }
 }
 
@@ -193,7 +195,7 @@
 @mixin clearfix {
     &:before,
     &:after {
-        content: "";
+        content: '';
         display: table;
     }
     &:after {
@@ -395,8 +397,8 @@
 
     // create single widths
     @each $classname, $style in $width {
-        $condition: if($classname == "uis-width", "[class*='#{$classname}']", ".#{$classname}");
-        
+        $condition: if($classname == 'uis-width', '[class*='#{$classname}']', '.#{$classname}');
+
         #{$condition} {
             @each $property, $value in $style {
                 #{$property}: #{$value};
@@ -588,7 +590,7 @@
             justify-content: $value;
         }
     }
-    
+
     @else {
         @warn 'Error in generate flex alignment';
     }

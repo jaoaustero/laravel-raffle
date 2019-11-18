@@ -48,7 +48,7 @@ $grid-divider-border:                   border(border-color) !default;
 
 /* ==================================================
     Component: Grid
-   ================================================== */  
+   ================================================== */
 
 /*
  * 1. Allow cells to wrap in to the next line
@@ -67,8 +67,8 @@ $grid-divider-border:                   border(border-color) !default;
 
 /*
  * Grid cell
- * Note: Space is allocated solely based on content dimensions, but shrinks: 0 1 auto
- * Reset margin for e.g. paragraphs
+ * Note: Space is allocated solely based on content dimensions,
+ *       but shrinks: 0 1 auto, reset margin for e.g. paragraphs
  */
 
 .uis-grid > * {
@@ -238,16 +238,16 @@ $grid-divider-border:                   border(border-color) !default;
     position: relative;
 }
 
-.uis-grid-divider > :not(.uis-first-column)::before {
-    content: "";
+.uis-grid-divider > :not(.uis-first-column):before {
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     border-left: $grid-divider-border-width solid $grid-divider-border;
 }
 
-.uis-grid-divider .uis-grid-stock > .uis-grid-margin::before {
-    content: "";
+.uis-grid-divider .uis-grid-stock > .uis-grid-margin:before {
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -257,7 +257,7 @@ $grid-divider-border:                   border(border-color) !default;
 /*
  * Default
  */
- 
+
 /* Horizontal */
 .uis-grid-divider {
     margin-left: (-$grid-gutter-horizontal * 2);
@@ -267,7 +267,7 @@ $grid-divider-border:                   border(border-color) !default;
     padding-left: $grid-gutter-horizontal * 2;
 }
 
-.uis-grid-divider > :not(.uis-first-column)::before {
+.uis-grid-divider > :not(.uis-first-column):before {
     left: $grid-gutter-horizontal;
 }
 
@@ -276,7 +276,7 @@ $grid-divider-border:                   border(border-color) !default;
     margin-top: ($grid-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
     top: (-$grid-gutter-vertical);
     left: ($grid-gutter-horizontal * 2);
 }
@@ -292,7 +292,7 @@ $grid-divider-border:                   border(border-color) !default;
         padding-left: $grid-gutter-horizontal-l * 2;
     }
 
-    .uis-grid-divider > :not(.uis-first-column)::before {
+    .uis-grid-divider > :not(.uis-first-column):before {
         left: $grid-gutter-horizontal-l;
     }
 
@@ -301,7 +301,7 @@ $grid-divider-border:                   border(border-color) !default;
         margin-top: ($grid-gutter-horizontal-l * 2);
     }
 
-    .uis-grid-divider .uis-grid-stack > .uis-grid-margin::before {
+    .uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
         top: (-$grid-gutter-vertical-l);
         left: ($grid-gutter-horizontal-l * 2);
     }
@@ -312,7 +312,7 @@ $grid-divider-border:                   border(border-color) !default;
 /*
  * Small
  */
- 
+
 /* Horizontal */
 .uis-grid-divider .uis-grid-small {
     margin-left: (-$grid-small-gutter-horizontal * 2);
@@ -322,7 +322,7 @@ $grid-divider-border:                   border(border-color) !default;
     padding-left: $grid-small-gutter-horizontal * 2;
 }
 
-.uis-grid-divider .uis-grid-small > :not(.uis-first-column)::before {
+.uis-grid-divider .uis-grid-small > :not(.uis-first-column):before {
     left: $grid-small-gutter-horizontal;
 }
 
@@ -331,7 +331,7 @@ $grid-divider-border:                   border(border-color) !default;
     margin-top: ($grid-small-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin:before {
     top: (-$grid-small-gutter-vertical);
     left: ($grid-small-gutter-horizontal * 2);
 }
@@ -341,7 +341,7 @@ $grid-divider-border:                   border(border-color) !default;
 /*
  * Medium
  */
- 
+
 /* Horizontal */
 .uis-grid-divider .uis-grid-medium {
     margin-left: (-$grid-medium-gutter-horizontal * 2);
@@ -351,7 +351,7 @@ $grid-divider-border:                   border(border-color) !default;
     padding-left: $grid-medium-gutter-horizontal * 2;
 }
 
-.uis-grid-divider .uis-grid-medium > :not(.uis-first-column)::before {
+.uis-grid-divider .uis-grid-medium > :not(.uis-first-column):before {
     left: $grid-medium-gutter-horizontal;
 }
 
@@ -360,7 +360,7 @@ $grid-divider-border:                   border(border-color) !default;
     margin-top: ($grid-medium-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin:before {
     top: (-$grid-medium-gutter-vertical);
     left: ($grid-medium-gutter-horizontal * 2);
 }
@@ -370,7 +370,7 @@ $grid-divider-border:                   border(border-color) !default;
 /*
  * Large
  */
- 
+
 /* Horizontal */
 .uis-grid-divider .uis-grid-large {
     margin-left: (-$grid-large-gutter-horizontal * 2);
@@ -380,7 +380,7 @@ $grid-divider-border:                   border(border-color) !default;
     padding-left: $grid-large-gutter-horizontal * 2;
 }
 
-.uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before {
+.uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
     left: $grid-large-gutter-horizontal;
 }
 
@@ -389,7 +389,7 @@ $grid-divider-border:                   border(border-color) !default;
     margin-top: ($grid-large-gutter-horizontal * 2);
 }
 
-.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
     top: (-$grid-large-gutter-vertical);
     left: ($grid-large-gutter-horizontal * 2);
 }
@@ -405,7 +405,7 @@ $grid-divider-border:                   border(border-color) !default;
         padding-left: $grid-large-gutter-horizontal-l * 2;
     }
 
-    .uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before {
+    .uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
         left: $grid-large-gutter-horizontal-l;
     }
 
@@ -414,7 +414,7 @@ $grid-divider-border:                   border(border-color) !default;
         margin-top: ($grid-large-gutter-horizontal-l * 2);
     }
 
-    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before {
+    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
         top: (-$grid-gutter-vertical-l);
         left: ($grid-gutter-horizontal-l * 2);
     }
@@ -428,8 +428,10 @@ $grid-divider-border:                   border(border-color) !default;
 /*
  * Behave like a block element
  * 1. Wrap into the next line
- * 2. Take the full width of at leaset 100%, Only if no class from width component is set.
- * 3. Expand width even if larger than 100%. e.g. because of negative margin (Needed for nested grids)
+ * 2. Take the full width of at leaset 100%, Only if
+ *    no class from width component is set.
+ * 3. Expand width even if larger than 100%. e.g. because
+ *    of negative margin (Needed for nested grids)
  */
 
 .uis-grid-match > *,
@@ -445,7 +447,7 @@ $grid-divider-border:                   border(border-color) !default;
     /* 2 */
     box-sizing: border-box;
     width: 100%;
-    
+
     /* 3 */
     flex: auto;
 }

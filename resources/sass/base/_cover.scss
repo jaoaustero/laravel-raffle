@@ -1,5 +1,6 @@
 // Name:            Cover
-// Description:     Utilities to let embedded content cover their container in a centered position
+// Description:     Utilities to let embedded content cover their container
+//                  in a centered position
 //
 // Component:       `uis-cover`
 //
@@ -10,7 +11,7 @@
 
 /* ==================================================
     Component: Cover
-   ================================================== */    
+   ================================================== */
 
 /*
  * Works with iframes and embedded content
@@ -39,11 +40,11 @@ iframe.uis-cover {
 
 /* Cover container
    ================================================== */
-   
+
 .uis-cover-container {
     /* 1 */
     overflow: hidden;
-    
+
     /* 2 */
     position: relative;
 }

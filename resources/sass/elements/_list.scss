@@ -35,12 +35,12 @@ $list-large-divider-margin-top:             margin(global) !default;
 $list-large-striped-padding-vertical:       margin(global) !default;
 $list-large-striped-padding-horizontal:     margin(small) !default;
 
-$internal-list-bullet-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiIGhlaWdodD0iNnB4IiB3aWR0aD0iNnB4IiBmaWxsPSIjMzMzMzMzIj48dGl0bGU+ZG90PC90aXRsZT48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iNCIvPjwvc3ZnPg==" !default;
+$internal-list-bullet-image: 'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiIGhlaWdodD0iNnB4IiB3aWR0aD0iNnB4IiBmaWxsPSIjMzMzMzMzIj48dGl0bGU+ZG90PC90aXRsZT48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iNCIvPjwvc3ZnPg==' !default;
 
 
 /* ==================================================
     Component: List
-   ================================================== */ 
+   ================================================== */
 
 .uis-list {
     padding: 0;
@@ -120,7 +120,8 @@ $internal-list-bullet-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIg
 
 /*
  * Bullet
- * 1. Reset display `table` which cause issues in combination with multi column layouts.
+ * 1. Reset display `table` which cause issues in combination
+ *    with multi column layouts.
  */
 
 .uis-list-bullet > li {
@@ -128,8 +129,8 @@ $internal-list-bullet-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIg
     padding-left: unquote('calc(#{$list-bullet-width} + #{$list-bullet-margin-right})');
 }
 
-.uis-list-bullet > li::before {
-    content: "";
+.uis-list-bullet > li:before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -138,7 +139,7 @@ $internal-list-bullet-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIg
     background: url($internal-list-bullet-image) $list-bullet-icon-color rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    
+
     /* 1 */
     display: block;
 }

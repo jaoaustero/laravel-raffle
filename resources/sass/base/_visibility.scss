@@ -1,5 +1,6 @@
 // Name:            Visibility
-// Description:     Utilities to show or hide content on breakpoints, hover or touch
+// Description:     Utilities to show or hide content on breakpoints,
+//                  hover or touch
 //
 // Component:       `uis-hidden-*`
 //                  `uis-visible-*`
@@ -33,7 +34,7 @@
     }
 }
 
-    
+
 
 /* Tablet landscape and bigger */
 @include respond-to(medium) {
@@ -105,10 +106,11 @@
 
 /*
  * Hidden
- * Can't use `display: hidden` because it's not focusable. This is accessible through keyboard.
+ * Can't use `display: hidden` because it's not focusable.
+ * This is accessible through keyboard.
  */
 
-.uis-visible-toggle:not(:hover):not(.uk-hover) .uis-hidden-hover:not(:focus) {
+.uis-visible-toggle:not(:hover):not(.uis-hover) .uis-hidden-hover:not(:focus) {
     position: absolute !important;
     width: 0 !important;
     height: 0 !important;
@@ -119,10 +121,11 @@
 
 /*
  * Invisible
- * Can't use `visibility: hidden` because it's not focusable. This is accessible through keyboard.
+ * Can't use `visibility: hidden` because it's not focusable.
+ * This is accessible through keyboard.
  */
 
-.uk-visible-toggle:not(:hover):not(.uk-hover) .uk-invisible-hover:not(:focus) {
+.uis-visible-toggle:not(:hover):not(.uis-hover) .uis-invisible-hover:not(:focus) {
     opacity: 0 !important;
 }
 

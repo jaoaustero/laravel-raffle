@@ -67,7 +67,7 @@ $link-inverse-hover-color:              transparentize(color(inverse), 0.5) !def
     text-decoration: none;
 }
 
-.uis-link.uis-link-line::after {
+.uis-link.uis-link-line:after {
     content: '';
     position: absolute;
     left: -50px;

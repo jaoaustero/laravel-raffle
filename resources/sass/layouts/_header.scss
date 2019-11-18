@@ -2,7 +2,7 @@
 //  Name:               Header
 //  Description:        Styles for header
 //
-//  Component:          `uis-header-*` 
+//  Component:          `uis-header-*`
 //
 //  Sub-components:     `uis-header-headline`
 //                      `uis-header-background`
@@ -49,7 +49,7 @@ $header-title-kerning:          1px !default;
     /* 2 */
     background-color: $header-background;
     background-image: $header-background-image;
-    
+
     /* 3 */
     overflow: hidden;
     padding-top: gutter(medium);

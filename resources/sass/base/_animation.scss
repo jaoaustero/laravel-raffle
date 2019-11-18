@@ -37,7 +37,7 @@
     animation-duration: 1s;
     animation-fill-mode: none;
 }
- 
+
 .uis-animate-infinite {
     animation-iteration-count: infinite;
 }
@@ -152,11 +152,11 @@
 /* Slide
 ================================================== */
 
-/* Slide In Down */ 
+/* Slide In Down */
 .uis-animate-slide-in-down {
     animation-name: slideInDown;
 }
- 
+
 @keyframes slideInDown {
     from {
         transform: translate3d(0, -100%, 0);
@@ -169,11 +169,11 @@
     }
 }
 
-/* Slide In Down */ 
+/* Slide In Down */
 .uis-animate-slide-in-up {
     animation-name: slideInUp;
 }
- 
+
 @keyframes slideInUp {
     from {
         transform: translate3d(0, 100%, 0);
@@ -184,11 +184,11 @@
     }
 }
 
-/* Slide In Down */ 
+/* Slide In Down */
 .uis-animate-slide-in-left {
     animation-name: slideInLeft;
 }
- 
+
 @keyframes slideInLeft {
     from {
         transform: translate3d(-100%, 0, 0);
@@ -201,11 +201,11 @@
     }
 }
 
-/* Slide Out Up */ 
+/* Slide Out Up */
 .uis-animate-slide-out-up {
     animation-name: slideOutUp;
 }
- 
+
 @keyframes slideOutUp {
     from {
         opacity: 1;

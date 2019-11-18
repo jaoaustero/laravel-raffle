@@ -56,7 +56,7 @@ $table-expand-min-width:                        150px !default;
 
 /* ==================================================
     Component: Table
-   ================================================== */  
+   ================================================== */
 
 /*
  * 1. Remove most spacing between table cells.
@@ -93,7 +93,7 @@ $table-expand-min-width:                        150px !default;
     padding: $table-cell-padding-vertical $table-cell-padding-horizontal;
     text-align: left;
     vertical-align: bottom;
-    
+
     /* 1 */
     font-size: $table-header-cell-font-size;
     font-weight: $table-header-cell-font-weight;
@@ -164,7 +164,7 @@ $table-expand-min-width:                        150px !default;
 .uis-table-divider > :first-child > tr:not(:first-child) {
     border-top: $table-divider-border-width solid $table-divider-border;
 }
- 
+
 
 
 /*
@@ -303,128 +303,4 @@ $table-expand-min-width:                        150px !default;
         padding-left: 0;
         padding-right: 0;
     }
-}
-
-
-
-/* Table to card
-   ================================================== */
-
-@include respond-to-max(small) {
-
-    .uis-table.uis-table-to-card thead {
-        display: none;
-    }
-
-    .uis-table.uis-table-to-card tr {
-        width: 100%;
-        display: block;
-        background: #FFFFFF;
-        box-shadow: box-shadow(small);
-
-        position: relative;
-        box-sizing: border-box;
-
-        border-radius: border(border-radius);
-        transition: all 0.3s ease;
-
-        border: border(border-width) solid border(border-color);
-        // padding: gutter(small);
-        margin: gutter(small) 0px;
-    }
-
-    .uis-table.uis-table-to-card tr:first-child {
-        margin-top: 0px;
-    }
-
-    /*
-     * Micro clearfix
-     */
-    .uis-table.uis-table-to-card tr {
-        @include clearfix;
-    }
-
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-image {
-        padding: 0px;
-    }
-
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-image .uis-avatar {
-        height: 300px;
-        width: 100%;
-        
-        & img {
-            border-bottom-right-radius: 0px;
-            border-bottom-left-radius: 0px;
-            filter: brightness(80%);
-        }
-
-        & img.uis-border-circle {
-            border-radius: 0px !important;
-        }
-    }
-
-    .uis-table.uis-table-to-card tr td .uis-avatar-border,
-    .uis-table.uis-table-to-card tr td .uis-placeholder-image {
-        border-radius: 0px;
-        border: 0px;
-        padding: 0px;
-        margin: 0px !important;
-
-        & img {
-            padding: 0;
-        }
-    }
-
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-title {
-        display: inline-block;
-
-        font-size: font-size(large);
-        font-weight: 600;
-        line-height: font-size(large);
-        margin-top: 12px;
-    }
-
-    .uis-table.uis-table-to-card tr td .uis-table-card-label {
-        display: block;
-        font-size: font-size(small);
-        font-weight: 600;
-    }
-
-    .uis-table.uis-table-to-card tr td {
-        display: block;
-        padding: margin(small) gutter(small);
-    }
-
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-option {
-        padding: 0px;
-        margin-bottom: 12px;
-    }
-
-    .uis-table.uis-table-to-card tr td:not(.uis-table-to-card-image):not(.uis-table-to-card-title):not(:last-child):not(.uis-table-to-card-remove-border) {
-        border-bottom: border(border-width) solid border(border-color);
-    }
-
-    .uis-table.uis-table-to-card tr td.uis-table-to-card-option > [uis-dropdown] {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-    }
-
-    .uis-table.uis-table-to-card tr td .uis-split-content {
-        display: flex;
-        align-items: center;
-        align-content: center;
-
-        & div {
-            flex: 1;
-        }
-
-        & div:last-child {
-            text-align: right;
-        }
-    }
-}
-
-.uis-table-card-label {
-    display: none;
 }

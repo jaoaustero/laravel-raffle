@@ -44,7 +44,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
 
 /* ==================================================
     Component: Subnav
-   ================================================== */ 
+   ================================================== */
 
 
 /*
@@ -68,7 +68,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
     overflow-x: auto;
 }
 
-.uis-subnav-horizontal-scroll::-webkit-scrollbar {
+.uis-subnav-horizontal-scroll:-webkit-scrollbar {
     display: none;
 }
 
@@ -156,10 +156,11 @@ $subnav-item-disabled-color:                     color(muted) !default;
  * `nth-child` makes it also work without JS if it's only one row
  */
 
-.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column)::before {
-    content: "";
+.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column):before {
+    content: '';
     height: $subnav-divider-border-height;
-    // margin-left: ($subnav-divider-margin-horizontal - $subnav-margin-horizontal);
+    // margin-left: ($subnav-divider-margin-horizontal -
+    // $subnav-margin-horizontal);
     margin-left: $subnav-divider-margin-horizontal;
     margin-right: $subnav-divider-margin-horizontal;
     border-left: $subnav-divider-border-width solid $subnav-divider-border;
@@ -178,7 +179,7 @@ $subnav-item-disabled-color:                     color(muted) !default;
  */
 
 .uis-subnav-default > * > a {
-    padding: 0px 16px 12px 16px;
+    padding: 0px 16px 12px;
 }
 
 .uis-subnav-default > .uis-active {
@@ -227,10 +228,6 @@ $subnav-item-disabled-color:                     color(muted) !default;
 
 .uis-subnav-default.uis-subnav-default-full > *:last-child {
     margin-right: 0px;
-}
-
-.uis-subnav-default.uis-subnav-default-full > * > a {
-    padding: 0px 16px 12px 16px;
 }
 
 .uis-subnav-default.uis-subnav-default-full > .uis-active {
