@@ -98,7 +98,7 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
 
     /* 4 */
     padding: $modal-padding-vertical $modal-padding-horizontal;
-    
+
     /* 5 */
     background: $modal-background;
 
@@ -156,8 +156,9 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
 /*
  * 1. Create position contex for spinner and close button
  * 2. Dimensions
- * 3. Fix `max-width: 100%` not working in combination with flex and responsive images in IE11
- *    `!important` needed to overwrite `uis-width-auto`. See `#modal-media-image` in tests
+ * 3. Fix `max-width: 100%` not working in combination with flex and responsive
+ *    images in IE11 `!important` needed to overwrite `uis-width-auto`.
+ *    See `#modal-media-image` in tests
  * 4. Style
  * 5. Slide-in transition
  */
@@ -176,8 +177,8 @@ $modal-close-outside-hover-color:                   color(inverse) !default;
     max-width: unquote('calc(100% - 0.01px)') !important;
 
     /* 4 */
-    background: $modal-dialog-background; 
-    
+    background: $modal-dialog-background;
+
     /* 5 */
     opacity: 0;
     transform: translateY(-100px);

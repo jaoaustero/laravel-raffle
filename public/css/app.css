@@ -3,23 +3,26 @@
  *
  * BASE
  * _animation...............Holds all animation similar to `animate.css`
- * _cover...................Works with iframes and embedded content to make it cover
+ * _cover...................Works with iframes and embedded content to make
+ *                          it cover
  * _flex....................Utilities for Flexbox
  * _margin..................Collections of margin classes and sizes
  * _padding.................Collections of padding classes and size
  * _position................Utilities to position content
  * _reboot..................Restart the default style of browsers
  * _utility.................Collections of utilities
- * _visibility..............Utilties to show or hide content on breakpoints, hover or touch
- * 
+ * _visibility..............Utilties to show or hide content on breakpoints,
+ *                          hover or touch
+ *
  * COMPONENTS
  * _modal...................Pop-up dialogs, that overlay on the page
  * _subnav..................Horizontal navigation with different styles
  * _toast...................Pop-up notification to alert users
- * 
+ *
  * ELEMENTS
  * _badge...................Display a number as notifications
- * _button..................Classic button with different color, sizes and states
+ * _button..................Classic button with different color, sizes
+ *                          and states
  * _card....................Container with gutter and other differnt style
  * _close...................Versatile delete/close cross
  * _container...............Center your content horizontally
@@ -28,32 +31,36 @@
  * _list....................List with different modifiers
  * _overlay.................Image overlay with different modifiers
  * _table...................Display collection of data grouped into rows
- * _text....................Depth for the page with different modifiers for title and paragraphs
- * 
+ * _text....................Depth for the page with different modifiers for
+ *                          title and paragraphs
+ *
  * GRID
  * _column..................Display content in multiple text columns
- * _grid....................Create full-reponsive, fluid and nestable grid layout
+ * _grid....................Create full-reponsive, fluid and nestable grid
+ *                          layout
  * _width...................Define width of elements of different viewport size
- * 
+ *
  * HELPERS
  * _functions...............Collection of reusable helper methods
- * _mixins..................Collections of creating different modifiers and grid system
- * _variables...............Globally-available variables that will use of all elements and components
- * 
+ * _mixins..................Collections of creating different modifiers and
+ *                          grid system
+ * _variables...............Globally-available variables that will use of
+ *                          all elements and components
+ *
  * LAYOUTS
  * _header..................A showcasing hero text
  * _main....................Collection of different sections of the page
  * _section.................Container to divider your page
  * _footer..................Contains information or list of navigations
- * 
+ *
  * PAGES
  * _auth....................A default page for application
  *
  * THEMES
  * _gloomy..................Feminine and light colors
- * _soft....................Light and pastel colors 
+ * _soft....................Light and pastel colors
  * _night...................Night or dark colors
- * 
+ *
  * APP......................A collection of all `scss` files
  */
 
@@ -92,15 +99,17 @@
  */
 
 /*
- * It create modifiers using `theme-colors` with selectors (hover, active, focus)
+ * It create modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
  */
 
 /*
- * It create text color modifiers using `text-colors` 
+ * It create text color modifiers using `text-colors`
  */
 
 /*
- * It create Outline modifiers using `theme-colors` with selectors (hover, active, focus)
+ * It create Outline modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
  */
 
 /*
@@ -137,7 +146,8 @@
  */
 
 /*
- * It create modifiers using `theme-colors` with selectors (hover, active, focus)
+ * It create modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
  */
 
 /* Base
@@ -516,10 +526,10 @@ iframe.uis-cover {
  * Remove pseudo elements created by micro clearfix as precautions
  */
 
-.uis-flex::before,
-.uis-flex::after,
-.uis-flex-inline::before,
-.uis-flex-inline::after {
+.uis-flex:before,
+.uis-flex:after,
+.uis-flex-inline:before,
+.uis-flex-inline:after {
   display: none;
 }
 
@@ -1278,7 +1288,8 @@ iframe.uis-cover {
 
 /*
  * Center
- * 1. Fix text wrapping if content is larger than 50% of the container (Not working in Firefox)
+ * 1. Fix text wrapping if content is larger than 50% of the
+ *    container (Not working in Firefox)
  * 2. Fix text wrapping for Firefox
  */
 
@@ -1290,7 +1301,6 @@ iframe.uis-cover {
   /* 1 */
   display: table;
   /* 2 */
-  width: -moz-max-content;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -1336,7 +1346,6 @@ iframe.uis-cover {
   /* 1 */
   display: table;
   /* 2 */
-  width: -moz-max-content;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -1494,9 +1503,9 @@ iframe.uis-cover {
 
 /*
  * 1. Set `font-size` to support `rem` units
- *    Not using `font` property because a leading hypen (e.g. -apple-system) causes the font to break in IE11 and Edge
- * 2. Prevent adjustment of font size after orientation changes in iOS.
- * 3. Style
+ *    Not using `font` property because a leading hypen (e.g. -apple-system)
+ *    causes the font to break in IE11 and Edge
+ * 2. Style
  */
 
 html {
@@ -1506,8 +1515,6 @@ html {
   font-weight: normal;
   line-height: 1.5;
   /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 3 */
   background: #FFFFFF;
   color: #454545;
   scroll-behavior: smooth;
@@ -1554,14 +1561,6 @@ body {
 
 /* Links
    ================================================== */
-
-/*
- * Remove gap in links underline in iOS 8+ and Safari 8+.
- */
-
-a {
-  -webkit-text-decoration-skip: objects;
-}
 
 /*
  * Remove the outline on focused links when they are also active or hovered
@@ -1619,9 +1618,9 @@ strong {
  *
  */
 
-::not(pre) > code,
-::not(pre) > kbd,
-::not(pre) > samp {
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
   /* 1 */
   font-family: Open Sans;
   /* 2 */
@@ -1739,7 +1738,8 @@ svg:not(:root) {
 
 /*
  * Hide `allt` for lazy load images
- * Selector for background while loading img[data-src*='.jpg'][src*='data:image']  { background: grey; }
+ * Selector for background while loading img[data-src*='.jpg'
+ * [src*='data:image']  { background: grey; }
  */
 
 img:not([src]) {
@@ -1961,8 +1961,8 @@ pre {
   font: 0.875rem / 1.5 Open Sans;
   color: text-color(#454545);
   -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
   /* 1 */
   overflow: auto;
 }
@@ -1973,12 +1973,6 @@ pre code {
 
 /* Selection pseudo-element
    ================================================== */
-
-::moz-selection {
-  background: #3399FF;
-  color: #FFFFFF;
-  text-shadow: none;
-}
 
 ::-moz-selection {
   background: #3399FF;
@@ -2092,9 +2086,12 @@ pre {
  ========================================================================== */
 
 /*
- * 1. `table-cell` is used with `::before` because `table` creates a 1px gap when it becomse a flex item, only in Webkit
- * `table` is used again with `::after` because `clear` only works with block elements.
- * Note: `display: block` with `overflow: hidden` is currently not working in the latest Safari
+ * 1. `table-cell` is used with `::before` because `table` creates a
+ *    1px gap when it becomse a flex item, only in Webkit
+ *    `table` is used again with `::after` because `clear` only works with
+ *     block elements.
+ * Note: `display: block` with `overflow: hidden` is currently not working in
+ *       the latest Safari
  */
 
 .uis-clearfix:before,
@@ -2137,7 +2134,8 @@ pre {
 
 /*
  * Enable scrollbars  if content is clipped
- * Note: firefox ignores `padding-bottom` for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+ * Note: firefox ignores `padding-bottom` for the scrollable
+ *       overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
  */
 
 .uis-overflow-auto {
@@ -2187,9 +2185,7 @@ pre {
  * 2. Create position context
  * 3. Prevent content overflow
  * 4. Behave like most inline-block elements
- * 5. Foce hardware accelaration without creating a new stacking context
- *    to fix 1px glitch when combined with overlays and transitions in Webkit
- * 6. Clip child elements
+ * 5. Clip child elements
  */
 
 [class*=uis-inline] {
@@ -2201,12 +2197,10 @@ pre {
   max-width: 100%;
   /* 4 */
   vertical-align: middle;
-  /* 5 */
-  -webkit-backface-visibility: hidden;
 }
 
 .uis-inline-clip {
-  /* 8 */
+  /* 5 */
   overflow: hidden;
 }
 
@@ -2215,7 +2209,8 @@ pre {
 
 /*
  * Preserve original dimensions
- * Because `img`, `video`, `canvas` and `audio` are already responsive by default, see the Reboot component
+ * Because `img`, `video`, `canvas` and `audio` are already responsive
+ * by default, see the Reboot component
  */
 
 .uis-preserve-width,
@@ -2238,7 +2233,8 @@ pre {
 }
 
 /*
- * 1. Set a maximum width `important` needed to override `uis-preserve-width img`
+ * 1. Set a maximum width `important` needed to override
+      `uis-preserve-width img`
  * 2. Auto scale the height. Only needed if `height` attribute is present
  */
 
@@ -2262,14 +2258,6 @@ pre {
 
 .uis-border-rounded {
   border-radius: 5px;
-}
-
-/*
- * Fix `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit 
- */
-
-.uis-inline-clip[class*=uis-border-] {
-  -webkit-transform: translateZ(0);
 }
 
 /* Box-shadow
@@ -2476,10 +2464,11 @@ pre {
 
 /*
  * Hidden
- * Can't use `display: hidden` because it's not focusable. This is accessible through keyboard.
+ * Can't use `display: hidden` because it's not focusable.
+ * This is accessible through keyboard.
  */
 
-.uis-visible-toggle:not(:hover):not(.uk-hover) .uis-hidden-hover:not(:focus) {
+.uis-visible-toggle:not(:hover):not(.uis-hover) .uis-hidden-hover:not(:focus) {
   position: absolute !important;
   width: 0 !important;
   height: 0 !important;
@@ -2490,10 +2479,11 @@ pre {
 
 /*
  * Invisible
- * Can't use `visibility: hidden` because it's not focusable. This is accessible through keyboard.
+ * Can't use `visibility: hidden` because it's not focusable.
+ * This is accessible through keyboard.
  */
 
-.uk-visible-toggle:not(:hover):not(.uk-hover) .uk-invisible-hover:not(:focus) {
+.uis-visible-toggle:not(:hover):not(.uis-hover) .uis-invisible-hover:not(:focus) {
   opacity: 0 !important;
 }
 
@@ -2613,8 +2603,9 @@ pre {
 /*
  * 1. Create position contex for spinner and close button
  * 2. Dimensions
- * 3. Fix `max-width: 100%` not working in combination with flex and responsive images in IE11
- *    `!important` needed to overwrite `uis-width-auto`. See `#modal-media-image` in tests
+ * 3. Fix `max-width: 100%` not working in combination with flex and responsive
+ *    images in IE11 `!important` needed to overwrite `uis-width-auto`.
+ *    See `#modal-media-image` in tests
  * 4. Style
  * 5. Slide-in transition
  */
@@ -2840,7 +2831,7 @@ pre {
   overflow-x: auto;
 }
 
-.uis-subnav-horizontal-scroll::-webkit-scrollbar {
+.uis-subnav-horizontal-scroll:-webkit-scrollbar {
   display: none;
 }
 
@@ -2933,7 +2924,7 @@ pre {
  * `nth-child` makes it also work without JS if it's only one row
  */
 
-.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column)::before {
+.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column):before {
   content: "";
   height: 1.5em;
   margin-left: 15px;
@@ -2953,7 +2944,7 @@ pre {
  */
 
 .uis-subnav-default > * > a {
-  padding: 0px 16px 12px 16px;
+  padding: 0px 16px 12px;
 }
 
 .uis-subnav-default > .uis-active {
@@ -3002,10 +2993,6 @@ pre {
 
 .uis-subnav-default.uis-subnav-default-full > *:last-child {
   margin-right: 0px;
-}
-
-.uis-subnav-default.uis-subnav-default-full > * > a {
-  padding: 0px 16px 12px 16px;
 }
 
 .uis-subnav-default.uis-subnav-default-full > .uis-active {
@@ -3233,8 +3220,10 @@ pre {
  * 5. Correct `font` properties and `color` not being inherited for `button`.
  * 6. Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 7. Style
- * 8. `line-height` is used to create a height because it also centers the text vertically for `a` elements.
- *      Better would be to use height and flexbox to center the text vertically but flexb ox doesn't work in Firefox on `button` elements.
+ * 8. `line-height` is used to create a height because it also centers the text
+ *    vertically for `a` elements.
+ *    Better would be to use height and flexbox to center the text vertically
+ *    but flexb ox doesn't work in Firefox on `button` elements.
  * 9. Align text if button has a width.
  * 10. Require for `a`.
  */
@@ -4058,8 +4047,8 @@ pre {
 /* Text Button Modifier
    ================================================== */
 
-/* 
- *default 
+/*
+ *default
  */
 
 .uis-button-text-default {
@@ -4080,8 +4069,8 @@ pre {
   color: #e6e6e6;
 }
 
-/* 
- *primary 
+/*
+ *primary
  */
 
 .uis-button-text-primary {
@@ -4102,8 +4091,8 @@ pre {
   color: #1d73a5;
 }
 
-/* 
- *accent 
+/*
+ *accent
  */
 
 .uis-button-text-accent {
@@ -4124,8 +4113,8 @@ pre {
   color: #cba300;
 }
 
-/* 
- *secondary 
+/*
+ *secondary
  */
 
 .uis-button-text-secondary {
@@ -4146,8 +4135,8 @@ pre {
   color: #04121e;
 }
 
-/* 
- *success 
+/*
+ *success
  */
 
 .uis-button-text-success {
@@ -4168,8 +4157,8 @@ pre {
   color: #1ea157;
 }
 
-/* 
- *warning 
+/*
+ *warning
  */
 
 .uis-button-text-warning {
@@ -4190,8 +4179,8 @@ pre {
   color: #db8200;
 }
 
-/* 
- *danger 
+/*
+ *danger
  */
 
 .uis-button-text-danger {
@@ -4212,8 +4201,8 @@ pre {
   color: #be1818;
 }
 
-/* 
- *inverse 
+/*
+ *inverse
  */
 
 .uis-button-text-inverse {
@@ -4271,7 +4260,8 @@ pre {
    ================================================== */
 
 /*
- * 1. Using `flex` instead of `inline-block` to prevent whitespace between child elements
+ * 1. Using `flex` instead of `inline-block` to prevent
+ *    whitespace between child elements
  * 2. Behave like button
  * 3. Create position context
  */
@@ -4537,7 +4527,8 @@ pre {
  * 1. Set the position
  * 2. set min-height
  * 3. Get the full width of the parent and subtract by 15%
- * 4. Tells the browser to account any broder or padding in the values you specific in the lement inside.
+ * 4. Tells the browser to account any broder or padding in the
+ *    values you specific in the lement inside.
  */
 
 @media screen and (min-width: 960px) {
@@ -4577,7 +4568,9 @@ pre {
 /*
  * 1. Set the dimensions
  * 2. Make the object fit the parent
- * We set the object to cover and overflow hidden on its parent to avoid inconsistent sizes of images, it will mask the image of its parent container which are "uis-card-media-*"
+ *    We set the object to cover and overflow hidden on its parent to avoid
+ *    inconsistent sizes of images, it will mask the image of its parent
+ *    container which are 'uis-card-media-*'
  */
 
 [class*=uis-card-media-] img,
@@ -4808,8 +4801,9 @@ pre {
    ================================================== */
 
 /*
- * 1. Box sizing has to be `content-box` so the max-width is always the same and
- *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
+ * 1. Box sizing has to be `content-box` so the max-width is always the same
+ *    and unaffected by the padding on different breakpoints. It's important
+ *    for the size modifiers.
  */
 
 .uis-container {
@@ -4897,9 +4891,9 @@ pre {
 /*
  * 1. Define consistent box sizing.
  *    Default is `content-box` with following exceptions set to `border-box`
- *    `select`, `input[type="checkbox"]` and `input[type="radio"]`
- *    `input[type="search"]` in Chrome, Safari and Opera
- *    `input[type="color"]` in Firefox
+ *    `select`, `input[type='checkbox']` and `input[type='radio']`
+ *    `input[type='search']` in Chrome, Safari and Opera
+ *    `input[type='color']` in Firefox
  * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
  * 3. Remove `border-radius` in iOS.
  * 4. Change font properties to `inherit` in all browsers.
@@ -4957,15 +4951,6 @@ pre {
   overflow: auto;
 }
 
-/*
- * Remvoe the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.
- */
-
-.uis-input[type=search]::-webkit-search-cancel-button,
-.uis-input[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .uis-input[type=search] {
   padding-right: 20px;
   background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjMwIiBoZWlnaHQ9IjE2IiBmaWxsPSIjNjY2NjY2IiB2aWV3Qm94PSIwIDAgNTAgNTEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLC04OC4wNTI5LC0xODQpIj4KICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDAuMDY4OTQ1MiwxNTkuMzI3KSI+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTAuMDY4OTQ1MiwtMTU5LjMyNykiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTEyMC42MTMsMjE5LjM1OUMxMTkuMDk4LDIyMC42NTQgMTE3LjM5LDIyMS43MiAxMTUuNTI4LDIyMi40ODFDMTA0Ljk5MiwyMjYuNzg5IDkxLjIxNSwyMjAuMTg1IDg4LjUxMiwyMDguNDg5Qzg1Ljg4MywxOTcuMTE0IDk0Ljg1MiwxODQuMzY3IDEwNy40NjQsMTg0LjAwN0MxMDcuNjc5LDE4NC4wMDIgMTA3Ljg5NCwxODQgMTA4LjEwOSwxODRDMTE3LjI4OSwxODQuMDg4IDEyNS45MjUsMTkxLjE1MiAxMjcuNjI0LDIwMC4zMjJDMTI4LjY3MywyMDUuOTgzIDEyNi45MzksMjExLjk2NSAxMjMuMzgzLDIxNi40NzJMMTM3LjQ5NywyMzAuNTg2QzEzOC44ODMsMjMyLjA0OSAxMzYuNzIzLDIzNS4zNjEgMTM0LjY2OCwyMzMuNDE0TDEyMC42MTMsMjE5LjM1OVpNMTA3Ljg3NiwxODhDMTAwLjUwOCwxODguMDcxIDkzLjYyNywxOTMuNzE2IDkyLjI2OCwyMDEuMDUxQzkwLjU4MSwyMTAuMTUgOTguMzg5LDIxOS44OTggMTA3Ljg3NiwyMTkuOTU4QzExOC4xNzcsMjIwLjAyNCAxMjcuMDgyLDIwOC4xMDggMTIyLjcwNCwxOTcuNzY1QzEyMC4zMTgsMTkyLjEyNiAxMTQuNTM1LDE4OC4xNDIgMTA4LjI5LDE4OC4wMDNDMTA4LjE1MiwxODguMDAxIDEwOC4wMTQsMTg4IDEwNy44NzYsMTg4WiIgc3R5bGU9ImZpbGwtcnVsZTpub256ZXJvOyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K");
@@ -5020,18 +5005,11 @@ pre {
 
 /* Input, select and textarea
  * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
-            `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
- * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset` and `image`
+ *          `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+ *
+ * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset`
+ *              and `image`
  ========================================================================== */
-
-/*
- * Remove default style in iOS.
- */
-
-.uis-input,
-.uis-textarea {
-  -webkit-appearance: none;
-}
 
 /*
   * 1. Prevent content overflow if a fixed width is used
@@ -5320,17 +5298,14 @@ select.uis-form-width-xsmall {
  ========================================================================== */
 
 /*
- * 1. Remove default style. Also works in Firefox
- * 2. Style
- * 3. Remove default style in IE 10/11
- * 4. Set `color` for options in the select dropdown, because the inherited `color` might be too light.
+ * 1. Style
+ * 2. Remove default style in IE 10/11
+ * 3. Set `color` for options in the select dropdown, because the
+ *    inherited `color` might be too light.
  */
 
 .uis-select:not([multiple]):not([size]) {
   /* 1 */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  /* 2 */
   padding-right: 20px;
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA2IiBoZWlnaHQ9IjE2cHgiIHdpZHRoPSIxNnB4Ij48dGl0bGU+QXNzZXQgMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBkPSJNNC41LDVhLjQ3LjQ3LDAsMCwxLS4zNS0uMTVsLTQtNGEuNDguNDgsMCwwLDEsMC0uNy40OC40OCwwLDAsMSwuNywwTDQuNSwzLjc5LDguMTUuMTVhLjQ4LjQ4LDAsMCwxLC43LDAsLjQ4LjQ4LDAsMCwxLDAsLjdsLTQsNEEuNDcuNDcsMCwwLDEsNC41LDVaIi8+PC9nPjwvZz48L3N2Zz4=");
   background-repeat: no-repeat;
@@ -5365,10 +5340,9 @@ select.uis-form-width-xsmall {
  * 1. Style
  * 2. Make box more robust so it clips the child element
  * 3. Vertical alignment
- * 4. Remove default style
- * 5. Fix black background on iOS
- * 6. Center icons
- * 7. Style
+ * 4. Fix black background on iOS
+ * 5. Center icons
+ * 6. Style
  */
 
 .uis-radio,
@@ -5383,14 +5357,11 @@ select.uis-form-width-xsmall {
   margin-top: -4px;
   vertical-align: middle;
   /* 4 */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  /* 5 */
   background-color: #f2f2f2;
-  /* 6 */
+  /* 5 */
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  /* 7 */
+  /* 6 */
   border: solid 0.5px #E5E5E5;
 }
 
@@ -5507,10 +5478,9 @@ select.uis-form-width-xsmall {
 /*
  * 1. Position and resize the form control to always cover its container
  * 2. Required for Firefox for positioning to the left
- * 3. Required for Webkit to make `height` work
- * 4. Hide controle and show cursor
- * 5. Needed for the cursor
- * 6. Clip height caused by 5. Needed for Webkit only
+ * 3. Hide controle and show cursor
+ * 4. Needed for the cursor
+ * 5. Clip height caused by 5. Needed for Webkit only
  */
 
 .uis-form-custom select,
@@ -5524,8 +5494,6 @@ select.uis-form-width-xsmall {
   /* 2 */
   left: 0;
   /* 3 */
-  -webkit-appearance: none;
-  /* 4 */
   opacity: 0;
   cursor: pointer;
 }
@@ -5578,7 +5546,8 @@ select.uis-form-width-xsmall {
     margin-left: 215px;
   }
 
-  /* Better vertical alignment if controls are checkboxes and radio buttons with text */
+  /* Better vertical alignment if controls are checkboxes
+     and radio buttons with text */
 
   .uis-form-horizontal .uis-form-controls-text {
     padding-top: 7px;
@@ -5701,7 +5670,7 @@ input:focus + .uis-slider {
 
 input:checked + .uis-slider:before {
   -webkit-transform: translateX(24px);
-  transform: translateX(24px);
+          transform: translateX(24px);
 }
 
 /* Rounded sliders */
@@ -5731,7 +5700,7 @@ input:checked + .uis-slider:before {
   text-decoration: none;
 }
 
-.uis-link.uis-link-line::after {
+.uis-link.uis-link-line:after {
   content: "";
   position: absolute;
   left: -50px;
@@ -5988,7 +5957,8 @@ a.uis-link-reset:hover,
 
 /*
  * Bullet
- * 1. Reset display `table` which cause issues in combination with multi column layouts.
+ * 1. Reset display `table` which cause issues in combination
+ *    with multi column layouts.
  */
 
 .uis-list-bullet > li {
@@ -5996,7 +5966,7 @@ a.uis-link-reset:hover,
   padding-left: calc(1.5em + 5px);
 }
 
-.uis-list-bullet > li::before {
+.uis-list-bullet > li:before {
   content: "";
   position: absolute;
   top: 0;
@@ -6261,135 +6231,6 @@ a.uis-link-reset:hover,
   }
 }
 
-/* Table to card
-   ================================================== */
-
-@media screen and (max-width: 959px) {
-  .uis-table.uis-table-to-card thead {
-    display: none;
-  }
-
-  .uis-table.uis-table-to-card tr {
-    width: 100%;
-    display: block;
-    background: #FFFFFF;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    position: relative;
-    box-sizing: border-box;
-    border-radius: 0.25rem;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    border: 1px solid #E5E5E5;
-    margin: 30px 0px;
-  }
-
-  .uis-table.uis-table-to-card tr:first-child {
-    margin-top: 0px;
-  }
-
-  /*
-   * Micro clearfix
-   */
-
-  .uis-table.uis-table-to-card tr:before,
-  .uis-table.uis-table-to-card tr:after {
-    content: "";
-    display: table;
-  }
-
-  .uis-table.uis-table-to-card tr:after {
-    clear: both;
-  }
-
-  .uis-table.uis-table-to-card tr td.uis-table-to-card-image {
-    padding: 0px;
-  }
-
-  .uis-table.uis-table-to-card tr td.uis-table-to-card-image .uis-avatar {
-    height: 300px;
-    width: 100%;
-  }
-
-  .uis-table.uis-table-to-card tr td.uis-table-to-card-image .uis-avatar img {
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    -webkit-filter: brightness(80%);
-            filter: brightness(80%);
-  }
-
-  .uis-table.uis-table-to-card tr td.uis-table-to-card-image .uis-avatar img.uis-border-circle {
-    border-radius: 0px !important;
-  }
-
-  .uis-table.uis-table-to-card tr td .uis-avatar-border,
-  .uis-table.uis-table-to-card tr td .uis-placeholder-image {
-    border-radius: 0px;
-    border: 0px;
-    padding: 0px;
-    margin: 0px !important;
-  }
-
-  .uis-table.uis-table-to-card tr td .uis-avatar-border img,
-  .uis-table.uis-table-to-card tr td .uis-placeholder-image img {
-    padding: 0;
-  }
-
-  .uis-table.uis-table-to-card tr td.uis-table-to-card-title {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.5rem;
-    margin-top: 12px;
-  }
-
-  .uis-table.uis-table-to-card tr td .uis-table-card-label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-
-  .uis-table.uis-table-to-card tr td {
-    display: block;
-    padding: 10px 30px;
-  }
-
-  .uis-table.uis-table-to-card tr td.uis-table-to-card-option {
-    padding: 0px;
-    margin-bottom: 12px;
-  }
-
-  .uis-table.uis-table-to-card tr td:not(.uis-table-to-card-image):not(.uis-table-to-card-title):not(:last-child):not(.uis-table-to-card-remove-border) {
-    border-bottom: 1px solid #E5E5E5;
-  }
-
-  .uis-table.uis-table-to-card tr td.uis-table-to-card-option > [uis-dropdown] {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-
-  .uis-table.uis-table-to-card tr td .uis-split-content {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-            align-items: center;
-    align-content: center;
-  }
-
-  .uis-table.uis-table-to-card tr td .uis-split-content div {
-    -webkit-box-flex: 1;
-            flex: 1;
-  }
-
-  .uis-table.uis-table-to-card tr td .uis-split-content div:last-child {
-    text-align: right;
-  }
-}
-
-.uis-table-card-label {
-  display: none;
-}
-
 /* ==================================================
     Component: Text
    ================================================== */
@@ -6408,7 +6249,7 @@ a.uis-link-reset:hover,
   font-weight: Bold;
 }
 
-.uis-loading::before {
+.uis-loading:before {
   content: "";
   position: absolute;
   height: 100%;
@@ -6468,8 +6309,8 @@ a.uis-link-reset:hover,
   }
 }
 
-.uis-text-header.uis-text-header-underline::after,
-.uis-text-subheader.uis-text-subheader-underline::after {
+.uis-text-header.uis-text-header-underline:after,
+.uis-text-subheader.uis-text-subheader-underline:after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -6486,8 +6327,8 @@ a.uis-link-reset:hover,
 }
 
 @media screen and (min-width: 960px) {
-  .uis-text-header.uis-text-header-underline::after,
-  .uis-text-subheader.uis-text-subheader-underline::after {
+  .uis-text-header.uis-text-header-underline:after,
+  .uis-text-subheader.uis-text-subheader-underline:after {
     width: 100%;
     left: 40px;
     right: auto;
@@ -6616,19 +6457,14 @@ a.uis-link-reset:hover,
    ================================================== */
 
 /*
- * 1. The background clips to the foreground text. Works in Chrome, Firefox, Safari, Edge and Opera
- *    Default color is set to transparent
- * 2. Container fills the text
- * 3. Fallback color for IE11
+ * 1. Container fills the text
+ * 2. Fallback color for IE11
  */
 
 .uis-text-background {
   /* 1 */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* 2 */
   display: inline-block;
-  /* 3 */
+  /* 2 */
   color: #2591D0;
 }
 
@@ -6753,7 +6589,8 @@ a.uis-link-reset:hover,
 
 /*
  * 1. Make sure a max-width is set after which truncation can occur
- * 2. Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
+ * 2. Prevent text from wrapping onto multiple lines, and truncate
+ *    with an ellipsis
  * 3. Fix for table cells
  */
 
@@ -6767,7 +6604,7 @@ a.uis-link-reset:hover,
   white-space: nowrap;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 959px) {
   .uis-text-truncate\@m {
     /* 1 */
     max-width: 100%;
@@ -6787,11 +6624,15 @@ td.uis-text-truncate {
 }
 
 /*
- * 1. Wrap long words onto the next line and break them if they are too long to fit
+ * 1. Wrap long words onto the next line and break them if they are too
+ *    long to fit
  * 2. Legacy `word-wrap` as fallback for `overflow-wrap`
- * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome, Opera, IE11, and Edge
+ * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome,
+ *    Opera, IE11, and Edge
  *    Must use `break-all` to support IE11 and Edge
- * Note: Not using `hypens: auto;` because it hypenates text even if not needed.
+ *
+ * Note: Not using `hypens: auto;` because it hypenates text even if not
+ *       needed.
  */
 
 .uis-text-break {
@@ -7069,8 +6910,8 @@ td.uis-text-break {
 
 /*
  * Grid cell
- * Note: Space is allocated solely based on content dimensions, but shrinks: 0 1 auto
- * Reset margin for e.g. paragraphs
+ * Note: Space is allocated solely based on content dimensions,
+ *       but shrinks: 0 1 auto, reset margin for e.g. paragraphs
  */
 
 .uis-grid > * {
@@ -7240,7 +7081,7 @@ td.uis-text-break {
   position: relative;
 }
 
-.uis-grid-divider > :not(.uis-first-column)::before {
+.uis-grid-divider > :not(.uis-first-column):before {
   content: "";
   position: absolute;
   top: 0;
@@ -7248,7 +7089,7 @@ td.uis-text-break {
   border-left: 1px solid #E5E5E5;
 }
 
-.uis-grid-divider .uis-grid-stock > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-stock > .uis-grid-margin:before {
   content: "";
   position: absolute;
   left: 0;
@@ -7270,7 +7111,7 @@ td.uis-text-break {
   padding-left: 60px;
 }
 
-.uis-grid-divider > :not(.uis-first-column)::before {
+.uis-grid-divider > :not(.uis-first-column):before {
   left: 30px;
 }
 
@@ -7280,7 +7121,7 @@ td.uis-text-break {
   margin-top: 60px;
 }
 
-.uis-grid-divider .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
   top: -30px;
   left: 60px;
 }
@@ -7298,7 +7139,7 @@ td.uis-text-break {
     padding-left: 80px;
   }
 
-  .uis-grid-divider > :not(.uis-first-column)::before {
+  .uis-grid-divider > :not(.uis-first-column):before {
     left: 40px;
   }
 
@@ -7308,7 +7149,7 @@ td.uis-text-break {
     margin-top: 80px;
   }
 
-  .uis-grid-divider .uis-grid-stack > .uis-grid-margin::before {
+  .uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
     top: -40px;
     left: 80px;
   }
@@ -7328,7 +7169,7 @@ td.uis-text-break {
   padding-left: 30px;
 }
 
-.uis-grid-divider .uis-grid-small > :not(.uis-first-column)::before {
+.uis-grid-divider .uis-grid-small > :not(.uis-first-column):before {
   left: 15px;
 }
 
@@ -7338,7 +7179,7 @@ td.uis-text-break {
   margin-top: 30px;
 }
 
-.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin:before {
   top: -15px;
   left: 30px;
 }
@@ -7357,7 +7198,7 @@ td.uis-text-break {
   padding-left: 80px;
 }
 
-.uis-grid-divider .uis-grid-medium > :not(.uis-first-column)::before {
+.uis-grid-divider .uis-grid-medium > :not(.uis-first-column):before {
   left: 40px;
 }
 
@@ -7367,7 +7208,7 @@ td.uis-text-break {
   margin-top: 80px;
 }
 
-.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin:before {
   top: -40px;
   left: 80px;
 }
@@ -7386,7 +7227,7 @@ td.uis-text-break {
   padding-left: 80px;
 }
 
-.uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before {
+.uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
   left: 40px;
 }
 
@@ -7396,7 +7237,7 @@ td.uis-text-break {
   margin-top: 80px;
 }
 
-.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before {
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
   top: -40px;
   left: 80px;
 }
@@ -7414,7 +7255,7 @@ td.uis-text-break {
     padding-left: 140px;
   }
 
-  .uis-grid-divider .uis-grid-large > :not(.uis-first-column)::before {
+  .uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
     left: 70px;
   }
 
@@ -7424,7 +7265,7 @@ td.uis-text-break {
     margin-top: 140px;
   }
 
-  .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin::before {
+  .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
     top: -40px;
     left: 80px;
   }
@@ -7436,8 +7277,10 @@ td.uis-text-break {
 /*
  * Behave like a block element
  * 1. Wrap into the next line
- * 2. Take the full width of at leaset 100%, Only if no class from width component is set.
- * 3. Expand width even if larger than 100%. e.g. because of negative margin (Needed for nested grids)
+ * 2. Take the full width of at leaset 100%, Only if
+ *    no class from width component is set.
+ * 3. Expand width even if larger than 100%. e.g. because
+ *    of negative margin (Needed for nested grids)
  */
 
 .uis-grid-match > *,
@@ -8274,7 +8117,8 @@ td.uis-text-break {
 /*
  * 1. Set Dimension
  * 2. Set spacing between siblings
- * 3. Add layer greater than wrapper to avoid overlapping of :before :after of wrapper.
+ * 3. Add layer greater than wrapper to avoid overlapping of :before
+ *    :after of wrapper.
  * 4. Style
  */
 
@@ -8493,7 +8337,7 @@ td.uis-text-break {
 
 /*
  * 1. Remove the gutter on the top
- * 2. Make it lean and looks 3d 
+ * 2. Make it lean and looks 3d
  */
 
 .uis-spinner-list > li:first-child {
@@ -8505,7 +8349,7 @@ td.uis-text-break {
 }
 
 /*
- * 1. Make it lean and looks 3d 
+ * 1. Make it lean and looks 3d
  */
 
 .uis-spinner-list > li:nth-child(3) {
@@ -8661,7 +8505,8 @@ td.uis-text-break {
 .uis-theme-night h3,
 .uis-theme-night h4,
 .uis-theme-night h5,
-.uis-theme-night .uis-text-lead .uis-theme-night .uis-form-label,
+.uis-theme-night .uis-text-lead,
+.uis-theme-night .uis-form-label,
 .uis-theme-night label {
   color: #FFFFFF !important;
 }

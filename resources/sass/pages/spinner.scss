@@ -34,7 +34,7 @@ $spinner-body-background:                               #252525 !default;
 $spinner-body-border-radius:                            10px !default;
 $spinner-body-padding:                                  gutter(xsmall) !default;
 
-$spinner-reel-background:                               theme-color(inverse) !default;                            
+$spinner-reel-background:                               theme-color(inverse) !default;
 
 
 /* ==================================================
@@ -44,7 +44,8 @@ $spinner-reel-background:                               theme-color(inverse) !de
 /*
  * 1. Set Dimension
  * 2. Set spacing between siblings
- * 3. Add layer greater than wrapper to avoid overlapping of :before :after of wrapper.
+ * 3. Add layer greater than wrapper to avoid overlapping of :before
+ *    :after of wrapper.
  * 4. Style
  */
 .uis-spinner {
@@ -108,10 +109,10 @@ $spinner-reel-background:                               theme-color(inverse) !de
 .uis-spinner-wrapper:before,
 .uis-spinner-wrapper:after {
     content: '';
-    
+
     position: absolute;
     height: 100%;
-    width: 50%;   
+    width: 50%;
 
     z-index: 10;
 }
@@ -281,7 +282,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 
 /*
  * 1. Remove the gutter on the top
- * 2. Make it lean and looks 3d 
+ * 2. Make it lean and looks 3d
  */
 .uis-spinner-list > li:first-child {
     /* 1 */
@@ -292,7 +293,7 @@ $spinner-reel-background:                               theme-color(inverse) !de
 }
 
 /*
- * 1. Make it lean and looks 3d 
+ * 1. Make it lean and looks 3d
  */
 .uis-spinner-list > li:nth-child(3) {
     /* 1 */

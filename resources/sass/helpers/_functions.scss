@@ -3,7 +3,7 @@
     @if map-has-key($text-color, $value) {
         @return map-get($text-color, $value);
     }
-    @warn "The key `#{$value}` is no available in the map";
+    @warn 'The key `#{$value}` is no available in the map';
     @return null;
 }
 
@@ -14,7 +14,7 @@
     @if map-has-key($link-color, $value) {
         @return map-get($link-color, $value);
     }
-    @warn "The key `#{$value}` is no available in the map";
+    @warn 'The key `#{$value}` is no available in the map';
     @return null;
 }
 
@@ -24,7 +24,7 @@
     @if map-has-key($theme-color, $scheme) {
         @return map-get($theme-color, $scheme);
     }
-    @warn "The key `#{$scheme}` is no available in the map";
+    @warn 'The key `#{$scheme}` is no available in the map';
     @return null;
 }
 
@@ -34,7 +34,7 @@
     @if map-has-key($font, $value) {
         @return map-get($font, $value);
     }
-    @warn "The key `#{$value}` is no available in the map";
+    @warn 'The key `#{$value}` is no available in the map';
     @return null;
 }
 
@@ -44,7 +44,7 @@
     @if map-has-key($font-size, $value) {
         @return map-get($font-size, $value);
     }
-    @warn "The key `#{$value}` is no available in the map";
+    @warn 'The key `#{$value}` is no available in the map';
     @return null;
 }
 
@@ -54,7 +54,7 @@
     @if map-has-key($font-weight, $value) {
         @return map-get($font-weight, $value);
     }
-    @warn "The key `#{$value}` is no available in the map";
+    @warn 'The key `#{$value}` is no available in the map';
     @return null;
 }
 
@@ -65,7 +65,7 @@
     @if map-has-key($border, $value) {
         @return map-get($border, $value);
     }
-    @warn "The key `#{$value}` is not available in the map";
+    @warn 'The key `#{$value}` is not available in the map';
     @return null;
 }
 
@@ -75,7 +75,7 @@
     @if map-has-key($box-shadow, $value) {
         @return map-get($box-shadow, $value);
     }
-    @warn "The key `#{$value}` is not available in the map";
+    @warn 'The key `#{$value}` is not available in the map';
     @return null;
 }
 
@@ -86,7 +86,7 @@
     @if map-has-key($margin, $value) {
         @return map-get($margin, $value);
     }
-    @warn "The key `#{$value}` is not available in the map";
+    @warn 'The key `#{$value}` is not available in the map';
     @return null;
 }
 
@@ -97,7 +97,7 @@
     @if map-has-key($gutter, $value) {
         @return map-get($gutter, $value);
     }
-    @warn "The key `#{$value}` is not available in the map";
+    @warn 'The key `#{$value}` is not available in the map';
     @return null;
 }
 
@@ -108,7 +108,7 @@
     @if map-has-key($control-height, $value) {
         @return map-get($control-height, $value);
     }
-    @warn "The key `#{$value}` is not available in the map";
+    @warn 'The key `#{$value}` is not available in the map';
     @return null;
 }
 
@@ -119,7 +119,7 @@
     @if map-has-key($layer, $value) {
         @return map-get($layer, $value);
     }
-    @warn "The key `#{$value}` is not available in the map";
+    @warn 'The key `#{$value}` is not available in the map';
     @return null;
 }
 

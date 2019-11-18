@@ -21,10 +21,10 @@
  * Remove pseudo elements created by micro clearfix as precautions
  */
 
-.uis-flex::before,
-.uis-flex::after,
-.uis-flex-inline::before,
-.uis-flex-inline::after {
+.uis-flex:before,
+.uis-flex:after,
+.uis-flex-inline:before,
+.uis-flex-inline:after {
     display: none;
 }
 
@@ -145,7 +145,7 @@
     .uis-flex-first\@s {
         order: -1;
     }
-    
+
     .uis-flex-last\@s {
         order: 99;
     }
@@ -155,7 +155,7 @@
     .uis-flex-first\@m {
         order: -1;
     }
-    
+
     .uis-flex-last\@m {
         order: 99;
     }
@@ -165,7 +165,7 @@
     .uis-flex-first\@l {
         order: -1;
     }
-    
+
     .uis-flex-last\@l {
         order: 99;
     }
@@ -175,7 +175,7 @@
     .uis-flex-first\@xl {
         order: -1;
     }
-    
+
     .uis-flex-last\@xl {
         order: 99;
     }

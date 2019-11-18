@@ -1,6 +1,7 @@
 //  ==================================================
 //  Component:          Variables
-//  Description:        Defines common values which are used across all components
+//  Description:        Defines common values which are used
+//                      across all components
 //  ==================================================
 
 
@@ -8,11 +9,13 @@
 /* Breakpoint
    ================================================== */
 
-// Phone Portrait:      Galaxy (360x640), iPhone 6 (375x667), iphone 6+ (414x736)
-// Phone Landscape:     Galaxy (640x360), iPhone 6 (667x375), iPhone 6+ (736x414)
+// Phone Portrait:      Galaxy (360x640), iPhone 6 (375x667),
+//                      iphone 6+ (414x736)
+// Phone Landscape:     Galaxy (640x360), iPhone 6 (667x375),
+//                      iPhone 6+ (736x414)
 // Tablet Portrait:     iPad (768x1024), Galaxy Tab (800x1280),
 // Tablet Landscape:    iPad (1024x768), iPad Pro (1024x1366),
-// Desktop:             Galaxy Tab (1280x800), iPad Pro (1366x1024) 
+// Desktop:             Galaxy Tab (1280x800), iPad Pro (1366x1024)
 $breakpoint: () !default;
 $breakpoint:(
     small:      640px,
@@ -59,7 +62,7 @@ $font-weight:(
 
 /* Color
    ================================================== */
-   
+
 // Main CTA Colors
 
 // Change the primary to more darker to consider acesibility

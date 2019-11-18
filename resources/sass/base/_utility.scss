@@ -96,9 +96,12 @@ $dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.
  ========================================================================== */
 
 /*
- * 1. `table-cell` is used with `::before` because `table` creates a 1px gap when it becomse a flex item, only in Webkit
- * `table` is used again with `::after` because `clear` only works with block elements.
- * Note: `display: block` with `overflow: hidden` is currently not working in the latest Safari
+ * 1. `table-cell` is used with `::before` because `table` creates a
+ *    1px gap when it becomse a flex item, only in Webkit
+ *    `table` is used again with `::after` because `clear` only works with
+ *     block elements.
+ * Note: `display: block` with `overflow: hidden` is currently not working in
+ *       the latest Safari
  */
 
 .uis-clearfix {
@@ -138,7 +141,8 @@ $dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.
 
 /*
  * Enable scrollbars  if content is clipped
- * Note: firefox ignores `padding-bottom` for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+ * Note: firefox ignores `padding-bottom` for the scrollable
+ *       overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
  */
 
 .uis-overflow-auto {
@@ -194,9 +198,7 @@ $dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.
  * 2. Create position context
  * 3. Prevent content overflow
  * 4. Behave like most inline-block elements
- * 5. Foce hardware accelaration without creating a new stacking context
- *    to fix 1px glitch when combined with overlays and transitions in Webkit
- * 6. Clip child elements
+ * 5. Clip child elements
  */
 
 [class*='uis-inline'] {
@@ -211,13 +213,10 @@ $dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.
 
     /* 4 */
     vertical-align: middle;
-
-    /* 5 */
-    -webkit-backface-visibility: hidden;
 }
 
 .uis-inline-clip {
-    /* 8 */
+    /* 5 */
     overflow: hidden;
 }
 
@@ -228,7 +227,8 @@ $dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.
 
 /*
  * Preserve original dimensions
- * Because `img`, `video`, `canvas` and `audio` are already responsive by default, see the Reboot component
+ * Because `img`, `video`, `canvas` and `audio` are already responsive
+ * by default, see the Reboot component
  */
 
 .uis-preserve-width,
@@ -251,14 +251,15 @@ $dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.
 }
 
 /*
- * 1. Set a maximum width `important` needed to override `uis-preserve-width img`
+ * 1. Set a maximum width `important` needed to override
+      `uis-preserve-width img`
  * 2. Auto scale the height. Only needed if `height` attribute is present
  */
 
 .uis-responsive-width {
     /* 1 */
     max-width: 100% !important;
-    
+
     /* 2 */
     height: auto;
 }
@@ -278,14 +279,6 @@ $dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.
 
 .uis-border-rounded {
     border-radius: $border-rounded-border-radius;
-}
-
-/*
- * Fix `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit 
- */
-
-.uis-inline-clip[class*='uis-border-'] {
-    -webkit-transform: translateZ(0);
 }
 
 

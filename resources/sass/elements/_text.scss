@@ -48,7 +48,7 @@ $text-background-color:                     theme-color(primary) !default;
 
 /* ==================================================
     Component: Text
-   ================================================== */    
+   ================================================== */
 
 
 .uis-text-header {
@@ -66,7 +66,7 @@ $text-background-color:                     theme-color(primary) !default;
 }
 
 
-.uis-loading::before {
+.uis-loading:before {
     content: '';
     position: absolute;
     height: 100%;
@@ -102,8 +102,8 @@ $text-background-color:                     theme-color(primary) !default;
 }
 
 
-.uis-text-header.uis-text-header-underline::after,
-.uis-text-subheader.uis-text-subheader-underline::after {
+.uis-text-header.uis-text-header-underline:after,
+.uis-text-subheader.uis-text-subheader-underline:after {
     content: '';
 
     position: absolute;
@@ -120,8 +120,8 @@ $text-background-color:                     theme-color(primary) !default;
 }
 
 @include respond-to(medium) {
-    .uis-text-header.uis-text-header-underline::after,
-    .uis-text-subheader.uis-text-subheader-underline::after {
+    .uis-text-header.uis-text-header-underline:after,
+    .uis-text-subheader.uis-text-subheader-underline:after {
         width: 100%;
         left: 40px;
         right: auto;
@@ -213,21 +213,15 @@ $text-background-color:                     theme-color(primary) !default;
    ================================================== */
 
 /*
- * 1. The background clips to the foreground text. Works in Chrome, Firefox, Safari, Edge and Opera
- *    Default color is set to transparent
- * 2. Container fills the text
- * 3. Fallback color for IE11
+ * 1. Container fills the text
+ * 2. Fallback color for IE11
  */
 
 .uis-text-background {
     /* 1 */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* 2 */
     display: inline-block;
 
-    /* 3 */
+    /* 2 */
     color: $text-background-color;
 }
 
@@ -263,11 +257,11 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-left\@s {
         text-align: left !important;
     }
-    
+
     .uis-text-right\@s {
         text-align: right !important;
     }
-    
+
     .uis-text-center\@s {
         text-align: center !important;
     }
@@ -278,11 +272,11 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-left\@m {
         text-align: left !important;
     }
-    
+
     .uis-text-right\@m {
         text-align: right !important;
     }
-    
+
     .uis-text-center\@m {
         text-align: center !important;
     }
@@ -293,11 +287,11 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-left\@l {
         text-align: left !important;
     }
-    
+
     .uis-text-right\@l {
         text-align: right !important;
     }
-    
+
     .uis-text-center\@l {
         text-align: center !important;
     }
@@ -308,11 +302,11 @@ $text-background-color:                     theme-color(primary) !default;
     .uis-text-left\@xl {
         text-align: left !important;
     }
-    
+
     .uis-text-right\@xl {
         text-align: right !important;
     }
-    
+
     .uis-text-center\@xl {
         text-align: center !important;
     }
@@ -355,7 +349,8 @@ $text-background-color:                     theme-color(primary) !default;
 
 /*
  * 1. Make sure a max-width is set after which truncation can occur
- * 2. Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
+ * 2. Prevent text from wrapping onto multiple lines, and truncate
+ *    with an ellipsis
  * 3. Fix for table cells
  */
 
@@ -370,7 +365,7 @@ $text-background-color:                     theme-color(primary) !default;
     white-space: nowrap;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 959px) {
     .uis-text-truncate\@m {
         /* 1 */
         max-width: 100%;
@@ -390,17 +385,21 @@ td.uis-text-truncate {
 }
 
 /*
- * 1. Wrap long words onto the next line and break them if they are too long to fit
+ * 1. Wrap long words onto the next line and break them if they are too
+ *    long to fit
  * 2. Legacy `word-wrap` as fallback for `overflow-wrap`
- * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome, Opera, IE11, and Edge
+ * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome,
+ *    Opera, IE11, and Edge
  *    Must use `break-all` to support IE11 and Edge
- * Note: Not using `hypens: auto;` because it hypenates text even if not needed.
+ *
+ * Note: Not using `hypens: auto;` because it hypenates text even if not
+ *       needed.
  */
 
 .uis-text-break {
     /* 1 */
     overflow-wrap: break-word;
-    
+
     /* 2 */
     word-wrap: break-word;
 }

@@ -3,23 +3,26 @@
  *
  * BASE
  * _animation...............Holds all animation similar to `animate.css`
- * _cover...................Works with iframes and embedded content to make it cover
+ * _cover...................Works with iframes and embedded content to make
+ *                          it cover
  * _flex....................Utilities for Flexbox
  * _margin..................Collections of margin classes and sizes
  * _padding.................Collections of padding classes and size
  * _position................Utilities to position content
  * _reboot..................Restart the default style of browsers
  * _utility.................Collections of utilities
- * _visibility..............Utilties to show or hide content on breakpoints, hover or touch
- * 
+ * _visibility..............Utilties to show or hide content on breakpoints,
+ *                          hover or touch
+ *
  * COMPONENTS
  * _modal...................Pop-up dialogs, that overlay on the page
  * _subnav..................Horizontal navigation with different styles
  * _toast...................Pop-up notification to alert users
- * 
+ *
  * ELEMENTS
  * _badge...................Display a number as notifications
- * _button..................Classic button with different color, sizes and states
+ * _button..................Classic button with different color, sizes
+ *                          and states
  * _card....................Container with gutter and other differnt style
  * _close...................Versatile delete/close cross
  * _container...............Center your content horizontally
@@ -28,32 +31,36 @@
  * _list....................List with different modifiers
  * _overlay.................Image overlay with different modifiers
  * _table...................Display collection of data grouped into rows
- * _text....................Depth for the page with different modifiers for title and paragraphs
- * 
+ * _text....................Depth for the page with different modifiers for
+ *                          title and paragraphs
+ *
  * GRID
  * _column..................Display content in multiple text columns
- * _grid....................Create full-reponsive, fluid and nestable grid layout
+ * _grid....................Create full-reponsive, fluid and nestable grid
+ *                          layout
  * _width...................Define width of elements of different viewport size
- * 
+ *
  * HELPERS
  * _functions...............Collection of reusable helper methods
- * _mixins..................Collections of creating different modifiers and grid system
- * _variables...............Globally-available variables that will use of all elements and components
- * 
+ * _mixins..................Collections of creating different modifiers and
+ *                          grid system
+ * _variables...............Globally-available variables that will use of
+ *                          all elements and components
+ *
  * LAYOUTS
  * _header..................A showcasing hero text
  * _main....................Collection of different sections of the page
  * _section.................Container to divider your page
  * _footer..................Contains information or list of navigations
- * 
+ *
  * PAGES
  * _auth....................A default page for application
  *
  * THEMES
  * _gloomy..................Feminine and light colors
- * _soft....................Light and pastel colors 
+ * _soft....................Light and pastel colors
  * _night...................Night or dark colors
- * 
+ *
  * APP......................A collection of all `scss` files
  */
 

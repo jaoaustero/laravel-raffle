@@ -89,7 +89,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 
 /* ==================================================
     Component: Card
-   ================================================== */    
+   ================================================== */
 
 .uis-card {
     position: relative;
@@ -137,7 +137,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 }
 
 /* Sections
-   ================================================== */ 
+   ================================================== */
 
 .uis-card-body {
     padding: $card-body-padding-vertical $card-body-padding-horizontal;
@@ -158,11 +158,11 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
     .uis-card-body {
         padding: $card-body-padding-vertical-l $card-body-padding-horizontal-l;
     }
-    
+
     .uis-card-header {
         padding: $card-header-padding-vertical-l $card-header-padding-horizontal-l;
     }
-    
+
     .uis-card-footer {
         padding: $card-footer-padding-vertical-l $card-footer-padding-horizontal-l;
     }
@@ -194,13 +194,14 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 
 
 /* Section Modifier
-   ================================================== */ 
+   ================================================== */
 
 /*
  * 1. Set the position
  * 2. set min-height
  * 3. Get the full width of the parent and subtract by 15%
- * 4. Tells the browser to account any broder or padding in the values you specific in the lement inside.
+ * 4. Tells the browser to account any broder or padding in the
+ *    values you specific in the lement inside.
  */
 @include respond-to(medium) {
     .uis-card-body.uis-card-body-pullup {
@@ -234,7 +235,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
  * 1. Set a specific dimension
  * 2. Set overflow hidden
  */
-[class*="uis-card-media-"] {
+[class*='uis-card-media-'] {
     /* 1 */
     height: 400px;
     width: 100%;
@@ -244,10 +245,12 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 /*
  * 1. Set the dimensions
  * 2. Make the object fit the parent
- * We set the object to cover and overflow hidden on its parent to avoid inconsistent sizes of images, it will mask the image of its parent container which are "uis-card-media-*"
+ *    We set the object to cover and overflow hidden on its parent to avoid
+ *    inconsistent sizes of images, it will mask the image of its parent
+ *    container which are 'uis-card-media-*'
  */
-[class*="uis-card-media-"] img,
-[class*="uis-card-media-"] video {
+[class*='uis-card-media-'] img,
+[class*='uis-card-media-'] video {
     /* 1 */
     height: 100%;
     width: 100%;
@@ -261,7 +264,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 /*
  * Zoom the image by default
  */
-[class*="uis-card-media-"] img {
+[class*='uis-card-media-'] img {
     transform: scale(1.2);
 }
 
@@ -269,14 +272,14 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
  * When hover or touch/click
  * Zoom out the image
  */
-.uis-card:hover [class*="uis-card-media-"] img {
+.uis-card:hover [class*='uis-card-media-'] img {
     transform: scale(1);
 }
 
 
 
 /* Title
-   ================================================== */ 
+   ================================================== */
 
 .uis-card-title {
     font-size: $card-title-font-size;
@@ -287,7 +290,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 
 
 /* Dropdown
-   ================================================== */ 
+   ================================================== */
 
 .uis-card-dropdown {
     position: absolute !important;
@@ -298,7 +301,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 
 
 /* Badge
-   ================================================== */ 
+   ================================================== */
 
 .uis-card-badge {
     position: absolute;
@@ -323,7 +326,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 
 
 /* Hover modifier
-   ================================================== */ 
+   ================================================== */
 
 .uis-card-hover:not(.uis-card-default):not(.uis-card-primary):not(.uis-card-secondary):hover {
     box-shadow: box-shadow(large);
@@ -389,7 +392,7 @@ $card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
 
 
 /* Size modifiers
-   ================================================== */ 
+   ================================================== */
 
 .uis-card-small.uis-card-body,
 .uis-card-small .uis-card-body {

@@ -102,21 +102,21 @@ $form-icon-color:                                color(muted) !default;
 $form-icon-hover-color:                          color(default) !default;
 
 
-$internal-form-select-image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA2IiBoZWlnaHQ9IjE2cHgiIHdpZHRoPSIxNnB4Ij48dGl0bGU+QXNzZXQgMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBkPSJNNC41LDVhLjQ3LjQ3LDAsMCwxLS4zNS0uMTVsLTQtNGEuNDguNDgsMCwwLDEsMC0uNy40OC40OCwwLDAsMSwuNywwTDQuNSwzLjc5LDguMTUuMTVhLjQ4LjQ4LDAsMCwxLC43LDAsLjQ4LjQ4LDAsMCwxLDAsLjdsLTQsNEEuNDcuNDcsMCwwLDEsNC41LDVaIi8+PC9nPjwvZz48L3N2Zz4=" !default;
-$internal-form-radio-image: "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22#000%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E" !default;
-$internal-form-checkbox-image: "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22#000%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A" !default;
-$internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E" !default;
+$internal-form-select-image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA2IiBoZWlnaHQ9IjE2cHgiIHdpZHRoPSIxNnB4Ij48dGl0bGU+QXNzZXQgMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBkPSJNNC41LDVhLjQ3LjQ3LDAsMCwxLS4zNS0uMTVsLTQtNGEuNDguNDgsMCwwLDEsMC0uNy40OC40OCwwLDAsMSwuNywwTDQuNSwzLjc5LDguMTUuMTVhLjQ4LjQ4LDAsMCwxLC43LDAsLjQ4LjQ4LDAsMCwxLDAsLjdsLTQsNEEuNDcuNDcsMCwwLDEsNC41LDVaIi8+PC9nPjwvZz48L3N2Zz4=' !default;
+$internal-form-radio-image: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22#000%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E' !default;
+$internal-form-checkbox-image: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22#000%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A' !default;
+$internal-form-checkbox-indeterminate-image: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E' !default;
 
-$icon-checked-white: "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A" !default;
+$icon-checked-white: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A' !default;
 
-$internal-form-search-image: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgaWQ9InNlYXJjaC1zdmciIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczpzZXJpZj0iaHR0cDovL3d3dy5zZXJpZi5jb20vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEuNDE0MjE7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTg4LjA1MjksLTE4NCkiPgogICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMC4wNjg5NDUyLDE1OS4zMjcpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4yODA2NTksMCwwLDAuMjc5OTM5LDYzLjI3MTEsLTI2LjgzNTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjAuNjEzLDIxOS4zNTlDMTE5LjA5OCwyMjAuNjU0IDExNy4zOSwyMjEuNzIgMTE1LjUyOCwyMjIuNDgxQzEwNC45OTIsMjI2Ljc4OSA5MS4yMTUsMjIwLjE4NSA4OC41MTIsMjA4LjQ4OUM4NS44ODMsMTk3LjExNCA5NC44NTIsMTg0LjM2NyAxMDcuNDY0LDE4NC4wMDdDMTA3LjY3OSwxODQuMDAyIDEwNy44OTQsMTg0IDEwOC4xMDksMTg0QzExNy4yODksMTg0LjA4OCAxMjUuOTI1LDE5MS4xNTIgMTI3LjYyNCwyMDAuMzIyQzEyOC42NzMsMjA1Ljk4MyAxMjYuOTM5LDIxMS45NjUgMTIzLjM4MywyMTYuNDcyTDEzNy40OTcsMjMwLjU4NkMxMzguODgzLDIzMi4wNDkgMTM2LjcyMywyMzUuMzYxIDEzNC42NjgsMjMzLjQxNEwxMjAuNjEzLDIxOS4zNTlaTTEwNy44NzYsMTg4QzEwMC41MDgsMTg4LjA3MSA5My42MjcsMTkzLjcxNiA5Mi4yNjgsMjAxLjA1MUM5MC41ODEsMjEwLjE1IDk4LjM4OSwyMTkuODk4IDEwNy44NzYsMjE5Ljk1OEMxMTguMTc3LDIyMC4wMjQgMTI3LjA4MiwyMDguMTA4IDEyMi43MDQsMTk3Ljc2NUMxMjAuMzE4LDE5Mi4xMjYgMTE0LjUzNSwxODguMTQyIDEwOC4yOSwxODguMDAzQzEwOC4xNTIsMTg4LjAwMSAxMDguMDE0LDE4OCAxMDcuODc2LDE4OFoiIHN0eWxlPSJmaWxsLXJ1bGU6bm9uemVybzsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" !default;
+$internal-form-search-image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgaWQ9InNlYXJjaC1zdmciIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczpzZXJpZj0iaHR0cDovL3d3dy5zZXJpZi5jb20vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEuNDE0MjE7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTg4LjA1MjksLTE4NCkiPgogICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMC4wNjg5NDUyLDE1OS4zMjcpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4yODA2NTksMCwwLDAuMjc5OTM5LDYzLjI3MTEsLTI2LjgzNTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjAuNjEzLDIxOS4zNTlDMTE5LjA5OCwyMjAuNjU0IDExNy4zOSwyMjEuNzIgMTE1LjUyOCwyMjIuNDgxQzEwNC45OTIsMjI2Ljc4OSA5MS4yMTUsMjIwLjE4NSA4OC41MTIsMjA4LjQ4OUM4NS44ODMsMTk3LjExNCA5NC44NTIsMTg0LjM2NyAxMDcuNDY0LDE4NC4wMDdDMTA3LjY3OSwxODQuMDAyIDEwNy44OTQsMTg0IDEwOC4xMDksMTg0QzExNy4yODksMTg0LjA4OCAxMjUuOTI1LDE5MS4xNTIgMTI3LjYyNCwyMDAuMzIyQzEyOC42NzMsMjA1Ljk4MyAxMjYuOTM5LDIxMS45NjUgMTIzLjM4MywyMTYuNDcyTDEzNy40OTcsMjMwLjU4NkMxMzguODgzLDIzMi4wNDkgMTM2LjcyMywyMzUuMzYxIDEzNC42NjgsMjMzLjQxNEwxMjAuNjEzLDIxOS4zNTlaTTEwNy44NzYsMTg4QzEwMC41MDgsMTg4LjA3MSA5My42MjcsMTkzLjcxNiA5Mi4yNjgsMjAxLjA1MUM5MC41ODEsMjEwLjE1IDk4LjM4OSwyMTkuODk4IDEwNy44NzYsMjE5Ljk1OEMxMTguMTc3LDIyMC4wMjQgMTI3LjA4MiwyMDguMTA4IDEyMi43MDQsMTk3Ljc2NUMxMjAuMzE4LDE5Mi4xMjYgMTE0LjUzNSwxODguMTQyIDEwOC4yOSwxODguMDAzQzEwOC4xNTIsMTg4LjAwMSAxMDguMDE0LDE4OCAxMDcuODc2LDE4OFoiIHN0eWxlPSJmaWxsLXJ1bGU6bm9uemVybzsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==' !default;
 
 
-$internal-form-search-2-image: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjMwIiBoZWlnaHQ9IjE2IiBmaWxsPSIjNjY2NjY2IiB2aWV3Qm94PSIwIDAgNTAgNTEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLC04OC4wNTI5LC0xODQpIj4KICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDAuMDY4OTQ1MiwxNTkuMzI3KSI+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTAuMDY4OTQ1MiwtMTU5LjMyNykiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTEyMC42MTMsMjE5LjM1OUMxMTkuMDk4LDIyMC42NTQgMTE3LjM5LDIyMS43MiAxMTUuNTI4LDIyMi40ODFDMTA0Ljk5MiwyMjYuNzg5IDkxLjIxNSwyMjAuMTg1IDg4LjUxMiwyMDguNDg5Qzg1Ljg4MywxOTcuMTE0IDk0Ljg1MiwxODQuMzY3IDEwNy40NjQsMTg0LjAwN0MxMDcuNjc5LDE4NC4wMDIgMTA3Ljg5NCwxODQgMTA4LjEwOSwxODRDMTE3LjI4OSwxODQuMDg4IDEyNS45MjUsMTkxLjE1MiAxMjcuNjI0LDIwMC4zMjJDMTI4LjY3MywyMDUuOTgzIDEyNi45MzksMjExLjk2NSAxMjMuMzgzLDIxNi40NzJMMTM3LjQ5NywyMzAuNTg2QzEzOC44ODMsMjMyLjA0OSAxMzYuNzIzLDIzNS4zNjEgMTM0LjY2OCwyMzMuNDE0TDEyMC42MTMsMjE5LjM1OVpNMTA3Ljg3NiwxODhDMTAwLjUwOCwxODguMDcxIDkzLjYyNywxOTMuNzE2IDkyLjI2OCwyMDEuMDUxQzkwLjU4MSwyMTAuMTUgOTguMzg5LDIxOS44OTggMTA3Ljg3NiwyMTkuOTU4QzExOC4xNzcsMjIwLjAyNCAxMjcuMDgyLDIwOC4xMDggMTIyLjcwNCwxOTcuNzY1QzEyMC4zMTgsMTkyLjEyNiAxMTQuNTM1LDE4OC4xNDIgMTA4LjI5LDE4OC4wMDNDMTA4LjE1MiwxODguMDAxIDEwOC4wMTQsMTg4IDEwNy44NzYsMTg4WiIgc3R5bGU9ImZpbGwtcnVsZTpub256ZXJvOyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K" !default;
+$internal-form-search-2-image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjMwIiBoZWlnaHQ9IjE2IiBmaWxsPSIjNjY2NjY2IiB2aWV3Qm94PSIwIDAgNTAgNTEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLC04OC4wNTI5LC0xODQpIj4KICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDAuMDY4OTQ1MiwxNTkuMzI3KSI+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTAuMDY4OTQ1MiwtMTU5LjMyNykiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTEyMC42MTMsMjE5LjM1OUMxMTkuMDk4LDIyMC42NTQgMTE3LjM5LDIyMS43MiAxMTUuNTI4LDIyMi40ODFDMTA0Ljk5MiwyMjYuNzg5IDkxLjIxNSwyMjAuMTg1IDg4LjUxMiwyMDguNDg5Qzg1Ljg4MywxOTcuMTE0IDk0Ljg1MiwxODQuMzY3IDEwNy40NjQsMTg0LjAwN0MxMDcuNjc5LDE4NC4wMDIgMTA3Ljg5NCwxODQgMTA4LjEwOSwxODRDMTE3LjI4OSwxODQuMDg4IDEyNS45MjUsMTkxLjE1MiAxMjcuNjI0LDIwMC4zMjJDMTI4LjY3MywyMDUuOTgzIDEyNi45MzksMjExLjk2NSAxMjMuMzgzLDIxNi40NzJMMTM3LjQ5NywyMzAuNTg2QzEzOC44ODMsMjMyLjA0OSAxMzYuNzIzLDIzNS4zNjEgMTM0LjY2OCwyMzMuNDE0TDEyMC42MTMsMjE5LjM1OVpNMTA3Ljg3NiwxODhDMTAwLjUwOCwxODguMDcxIDkzLjYyNywxOTMuNzE2IDkyLjI2OCwyMDEuMDUxQzkwLjU4MSwyMTAuMTUgOTguMzg5LDIxOS44OTggMTA3Ljg3NiwyMTkuOTU4QzExOC4xNzcsMjIwLjAyNCAxMjcuMDgyLDIwOC4xMDggMTIyLjcwNCwxOTcuNzY1QzEyMC4zMTgsMTkyLjEyNiAxMTQuNTM1LDE4OC4xNDIgMTA4LjI5LDE4OC4wMDNDMTA4LjE1MiwxODguMDAxIDEwOC4wMTQsMTg4IDEwNy44NzYsMTg4WiIgc3R5bGU9ImZpbGwtcnVsZTpub256ZXJvOyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K' !default;
 
-$internal-form-spinner-image: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjNjY2NjY2IiB2aWV3Qm94PSIwIDAgMTggMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+CiAgICA8cGF0aCBpZD0iYXJyb3ciIGNsYXNzPSJzdDAiIGQ9Ik05LjMsMTYuNGMzLjItMC40LDUuOC0yLjksNi4yLTYuMWMwLjUtNC4yLTIuOC03LjctNi45LTcuOFYwLjZjMC0wLjEtMC4xLTAuMi0wLjItMC4xbC00LDIuOQogICAgCWMtMC4xLDAtMC4xLDAuMSwwLDAuMmwzLjksMi44YzAuMSwwLjEsMC4yLDAsMC4yLTAuMVY0LjVjMi45LDAsNS4yLDIuNSw1LDUuNGMtMC4yLDIuNS0yLjIsNC41LTQuOCw0LjdjLTIuNywwLjItNS0xLjctNS40LTQuMgogICAgCWMtMC4xLTAuNS0wLjUtMC44LTEtMC44Yy0wLjYsMC0xLDAuNS0xLDEuMUMyLjEsMTQuMiw1LjQsMTYuOSw5LjMsMTYuNEw5LjMsMTYuNHoiPgogICAgICAgIDxhbmltYXRluisJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9InhtbCIgYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGZyb209IjM2MCA4LjQgOS41IiB0bz0iMCA4LjQgOS41IiBkdXI9IjAuNXMiIGFkZGl0aXZlPSJzdW0iIHJlcGuisdENvdW50PSJpbmRlZmluaXRlIiAvPgogICAgPC9wYXRoPgo8L3N2Zz4K" !default;
+$internal-form-spinner-image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjNjY2NjY2IiB2aWV3Qm94PSIwIDAgMTggMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+CiAgICA8cGF0aCBpZD0iYXJyb3ciIGNsYXNzPSJzdDAiIGQ9Ik05LjMsMTYuNGMzLjItMC40LDUuOC0yLjksNi4yLTYuMWMwLjUtNC4yLTIuOC03LjctNi45LTcuOFYwLjZjMC0wLjEtMC4xLTAuMi0wLjItMC4xbC00LDIuOQogICAgCWMtMC4xLDAtMC4xLDAuMSwwLDAuMmwzLjksMi44YzAuMSwwLjEsMC4yLDAsMC4yLTAuMVY0LjVjMi45LDAsNS4yLDIuNSw1LDUuNGMtMC4yLDIuNS0yLjIsNC41LTQuOCw0LjdjLTIuNywwLjItNS0xLjctNS40LTQuMgogICAgCWMtMC4xLTAuNS0wLjUtMC44LTEtMC44Yy0wLjYsMC0xLDAuNS0xLDEuMUMyLjEsMTQuMiw1LjQsMTYuOSw5LjMsMTYuNEw5LjMsMTYuNHoiPgogICAgICAgIDxhbmltYXRluisJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9InhtbCIgYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGZyb209IjM2MCA4LjQgOS41IiB0bz0iMCA4LjQgOS41IiBkdXI9IjAuNXMiIGFkZGl0aXZlPSJzdW0iIHJlcGuisdENvdW50PSJpbmRlZmluaXRlIiAvPgogICAgPC9wYXRoPgo8L3N2Zz4K' !default;
 
-$internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMC44MyAyMC4zMyIgaGVpZ2h0PSIxNnB4IiB3aWR0aD0iMTZweCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZWFyY2gtaWNvbjwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDIuNTQsMzMuNjIsMzYuODgsMjhhMS4xNSwxLjE1LDAsMCwwLS40My0uMjRBOC4wNiw4LjA2LDAsMSwwLDM1LjI0LDI5YTEsMSwwLDAsMCwuMjIuMzVMNDEuMTIsMzVhMSwxLDAsMCwwLC43MS4yOSwxLDEsMCwwLDAsLjcxLS4yOUExLDEsMCwwLDAsNDIuNTQsMzMuNjJaTTMwLDI5YTYsNiwwLDEsMSw2LTZBNiw2LDAsMCwxLDMwLDI5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIyIC0xNSkiLz48L3N2Zz4=" !default;
+$internal-form-search-inverse-image: 'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMC44MyAyMC4zMyIgaGVpZ2h0PSIxNnB4IiB3aWR0aD0iMTZweCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZWFyY2gtaWNvbjwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDIuNTQsMzMuNjIsMzYuODgsMjhhMS4xNSwxLjE1LDAsMCwwLS40My0uMjRBOC4wNiw4LjA2LDAsMSwwLDM1LjI0LDI5YTEsMSwwLDAsMCwuMjIuMzVMNDEuMTIsMzVhMSwxLDAsMCwwLC43MS4yOSwxLDEsMCwwLDAsLjcxLS4yOUExLDEsMCwwLDAsNDIuNTQsMzMuNjJaTTMwLDI5YTYsNiwwLDEsMSw2LTZBNiw2LDAsMCwxLDMwLDI5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIyIC0xNSkiLz48L3N2Zz4=' !default;
 
 /* ==================================================
     Component: Form
@@ -125,9 +125,9 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
 /*
  * 1. Define consistent box sizing.
  *    Default is `content-box` with following exceptions set to `border-box`
- *    `select`, `input[type="checkbox"]` and `input[type="radio"]`
- *    `input[type="search"]` in Chrome, Safari and Opera
- *    `input[type="color"]` in Firefox
+ *    `select`, `input[type='checkbox']` and `input[type='radio']`
+ *    `input[type='search']` in Chrome, Safari and Opera
+ *    `input[type='color']` in Firefox
  * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
  * 3. Remove `border-radius` in iOS.
  * 4. Change font properties to `inherit` in all browsers.
@@ -186,22 +186,15 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
     overflow: auto;
 }
 
-/*
- * Remvoe the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.
- */
-.uis-input[type="search"]::-webkit-search-cancel-button,
-.uis-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
 
-.uis-input[type="search"] {
+.uis-input[type='search'] {
     padding-right: $form-select-padding-right;
     background: url($internal-form-search-2-image);
     background-repeat: no-repeat;
     background-position: 100% 50%;
 }
 
-.uis-modal.uis-search-modal .uis-input[type="search"] {
+.uis-modal.uis-search-modal .uis-input[type='search'] {
     padding-left: $form-select-padding-right;
     background: url($internal-form-search-image);
     background-repeat: no-repeat;
@@ -212,8 +205,8 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
 /*
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-.uis-input[type="number"]::-webkit-inner-spin-button,
-.uis-input[type="number"]::-webkit-outer-spin-button {
+.uis-input[type='number']::-webkit-inner-spin-button,
+.uis-input[type='number']::-webkit-outer-spin-button {
     height: auto;
 }
 
@@ -245,17 +238,11 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
 
 /* Input, select and textarea
  * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
-            `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
- * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset` and `image`
+ *          `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+ *
+ * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset`
+ *              and `image`
  ========================================================================== */
-
-/*
- * Remove default style in iOS.
- */
-.uis-input,
-.uis-textarea {
-    -webkit-appearance: none;
-}
 
 /*
   * 1. Prevent content overflow if a fixed width is used
@@ -309,7 +296,7 @@ $internal-form-search-inverse-image: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5
 .uis-select:not([multiple]):not([size]) {
     height: $form-height;
     vertical-align: middle;
-    
+
     /* 1 */
     display: inline-block;
 }
@@ -494,17 +481,13 @@ select.uis-form-width-xsmall {
  ========================================================================== */
 
 /*
- * 1. Remove default style. Also works in Firefox
- * 2. Style
- * 3. Remove default style in IE 10/11
- * 4. Set `color` for options in the select dropdown, because the inherited `color` might be too light.
+ * 1. Style
+ * 2. Remove default style in IE 10/11
+ * 3. Set `color` for options in the select dropdown, because the
+ *    inherited `color` might be too light.
  */
 .uis-select:not([multiple]):not([size]) {
     /* 1 */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    /* 2 */
     padding-right: $form-select-padding-right;
     background: url($internal-form-select-image);
     background-repeat: no-repeat;
@@ -539,10 +522,9 @@ select.uis-form-width-xsmall {
  * 1. Style
  * 2. Make box more robust so it clips the child element
  * 3. Vertical alignment
- * 4. Remove default style
- * 5. Fix black background on iOS
- * 6. Center icons
- * 7. Style
+ * 4. Fix black background on iOS
+ * 5. Center icons
+ * 6. Style
  */
 .uis-radio,
 .uis-checkbox {
@@ -557,19 +539,15 @@ select.uis-form-width-xsmall {
     /* 3 */
     margin-top: $form-radio-margin-top;
     vertical-align: middle;
-    
-    /* 4 */
-    -webkit-appearance: none;
-    -moz-appearance: none;
 
-    /* 5 */
+    /* 4 */
     background-color: $form-radio-background;
 
-    /* 6 */
+    /* 5 */
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
-    /* 7 */
+    /* 6 */
     border: solid 0.5px #E5E5E5;
 }
 
@@ -689,13 +667,12 @@ select.uis-form-width-xsmall {
 /*
  * 1. Position and resize the form control to always cover its container
  * 2. Required for Firefox for positioning to the left
- * 3. Required for Webkit to make `height` work
- * 4. Hide controle and show cursor
- * 5. Needed for the cursor
- * 6. Clip height caused by 5. Needed for Webkit only
+ * 3. Hide controle and show cursor
+ * 4. Needed for the cursor
+ * 5. Clip height caused by 5. Needed for Webkit only
  */
 .uis-form-custom select,
-.uis-form-custom input[type="file"] {
+.uis-form-custom input[type='file'] {
     /* 1 */
     position: absolute;
     top: 0;
@@ -707,14 +684,11 @@ select.uis-form-width-xsmall {
     left: 0;
 
     /* 3 */
-    -webkit-appearance: none;
-
-    /* 4 */
     opacity: 0;
     cursor: pointer;
 }
 
-.uis-form-custom input[type="file"] {
+.uis-form-custom input[type='file'] {
     /* 5 */
     font-size: 500px;
 
@@ -763,7 +737,8 @@ select.uis-form-width-xsmall {
         margin-left: $form-horizontal-controls-margin-left;
     }
 
-    /* Better vertical alignment if controls are checkboxes and radio buttons with text */
+    /* Better vertical alignment if controls are checkboxes
+       and radio buttons with text */
     .uis-form-horizontal .uis-form-controls-text {
         padding-top: $form-horizontal-controls-text-padding-top;
     }
@@ -863,41 +838,37 @@ select.uis-form-width-xsmall {
     right: 0;
     bottom: 0;
     background-color: #CCCCCC;
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: 0.4s;
 }
-  
+
 .uis-slider:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 16px;
     width: 16px;
     left: 4px;
     bottom: 4px;
     background-color: theme-color(inverse);
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: 0.4s;
 }
-  
+
 input:checked + .uis-slider {
     background-color: color(success);
 }
-  
+
 input:focus + .uis-slider {
     box-shadow: 0 0 1px color(success);
 }
-  
+
 input:checked + .uis-slider:before {
-    -webkit-transform: translateX(24px);
-    -ms-transform: translateX(24px);
     transform: translateX(24px);
 }
-  
+
 /* Rounded sliders */
 .uis-slider.uis-slider-round {
     border-radius: 34px;
 }
-  
+
 .uis-slider.uis-slider-round:before {
     border-radius: 50%;
 }

@@ -396,16 +396,395 @@ module.exports = {
 
         // Limit the length of the line
         // Reference: https://stylelint.io/user-guide/rules/max-line-length
-        // 'max-line-length': [
-        //     80,
-        //     {
-        //         'ignorePattern': [
-        //             "/https?:\/\/[0-9,a-z]*.*/",
-        //             "/data:image?:\/\/[0-9,a-z]*.*/",
-        //             "/^\$.*[a-z].;$/g"
-        //         ]
-        //     }
-        // ]
+        'max-line-length': [
+            80,
+            {
+                'ignore': [
+                    'non-comments',
+                ]
+            }
+        ],
 
+        // Limit the depth of nesting
+        // Reference: https://stylelint.io/user-guide/rules/max-nesting-depth
+        'max-nesting-depth': 4,
+
+        // Require whitespace after colon inside of parameter of @media
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-colon-space-after
+        'media-feature-colon-space-after': 'always',
+
+        // Disallow whitespace before colon inside of parameter of @media
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-colon-space-before
+        'media-feature-colon-space-before': 'never',
+
+        // Specify black list of 
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-name-blacklist
+        'media-feature-name-blacklist': null,
+
+        // Require lower case media parameter
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-name-case
+        'media-feature-name-case': 'lower',
+
+        // Disallow unknown parameter
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-name-no-unknown
+        'media-feature-name-no-unknown': true,
+
+        // Disallow vendor prefixes on media argument
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-name-no-vendor-prefix
+        'media-feature-name-no-vendor-prefix': true,
+
+        // Specify arguments value that allowed
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-name-value-whitelist
+        'media-feature-name-value-whitelist': null,
+
+        // Specify arguments
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-name-whitelist
+        'media-feature-name-whitelist': null,
+
+        // Disallow space inside of media parameter
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-parentheses-space-inside
+        'media-feature-parentheses-space-inside': 'never',
+
+        // Require whitespace after media operator
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-range-operator-space-after
+        'media-feature-range-operator-space-after': 'always',
+
+        // Require whitespace before media operator
+        // Reference: https://stylelint.io/user-guide/rules/media-feature-range-operator-space-before
+        'media-feature-range-operator-space-before': 'always',
+
+        // Require newline after comma on media
+        // Reference: https://stylelint.io/user-guide/rules/media-query-list-comma-newline-after
+        'media-query-list-comma-newline-after': 'always-multi-line',
+
+        // Require new line before comma
+        // Reference: https://stylelint.io/user-guide/rules/media-query-list-comma-newline-before
+        'media-query-list-comma-newline-before': null,
+
+        // Require whitespace after comma
+        // Reference: https://stylelint.io/user-guide/rules/media-query-list-comma-space-after
+        'media-query-list-comma-space-after': 'always-single-line',
+
+        // Require whitespace before comma
+        // Reference: https://stylelint.io/user-guide/rules/media-query-list-comma-space-before
+        'media-query-list-comma-space-before': null,
+
+        // Disallow selectors of lower specifity from coming after overriding selectors
+        // of higher specificity
+        // Reference: https://stylelint.io/user-guide/rules/no-descending-specificity
+        'no-descending-specificity': null,
+
+        // Disallow duplicate imports
+        // Reference: https://stylelint.io/user-guide/rules/no-duplicate-at-import-rules
+        'no-duplicate-at-import-rules': true,
+
+        // Disallow duplicate selectors
+        // Reference: https://stylelint.io/user-guide/rules/no-duplicate-selectors
+        'no-duplicate-selectors': null,
+
+        // No empty line
+        // Reference: https://stylelint.io/user-guide/rules/no-empty-first-line
+        'no-empty-first-line': true,
+
+        // Disallow empty file
+        // Reference: https://stylelint.io/user-guide/rules/no-empty-source
+        'no-empty-source': true,
+
+        // Disallow trailing whitespace
+        // Reference: https://stylelint.io/user-guide/rules/no-eol-whitespace
+        'no-eol-whitespace': true,
+
+        // Disallow extra semicolns
+        // Reference: https://stylelint.io/user-guide/rules/no-extra-semicolons
+        'no-extra-semicolons': true,
+
+        // Disallow double slash comment inside of property
+        // Reference: https://stylelint.io/user-guide/rules/no-invalid-double-slash-comments
+        'no-invalid-double-slash-comments': true,
+
+        // Requires newline every end of the file
+        // Reference: https://stylelint.io/user-guide/rules/no-missing-end-of-source-newline
+        'no-missing-end-of-source-newline': true,
+
+        // Disallow unkown animation
+        // Reference: https://stylelint.io/user-guide/rules/no-unknown-animations
+        'no-unknown-animations': true,
+
+        // Requires number zero on leading
+        // Reference: https://stylelint.io/user-guide/rules/number-leading-zero
+        'number-leading-zero': 'always',
+
+        // Limit the number of decimal places
+        // Reference: https://stylelint.io/user-guide/rules/number-max-precision
+        'number-max-precision': 3,
+
+        // Disallow trailing number zero
+        // Reference: https://stylelint.io/user-guide/rules/number-no-trailing-zeros
+        'number-no-trailing-zeros': true,
+
+        // Specify properties not allowed
+        // Reference: https://stylelint.io/user-guide/rules/property-blacklist
+        'property-blacklist': null,
+
+        // Require lower case on property
+        // Reference: https://stylelint.io/user-guide/rules/property-case
+        'property-case': 'lower',
+
+        // Disallow unknown properties
+        // Reference: https://stylelint.io/user-guide/rules/property-no-unknown
+        'property-no-unknown': true,
+
+        // Disallow vendor prefix property, autoprefixed should handle that
+        // Reference: https://stylelint.io/user-guide/rules/property-no-vendor-prefix
+        'property-no-vendor-prefix': true,
+
+        // Specify allow properties
+        // Reference: https://stylelint.io/user-guide/rules/property-whitelist
+        'property-whitelist': null,
+
+        // Require empty line before declaration
+        // Reference: https://stylelint.io/user-guide/rules/rule-empty-line-before
+        'rule-empty-line-before': [
+            'always',
+            {
+                'ignore': [
+                    'after-comment',
+                    'first-nested',
+                    'inside-block',
+                ]
+            }
+        ],
+
+        // Require whitespace inside of brackets
+        // Reference: https://stylelint.io/user-guide/rules/selector-attribute-brackets-space-inside
+        'selector-attribute-brackets-space-inside': 'never',
+
+        // Specify disallow operator inside brackers
+        // Reference: https://stylelint.io/user-guide/rules/selector-attribute-operator-blacklist
+        'selector-attribute-operator-blacklist': null,
+
+        // Disallow space after operator of selector attribute
+        // Reference: https://stylelint.io/user-guide/rules/selector-attribute-operator-space-after
+        'selector-attribute-operator-space-after': 'never',
+
+        // Disallow space before operator of selector attribute
+        // Reference: https://stylelint.io/user-guide/rules/selector-attribute-operator-space-before
+        'selector-attribute-operator-space-before': 'never',
+
+        // Specify allow operator on selector attribute
+        // Reference: https://stylelint.io/user-guide/rules/selector-attribute-operator-whitelist
+        'selector-attribute-operator-whitelist': null,
+
+        // Require qoutes on value of selector attribute
+        // Reference: https://stylelint.io/user-guide/rules/selector-attribute-quotes
+        'selector-attribute-quotes': 'always',
+
+        // Specify pattern of classes
+        // Reference: https://stylelint.io/user-guide/rules/selector-class-pattern
+        'selector-class-pattern': 'uis-[a-z]+.',
+
+        // Specify selector combinator black list
+        // Reference: https://stylelint.io/user-guide/rules/selector-combinator-blacklist
+        'selector-combinator-blacklist': null,
+
+        // Requires space after selector combinator
+        // Reference: https://stylelint.io/user-guide/rules/selector-combinator-space-after
+        'selector-combinator-space-after': 'always',
+
+        // Requires space before selector combinator
+        // Reference: https://stylelint.io/user-guide/rules/selector-combinator-space-before
+        'selector-combinator-space-before': 'always',
+
+        // Specify selector combinator allowed
+        // Reference: https://stylelint.io/user-guide/rules/selector-combinator-whitelist
+        'selector-combinator-whitelist': null,
+
+        // Disallow non-space characters for descendant cominators of selectors
+        // Reference: https://stylelint.io/user-guide/rules/selector-descendant-combinator-no-non-space
+        'selector-descendant-combinator-no-non-space': true,
+
+        // Specify patter of ID value
+        // Reference: https://stylelint.io/user-guide/rules/selector-id-pattern
+        'selector-id-pattern': null,
+
+        // Require new line after comma in selector
+        // Reference: https://stylelint.io/user-guide/rules/selector-list-comma-newline-after
+        'selector-list-comma-newline-after': 'always-multi-line',
+
+        // Require new line before comma in selector
+        // Reference: https://stylelint.io/user-guide/rules/selector-list-comma-newline-before
+        'selector-list-comma-newline-before': null,
+
+        // Require whitespace after comma in selector
+        // Reference: https://stylelint.io/user-guide/rules/selector-list-comma-space-after
+        'selector-list-comma-space-after': 'always-single-line',
+
+        // Require whitespace before comma in selector
+        // Reference: https://stylelint.io/user-guide/rules/selector-list-comma-space-before
+        'selector-list-comma-space-before': 'never',
+
+        // Limit the number for attribute selector
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-attribute
+        'selector-max-attribute': 2,
+
+        // Limit the number of class
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-class
+        'selector-max-class': 4,
+
+        // Limit the number for combinators
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-combinators
+        'selector-max-combinators': 4,
+
+        // Limit the number of compound selectors
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-compound-selectors
+        'selector-max-compound-selectors': 4,
+
+        // Limit the number of adjacent of empty lines
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-empty-lines
+        'selector-max-empty-lines': 0,
+
+        // Limit the number of ID selectors in a selector
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-id
+        'selector-max-id': 2,
+
+        // Limit the number for pseudo-classes in a selector
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-pseudo-class
+        'selector-max-pseudo-class': 4,
+
+        // Limit the specify to selectors
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-specificity
+        'selector-max-specificity': null,
+
+        // Limit the number of type in a selectors
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-type
+        'selector-max-type': 4,
+
+        // Limit the number of universal selectors
+        // Reference: https://stylelint.io/user-guide/rules/selector-max-universal
+        'selector-max-universal': 1,
+
+        // Specify pattern of nested selectors
+        // Reference: https://stylelint.io/user-guide/rules/selector-nested-pattern
+        'selector-nested-pattern': null,
+
+        // Allow qualifying a selector type
+        // Reference: https://stylelint.io/user-guide/rules/selector-no-qualifying-type
+        'selector-no-qualifying-type': null,
+
+        // Disallow vendor prefix
+        // Reference: https://stylelint.io/user-guide/rules/selector-no-vendor-prefix
+        'selector-no-vendor-prefix': null,
+
+        // Specify pseudo-class blacklist
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-class-blacklist
+        'selector-pseudo-class-blacklist': null,
+
+        // Require pseudo-class in lower case
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-class-case
+        'selector-pseudo-class-case': 'lower',
+
+        // Disallow unknown pseudo-class
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown
+        'selector-pseudo-class-no-unknown': true,
+
+        // Disallow space inside parameter of pseudo-class paramtere
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-class-parentheses-space-inside
+        'selector-pseudo-class-parentheses-space-inside': 'never',
+
+        // Specify allow pseudo-class
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-class-whitelist
+        'selector-pseudo-class-whitelist': null,
+
+        // Specify not allowed pseudo-element
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-element-blacklist
+        'selector-pseudo-element-blacklist': null,
+
+        // Require lower on pseudo-element
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-element-case
+        'selector-pseudo-element-case': 'lower',
+
+        // Require single colon only in pseudo
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation
+        'selector-pseudo-element-colon-notation': 'single',
+
+        // Disallow unknown pseudo-element
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-element-no-unknown
+        'selector-pseudo-element-no-unknown': true,
+
+        // Specify alloweed pseudo-element
+        // Reference: https://stylelint.io/user-guide/rules/selector-pseudo-element-whitelist
+        'selector-pseudo-element-whitelist': null,
+
+        // Require lower case on selector type case
+        // Reference: https://stylelint.io/user-guide/rules/selector-type-case
+        'selector-type-case': 'lower',
+
+        // Disallow unknown selector type
+        // Reference: https://stylelint.io/user-guide/rules/selector-type-no-unknown
+        'selector-type-no-unknown': true,
+
+        // Disallow redundant short property
+        // Reference: https://stylelint.io/user-guide/rules/shorthand-property-no-redundant-values
+        'shorthand-property-no-redundant-values': true,
+
+        // Disallow newline on string,
+        // Reference: https://stylelint.io/user-guide/rules/string-no-newline
+        'string-no-newline': true,
+
+        // Require single qoute on string,
+        // Reference: https://stylelint.io/user-guide/rules/string-quotes
+        'string-quotes': 'single',
+
+        // Set minimum in millseconds
+        // Referene: https://stylelint.io/user-guide/rules/time-min-milliseconds
+        'time-min-milliseconds': 150,
+
+        // Disallow unicode
+        // Reference: https://stylelint.io/user-guide/rules/unicode-bom
+        'unicode-bom': null,
+
+        // Specify blacklist units
+        // Reference: https://stylelint.io/user-guide/rules/unit-blacklist
+        'unit-blacklist': null,
+
+        // Require lower case on units
+        // Reference: https://stylelint.io/user-guide/rules/unit-case
+        'unit-case': 'lower',
+
+        // Disallow unknown unit case
+        // Reference: https://stylelint.io/user-guide/rules/unit-no-unknown
+        'unit-no-unknown': true,
+
+        // Specify allowed unit
+        // Reference: https://stylelint.io/user-guide/rules/unit-whitelist
+        'unit-whitelist': null,
+
+        // Required lower case on value keyword case
+        // Reference: https://stylelint.io/user-guide/rules/value-keyword-case
+        'value-keyword-case': null,
+
+        // Disallow new line after comma in value
+        // Reference: https://stylelint.io/user-guide/rules/value-list-comma-newline-after
+        'value-list-comma-newline-after': null,
+
+        // Disallow new line before comma in value
+        // Reference: https://stylelint.io/user-guide/rules/value-list-comma-newline-before
+        'value-list-comma-newline-before': null,
+
+        // Require space after comma
+        // Reference: https://stylelint.io/user-guide/rules/value-list-comma-space-after
+        'value-list-comma-space-after': 'always-single-line',
+
+        // Require space before comma
+        // Reference: https://stylelint.io/user-guide/rules/value-list-comma-space-before
+        'value-list-comma-space-before': null,
+
+        // Disallow empty lines on values
+        // Reference: https://stylelint.io/user-guide/rules/value-list-max-empty-lines
+        'value-list-max-empty-lines': 0,
+
+        // Disalow vendor prefix
+        // Reference: https://stylelint.io/user-guide/rules/value-no-vendor-prefix
+        'value-no-vendor-prefix': true,
     }
 }
